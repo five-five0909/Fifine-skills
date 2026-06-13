@@ -1,0 +1,11 @@
+{
+  "name": "@fifine/skills",
+  "version": "0.1.0",
+  "description": "Reusable AI coding skills for Claude Code, Codex, and other agent tools",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "keywords": ["claude-code", "codex", "agent-skills", "ai-tools"],
+  "author": "fifine",
+  "license": "MIT"
+}

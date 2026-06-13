@@ -1,0 +1,337 @@
+{
+  "direction": {
+    "name": "Direction Triage",
+    "questions": [
+      {
+        "id": "dir_1",
+        "q": "What is the exact research question in one sentence?",
+        "good": "Does instruction tuning with synthetic rationales improve factual grounding in low-resource QA compared to standard fine-tuning?",
+        "bad": "Use LLMs for education",
+        "fix": "Add task, data, intervention, baseline, metric"
+      },
+      {
+        "id": "dir_2",
+        "q": "Can the problem be stated without naming a model?",
+        "good": "Can adding chain-of-thought rationales to training data reduce hallucination in factual QA?",
+        "bad": "Use GPT-4 for QA",
+        "fix": "If the problem disappears when you remove the model name, it is not a research problem"
+      },
+      {
+        "id": "dir_3",
+        "q": "What is the smallest baseline that would embarrass your method if it performed equally well?",
+        "good": "TF-IDF + logistic regression on the same data. If it matches my LLM, my approach is not justified.",
+        "bad": "I haven't thought about baselines",
+        "fix": "Define at least 3 baselines: trivial, classical, frozen LLM"
+      },
+      {
+        "id": "dir_4",
+        "q": "What evidence would make you abandon this direction?",
+        "good": "If a frozen LLM with good prompting matches my fine-tuned model on the target metric, the direction is dead.",
+        "bad": "Nothing, I believe in this direction",
+        "fix": "Define falsification criteria before starting"
+      },
+      {
+        "id": "dir_5",
+        "q": "Why is this an LLM problem rather than classical ML, rules, retrieval, or data cleaning?",
+        "good": "Because the output space is open-ended generation and the task requires world knowledge that cannot be hand-coded.",
+        "bad": "Because LLMs are powerful",
+        "fix": "Name the specific capability only LLMs provide"
+      },
+      {
+        "id": "dir_6",
+        "q": "What is new: data, task, model, training method, evaluation, analysis, or application?",
+        "good": "New evaluation protocol that reveals failure modes existing metrics miss.",
+        "bad": "Everything is new",
+        "fix": "Pick one contribution type and defend it"
+      },
+      {
+        "id": "dir_7",
+        "q": "Who would care if the result is positive, and who would care if it is negative?",
+        "good": "Positive: QA system builders in low-resource domains. Negative: people claiming LLMs always need more data.",
+        "bad": "Everyone would care",
+        "fix": "Name specific stakeholders"
+      }
+    ]
+  },
+  "dataset": {
+    "name": "Dataset Interrogation",
+    "questions": [
+      {
+        "id": "ds_1",
+        "q": "What is one row/sample? Show a realistic example with fields.",
+        "good": "{\"id\": \"q001\", \"question\": \"...\", \"context\": \"...\", \"answer\": \"...\", \"source\": \"wikipedia\", \"difficulty\": \"easy\"}",
+        "bad": "It's a QA dataset",
+        "fix": "Show the actual schema with realistic values"
+      },
+      {
+        "id": "ds_2",
+        "q": "What fields exist in raw data, and which are allowed at inference time?",
+        "good": "Raw has question, context, answer, annotator_id, source_url. Inference only gets question and context.",
+        "bad": "All fields are available",
+        "fix": "Separate metadata from inference-time features"
+      },
+      {
+        "id": "ds_3",
+        "q": "What is the label, and how was it created?",
+        "good": "Free-text answer extracted from context by 3 annotators with 0.82 inter-annotator agreement.",
+        "bad": "The labels are in the dataset",
+        "fix": "Describe the annotation process and reliability"
+      },
+      {
+        "id": "ds_4",
+        "q": "What information might leak from train to test?",
+        "good": "Same document passages appear in both splits. Same source URLs. Same annotator bias.",
+        "bad": "No leakage",
+        "fix": "Check for duplicates, shared IDs, temporal leakage, metadata shortcuts"
+      },
+      {
+        "id": "ds_5",
+        "q": "What is the split strategy: random, stratified, temporal, group, domain-held-out, or source-held-out?",
+        "good": "Temporal split: train on pre-2023, test on post-2023. Group split by document ID to prevent passage leakage.",
+        "bad": "Random 80/10/10",
+        "fix": "Explain why this split matches the deployment scenario"
+      },
+      {
+        "id": "ds_6",
+        "q": "What preprocessing could accidentally remove signal or introduce artifacts?",
+        "good": "Lowercasing removes named entity signal. Truncation at 512 tokens removes 15% of answers that appear late in context.",
+        "bad": "Standard preprocessing",
+        "fix": "Audit each preprocessing step for signal loss and artifact creation"
+      },
+      {
+        "id": "ds_7",
+        "q": "What labels are ambiguous or noisy, and how will you measure that?",
+        "good": "12% of answers have multiple valid phrasings. Measuring with exact match vs F1 vs human judgment.",
+        "bad": "Labels are clean",
+        "fix": "Quantify label noise and choose metrics that handle it"
+      },
+      {
+        "id": "ds_8",
+        "q": "What data cannot be used because of licensing, privacy, or ethical constraints?",
+        "good": "Cannot redistribute annotator IDs. Cannot use data from source X due to license restriction.",
+        "bad": "Everything is fine",
+        "fix": "Check licenses, PII, and ethical review requirements"
+      }
+    ]
+  },
+  "framework": {
+    "name": "PyTorch/LLM Framework Audit",
+    "questions": [
+      {
+        "id": "fw_1",
+        "q": "What framework are you using: raw PyTorch, Lightning, HF Trainer, Accelerate, DeepSpeed, FSDP, PEFT, or custom loop? Why?",
+        "good": "HF Trainer because it handles distributed training and gradient accumulation. Custom eval loop because Trainer's compute_metrics doesn't support my metric.",
+        "bad": "Whatever the tutorial used",
+        "fix": "Match framework choice to failure mode: correctness/memory/speed/quality/reproducibility"
+      },
+      {
+        "id": "fw_2",
+        "q": "What exact tensor shapes enter the model? Show one post-collation batch.",
+        "good": "input_ids: [8, 512], attention_mask: [8, 512], labels: [8, 512] with -100 on prompt tokens.",
+        "bad": "I don't know",
+        "fix": "Print batch keys and shapes before training"
+      },
+      {
+        "id": "fw_3",
+        "q": "Where are labels created, shifted, padded, and masked?",
+        "good": "Labels are shifted left by 1 in the model forward. Prompt tokens masked with -100 in data collator. Padding masked in loss function.",
+        "bad": "The framework handles it",
+        "fix": "Trace label flow from data to loss"
+      },
+      {
+        "id": "fw_4",
+        "q": "Which parameters are trainable and how many?",
+        "good": "LoRA on q_proj and v_proj. 2.1M trainable out of 7B total (0.03%).",
+        "bad": "All parameters",
+        "fix": "Print trainable parameter count and names"
+      },
+      {
+        "id": "fw_5",
+        "q": "Can you overfit 8 examples? If not, what is broken?",
+        "good": "Yes, loss collapses to 0.01 in 50 steps.",
+        "bad": "I haven't tried",
+        "fix": "Run 8-example overfit test before any serious training"
+      },
+      {
+        "id": "fw_6",
+        "q": "What is the loss function, and does it match the task?",
+        "good": "CrossEntropyLoss for classification. Labels are integer class IDs. Loss ignores padding via ignore_index=-100.",
+        "bad": "Default loss",
+        "fix": "Verify loss matches task type and label format"
+      },
+      {
+        "id": "fw_7",
+        "q": "What part of memory is dominant: weights, activations, optimizer states, gradients, KV cache, or dataloader?",
+        "good": "Activations dominate at seq_len=2048 with batch_size=4. Switching to gradient checkpointing reduces by 60%.",
+        "bad": "I keep getting OOM",
+        "fix": "Profile memory breakdown before scaling up"
+      },
+      {
+        "id": "fw_8",
+        "q": "What checkpoint would let another person resume the exact run?",
+        "good": "checkpoint-1000/ contains model.safetensors, optimizer.pt, scheduler.pt, trainer_state.json, training_args.yaml, random seeds logged.",
+        "bad": "I save the final model",
+        "fix": "Save model + optimizer + scheduler + config + seeds"
+      }
+    ]
+  },
+  "literature": {
+    "name": "Paper/Book Grilling",
+    "questions": [
+      {
+        "id": "lit_1",
+        "q": "What is the main claim of the paper/chapter in one sentence?",
+        "good": "Instruction tuning with chain-of-thought rationales improves factual grounding by 15% on TriviaQA.",
+        "bad": "The paper is about instruction tuning",
+        "fix": "Extract the falsifiable claim, not the topic"
+      },
+      {
+        "id": "lit_2",
+        "q": "What assumptions are required for that claim to hold?",
+        "good": "Assumes TriviaQA measures factual grounding. Assumes 15% improvement is not from data contamination. Assumes the rationale quality is sufficient.",
+        "bad": "No assumptions",
+        "fix": "List every assumption that could break the claim"
+      },
+      {
+        "id": "lit_3",
+        "q": "What experiment is the strongest evidence?",
+        "good": "Table 3: ablation removing rationales drops performance by 12%, showing rationales are the causal factor.",
+        "bad": "All experiments support it",
+        "fix": "Name the single experiment that most supports the claim"
+      },
+      {
+        "id": "lit_4",
+        "q": "What baseline is suspiciously absent?",
+        "good": "No frozen LLM with good prompting. No retrieval-only baseline. No data augmentation without rationales.",
+        "bad": "They covered everything",
+        "fix": "Name at least one missing baseline"
+      },
+      {
+        "id": "lit_5",
+        "q": "What is reusable in your project: metric, dataset, architecture, training trick, evaluation protocol, or failure taxonomy?",
+        "good": "Their evaluation protocol with per-slice breakdown. Their failure taxonomy for hallucination types.",
+        "bad": "The whole method",
+        "fix": "Pick specific reusable decisions, not general inspiration"
+      },
+      {
+        "id": "lit_6",
+        "q": "What would invalidate the claim on your dataset?",
+        "good": "If my dataset has different domain distribution, the rationale quality may not transfer. If my evaluation metric is stricter, the 15% gap may disappear.",
+        "bad": "It would work the same",
+        "fix": "Identify dataset/method/eval differences that could break transfer"
+      }
+    ]
+  },
+  "experiment": {
+    "name": "Experiment Design Review",
+    "questions": [
+      {
+        "id": "exp_1",
+        "q": "What is the hypothesis in if-then-because form?",
+        "good": "If we add chain-of-thought rationales to training data, then factual grounding improves by ≥10%, because rationales teach the model to reason before answering.",
+        "bad": "We will train a model and see",
+        "fix": "Use if-then-because format"
+      },
+      {
+        "id": "exp_2",
+        "q": "What is the control, intervention, metric, and stopping criterion?",
+        "good": "Control: standard fine-tuning. Intervention: + rationales. Metric: F1 on factual claims. Stop: when eval loss plateaus for 3 epochs.",
+        "bad": "Compare with baseline",
+        "fix": "Define all four explicitly"
+      },
+      {
+        "id": "exp_3",
+        "q": "What is the minimal ablation that tests your core claim?",
+        "good": "Remove rationales from training data, keep everything else identical. If performance drops, rationales are the cause.",
+        "bad": "Compare different models",
+        "fix": "Each ablation must remove one claimed source of improvement"
+      },
+      {
+        "id": "exp_4",
+        "q": "What result table would convince a skeptical reviewer?",
+        "good": "Table with: baseline, main run, ablation (no rationales), ablation (no instruction tuning), per-slice breakdown, 3 seeds with std dev.",
+        "bad": "One accuracy number",
+        "fix": "Design the table before running experiments"
+      },
+      {
+        "id": "exp_5",
+        "q": "What error slices will you inspect after aggregate metrics?",
+        "good": "Length bins, question type (factual vs reasoning), domain (science vs history), difficulty (easy vs hard), hallucination rate per slice.",
+        "bad": "Overall accuracy",
+        "fix": "Define error slices before training"
+      },
+      {
+        "id": "exp_6",
+        "q": "What is the compute budget, and how does it constrain model/data size?",
+        "good": "2x A100 for 48 hours. Fits 7B model with LoRA, batch 8, seq 512. Cannot do full fine-tuning or larger models.",
+        "bad": "As much as needed",
+        "fix": "Define hardware, time, and resulting constraints"
+      },
+      {
+        "id": "exp_7",
+        "q": "How many seeds or repeated runs are needed for the claim you want to make?",
+        "good": "3 seeds for main result, report mean ± std. If std > 2%, need more seeds or larger effect size.",
+        "bad": "One run",
+        "fix": "Define seed count and significance threshold"
+      }
+    ]
+  },
+  "defense": {
+    "name": "Defense/Advisor Meeting Prep",
+    "questions": [
+      {
+        "id": "def_1",
+        "q": "Why this problem and not a nearby easier one?",
+        "good": "Because the easier version (pure classification) has been solved and the harder version (open-ended generation with grounding) has real-world impact.",
+        "bad": "I find it interesting",
+        "fix": "Defend the problem choice with impact and novelty"
+      },
+      {
+        "id": "def_2",
+        "q": "What is the contribution if the model does not beat the strongest baseline?",
+        "good": "The contribution is the evaluation protocol that reveals failure modes, not the model performance.",
+        "bad": "Then the project failed",
+        "fix": "Define contribution types beyond metric improvement"
+      },
+      {
+        "id": "def_3",
+        "q": "Why should anyone trust your labels?",
+        "good": "3 annotators, 0.82 agreement, adjudication protocol documented, edge cases sampled and reviewed.",
+        "bad": "The dataset is standard",
+        "fix": "Document annotation process and reliability"
+      },
+      {
+        "id": "def_4",
+        "q": "How do you know the model learned the intended signal?",
+        "good": "Attention analysis shows focus on relevant context. Error analysis shows failures on cases where context is misleading. Ablation confirms rationale dependency.",
+        "bad": "The metric improved",
+        "fix": "Go beyond metrics: attention, error analysis, ablations"
+      },
+      {
+        "id": "def_5",
+        "q": "What is the biggest threat to validity?",
+        "good": "Data contamination: some test questions may appear in LLM pretraining data. Mitigation: use post-cutoff data and check for memorization.",
+        "bad": "There are no major threats",
+        "fix": "Name the #1 threat and your mitigation"
+      }
+    ]
+  },
+  "rubrics": {
+    "dimensions": ["problem_clarity", "dataset_readiness", "implementation_readiness", "literature_grounding", "experiment_validity", "novelty_contribution", "reproducibility"],
+    "scores": {
+      "0": "absent; not defined",
+      "1": "vague; keywords and intentions only",
+      "2": "partial; some pieces exist but cannot guide implementation",
+      "3": "workable; enough to run a small experiment with risk",
+      "4": "strong; defensible for advisor review",
+      "5": "publication/defense-ready; evidence and threats explicit"
+    },
+    "verdicts": {
+      "idea_fog": "< 1.5 average. Need problem and dataset definition before coding.",
+      "pre_proposal": "1.5-2.4. Have direction but lack evidence and design.",
+      "prototype_ready": "2.5-3.4. Can run a minimal experiment.",
+      "review_ready": "3.5-4.3. Can show an advisor/reviewer.",
+      "defense_ready": "> 4.3. Should refine claims and presentation."
+    }
+  }
+}

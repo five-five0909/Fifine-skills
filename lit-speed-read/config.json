@@ -1,0 +1,43 @@
+{
+  "domains": {
+    "ml_ai": {
+      "name": "机器学习 / 人工智能",
+      "keywords": ["neural", "deep learning", "transformer", "classification", "regression", "model", "dataset", "accuracy", "loss"],
+      "metrics_hint": "R²、RMSE、MAE、Accuracy、F1、AUC",
+      "method_types_hint": "监督学习、深度学习、迁移学习、自监督学习"
+    },
+    "ecology_soil": {
+      "name": "生态学 / 土壤科学",
+      "keywords": ["soil", "spectral", "vegetation", "remote sensing", "organic carbon", "hyperspectral", "NDVI"],
+      "metrics_hint": "R²、RMSE、NDVI、PI、RPD、SEP",
+      "method_types_hint": "光谱分析、机器学习、迁移学习、地统计"
+    },
+    "medicine": {
+      "name": "医学 / 临床研究",
+      "keywords": ["patient", "clinical", "trial", "treatment", "disease", "cohort", "randomized", "mortality"],
+      "metrics_hint": "OR、HR、p-value、灵敏度、特异度、AUC",
+      "method_types_hint": "RCT、队列研究、Meta分析、病例对照"
+    },
+    "social_science": {
+      "name": "社会科学",
+      "keywords": ["survey", "interview", "behavior", "social", "policy", "institutional", "qualitative"],
+      "metrics_hint": "β系数、p-value、效应量、信度α",
+      "method_types_hint": "问卷调查、访谈、扎根理论、SEM"
+    },
+    "economics": {
+      "name": "经济学",
+      "keywords": ["market", "price", "GDP", "income", "fiscal", "monetary", "elasticity", "welfare"],
+      "metrics_hint": "弹性系数、IV估计量、p-value、R²",
+      "method_types_hint": "计量经济、实验经济、博弈论、DID"
+    },
+    "default": {
+      "name": "通用",
+      "keywords": [],
+      "metrics_hint": "",
+      "method_types_hint": ""
+    }
+  },
+  "lit_types": ["理论", "方法", "背景", "原创", "衍生"],
+  "relation_options": ["继承", "修正", "挑战"],
+  "usage_options": ["方法参照", "观点支撑", "概念来源", "对比案例"]
+}
