@@ -118,8 +118,22 @@ description: >
 
 每次 grill 结束后，把过程记录下来：
 
+脚本位于**当前已安装的 skill 目录**中：
+
+```text
+grill-me-cn/grill.py
+```
+
+调用时不要写死：
+
+- 某个 Claude 全局 skills 固定目录
+- 作者机器路径
+- Claude-only 全局目录
+
+应按当前宿主实际安装位置解析本 skill 目录，再执行：
+
 ```bash
-python ~/.claude/skills/grill-me-cn/grill.py \
+python <当前skill目录>/grill.py \
   --mode "<A|B|D>" \
   --topic "<一句话描述用户的主题>" \
   --findings "<发现的主要问题，逗号分隔>" \

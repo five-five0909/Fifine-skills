@@ -65,20 +65,20 @@ description: >
 
 ## 脚本入口
 
-内部执行时始终从以下命令进入：
+内部执行时应始终调用**当前已安装 skill 目录**中的主控脚本，而不是假设仓库根目录或 Claude 全局目录：
 
 ```bash
-python paper-weaver/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "<用户原话>"
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "<用户原话>"
 ```
 
 高级用法：
 
 ```bash
-python paper-weaver/scripts/run_pipeline.py --pdf <paper.pdf> --mode first-pass
-python paper-weaver/scripts/run_pipeline.py --pdf <paper.pdf> --mode second-pass
-python paper-weaver/scripts/run_pipeline.py --pdf <paper.pdf> --mode custom --modules abstract,introduction,experiments
-python paper-weaver/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看实验"
-python paper-weaver/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看摘要和实验"
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode first-pass
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode second-pass
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode custom --modules abstract,introduction,experiments
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看实验"
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看摘要和实验"
 ```
 
 ## 硬编码主流程

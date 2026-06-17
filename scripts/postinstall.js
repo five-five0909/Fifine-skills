@@ -13,11 +13,35 @@ const path = require('path');
 // Project root = where `npm install` was run (3 levels up from node_modules/@fifine/skills/scripts/)
 const projectRoot = path.resolve(__dirname, '..', '..', '..', '..');
 const skillsRoot = path.resolve(__dirname, '..');
+const publishableSkillsPath = path.join(__dirname, 'publishable-skills.json');
+
+function readPublishableSkills() {
+  const fallback = [
+    'paper-weaver',
+    'lit-speed-read',
+    'grill-me-cn',
+    'llm-research-grill',
+    'write-research-grill',
+    'prompt-amplifier',
+    'tavily-search',
+    'topic-refiner',
+    'ref-rename',
+    'ref-classify',
+    'trellis-task-orchestrator',
+    'parallel-executor-with-trellis',
+  ];
+  if (!fs.existsSync(publishableSkillsPath)) return fallback;
+  try {
+    const parsed = JSON.parse(fs.readFileSync(publishableSkillsPath, 'utf8'));
+    return Array.isArray(parsed.skills) ? parsed.skills : fallback;
+  } catch {
+    return fallback;
+  }
+}
 
 // Skill directories in this package (anything with a SKILL.md)
-function getAvailableSkills() {
-  return fs.readdirSync(skillsRoot).filter(name => {
-    if (['scripts', 'node_modules', '.git'].includes(name)) return false;
+function getAvailableSkills(publishableSkills) {
+  return publishableSkills.filter(name => {
     const skillMd = path.join(skillsRoot, name, 'SKILL.md');
     return fs.existsSync(skillMd);
   });
@@ -58,7 +82,8 @@ function copyDir(src, dest) {
 
 function main() {
   const config = readProjectConfig();
-  const available = getAvailableSkills();
+  const publishableSkills = readPublishableSkills();
+  const available = getAvailableSkills(publishableSkills);
 
   const toInstall = config.include
     ? available.filter(s => config.include.includes(s))
@@ -78,6 +103,11 @@ function main() {
 
   if (targets.length === 0) {
     console.log('[fifine-skills] No AI tool directories found (.claude / .codex / .agents). Skipping.');
+    return;
+  }
+
+  if (toInstall.length === 0) {
+    console.log('[fifine-skills] No publishable skills matched the current config. Skipping.');
     return;
   }
 

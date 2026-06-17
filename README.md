@@ -14,7 +14,7 @@
 npm install github:five-five0909/Fifine-skills
 ```
 
-安装后 `postinstall.js` 自动检测项目内已有的 AI 工具目录，并将 skills 分发进去。
+安装后 `postinstall.js` 自动检测项目内已有的 AI 工具目录，并将**显式白名单中的 publishable skills** 分发进去。
 
 ---
 
@@ -31,7 +31,7 @@ npm install github:five-five0909/Fifine-skills
 
 | 字段 | 说明 | 默认值 |
 |------|------|--------|
-| `include` | 要安装的 skill 名称列表 | 全部安装 |
+| `include` | 要安装的 skill 名称列表 | 全部 publishable skills |
 | `targets` | 目标工具：`claude` / `codex` / `agents` | 自动检测 |
 
 ---
@@ -64,7 +64,6 @@ npm install github:five-five0909/Fifine-skills
 |-------|-------------|
 | **trellis-task-orchestrator** | Trellis 任务编排器。新功能 / Bug / 重构等开发任务的全流程编排 |
 | **parallel-executor-with-trellis** | 并行任务执行器。大型任务自动拆分 + 并行 Agent 执行 |
-| **claude-sync-bridge** | Claude Code skills 与 MCP 配置同步工具 |
 
 ---
 
@@ -83,7 +82,16 @@ postinstall.js 运行
 
 分发后，每个 skill 的 `SKILL.md` 被对应 AI 工具加载为上下文，无需额外配置。
 
+注意：这个 GitHub 仓库本身仍然会保留开发资源（如 `.trellis/`、`.codegraph/`、任务文档、维护说明等），
+但 `postinstall.js` 不会把这些开发资源复制到用户项目的 `.claude/.codex/.agents` skill 目录中。
+
 其中 `paper-weaver` 已经合并了原先分散的论文阅读模块（Abstract / Introduction-GAP / Related Work / Formula / Experiments），现在只保留一个统一入口。
+
+仓库内的 skill 内容以 **`.agents` 中性语义** 为 canonical standard：
+
+- `.claude/.codex/.agents` 是分发目标
+- skill 内容本身不应依赖作者机器路径
+- skill 内容本身不应绑定 Claude-only 目录语义
 
 ---
 
