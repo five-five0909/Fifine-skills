@@ -44,6 +44,20 @@ def build_abstract_rows(sentences):
         rows.append(row)
     return "\n".join(rows)
 
+# --- 构建方法数据流 ---
+def build_method_flow(deep):
+    if not deep:
+        return ""
+    steps = deep.get("method_flow", [])
+    if not steps:
+        return ""
+    parts = []
+    for i, step in enumerate(steps):
+        parts.append(f'<div class="var-box">{h(step)}</div>')
+        if i < len(steps) - 1:
+            parts.append('<div class="var-arrow">→</div>')
+    return "\n        ".join(parts)
+
 # --- 构建变量流向 ---
 def build_var_flow(deep):
     if not deep:
@@ -112,9 +126,19 @@ def render_html(data):
     deep_html = ""
     if deep:
         var_flow = build_var_flow(deep)
+        method_flow_html = build_method_flow(deep)
         metrics_html = build_metrics(deep.get("metrics", []))
         methods = deep.get("methods", [])
         methods_html = " ".join(f'<span class="tag">{h(m)}</span>' for m in methods)
+        method_flow_section = ""
+        if method_flow_html:
+            method_flow_section = f"""
+    <div class="section">
+      <div class="section-label">方法数据流</div>
+      <div class="var-flow">
+        {method_flow_html}
+      </div>
+    </div>"""
         deep_html = f"""
     <div class="section">
       <div class="section-label">变量关系</div>
@@ -122,7 +146,7 @@ def render_html(data):
         {var_flow}
       </div>
     </div>
-
+{method_flow_section}
     <div class="section">
       <div class="section-label">关键数字</div>
       <div class="metrics">
