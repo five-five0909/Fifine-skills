@@ -1,0 +1,6 @@
+{
+  "why_single": "在{task}任务中，现有方法（{methods}）在{capability}关键能力上仍存在不足，尤其是在{scenario}场景下表现受限。",
+  "why_contrast": "在{task}任务中，{methods}在{capability}上效果或效率不足，而{methods2}虽然具备{strength2}，但{weakness2}，因此在{scenario}场景下整体表现仍受限。",
+  "how": "为了解决这一问题，本文提出{method_name}，其核心是通过{mechanism}来实现{capability_achieved}能力，从而{effect}。",
+  "so_what": "实验表明，该方法在{benchmark}上取得优于现有方法的表现，能够实现{improvement}，验证了其有效性与通用性。"
+}

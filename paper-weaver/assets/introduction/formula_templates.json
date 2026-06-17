@@ -1,0 +1,9 @@
+{
+  "stage1_sentence1_full": "在{X}中，核心问题是{Y}，研究目标是理解或构建能够{goal_verb}{Z}的理论或方法。",
+  "stage1_sentence1_short": "在{X}中，研究目标是理解或构建能够{goal_verb}{Z}的理论或方法。",
+  "stage1_sentence2": "该领域已有多种研究路径或方法，包括{A}，它们分别从不同角度尝试解决该问题。",
+  "stage2_sentence1": "然而，在{B}下，这些方法仍然存在不足，主要表现为：{limitations}。",
+  "stage2_sentence2": "因此，在{core_problem}上仍存在尚未解决或解释不足的研究缺口（GAP），即现有理论或方法无法同时满足{req1}与{req2}。",
+  "stage3_sentence1_full": "针对该 GAP，本文提出{M}，通过{mechanism}，将{old_structure}重新表述或转化为{new_form}，从而实现对{Z}的改进或提升。",
+  "stage3_sentence1_short": "针对该 GAP，本文提出{M}，通过{mechanism}，从而实现对{Z}的改进或提升。"
+}

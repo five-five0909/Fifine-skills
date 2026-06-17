@@ -42,6 +42,7 @@ npm install github:five-five0909/Fifine-skills
 
 | Skill | 触发词 / 说明 |
 |-------|-------------|
+| **paper-weaver** | 统一论文阅读 skill。用户只需 `@paper-weaver + PDF路径 + 一句需求`；内部由 Python 硬编码主流程自动判定 first-pass / second-pass / full / custom，并支持“只看实验 / 只看公式 / 只看摘要和实验”等自然语言路由 |
 | **lit-speed-read** | 学术文献速读/精读引导工具。给一篇论文（URL / PDF / HTML），自动解析 Abstract、提炼核心 4 问、生成思考题，输出 HTML 阅读报告 |
 | **topic-refiner** | 研究选题精炼工具。帮助从模糊想法收敛到可执行的论文选题 |
 | **ref-rename** | 文献 PDF 批量重命名。统一为 `作者-年份-关键词` 格式 |
@@ -81,6 +82,8 @@ postinstall.js 运行
 ```
 
 分发后，每个 skill 的 `SKILL.md` 被对应 AI 工具加载为上下文，无需额外配置。
+
+其中 `paper-weaver` 已经合并了原先分散的论文阅读模块（Abstract / Introduction-GAP / Related Work / Formula / Experiments），现在只保留一个统一入口。
 
 ---
 

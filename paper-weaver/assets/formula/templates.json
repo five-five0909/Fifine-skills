@@ -1,0 +1,10 @@
+{
+  "node_intro": "{lead_in}：\n$$ {formula} $$\n{gloss}",
+  "node_problem": "该形式能够{capability}，但{limitation}。\n\n因此，{stage_name}问题可以表述为：\n\n{problem_statement}。\n\n相应的目标是：\n\n{goal_statement}。",
+  "node_tool_intro": "为{tool_purpose}，引入{tool_name}。\n\n{tool_statement_label}\n\n$$ {tool_formula} $$\n\n{tool_gloss}",
+  "node_resolution": "该{unit_label}解决的问题是：\n\n{problem_recap}。\n\n相应的解决方案是：\n\n{solution_recap}。",
+  "node_transition_split": "$$ \\text{{{whole_label}}}\n\\text{{{part_a_label}}}\n\\text{{{part_b_label}}} $$",
+  "symbol_row": "| {symbol} | {meaning} | {role} | {shape} |",
+  "concept_card": "**{concept_name}**\n\n- 作者为什么需要它：{why_needed}\n- 它让哪个计算/问题变得可处理：{what_it_simplifies}\n- 它的代价或限制：{tradeoff}\n- 一句话功能翻译：{plain_translation}",
+  "closing_chain": "{opening_form_label}：\n\n$$ {opening_formula} $$\n\n经{transformation_chain}，最终得到：\n\n$$ {closing_formula} $$\n\n因此，{thesis_method}的核心思路是：{one_line_thesis}。"
+}

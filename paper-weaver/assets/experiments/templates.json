@@ -1,0 +1,10 @@
+{
+  "opening": "{method_name} 的实验部分主要围绕{n_claims}个主张展开：{claims_list}。",
+  "section_block": "{section_id} 节检验{claim_name}。{evidence_sentences}由此可见，{section_takeaway}。",
+  "evidence_sentence_single": "{table_or_fig} {comparison_desc}，结果显示{result_desc}。",
+  "section_support_line": "因此，{section_id} 节支持的是 {target_claim_origin} 中关于{claim_name}的主张。",
+  "ablation_present": "从消融角度看，{ablation_table_or_section} 对比了去掉/替换{module_name}前后的表现，结果显示{ablation_result}。这说明{module_name}是{verdict}。",
+  "ablation_absent": "从消融角度看，{scope_note}没有系统展示去掉{module_list}后的性能变化。因此，这部分实验可以支持\"{supported_claim}\"的结论，但不足以单独证明每个内部模块的必要性。若要判断某个模块是否只是包装，还需要进一步查看{where_to_look}。",
+  "efficiency_block": "效率账方面，{efficiency_evidence}。这说明{efficiency_verdict}。",
+  "closing": "总体来看，{method_name} 的实验设计{overall_verdict}：{claim_to_evidence_recap}。实验部分的主要结论不是\"{anti_pattern}\"，而是{evidence_chain_thesis}。"
+}
