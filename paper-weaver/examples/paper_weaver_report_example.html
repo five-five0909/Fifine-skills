@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paper-weaver HTML Example</title>
+
+  <!-- GitHub 风格正文 -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown-light.min.css"
+  />
+
+  <!-- KaTeX：公式渲染 -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+  />
+
+  <!-- highlight.js：GitHub 代码主题 -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css"
+  />
+
+  <style>
+    :root {
+      --bg: #f6f8fa;
+      --panel: #ffffff;
+      --border: #d0d7de;
+      --muted: #57606a;
+      --text: #24292f;
+      --accent: #0969da;
+      --accent-soft: #ddf4ff;
+      --success: #1a7f37;
+      --warning: #9a6700;
+      --shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(9, 105, 218, 0.08), transparent 25%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 280px);
+      font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    .page {
+      width: min(1200px, calc(100vw - 32px));
+      margin: 24px auto 64px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f6faff 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 15px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .summary-card .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .summary-card .value {
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 20px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+
+    .toc a {
+      display: block;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 7px 0;
+      font-size: 14px;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    .content-shell {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .markdown-body {
+      max-width: none;
+      background: transparent;
+      padding: 28px;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 18px 0;
+    }
+
+    .callout strong { display: block; margin-bottom: 6px; }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .mini-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: #fff;
+    }
+
+    .mini-card h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+
+    .metric {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .metric.up {
+      color: var(--success);
+      background: #dafbe1;
+    }
+
+    .metric.warn {
+      color: var(--warning);
+      background: #fff8c5;
+    }
+
+    .formula-box {
+      border: 1px dashed #8c959f;
+      border-radius: 14px;
+      padding: 18px;
+      background: #fcfcfd;
+      margin: 18px 0;
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    pre {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 960px) {
+      .summary-grid,
+      .layout,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    TEMPLATE CONTRACT（给后续 paper-weaver 输出用）：
+    1. 顶部必须有标题区 + 元信息卡片
+    2. 正文使用 markdown-body 容器，便于直接塞 Markdown 转 HTML 的结果
+    3. 公式统一写成 LaTeX，交给 KaTeX 自动渲染
+    4. 代码块使用 <pre><code class="language-xxx">，交给 highlight.js 走 GitHub 主题
+    5. 各 section 保持稳定 id，便于目录跳转和后续脚本填充
+  -->
+
+  <div class="page">
+    <header class="hero">
+      <div class="badges">
+        <span class="badge">paper-weaver / HTML example</span>
+        <span class="badge">支持 KaTeX 公式</span>
+        <span class="badge">支持 GitHub 风格代码高亮</span>
+        <span class="badge">适合作为最终阅读报告模板</span>
+      </div>
+      <h1>Selective State Space Reader</h1>
+      <p class="subtitle">
+        一个用于演示 paper-weaver 最终 HTML 输出样式的示例页面。内容是虚构论文，但页面结构、公式、
+        代码块、表格、提示框、目录导航都按正式报告的需求设计。
+      </p>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="label">Paper</div>
+          <div class="value">Selective State Space Reader for Long Context Reasoning</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Task</div>
+          <div class="value">长上下文建模 / 推理加速 / 可解释性增强</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Core Idea</div>
+          <div class="value">选择性状态更新 + 低秩记忆压缩 + 可视化证据链</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Takeaway</div>
+          <div class="value">更长上下文、更低显存、更清晰的分析输出</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="toc">
+        <h2>目录</h2>
+        <a href="#abstract">1. Abstract</a>
+        <a href="#introduction">2. Introduction / GAP</a>
+        <a href="#method">3. Method Overview</a>
+        <a href="#formula">4. Formula Thread</a>
+        <a href="#experiments">5. Experiments</a>
+        <a href="#code">6. Code Appendix</a>
+        <a href="#notes">7. Notes</a>
+      </aside>
+
+      <main class="content-shell">
+        <article class="markdown-body">
+          <section id="abstract">
+            <h2>1. Abstract</h2>
+            <p>
+              在长上下文推理任务中，现有 Transformer 或标准状态空间模型通常难以同时兼顾
+              <strong>信息保真、推理深度与显存效率</strong>，尤其当上下文长度提升到
+              <strong>64k tokens</strong> 以上时，检索噪声与状态漂移会明显恶化最终表现。
+            </p>
+            <p>
+              为了解决这一问题，本文提出 <strong>Selective State Space Reader (S3R)</strong>，
+              通过选择性门控更新、低秩记忆压缩与证据片段回写机制，在保持长期依赖建模能力的同时，
+              将状态更新成本约束在可控范围内。
+            </p>
+            <p>
+              实验表明，该方法在长文问答、代码仓库导航与多跳文档推理任务上均取得更优表现，并显著降低了推理时显存开销。
+            </p>
+
+            <div class="callout">
+              <strong>模板建议</strong>
+              这一段很适合直接承接 paper-weaver 的三句式摘要输出。后续真实产物可以把每一句保留为独立段落，
+              让页面在“快速扫读”时更清晰。
+            </div>
+          </section>
+
+          <section id="introduction">
+            <h2>2. Introduction / GAP</h2>
+            <p>
+              该方向的核心目标，是构建一种能够在超长上下文场景下仍然稳定保留关键信息、并支持复杂推理链的阅读模型。
+              现有方案大体可以分为三类：全量注意力模型、检索增强模型、状态压缩模型。
+            </p>
+
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h4>现有路线 A：全量注意力</h4>
+                <p>优点是表达力强；缺点是显存与计算成本随上下文快速膨胀。</p>
+              </div>
+              <div class="mini-card">
+                <h4>现有路线 B：检索增强</h4>
+                <p>优点是速度快；缺点是证据召回与最终推理链之间容易断裂。</p>
+              </div>
+              <div class="mini-card">
+                <h4>现有路线 C：状态压缩</h4>
+                <p>优点是效率高；缺点是压缩后常牺牲细粒度可追踪性。</p>
+              </div>
+              <div class="mini-card">
+                <h4>核心 GAP</h4>
+                <p>现有方法往往无法同时满足 <strong>长程保真</strong> 与 <strong>证据可解释</strong>。</p>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>维度</th>
+                  <th>现有问题</th>
+                  <th>本文切入点</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>长上下文</td>
+                  <td>长度提升时噪声累积严重</td>
+                  <td>选择性状态更新</td>
+                </tr>
+                <tr>
+                  <td>推理链</td>
+                  <td>检索与答案生成断层</td>
+                  <td>证据片段回写</td>
+                </tr>
+                <tr>
+                  <td>效率</td>
+                  <td>全量建模成本过高</td>
+                  <td>低秩记忆压缩</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="method">
+            <h2>3. Method Overview</h2>
+            <p>
+              方法主线可以概括为三步：先对输入序列生成可学习的重要性分数，再只对关键片段进行高保真状态写入，
+              最后将压缩状态与原始证据索引共同送入推理头。
+            </p>
+
+            <ol>
+              <li><strong>Evidence Scoring</strong>：给每个片段分配选择性分数。</li>
+              <li><strong>State Update</strong>：只对高价值片段执行完整状态更新。</li>
+              <li><strong>Reasoning Readout</strong>：输出答案时同时回溯对应证据片段。</li>
+            </ol>
+
+            <div class="callout">
+              <strong>一句话人话版</strong>
+              它不是“把所有东西都记住”，而是“只认真记值得记的内容，并保留为什么记它的证据索引”。
+            </div>
+          </section>
+
+          <section id="formula">
+            <h2>4. Formula Thread</h2>
+            <p>
+              下面这部分专门测试公式渲染。模板里同时覆盖了 inline 公式和 block 公式。
+              例如状态更新写成 $h_t = (1 - g_t) \odot h_{t-1} + g_t \odot \tilde{h}_t$。
+            </p>
+
+            <div class="formula-box">
+              $$
+              g_t = \sigma(W_g x_t + U_g h_{t-1}), \qquad
+              \tilde{h}_t = A h_{t-1} + B x_t
+              $$
+
+              $$
+              h_t = (1 - g_t) \odot h_{t-1} + g_t \odot \tilde{h}_t
+              $$
+
+              $$
+              \mathcal{L} = \mathcal{L}_{qa} + \lambda_1 \mathcal{L}_{evidence} + \lambda_2 \|M\|_*
+              $$
+            </div>
+
+            <p>
+              如果后续 paper-weaver 要在公式线程里展示符号表，也可以直接配一张表：
+            </p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>符号</th>
+                  <th>含义</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$x_t$</td>
+                  <td>第 $t$ 个输入片段的表示</td>
+                </tr>
+                <tr>
+                  <td>$g_t$</td>
+                  <td>选择性门控分数</td>
+                </tr>
+                <tr>
+                  <td>$h_t$</td>
+                  <td>当前记忆状态</td>
+                </tr>
+                <tr>
+                  <td>$\|M\|_*$</td>
+                  <td>低秩记忆矩阵的核范数正则</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="experiments">
+            <h2>5. Experiments</h2>
+            <p>
+              这部分适合承接 paper-weaver 的“主张-证据链”输出。比如：
+            </p>
+
+            <ul>
+              <li>
+                <strong>Claim A：</strong>在超长问答上性能更好
+                <span class="metric up">+4.7 EM</span>
+              </li>
+              <li>
+                <strong>Claim B：</strong>显存占用更低
+                <span class="metric up">-31% VRAM</span>
+              </li>
+              <li>
+                <strong>Claim C：</strong>证据定位更稳定
+                <span class="metric warn">Top-3 evidence hit +8.9</span>
+              </li>
+            </ul>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Benchmark</th>
+                  <th>Baseline</th>
+                  <th>S3R</th>
+                  <th>结论</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LongDocQA</td>
+                  <td>62.1</td>
+                  <td><strong>66.8</strong></td>
+                  <td>长文问答更强</td>
+                </tr>
+                <tr>
+                  <td>RepoNav-128k</td>
+                  <td>48.5</td>
+                  <td><strong>54.2</strong></td>
+                  <td>代码仓导航更稳</td>
+                </tr>
+                <tr>
+                  <td>VRAM @ 64k</td>
+                  <td>23.4 GB</td>
+                  <td><strong>16.1 GB</strong></td>
+                  <td>推理更省显存</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="code">
+            <h2>6. Code Appendix</h2>
+            <p>
+              这里用来验证代码块是不是走 GitHub 风格主题。后续 HTML 报告里如果需要插入伪代码、
+              关键实现片段或命令行示例，都可以复用这一段结构。
+            </p>
+
+<pre><code class="language-python">import torch
+import torch.nn as nn
+
+
+class SelectiveStateBlock(nn.Module):
+    def __init__(self, dim: int):
+        super().__init__()
+        self.gate = nn.Linear(dim, dim)
+        self.proj = nn.Linear(dim, dim)
+
+    def forward(self, x, state):
+        gate = torch.sigmoid(self.gate(x))
+        proposal = self.proj(x)
+        next_state = (1 - gate) * state + gate * proposal
+        return next_state
+</code></pre>
+
+<pre><code class="language-bash">python paper-weaver/scripts/run_pipeline.py \
+  --pdf ./demo-paper.pdf \
+  --mode full \
+  --request-text "全部生成，并最终输出 HTML 报告"</code></pre>
+          </section>
+
+          <section id="notes">
+            <h2>7. Notes</h2>
+            <ul>
+              <li>正文容器已经是 GitHub Markdown 风格，适合从 Markdown 直接转换后嵌入。</li>
+              <li>公式由 KaTeX 自动渲染，适合 `formula_thread` 模块直接输出 LaTeX。</li>
+              <li>代码块用 highlight.js 的 GitHub 主题，和你要的“按 GitHub 风格”一致。</li>
+              <li>如果你后面决定做离线版，我可以再把 CDN 依赖改成内嵌资源或本地 assets。</li>
+            </ul>
+
+            <div class="footer-note">
+              这是一个 example，不绑定当前 pipeline 的具体字段命名；它的目标是先把“最终 HTML 长什么样”
+              这件事钉住。下一步如果你认可这个方向，我可以继续把它收敛成
+              <code>paper-weaver</code> 的正式输出模板或 prompt contract。
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.hljs) {
+        window.hljs.highlightAll();
+      }
+
+      if (window.renderMathInElement) {
+        window.renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "\\(", right: "\\)", display: false },
+            { left: "$", right: "$", display: false }
+          ],
+          ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+        });
+      }
+    });
+  </script>
+</body>
+</html>

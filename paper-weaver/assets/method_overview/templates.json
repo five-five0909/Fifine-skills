@@ -1,5 +1,5 @@
 {
-  "paragraph_1": "本文的方法主线首先面对的问题是：{problem_statement}。作者指出，现有路线虽然能够处理{task_scope}，但在{bottleneck}这一点上仍然存在明确瓶颈。",
-  "paragraph_2": "为了解决这个问题，本文提出{method_name}，总体路径可以概括为：{pipeline_overview}。其中最关键的机制包括{key_mechanisms}，它们共同服务于{target_capability}这一目标。",
-  "paragraph_3": "因此，这一方法贡献不只是提出一个新模块，而是把{base_object}重写成{new_form}，从而在保留{preserved_advantage}的同时，改善了{improved_aspect}。"
+  "paragraph_1": "### 方法要解决什么问题\n\n本文的方法主线首先面对的问题是：{problem_statement}。\n\n作者指出，现有路线虽然能够处理{task_scope}，但在{bottleneck}这一点上仍然存在明确瓶颈。",
+  "paragraph_2": "### 方法主线\n\n为了解决这个问题，本文提出{method_name}，总体路径可以概括为：\n\n{pipeline_overview}\n\n其中最关键的机制包括{key_mechanisms}，它们共同服务于{target_capability}这一目标。",
+  "paragraph_3": "### 这篇方法真正贡献了什么\n\n因此，这一方法贡献不只是提出一个新模块，而是把{base_object}重写成{new_form}。\n\n这样做的结果是：在保留{preserved_advantage}的同时，改善了{improved_aspect}。"
 }

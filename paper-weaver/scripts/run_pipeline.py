@@ -5,6 +5,7 @@ import argparse
 import importlib
 from pathlib import Path
 
+from render_html_report import render_workspace_html
 from shared import ensure_pdf, read_json, slugify_path, write_json, write_text
 from state_machine import resolve_auto_plan, resolve_stage_sequence
 
@@ -172,7 +173,9 @@ def main() -> int:
         if code != 0:
             return code
     assemble_report(workspace, stages, manifest)
+    html_path = render_workspace_html(workspace)
     print(f"[COMPLETE] 全部阶段完成，已生成总报告：{workspace / 'final_report.md'}")
+    print(f"[COMPLETE] 已生成 HTML 报告：{html_path}")
     return 0
 
 

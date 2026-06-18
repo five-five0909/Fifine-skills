@@ -71,6 +71,11 @@ description: >
 python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "<用户原话>"
 ```
 
+主控脚本在全部阶段通过后，会自动额外生成：
+
+- `final_report.md`
+- `final_report.html`
+
 高级用法：
 
 ```bash
@@ -109,14 +114,21 @@ python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto
 - `stages/<stage>/output.md`
 - `stages/<stage>/missing_fields.json`（如缺字段）
 - `final_report.md`
+- `final_report.html`
 
 ## 阶段说明
 
 - `abstract`：三句话摘要（Why / How / So-what）
 - `introduction`：Introduction / GAP 三段式 + GAP 表
 - `related_work`：Related Work 演化脉络
-- `method_overview`：Method 的人话主线总结
-- `formula_thread`：核心公式链、符号表、概念卡
+- `method_overview`：Method 的人话主线总结；输出应按“问题 / 主线 / 贡献”分段，而不是一整段糊在一起
+- `formula_thread`：核心公式链、符号表、概念卡；公式部分必须写成“公式主线讲解稿”，要求：
+  - block formula 单独起块
+  - 关键变形前后要有解释段落
+  - 推导按步骤推进，避免机械填空感
+  - “问题是 / 目标是 / 进一步得到 / 这一部分真正解决的是” 这类提示语，在最终 HTML 中使用偏 Notion 引用块风格的橙色背景，不使用蓝色胶囊按钮样式
+  - “视角切换” 采用居中的结构化卡片块，不再依赖容易炸掉的 LaTeX `cases` 展示
+  - 允许保留概念卡和总结，但主体必须更像论文精读笔记，而不是模板拼接
 - `experiments`：实验主张-证据链、消融与效率判断
 
 ## 重要说明
