@@ -1,26 +1,78 @@
 # Fifine-skills
 
-> 可复用的 AI 编程技能包，支持 Claude Code、Codex 等主流 AI 编程工具。
+> 可复用的 AI 编程技能包，支持 Claude Code、Codex 和其他兼容 `.agents` 语义的工具。
 
-一次安装，自动分发到项目内所有 AI 工具目录（`.claude/skills/`、`.codex/skills/`、`.agents/skills/`）。
+一次安装，自动把 publishable skills 分发到项目内已有的 AI 工具目录：
+
+- `.claude/skills/`
+- `.codex/skills/`
+- `.agents/skills/`
 
 ---
 
-## 安装
+## 安装前先看
 
-无需发布到 npm registry，直接从 GitHub 安装：
+这个仓库的安装逻辑是：
+
+1. 先把本仓库作为依赖装进 `node_modules/@fifine/skills`
+2. 再由 `postinstall.js` 检测你的项目里**已经存在**的 AI 工具目录
+3. 把 publishable skills 复制到对应的 `skills/` 目录
+
+### 重要前置条件
+
+安装前，你的项目里至少要先有下面目录中的一个：
+
+- `.claude/`
+- `.codex/`
+- `.agents/`
+
+如果一个都没有，`npm install` 仍然会成功，但 **不会分发任何 skill**。
+
+---
+
+## 快速开始
+
+### 1）准备目标目录
+
+按你的工具先建目录，例如：
+
+```bash
+mkdir -p .claude
+mkdir -p .codex
+mkdir -p .agents
+```
+
+> Windows / PowerShell 用户可自行换成等价命令。重点不是命令本身，而是这些目录要先存在。
+
+### 2）从 GitHub 安装
 
 ```bash
 npm install github:five-five0909/Fifine-skills
 ```
 
-安装后 `postinstall.js` 自动检测项目内已有的 AI 工具目录，并将**显式白名单中的 publishable skills** 分发进去。
+安装完成后，`postinstall.js` 会：
+
+- 读取项目根目录的 `skills.json`（如果有）
+- 检测 `.claude` / `.codex` / `.agents` 哪些存在
+- 把白名单中的 publishable skills 复制到 `{tool-dir}/skills/{name}/`
+
+### 3）检查结果
+
+例如：
+
+```text
+.claude/skills/paper-weaver/
+.codex/skills/paper-weaver/
+.agents/skills/paper-weaver/
+```
+
+每个 skill 目录至少包含 `SKILL.md`，以及该 skill 运行所需的伴随脚本 / 资源文件。
 
 ---
 
-## 按需安装（可选）
+## 按需安装
 
-在项目根目录创建 `skills.json`，控制安装哪些 skills 以及分发到哪些工具：
+如果你不想安装全部 skills，可以在项目根目录创建 `skills.json`：
 
 ```json
 {
@@ -32,66 +84,104 @@ npm install github:five-five0909/Fifine-skills
 | 字段 | 说明 | 默认值 |
 |------|------|--------|
 | `include` | 要安装的 skill 名称列表 | 全部 publishable skills |
-| `targets` | 目标工具：`claude` / `codex` / `agents` | 自动检测 |
+| `targets` | 目标工具：`claude` / `codex` / `agents` | 自动检测已存在目录 |
+
+上面的配置表示：
+
+- 只安装 `lit-speed-read` 和 `ref-classify`
+- 只复制到 `.claude/skills/` 和 `.codex/skills/`
+- 不分发到 `.agents/skills/`
 
 ---
 
-## 技能清单
+## 安装后到底会拿到什么
 
-### 学术研究类
+需要区分两层内容：
 
-| Skill | 触发词 / 说明 |
-|-------|-------------|
-| **paper-weaver** | 统一论文阅读 skill。用户只需 `@paper-weaver + PDF路径 + 一句需求`；内部由 Python 硬编码主流程自动判定 first-pass / second-pass / full / custom，并支持“只看实验 / 只看公式 / 只看摘要和实验”等自然语言路由 |
-| **lit-speed-read** | 学术文献速读/精读引导工具。给一篇论文（URL / PDF / HTML），自动解析 Abstract、提炼核心 4 问、生成思考题，输出 HTML 阅读报告 |
-| **topic-refiner** | 研究选题精炼工具。帮助从模糊想法收敛到可执行的论文选题 |
-| **ref-rename** | 文献 PDF 批量重命名。统一为 `作者-年份-关键词` 格式 |
-| **ref-classify** | 文献自动分类。按研究方向将 PDF 分组归档 |
-| **llm-research-grill** | LLM / PyTorch 研究方向自检。交互式收集研究状态，生成结构化审问报告 |
-| **write-research-grill** | 写稿前结构化审问。逼你想清楚再动笔 |
+### 1）依赖包本体
 
-### 通用效率类
+也就是：
 
-| Skill | 触发词 / 说明 |
-|-------|-------------|
-| **grill-me-cn** | 方案压力测试。用于方案审查、执行任务前的盲点检查 |
-| **prompt-amplifier** | 指令强化工具。把普通指令加工成高执行度版本 |
-| **tavily-search** | 实时网络搜索（Tavily MCP）。遇到需要最新信息时自动触发 |
+```text
+node_modules/@fifine/skills
+```
 
-### Trellis 工作流类
+这里是安装脚本运行时所需的最小内容，只包含：
 
-| Skill | 触发词 / 说明 |
-|-------|-------------|
-| **trellis-task-orchestrator** | Trellis 任务编排器。新功能 / Bug / 重构等开发任务的全流程编排 |
-| **parallel-executor-with-trellis** | 并行任务执行器。大型任务自动拆分 + 并行 Agent 执行 |
+- `package.json`
+- `README.md`
+- `scripts/postinstall.js`
+- `scripts/publishable-skills.json`
+- 所有 publishable skill 目录
+
+它**不应再包含**开发期资源，例如：
+
+- `.trellis/`
+- `.codegraph/`
+- `.claude/`
+- `.codex/`
+- 任务文档、维护辅助文件等
+
+### 2）最终分发产物
+
+也就是：
+
+```text
+.claude/skills/{skill-name}/
+.codex/skills/{skill-name}/
+.agents/skills/{skill-name}/
+```
+
+这里只会复制 skill 自身内容，不会把开发资源带进你的项目 skill 目录。
 
 ---
 
 ## 工作原理
 
-```
+```text
 npm install github:five-five0909/Fifine-skills
+        │
+        ▼
+依赖被安装到 node_modules/@fifine/skills
         │
         ▼
 postinstall.js 运行
         │
         ├── 读取项目根目录的 skills.json（不存在则安装全部）
-        ├── 检测 .claude/ .codex/ .agents/ 是否存在
-        └── 复制 skill 目录 → {tool-dir}/skills/{name}/
+        ├── 检测 .claude/ .codex/ .agents/ 哪些存在
+        └── 复制 publishable skill → {tool-dir}/skills/{name}/
 ```
 
-分发后，每个 skill 的 `SKILL.md` 被对应 AI 工具加载为上下文，无需额外配置。
+---
 
-注意：这个 GitHub 仓库本身仍然会保留开发资源（如 `.trellis/`、`.codegraph/`、任务文档、维护说明等），
-但 `postinstall.js` 不会把这些开发资源复制到用户项目的 `.claude/.codex/.agents` skill 目录中。
+## Publishable skills
 
-其中 `paper-weaver` 已经合并了原先分散的论文阅读模块（Abstract / Introduction-GAP / Related Work / Formula / Experiments），现在只保留一个统一入口。
+### 学术研究类
 
-仓库内的 skill 内容以 **`.agents` 中性语义** 为 canonical standard：
+| Skill | 说明 |
+|-------|------|
+| **paper-weaver** | 统一论文阅读 skill，支持 first-pass / second-pass / full / custom 模式 |
+| **lit-speed-read** | 学术文献速读/精读引导工具，输出 HTML 阅读报告 |
+| **topic-refiner** | 研究选题精炼工具 |
+| **ref-rename** | 文献 PDF 批量重命名 |
+| **ref-classify** | 文献自动分类 |
+| **llm-research-grill** | LLM / PyTorch 研究方向自检 |
+| **write-research-grill** | 写稿前结构化审问 |
 
-- `.claude/.codex/.agents` 是分发目标
-- skill 内容本身不应依赖作者机器路径
-- skill 内容本身不应绑定 Claude-only 目录语义
+### 通用效率类
+
+| Skill | 说明 |
+|-------|------|
+| **grill-me-cn** | 方案压力测试工具 |
+| **prompt-amplifier** | 指令强化工具 |
+| **tavily-search** | Tavily 实时网络搜索 |
+
+### Trellis 工作流类
+
+| Skill | 说明 |
+|-------|------|
+| **trellis-task-orchestrator** | Trellis 任务编排器 |
+| **parallel-executor-with-trellis** | Trellis 并行任务执行器 |
 
 ---
 
@@ -105,11 +195,22 @@ postinstall.js 运行
 
 ---
 
+## Canonical skill standard
+
+仓库内的 skill 内容以 **`.agents` 兼容的中性标准** 为 canonical standard：
+
+- `.claude/.codex/.agents` 是分发目标，不是 skill 内容的唯一语义来源
+- skill 文档不应依赖作者机器路径
+- skill 文档不应硬编码 Claude-only 全局路径
+- skill 内容本身应尽量保持宿主无关
+
+---
+
 ## 新增 Skill
 
 每个 skill 最少只需一个文件：
 
-```
+```text
 {skill-name}/
 └── SKILL.md
 ```
@@ -131,7 +232,7 @@ description: >
 
 如有伴随脚本，放在同一目录下：
 
-```
+```text
 {skill-name}/
 ├── SKILL.md
 ├── workflow.py
@@ -158,24 +259,45 @@ python .trellis/scripts/task.py current
 python .trellis/scripts/task.py finish
 ```
 
-直接用 `claude` 或 `codex` 打开此仓库，Trellis 工作流自动注入。
+直接用 `claude` 或 `codex` 打开此仓库，Trellis 工作流会自动注入。
 
 ---
 
-## 仓库结构
+## 源码仓库与安装包边界
 
-```
+这个 GitHub 仓库作为**源码仓库**，本身可以包含开发资源，例如：
+
+- `.trellis/`
+- `.codegraph/`
+- 任务文档
+- 维护说明
+
+但用户通过 `npm install github:five-five0909/Fifine-skills` 安装时，最终应得到的是：
+
+- 最小依赖包本体
+- publishable skills
+- 分发后的目标 skill 目录内容
+
+开发期资源不应进入最终安装包。
+
+---
+
+## 仓库结构（源码仓库）
+
+```text
 Fifine-skills/
 ├── README.md
-├── CLAUDE.md              ← Claude Code 专用指令
-├── AGENTS.md              ← Codex / 跨工具说明
+├── CLAUDE.md
+├── AGENTS.md
 ├── package.json
 ├── scripts/
-│   └── postinstall.js     ← 安装分发逻辑
-├── {skill-name}/          ← 每个 skill 一个目录
+│   ├── postinstall.js
+│   └── publishable-skills.json
+├── {skill-name}/
 │   ├── SKILL.md
 │   └── ...
-├── .claude/               ← Claude Code 工作流配置
-├── .codex/                ← Codex 工作流配置
-└── .trellis/              ← Trellis 任务系统
+├── .claude/
+├── .codex/
+├── .trellis/
+└── .codegraph/
 ```
