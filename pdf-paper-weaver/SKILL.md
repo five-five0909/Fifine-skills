@@ -1,10 +1,10 @@
 ---
-name: paper-weaver
+name: pdf-paper-weaver
 description: >
   统一论文阅读 skill。唯一入口必须是主论文 PDF，由 Python 主控脚本硬编码第一遍阅读/第二遍阅读/完整阅读/自定义阅读流程；脚本会强制生成骨架、检查缺字段、阻断未完成阶段，并要求补齐后再继续。适用于对同一篇论文生成 Abstract、Introduction/GAP、Related Work、Method、核心公式、Experiments 的结构化阅读结果。触发词：帮我读这篇论文、论文阅读、精读论文、paper-weaver、论文结构化分析。
 ---
 
-# paper-weaver
+# pdf-paper-weaver
 
 ## 核心原则
 
@@ -135,4 +135,4 @@ python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto
 
 - 本 skill 不再暴露旧的 5 个独立入口。
 - 不允许直接对旧模块逐个单独调用作为正式入口。
-- 旧逻辑已经被整合为 `paper-weaver` 内部阶段。
+- 旧逻辑已经被整合为 `pdf-paper-weaver` 内部阶段。

@@ -1,5 +1,5 @@
 ---
-name: ref-classify
+name: pdf-ref-classify
 description: >
   PISFM 参考文献 A-F 板块自动分类工具。扫描指定目录下的 PDF，
   依次用三种技巧匹配板块（关键词 → 作者年份 → PDF 首页内容），
@@ -7,7 +7,7 @@ description: >
   触发词：分类文献、整理参考文献、ref-classify、帮我分一下PDF、文献归档。
 ---
 
-# ref-classify
+# pdf-ref-classify
 
 > 三种匹配技巧依次兜底，置信度不足时问用户，不猜测、不静默移错。
 

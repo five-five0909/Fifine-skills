@@ -1,5 +1,5 @@
 ---
-name: ref-rename
+name: pdf-ref-rename
 description: >
   批量重命名学术文献 PDF。递归扫描路径下所有 PDF，提取原始元数据和首页文本，
   由 AI 识别标题/作者/年份，提供多种命名方案供用户选择，确认后批量重命名。
@@ -7,7 +7,7 @@ description: >
   触发词：重命名文献、整理PDF、文献重命名、ref-rename、批量改文件名、参考文献整理。
 ---
 
-# ref-rename
+# pdf-ref-rename
 
 > 批量重命名学术文献 PDF。脚本提取原始数据，AI 做语义判断，用户做最终决策。
 > 默认增量更新：已命名文件自动跳过，只处理新增/未命名文件。
