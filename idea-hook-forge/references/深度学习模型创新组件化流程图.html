@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>深度学习模型创新组件化 × Idea Hook 闭环系统</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        primaryColor: "#f7f6f3",
+        primaryBorderColor: "#d9d5cc",
+        primaryTextColor: "#2f3437",
+        lineColor: "#9b958a",
+        secondaryColor: "#eef6ff",
+        tertiaryColor: "#fff4e8"
+      },
+      flowchart: { curve: "basis", htmlLabels: true, useMaxWidth: true }
+    });
+  </script>
+  <style>
+    :root{
+      --bg:#f7f6f3; --paper:#fff; --text:#2f3437; --muted:#6b6f76; --line:#e9e6df;
+      --blue:#2f80ed; --blue-bg:#eef6ff; --green:#0f8b6f; --green-bg:#eefaf6;
+      --orange:#d9730d; --orange-bg:#fff4e8; --red:#d44c47; --red-bg:#fff1f0;
+      --purple:#6940a5; --purple-bg:#f4efff; --yellow:#9a6700; --yellow-bg:#fff8d6;
+      --gray:#787774; --gray-bg:#f1f1ef; --code:#f6f6f6;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.72;font-size:16px}
+    .layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;max-width:1540px;margin:0 auto;padding:28px}
+    aside{position:sticky;top:20px;align-self:start;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:16px;padding:18px;max-height:calc(100vh - 40px);overflow:auto;box-shadow:0 8px 30px rgba(15,15,15,.04)}
+    aside h2{font-size:14px;margin:0 0 10px;color:var(--muted);font-weight:600}
+    aside a{display:block;padding:6px 8px;margin:2px 0;color:#4b5563;text-decoration:none;border-radius:8px;font-size:14px}
+    aside a:hover{background:var(--gray-bg);color:var(--text)}
+    main{min-width:0}
+    .hero{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:42px 46px;margin-bottom:24px;box-shadow:0 10px 35px rgba(15,15,15,.05)}
+    .eyebrow{font-size:14px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+    .title{font-size:38px;line-height:1.18;margin:0 0 12px;font-weight:760}
+    .subtitle{font-size:18px;color:var(--muted);max-width:980px;margin:0}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 30px;margin:20px 0;box-shadow:0 6px 24px rgba(15,15,15,.035)}
+    h1,h2,h3,h4{line-height:1.34}
+    h2{font-size:26px;margin:0 0 18px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+    h3{font-size:20px;margin:26px 0 12px}
+    h4{font-size:17px;margin:20px 0 8px}
+    p{margin:10px 0}
+    .small{font-size:13px;color:var(--muted)}
+    .callout{border-radius:14px;padding:14px 16px;margin:14px 0;border:1px solid var(--line);background:var(--gray-bg)}
+    .callout.blue{background:var(--blue-bg);border-color:#d9eaff}.callout.green{background:var(--green-bg);border-color:#d7f2e8}.callout.orange{background:var(--orange-bg);border-color:#ffdfbd}.callout.red{background:var(--red-bg);border-color:#ffd7d4}.callout.purple{background:var(--purple-bg);border-color:#e4d8ff}.callout.yellow{background:var(--yellow-bg);border-color:#f4e6a2}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.col-4{grid-column:span 4}.col-6{grid-column:span 6}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+    table{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0 20px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;font-size:14px}
+    th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:10px 12px;vertical-align:top} th:last-child,td:last-child{border-right:0} tr:last-child td{border-bottom:0} th{background:#fbfaf8;color:#4b5563;font-weight:650;text-align:left;white-space:nowrap}
+    code,.code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;background:var(--code);border:1px solid #ececec;border-radius:6px;padding:2px 6px;font-size:13px}
+    .block-code{white-space:pre-wrap;background:#fbfbfa;border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto;font-size:13px}
+    .tag{display:inline-block;border-radius:999px;padding:2px 8px;font-size:12px;margin:2px 4px 2px 0;font-weight:600}.tag.blue{color:#0b55b7;background:var(--blue-bg)}.tag.green{color:#08775d;background:var(--green-bg)}.tag.orange{color:#a34d00;background:var(--orange-bg)}.tag.red{color:#b42318;background:var(--red-bg)}.tag.purple{color:#5a2f91;background:var(--purple-bg)}.tag.gray{color:#555;background:var(--gray-bg)}.tag.yellow{color:#7a5600;background:var(--yellow-bg)}
+    .mermaid{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0;overflow:auto}.mermaid.tall{padding:14px;min-height:420px;width:100%}.mermaid.tall svg{min-width:100%;height:auto}.closed-loop-card{padding:28px 30px}.closed-loop-card .mermaid{margin-top:14px}.closed-loop-card p{font-size:16px}.closed-loop-card .callout{font-size:15px}
+    .checklist{background:#f8fafc;border:1px solid #dbeafe;border-radius:12px;padding:16px 20px;margin:18px 0}
+    .checklist li{margin:6px 0}
+    .pill{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:4px 10px;border-radius:999px;font-size:13px;margin:4px 6px 4px 0}
+    @media(max-width:1000px){.layout{display:block;padding:16px}aside{position:relative;top:auto;margin-bottom:18px}.hero{padding:28px 24px}.title{font-size:30px}.col-4,.col-6,.col-8,.col-12{grid-column:span 12}table{font-size:13px}th,td{padding:8px}}
+    @media print{aside{display:none}.layout{display:block;max-width:none}.card,.hero{box-shadow:none;break-inside:avoid}body{background:#fff}}
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <h2>导航</h2>
+    <a href="#closed-loop">0. 闭环总图</a>
+    <a href="#three-layers">1. 三层系统</a>
+    <a href="#exec-sop">2. 可执行拆解流程</a>
+    <a href="#component-pipeline">3. 模型组件总流程</a>
+    <a href="#classification">4. A-T + U 分类</a>
+    <a href="#hook-map">5. 8 类 Hook</a>
+    <a href="#matrix">6. 组件 × Hook 矩阵</a>
+    <a href="#idea-engine">7. 从组件到 Idea</a>
+    <a href="#sop">8. 读论文 SOP</a>
+    <a href="#cards">9. 卡片模板</a>
+    <a href="#examples">10. 示例映射</a>
+    <a href="#quality">11. 过关标准</a>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Component Workflow × Idea Hook Closed Loop</div>
+      <h1 class="title">深度学习模型创新组件化 × Idea Hook 闭环系统</h1>
+      <p class="subtitle">把一篇论文从"读懂结构"升级成"可分类、可拆模块、可提 Hook、可生成 Idea、可转实验、可回写论文"的闭环工作流。适用于 Mamba / SSM / Transformer / 高光谱土壤 SOC / PINN / SoilML / 遥感深度学习论文。</p>
+      <div class="callout blue"><b>核心句：</b>先用 A-T + U 把论文拆成组件，再用 8 类 Hook 判断它未来怎么进入你的研究，最后沉淀成"理解卡 + Hook卡 + Idea卡 + 实验卡 + 写作卡"，形成长期可调用的研究接口。</div>
+    </section>
+
+    <section id="closed-loop" class="card closed-loop-card">
+      <h2>0. 闭环总图：从论文到自己的研究接口</h2>
+      <p>这个页面把"模型组件化流程图"和 "Idea Hook 闭环系统"真正合成了一套流程。前者回答：<b>论文里的方法改了模型哪一步？</b> 后者回答：<b>这个方法以后会怎样进入我的实验、写作和下一篇 idea？</b></p>
+      <div class="mermaid tall">
+flowchart TD
+  A[读一篇论文<br/>进入分析入口]
+  A --> B[第一层：论文类型判断<br/>K-T：数据 / 指标 / 范式 / 理论 / 应用]
+  B --> C[第二层：模型组件拆分<br/>A-J：输入 / 局部 / 交互 / 长程 / 记忆 / 融合 / 训练 / 加速 / 知识]
+  C --> D[第三层：公式标签<br/>U：公式 / 算子 / loss / 矩阵 / 门控]
+  D --> E[Hook 提取<br/>问题 / 方法 / 变量 / 实验 / 解释 / 反例 / 失败 / 写作]
+  E --> F[生成卡片<br/>理解卡 + Hook卡 + Idea卡<br/>+ 实验卡 + 写作卡]
+  F --> G[进入个人知识库<br/>Markdown / Notion / 项目计划]
+  G --> H[反向调用<br/>写 Introduction / Related Work<br/>/ Method / Discussion]
+  H --> I[形成新实验或下一篇 idea]
+  I -.闭环迭代.-> A
+      </div>
+      <table>
+        <tr><th>环节</th><th>你要做什么</th><th>产物</th><th>不过关表现</th></tr>
+        <tr><td>1. 分类</td><td>判断它属于 A-T + U 哪些类</td><td>标签</td><td>只记论文名字</td></tr>
+        <tr><td>2. 拆分</td><td>拆出输入、主干、状态更新、融合、loss、实验</td><td>组件清单</td><td>只写摘要</td></tr>
+        <tr><td>3. Hook</td><td>判断它未来怎么用</td><td>8 类 Hook</td><td>只说"很相关"</td></tr>
+        <tr><td>4. Idea</td><td>把 hook 转成可验证假设</td><td>最小实验 / 新 idea</td><td>停留在灵感</td></tr>
+        <tr><td>5. 回写</td><td>写进论文不同位置</td><td>写作句 / 实验卡 / 风险防御点</td><td>读完不用</td></tr>
+      </table>
+    </section>
+
+    <section id="three-layers" class="card">
+      <h2>1. 三层系统：分类是骨架，Hook 是接口，Idea 是输出</h2>
+      <div class="grid">
+        <div class="col-4 callout blue"><b>第一层：A-T 分类</b><br/>回答"这篇论文是什么类型、改了模型哪一步"。</div>
+        <div class="col-4 callout green"><b>第二层：U 公式标签</b><br/>回答"关键创新是不是公式、算子、矩阵、loss 或状态更新"。</div>
+        <div class="col-4 callout orange"><b>第三层：8 类 Hook</b><br/>回答"这篇论文以后如何进入我的研究、实验和写作"。</div>
+      </div>
+      <table>
+        <tr><th>层级</th><th>核心问题</th><th>典型输出</th><th>对应动作</th></tr>
+        <tr><td>A-T + U</td><td>它属于什么组件？</td><td>D 长程建模 + E 记忆更新 + I 加速 + U1 状态公式</td><td>完成分类与索引</td></tr>
+        <tr><td>Hook</td><td>它以后怎么用？</td><td>方法 hook / 实验 hook / 写作 hook / 反例 hook</td><td>决定是否进入项目</td></tr>
+        <tr><td>Idea</td><td>它能变成什么动作？</td><td>替换模块、补实验、写段落、形成下一篇方法</td><td>进入实验计划或论文草稿</td></tr>
+      </table>
+      <div class="callout yellow"><b>使用原则：</b>一篇论文不要试图填满所有分类。先抓主标签，再抓 1-3 个最有价值的 hook。真正有用的笔记不是"信息最多"，而是"以后最容易调用"。</div>
+    </section>
+
+    <section id="exec-sop" class="card">
+      <h2>2. 把"流程图"变成真正可执行的论文拆解步骤</h2>
+      <p>上面的闭环还是总览。真正拿到一篇 PDF 后，你应该按下面的执行顺序走，而不是单纯从头读到尾。</p>
+      <div class="mermaid">
+flowchart TD
+    A[拿到一篇论文 / PDF] --> B[Step 1 先判论文类型<br/>方法 / 数据 / 综述 / 理论 / 应用]
+    B --> C[Step 2 提炼任务对象<br/>输入是什么 输出是什么 数据规模怎样]
+    C --> D[Step 3 找主干 backbone<br/>CNN / Transformer / Mamba / SSM / Hybrid]
+    D --> E[Step 4 顺着数据流拆模块<br/>输入编码 → 局部特征 → 长程建模 → 状态更新 → 门控 → 融合]
+    E --> F[Step 5 标出附加流程<br/>训练稳定 / 计算加速 / 知识约束 / 可解释性]
+    F --> G[Step 6 追问真实痛点<br/>为什么非要这样改]
+    G --> H[Step 7 找证据<br/>消融 / 对比 / 复杂度 / 可解释性 / 泛化]
+    H --> I[Step 8 形成结构化笔记<br/>主创新 + 副创新 + Hook + 待验证问题]
+      </div>
+      <div class="checklist">
+        <strong>你真正读一篇方法论文时，建议固定问这 8 个问题：</strong>
+        <ul>
+          <li>这篇论文属于方法、数据、综述、应用还是理论论文？</li>
+          <li>它解决的任务是什么？输入和输出分别是什么？</li>
+          <li>主干网络是什么？是 CNN、Attention、Mamba、SSM，还是混合结构？</li>
+          <li>它到底改了哪几个流程，而不是"看起来模块很多"？</li>
+          <li>这些改动对应的任务痛点是什么：长序列、局部纹理、多模态、小样本、速度、可解释性？</li>
+          <li>它的创新是结构创新、公式创新、损失创新、训练创新，还是系统创新？</li>
+          <li>作者有没有用消融、复杂度、可视化、泛化实验把这个创新真正证明出来？</li>
+          <li>这个组件以后能不能迁移到你的土壤 / 遥感 / 高光谱任务里？</li>
+        </ul>
+      </div>
+      <table>
+        <tr><th>执行步骤</th><th>你具体要做什么</th><th>最后产出什么</th></tr>
+        <tr><td>Step 1 论文定位</td><td>先判定是不是"方法创新论文"</td><td>K-T 标签</td></tr>
+        <tr><td>Step 2 任务定位</td><td>写清输入、输出、数据模态、任务目标</td><td>任务定义摘要</td></tr>
+        <tr><td>Step 3 主干识别</td><td>判断 backbone 属于哪条技术路线</td><td>主干类别 + 代表模块</td></tr>
+        <tr><td>Step 4 流程拆解</td><td>按输入编码、局部特征、长程建模等顺序拆</td><td>A-J 主类 / 副类标签</td></tr>
+        <tr><td>Step 5 创新归因</td><td>区分主创新、辅助创新、工程配套</td><td>主贡献一句话总结</td></tr>
+        <tr><td>Step 6 证据核对</td><td>看消融、复杂度、速度、可解释性是否支撑结论</td><td>证据清单</td></tr>
+        <tr><td>Step 7 可迁移分析</td><td>分析能否迁到你的任务</td><td>可迁移组件 + 风险点</td></tr>
+      </table>
+    </section>
+
+    <section id="component-pipeline" class="card">
+      <h2>3. 模型组件总流程：一个现代深度学习模型从输入到输出怎么走？</h2>
+      <div class="mermaid">
+flowchart TD
+    A[原始输入数据<br/>图像 / 光谱 / 文本 / 时间序列 / 遥感影像] --> B[输入编码流程<br/>Tokenization / Patch Embedding / Position Encoding]
+    B --> C[局部特征提取流程<br/>CNN / 大核卷积 / 局部窗口]
+    C --> D[长程依赖建模流程<br/>Attention / SSM / Mamba / Hyena / xLSTM]
+    D --> E[记忆与状态更新流程<br/>KV Cache / Hidden State / Selective State / Delta Memory]
+    E --> F[选择与门控流程<br/>通道选择 / 空间选择 / 时间选择 / 状态选择]
+    F --> G[多尺度与多模态融合流程<br/>空间-光谱融合 / 时空融合 / 跨模态融合]
+    G --> H[训练稳定流程<br/>残差 / 归一化 / 初始化 / 梯度控制]
+    H --> I[计算加速流程<br/>矩阵结构化 / Scan / Flash / FFT / Kernel Fusion]
+    I --> J[任务约束流程<br/>物理约束 / 土壤知识约束 / 先验规则 / 不确定性]
+    J --> K[任务输出<br/>分类 / 回归 / 分割 / 预测 / 生成]
+      </div>
+      <div class="logic"><b>理解方式：</b>一篇方法论文的创新点通常不是凭空出现的，而是发生在其中某一个或几个流程上。比如 Mamba 主要改"长程建模 + 状态更新 + 计算加速"，SENet 主要改"选择与门控"，PINN / SoilML 主要改"任务约束"。</div>
+      <table>
+        <tr><th>流程</th><th>核心问题</th><th>典型组件</th><th>你读论文时要抓什么</th></tr>
+        <tr><td>输入编码</td><td>原始数据如何变成 token / 特征</td><td>Patch、Band Token、位置编码、扫描路线</td><td>输入重排方式、分解策略</td></tr>
+        <tr><td>局部特征</td><td>模型如何先看近邻信息</td><td>CNN、大核卷积、多尺度卷积、局部窗口</td><td>局部纹理、邻域关系、感受野</td></tr>
+        <tr><td>长程建模</td><td>远距离信息如何关联</td><td>Transformer、S4、S5、Mamba、Hyena</td><td>长依赖处理路径、复杂度</td></tr>
+        <tr><td>状态更新</td><td>历史状态如何被当前输入改写</td><td>Gate、Selective Update、Delta Update</td><td>记什么、忘什么、怎么写入</td></tr>
+        <tr><td>门控选择</td><td>哪些通道/位置/波段更重要</td><td>SENet、CBAM、Spectral Gate</td><td>权重来源、选择对象</td></tr>
+        <tr><td>特征融合</td><td>多路信息如何合并</td><td>Add、Concat、Gate、Cross-Attention</td><td>融合时机、分支分工</td></tr>
+        <tr><td>训练稳定</td><td>模型如何训得动、训得稳</td><td>Residual、Norm、Init、Aux Loss</td><td>为什么稳、哪里容易崩</td></tr>
+        <tr><td>计算加速</td><td>如何更快、更省显存</td><td>Scan、Flash、FFT、结构化矩阵</td><td>速度、显存、吞吐、硬件友好性</td></tr>
+        <tr><td>知识约束</td><td>输出如何符合领域规律</td><td>PINN、SoilML、SCORPAN、光谱先验</td><td>先验从哪来、怎么进模型</td></tr>
+      </table>
+    </section>
+
+    <section id="classification" class="card">
+      <h2>4. A-T + U 最终分类表</h2>
+      <h3>4.1 A-J：模型组件类</h3>
+      <table>
+        <tr><th>编号</th><th>大类</th><th>通俗理解</th><th>你要摘抄什么</th><th>常见 Hook</th></tr>
+        <tr><td>A</td><td>输入编码</td><td>原始数据怎么变成 token / 特征</td><td>patch、token、位置编码、扫描路线、光谱 band token</td><td>问题 / 方法 / 变量</td></tr>
+        <tr><td>B</td><td>局部特征</td><td>模型怎么先看附近信息</td><td>CNN、大核卷积、局部窗口、多尺度卷积</td><td>方法 / 实验</td></tr>
+        <tr><td>C</td><td>全局交互</td><td>远距离 token 怎么互相看</td><td>attention、cross-attention、linear attention</td><td>方法 / 解释 / 实验</td></tr>
+        <tr><td>D</td><td>长程建模</td><td>长序列怎么记住远处信息</td><td>S4、S5、Mamba、Mamba-2、Hyena、RetNet、xLSTM</td><td>问题 / 方法 / 解释</td></tr>
+        <tr><td>E</td><td>记忆更新</td><td>旧状态怎么被新输入改写</td><td>衰减、门控、选择性更新、Delta 更新</td><td>方法 / 变量 / 公式</td></tr>
+        <tr><td>F</td><td>选择注意力</td><td>哪些通道、位置、时间、波段更重要</td><td>SENet、CBAM、ECA、光谱 gate、band selection</td><td>方法 / 解释 / 写作</td></tr>
+        <tr><td>G</td><td>特征融合</td><td>多路信息怎么合并</td><td>Add、Concat、Gate、Cross-Attention、Spatial-Spectral Gate</td><td>方法 / 实验</td></tr>
+        <tr><td>H</td><td>训练稳定</td><td>模型怎么训得稳</td><td>Residual、Norm、初始化、梯度裁剪、辅助损失</td><td>方法 / 失败</td></tr>
+        <tr><td>I</td><td>计算加速</td><td>怎么更快、更省显存</td><td>Flash、Scan、FFT、结构化矩阵、KV cache 压缩</td><td>方法 / 实验 / 写作</td></tr>
+        <tr><td>J</td><td>知识约束</td><td>怎么让模型符合科学规律</td><td>PINN、SoilML、PDE residual、SCORPAN、光谱先验</td><td>问题 / 方法 / 解释 / 写作</td></tr>
+      </table>
+      <h3>4.2 K-T：论文类型类</h3>
+      <table>
+        <tr><th>编号</th><th>大类</th><th>主要记录什么</th><th>典型 Hook</th></tr>
+        <tr><td>K</td><td>数据与基准</td><td>数据集、benchmark、标注、划分协议</td><td>实验 / 反例 / 写作</td></tr>
+        <tr><td>L</td><td>评价指标</td><td>Accuracy、F1、mIoU、RMSE、R²、UQ 指标</td><td>实验 / 写作</td></tr>
+        <tr><td>M</td><td>优化算法</td><td>optimizer、scheduler、loss landscape</td><td>方法 / 公式 / 失败</td></tr>
+        <tr><td>N</td><td>学习范式</td><td>自监督、半监督、迁移、多任务、预训练</td><td>方法 / 反例 / 实验</td></tr>
+        <tr><td>O</td><td>可解释性</td><td>SHAP、attention map、band importance、occlusion</td><td>解释 / 写作</td></tr>
+        <tr><td>P</td><td>可信学习</td><td>鲁棒性、OOD、不确定性、校准</td><td>实验 / 失败 / 反例</td></tr>
+        <tr><td>Q</td><td>部署系统</td><td>量化、剪枝、蒸馏、边缘部署、硬件适配</td><td>方法 / 实验</td></tr>
+        <tr><td>R</td><td>理论分析</td><td>复杂度、收敛、表达能力、泛化证明</td><td>写作 / 解释</td></tr>
+        <tr><td>S</td><td>综述地图</td><td>survey、taxonomy、路线图</td><td>写作 / 问题</td></tr>
+        <tr><td>T</td><td>应用任务</td><td>土壤 SOC、遥感、高光谱、气象、医学等</td><td>问题 / 写作 / 实验</td></tr>
+      </table>
+      <h3>4.3 U：公式 / 算子 / Loss 横向标签</h3>
+      <table>
+        <tr><th>编号</th><th>类型</th><th>改的是哪里</th><th>例子</th><th>判断重点</th></tr>
+        <tr><td>U1</td><td>状态更新公式</td><td>h_t 如何由 h_t-1 与 x_t 得到</td><td>Mamba、S5、xLSTM、DeltaNet</td><td>记什么、忘什么、怎么写入</td></tr>
+        <tr><td>U2</td><td>注意力公式</td><td>QK^TV 或其近似形式</td><td>Linear Attention、RetNet、HiLo</td><td>复杂度与表达能力</td></tr>
+        <tr><td>U3</td><td>矩阵参数化</td><td>A、K、Toeplitz、低秩、半可分矩阵</td><td>S4、Mamba-2 / SSD、Hyena</td><td>为什么更快/更稳定</td></tr>
+        <tr><td>U4</td><td>卷积/滤波公式</td><td>长卷积、频域滤波、隐式 filter</td><td>Hyena、TCN、ModernTCN</td><td>感受野与复杂度</td></tr>
+        <tr><td>U5</td><td>门控公式</td><td>信息通过比例</td><td>SENet、GLU、Mamba gate、Spectral gate</td><td>门控对象是什么</td></tr>
+        <tr><td>U6</td><td>损失函数公式</td><td>data loss + prior/physics/soil loss</td><td>PINN、SoilML、对比学习</td><td>每一项 loss 的意义</td></tr>
+        <tr><td>U7</td><td>归一化/优化公式</td><td>梯度、激活、参数更新</td><td>LayerNorm、RMSNorm、AdamW</td><td>训练是否更稳</td></tr>
+        <tr><td>U8</td><td>采样/权重公式</td><td>样本、token、collocation point 权重</td><td>RAR、Focal Loss、Hard Mining</td><td>解决什么数据难点</td></tr>
+      </table>
+    </section>
+
+    <section id="hook-map" class="card">
+      <h2>5. 8 类 Hook：把论文变成研究接口</h2>
+      <p>Hook 的核心不是"论文讲了什么"，而是"它未来怎么进入你的研究、实验、写作或下一个 idea"。</p>
+      <table>
+        <tr><th>Hook 类型</th><th>核心问题</th><th>可产出什么</th><th>最适合的论文内容</th><th>过关标准</th></tr>
+        <tr><td><span class="tag blue">问题 Hook</span></td><td>别人的问题能不能转成我的问题？</td><td>新的研究问题表述</td><td>痛点、任务定义、motivation</td><td>能写出一句新问题</td></tr>
+        <tr><td><span class="tag green">方法 Hook</span></td><td>别人的方法能不能改造我的模型？</td><td>替换模块、组合模块、baseline</td><td>新模块、新主干、新融合</td><td>能落到一个具体动作</td></tr>
+        <tr><td><span class="tag purple">变量 Hook</span></td><td>某个参数/尺度能不能变成我的变量？</td><td>可学习变量、调制机制、假设</td><td>Δ、权重、门控、波段、尺度</td><td>能变成可验证假设</td></tr>
+        <tr><td><span class="tag orange">实验 Hook</span></td><td>别人的实验能不能借过来？</td><td>消融、鲁棒性、效率、解释实验</td><td>ablation、robustness、efficiency</td><td>能说明删什么、比什么、看什么指标</td></tr>
+        <tr><td><span class="tag yellow">解释 Hook</span></td><td>它能解释我的实验现象吗？</td><td>Discussion 段落</td><td>机制解释、失败原因、归纳偏置</td><td>能写成一段机制解释</td></tr>
+        <tr><td><span class="tag red">反例 Hook</span></td><td>它会不会挑战我的假设？</td><td>审稿防御实验、公平 baseline</td><td>强 baseline、相反结论、替代解释</td><td>能提前暴露审稿风险</td></tr>
+        <tr><td><span class="tag gray">失败 Hook</span></td><td>它暴露了什么边界？</td><td>Limitation / Future Work</td><td>失败场景、局限、负结果</td><td>能帮助写得更稳</td></tr>
+        <tr><td><span class="tag blue">写作 Hook</span></td><td>它能放进论文哪一部分？</td><td>Intro / RW / Method / Discussion 句子</td><td>经典论述、背景、证据</td><td>能定位到具体章节</td></tr>
+      </table>
+    </section>
+
+    <section id="matrix" class="card">
+      <h2>6. 组件 × Hook 矩阵：看到什么就摘什么</h2>
+      <table>
+        <tr><th>组件类</th><th>优先 Hook</th><th>你应摘抄的内容</th><th>可能生成的 idea</th></tr>
+        <tr><td>A 输入编码</td><td>问题 / 方法 / 变量</td><td>数据如何 token 化、扫描、位置编码、光谱编码</td><td>把高光谱看成长波段序列；设计 PPI-aware spectral token</td></tr>
+        <tr><td>B 局部特征</td><td>方法 / 实验</td><td>CNN、大核、多尺度、局部窗口如何分工</td><td>CNN 抓局部纹理，Mamba 抓光谱长程</td></tr>
+        <tr><td>C 全局交互</td><td>方法 / 解释</td><td>注意力如何计算、在哪里贵、如何替代</td><td>少量 attention + 多数 Mamba 的 hybrid backbone</td></tr>
+        <tr><td>D 长程建模</td><td>问题 / 方法 / 解释</td><td>历史放在哪里、怎么读取、怎么降低复杂度</td><td>把 SOC 光谱回归改写成长序列建模问题</td></tr>
+        <tr><td>E 记忆更新</td><td>变量 / 公式 / 方法</td><td>状态更新公式、门控、选择性、Delta</td><td>PPI 调制 SSM timescale / selective scan</td></tr>
+        <tr><td>F 选择注意力</td><td>方法 / 解释</td><td>选择通道/位置/波段/状态的权重</td><td>关键吸收峰 band gate + occlusion test</td></tr>
+        <tr><td>G 融合</td><td>方法 / 实验</td><td>空间、光谱、物理先验如何合并</td><td>Spatial branch + Spectral branch + PPI gate</td></tr>
+        <tr><td>H 训练稳定</td><td>失败 / 方法</td><td>为什么训不稳、如何归一化、初始化</td><td>小样本下对比 Norm / init / pretraining 消融</td></tr>
+        <tr><td>I 计算加速</td><td>实验 / 写作</td><td>复杂度、显存、吞吐、scan / flash / FFT</td><td>补 FLOPs、参数量、显存、推理速度表</td></tr>
+        <tr><td>J 知识约束</td><td>问题 / 方法 / 写作</td><td>物理/土壤/光谱先验从哪里来、怎么进模型</td><td>SoilML loss、SCORPAN prior、spectral absorption prior</td></tr>
+        <tr><td>U 公式标签</td><td>变量 / 方法 / 实验</td><td>原公式、新公式、改了哪项、复杂度变化</td><td>把公式变化转成模块图 + 消融实验</td></tr>
+      </table>
+    </section>
+
+    <section id="idea-engine" class="card">
+      <h2>7. 从"论文创新点"到"你自己的方法设计"</h2>
+      <div class="mermaid">
+flowchart TD
+    A[锁定你的任务] --> B{主要瓶颈是什么？}
+    B --> B1[输入表达不够好]
+    B --> B2[局部纹理抓不住]
+    B --> B3[长距离依赖建不起来]
+    B --> B4[历史状态更新不合理]
+    B --> B5[多路特征融合差]
+    B --> B6[训练不稳定 / 样本少]
+    B --> B7[推理太慢 / 显存太高]
+    B --> B8[结果不符合领域规律]
+    B1 --> C1[优先看输入编码类创新]
+    B2 --> C2[优先看局部特征类创新]
+    B3 --> C3[优先看长程建模类创新]
+    B4 --> C4[优先看状态更新类创新]
+    B5 --> C5[优先看融合类创新]
+    B6 --> C6[优先看稳定与学习范式]
+    B7 --> C7[优先看加速类创新]
+    B8 --> C8[优先看知识约束类创新]
+    C1 --> D[候选组件池]
+    C2 --> D
+    C3 --> D
+    C4 --> D
+    C5 --> D
+    C6 --> D
+    C7 --> D
+    C8 --> D
+    D --> E{每个候选组件都过 4 个筛子}
+    E --> E1[是否真的对准当前痛点]
+    E --> E2[是否与现有 backbone 兼容]
+    E --> E3[是否有足够实验空间证明它有效]
+    E --> E4[是否不会把系统复杂度推太高]
+    E4 --> F[保留 1 个主创新 + 1-2 个辅助创新]
+    F --> G[设计最小可验证模型]
+    G --> H[做消融 / 对比 / 复杂度 / 可解释性实验]
+    H --> I[决定是否进入正式论文方案]
+      </div>
+      <div class="callout purple"><b>新 Idea 公式：</b>新 Idea = 任务痛点 T + 组件改造 A-J + 公式/变量 U + Hook 类型 + 最小验证实验</div>
+      <div class="checklist">
+        <strong>筛组件时，强烈建议只保留这种组合：</strong>
+        <div style="margin-top:10px;">
+          <span class="pill">1 个主创新</span>
+          <span class="pill">1-2 个辅助创新</span>
+          <span class="pill">1 套清楚的证据链</span>
+        </div>
+        <ul>
+          <li>主创新：最想讲、最有辨识度、最能解释任务痛点的那个模块。</li>
+          <li>辅助创新：为主创新服务，不要抢戏。</li>
+          <li>证据链：至少能用消融 + 对比 + 复杂度 / 可解释性把故事闭环。</li>
+        </ul>
+      </div>
+      <table>
+        <tr><th>常见错误</th><th>为什么危险</th><th>更好的改法</th></tr>
+        <tr><td>看到好模块就往模型里堆</td><td>创新点分散，论文主线不清楚</td><td>先锁定一个主痛点，再选主创新</td></tr>
+        <tr><td>只说"加了 Mamba / Attention"</td><td>表达过泛，审稿人会问为什么一定要加</td><td>明确写出它对应的是哪条流程、解决哪个瓶颈</td></tr>
+        <tr><td>结构复杂但没有证据链</td><td>容易被认为是工程堆砌</td><td>每个关键模块都准备可验证实验</td></tr>
+        <tr><td>同时改输入、backbone、loss、训练范式太多</td><td>很难讲清谁真正有效</td><td>优先做单主创新 + 少量配套</td></tr>
+      </table>
+    </section>
+
+    <section id="sop" class="card">
+      <h2>8. 读论文 SOP：一篇论文 30-60 分钟闭环处理</h2>
+      <div class="mermaid">
+flowchart TD
+  A[0. 记录论文基本信息] --> B[1. 判断论文类型 K-T]
+  B --> C[2. 拆模型组件 A-J]
+  C --> D[3. 标公式/算子/loss U]
+  D --> E[4. 选 1-3 个主要 Hook]
+  E --> F{Hook 是否能落地?}
+  F -- 否 --> G[降级为普通参考文献或只放 Related Work]
+  F -- 是 --> H[5. 填 Hook 卡]
+  H --> I[6. 生成 Idea 卡或实验卡]
+  I --> J[7. 生成写作句]
+  J --> K[8. 加入 Markdown / Notion 数据库]
+  K --> L[9. 每周筛选 H1 Hook 进入实验计划]
+      </div>
+      <table>
+        <tr><th>步骤</th><th>必须回答的问题</th><th>输出</th><th>建议时间</th></tr>
+        <tr><td>0</td><td>这篇论文为什么读？</td><td>读前目的</td><td>3 min</td></tr>
+        <tr><td>1</td><td>它是方法、数据、理论、应用还是综述？</td><td>K-T 标签</td><td>3 min</td></tr>
+        <tr><td>2</td><td>它改了模型哪一步？</td><td>A-J 标签</td><td>10 min</td></tr>
+        <tr><td>3</td><td>有没有关键公式/算子/loss？</td><td>U 标签</td><td>8 min</td></tr>
+        <tr><td>4</td><td>它以后怎么用？</td><td>Hook 类型</td><td>8 min</td></tr>
+        <tr><td>5</td><td>能不能变成动作？</td><td>实验/写作/idea 卡</td><td>15 min</td></tr>
+        <tr><td>6</td><td>是否值得进入项目计划？</td><td>H1/H2/H3 等级</td><td>3 min</td></tr>
+      </table>
+    </section>
+
+    <section id="cards" class="card">
+      <h2>9. 卡片模板：直接复制到 Markdown / Notion</h2>
+      <h3>9.1 论文理解卡</h3>
+      <div class="block-code">论文名：
+年份 / 会议 / 期刊：
+任务：
+一句话问题：
+一句话方法：
+一句话结果：
+主分类 A-T：
+公式标签 U：
+适合精读吗：是 / 否</div>
+      <h3>9.2 组件摘抄卡</h3>
+      <div class="block-code">组件名称：
+所属大类：A/B/C/D/E/F/G/H/I/J
+所属子类：
+原模型中位置：Input / Backbone / State Update / Fusion / Loss / Inference
+核心操作：
+解决痛点：
+可画图：是 / 否；如果是，画成：输入 → 模块 → 输出
+可迁移到我的方向：
+需要验证的实验：</div>
+      <h3>9.3 Hook 卡</h3>
+      <div class="block-code">Hook 类型：问题 / 方法 / 变量 / 实验 / 解释 / 反例 / 失败 / 写作
+这篇论文提供的 hook：
+它未来会在 ______ 场景下被调用：
+它支持 / 挑战的论述：
+它能影响当前模型的部分：Backbone / PPI / Pretraining / Loss / Baseline / Interpretation
+最小可行动作：
+Hook 等级：H1 / H2 / H3</div>
+      <h3>9.4 Idea 卡</h3>
+      <div class="block-code">Idea 名称：
+来源论文：
+来源组件：
+来源 Hook：
+核心假设：
+模型改动：
+最小实验：
+需要 baseline：
+预期结果：
+失败风险：
+如果成功，可写成的贡献点：</div>
+      <h3>9.5 实验卡</h3>
+      <div class="block-code">实验名称：
+来自哪篇论文的实验 hook：
+要证明的主张：
+实验设置：
+删除 / 替换 / 遮挡 / 对比什么：
+指标：RMSE / R² / MAE / Accuracy / FLOPs / Memory / Time / UQ
+baseline：
+预期图表：
+如果失败，如何解释：</div>
+      <h3>9.6 写作卡</h3>
+      <div class="block-code">可放入章节：Introduction / Related Work / Method / Experiment / Discussion / Limitation / Future Work
+可支持的论述：
+可直接改写的句子：
+需要引用的论文：
+它在本文中的角色：背景 / 动机 / 对比 / 解释 / 风险防御</div>
+    </section>
+
+    <section id="examples" class="card">
+      <h2>10. 典型示例：如何把论文变成 Hook</h2>
+      <div class="callout orange"><b>这一节的重点不再是"我最小能做什么实验"，而是"原论文本身用了哪些实验类型来证明自己的主张，以及这些实验分别给你什么 hook"。</b></div>
+
+      <h3>10.1 Mamba</h3>
+      <table>
+        <tr><th>维度</th><th>内容</th></tr>
+        <tr><td>分类</td><td><span class="tag green">D 长程建模</span><span class="tag green">E 记忆更新</span><span class="tag green">I 计算加速</span><span class="tag purple">U1 状态更新公式</span></td></tr>
+        <tr><td>主创新</td><td>把传统 SSM 改造成 <b>输入驱动的选择性状态空间模型</b>，使模型可以根据当前输入决定记什么、忘什么。</td></tr>
+        <tr><td>方法 Hook</td><td>Selective SSM 可以作为高光谱波段序列的主干，替代或增强 Transformer。</td></tr>
+        <tr><td>变量 Hook</td><td>选择性状态参数、时间尺度、门控权重都可以进一步做物理调制。</td></tr>
+        <tr><td>解释 Hook</td><td>解释为什么它不是普通 RNN，而是"输入依赖的状态选择机制"。</td></tr>
+        <tr><td>原论文中的实验类型</td><td>长序列建模对比实验；不同任务泛化实验；效率/吞吐/显存实验；与 Transformer 类方法的基准对比。</td></tr>
+        <tr><td>这些实验分别证明什么</td><td>对比实验证明性能可比或更强；效率实验证明线性复杂度与硬件友好；跨任务实验证明方法不是只对单一任务有效。</td></tr>
+        <tr><td>你可继承的实验 Hook</td><td>在你的任务里补：精度对比、显存占用、序列长度扩展、小样本性能曲线。</td></tr>
+        <tr><td>写作 Hook</td><td>可用于 Introduction / Method：把高光谱反射率重述为长光谱序列建模问题。</td></tr>
+      </table>
+
+      <h3>10.2 S5</h3>
+      <table>
+        <tr><th>维度</th><th>内容</th></tr>
+        <tr><td>分类</td><td><span class="tag green">D 长程建模</span><span class="tag gray">H 训练稳定</span><span class="tag green">I Scan 加速</span><span class="tag purple">U3 矩阵参数化</span></td></tr>
+        <tr><td>主创新</td><td>通过 <b>MIMO SSM + diagonalized dynamics + parallel scan</b> 改善 SSM 的实现效率与稳定训练能力。</td></tr>
+        <tr><td>方法 Hook</td><td>S5-like spectral encoder 适合迁移为高光谱长波段编码器。</td></tr>
+        <tr><td>变量 Hook</td><td>timescale Δ、状态维度、scan 方式可以变成你的可控变量。</td></tr>
+        <tr><td>解释 Hook</td><td>可用于解释为什么某些 SSM 变体比传统递推模型更稳定、更容易并行。</td></tr>
+        <tr><td>原论文中的实验类型</td><td>标准长序列 benchmark 对比；scan 并行效率实验；不同状态参数化的消融；训练稳定性比较。</td></tr>
+        <tr><td>这些实验分别证明什么</td><td>benchmark 证明性能，scan 实验证明并行计算收益，消融证明结构化参数化不是装饰，稳定性实验说明训练改进是真实的。</td></tr>
+        <tr><td>你可继承的实验 Hook</td><td>missing-band robustness、关键波段窗口遮挡、不同状态维度 / Δ 设置下的性能-效率曲线。</td></tr>
+        <tr><td>写作 Hook</td><td>适合写在 Method / Experiment：强调你的 spectral encoder 来自稳定可并行的 SSM 设计，而不是黑盒替换。</td></tr>
+      </table>
+
+      <h3>10.3 S2Mamba</h3>
+      <table>
+        <tr><th>维度</th><th>内容</th></tr>
+        <tr><td>分类</td><td><span class="tag blue">A 扫描编码</span><span class="tag green">D Mamba</span><span class="tag orange">G 空间-光谱融合</span><span class="tag yellow">T 高光谱任务</span></td></tr>
+        <tr><td>主创新</td><td>把 <b>空间建模</b> 与 <b>光谱建模</b> 分开处理，再通过混合门控融合。</td></tr>
+        <tr><td>方法 Hook</td><td>空间分支 + 光谱分支 + Mixture Gate 可以迁移到 SOC / OM 回归。</td></tr>
+        <tr><td>解释 Hook</td><td>均质区域更依赖光谱，复杂纹理区域更依赖空间，可用于解释融合权重。</td></tr>
+        <tr><td>反例 Hook</td><td>如果你的任务空间信息弱，照搬空间分支可能收益有限，必须验证是否真的需要双分支。</td></tr>
+        <tr><td>原论文中的实验类型</td><td>主任务性能对比；空间分支/光谱分支/融合门控消融；可视化分析；不同数据集验证。</td></tr>
+        <tr><td>这些实验分别证明什么</td><td>主任务对比证明整体有效；分支消融证明每路信息的独立贡献；可视化证明融合不是黑盒；多数据集验证说明方法具有一定泛化性。</td></tr>
+        <tr><td>你可继承的实验 Hook</td><td>分别消融 spatial branch、spectral branch、mixture gate；增加融合权重热图与不同纹理区域分析。</td></tr>
+        <tr><td>写作 Hook</td><td>适合写在 Discussion：说明空间与光谱贡献不恒定，需要自适应融合而不是固定拼接。</td></tr>
+      </table>
+
+      <h3>10.4 PINN / SoilML</h3>
+      <table>
+        <tr><th>维度</th><th>内容</th></tr>
+        <tr><td>分类</td><td><span class="tag orange">J 知识约束</span><span class="tag purple">U6 Loss 公式</span><span class="tag yellow">O 可解释性</span><span class="tag yellow">T 土壤任务</span></td></tr>
+        <tr><td>主创新</td><td>把 <b>物理规律 / 土壤知识 / 光谱先验</b> 通过 loss、约束项或先验结构注入模型，而不是只做纯数据拟合。</td></tr>
+        <tr><td>问题 Hook</td><td>小样本土壤高光谱预测不应只依赖数据拟合，还应注入土壤和光谱先验。</td></tr>
+        <tr><td>方法 Hook</td><td>把 PPI、关键吸收峰、SCORPAN 因子做成 loss、权重或输入提示。</td></tr>
+        <tr><td>写作 Hook</td><td>用于 Introduction / Discussion：说明纯数据驱动模型在土壤科学中存在泛化和解释性不足。</td></tr>
+        <tr><td>原论文中的实验类型</td><td>有/无约束对比实验；loss 项消融；跨区域泛化实验；可解释性分析；不确定性或可靠性分析。</td></tr>
+        <tr><td>这些实验分别证明什么</td><td>对比实验说明知识约束有效；loss 消融证明每个约束项不是装饰；跨区域实验证明先验提升泛化；解释性分析证明模型更科学可解释。</td></tr>
+        <tr><td>你可继承的实验 Hook</td><td>band importance、occlusion test、跨区域泛化、不确定性分析、是否符合土壤合理范围的约束检验。</td></tr>
+        <tr><td>失败 / 风险 Hook</td><td>约束加太多可能伤害拟合能力；先验不准可能反而误导模型；因此需要"约束强度"消融。</td></tr>
+      </table>
+    </section>
+
+
+    <section id="quality" class="card">
+      <h2>11. 过关标准：避免读了但不能用</h2>
+      <table>
+        <tr><th>等级</th><th>定义</th><th>产物</th><th>处理方式</th></tr>
+        <tr><td><span class="tag red">H1</span></td><td>能直接影响当前论文或实验</td><td>实验卡 / 写作卡 / 方法改造</td><td>本周进入计划</td></tr>
+        <tr><td><span class="tag orange">H2</span></td><td>有潜力，但需要等待条件</td><td>Idea 卡 / Future Work</td><td>放入 idea 池</td></tr>
+        <tr><td><span class="tag gray">H3</span></td><td>只是背景或普通参考</td><td>Related Work 一句话</td><td>低优先级管理</td></tr>
+      </table>
+      <h3>11.1 Hook 是否过关</h3>
+      <table>
+        <tr><th>判断问题</th><th>过关</th><th>不过关</th></tr>
+        <tr><td>能不能说清未来调用场景？</td><td>以后在 Discussion 解释小样本优势时调用</td><td>这篇论文很相关</td></tr>
+        <tr><td>能不能落到具体动作？</td><td>补 missing-band robustness 实验</td><td>以后可以试试</td></tr>
+        <tr><td>能不能写成一句论文语言？</td><td>Hyperspectral bands can be modeled as long spectral sequences.</td><td>它说了长序列</td></tr>
+        <tr><td>能不能生成实验设置？</td><td>遮挡 1730/1900/2100nm，比较 RMSE/R²</td><td>做鲁棒性实验</td></tr>
+        <tr><td>能不能暴露风险？</td><td>需要公平预训练 Transformer baseline</td><td>这个方法可能也强</td></tr>
+      </table>
+      <div class="callout red"><b>最终检查句：</b>读完一篇论文后，如果你只剩"这篇论文提出了一个新模型"，没有过关；如果你能说"它以后会在什么场景下被调用，因为它提供了什么 hook"，才算进入你的研究系统。</div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

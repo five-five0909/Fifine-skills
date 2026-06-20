@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>论文方法组件化笔记体系｜Notion 风格</title>
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --paper: #ffffff;
+      --text: #2f3437;
+      --muted: #6b6f76;
+      --line: #e9e6df;
+      --blue: #2f80ed;
+      --blue-bg: #eef6ff;
+      --green: #0f8b6f;
+      --green-bg: #eefaf6;
+      --orange: #d9730d;
+      --orange-bg: #fff4e8;
+      --red: #d44c47;
+      --red-bg: #fff0f0;
+      --purple: #6940a5;
+      --purple-bg: #f6f0ff;
+      --gray-bg: #f1f1ef;
+      --code: #eb5757;
+      --shadow: 0 8px 26px rgba(15, 23, 42, 0.06);
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.72;
+      font-size: 15px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 28px 22px;
+      border-right: 1px solid var(--line);
+      background: rgba(255,255,255,0.65);
+      backdrop-filter: blur(10px);
+    }
+
+    aside h2 {
+      font-size: 14px;
+      margin: 0 0 12px;
+      letter-spacing: .04em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    aside a {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      padding: 6px 8px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin: 2px 0;
+    }
+
+    aside a:hover { background: var(--gray-bg); }
+
+    main {
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 52px 44px 90px;
+    }
+
+    .hero {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 42px 46px;
+      box-shadow: var(--shadow);
+      margin-bottom: 26px;
+    }
+
+    h1 {
+      font-size: 40px;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+      max-width: 900px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: var(--gray-bg);
+      color: var(--text);
+      font-size: 13px;
+      border: 1px solid var(--line);
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px 34px;
+      margin: 22px 0;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 25px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      font-size: 19px;
+    }
+
+    h4 {
+      margin: 22px 0 8px;
+      font-size: 16px;
+    }
+
+    p { margin: 10px 0; }
+    strong { font-weight: 700; }
+    code {
+      background: var(--gray-bg);
+      color: var(--code);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+    }
+
+    .callout {
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .callout .icon { font-size: 18px; }
+    .callout.blue { background: var(--blue-bg); }
+    .callout.green { background: var(--green-bg); }
+    .callout.orange { background: var(--orange-bg); }
+    .callout.red { background: var(--red-bg); }
+    .callout.purple { background: var(--purple-bg); }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      padding: 10px 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th:last-child, td:last-child { border-right: 0; }
+    tr:last-child td { border-bottom: 0; }
+
+    th {
+      background: #fbfbfa;
+      font-weight: 650;
+      color: #3b3f43;
+      white-space: nowrap;
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 1px 3px 1px 0;
+      white-space: nowrap;
+    }
+    .tag.blue { background: var(--blue-bg); color: var(--blue); }
+    .tag.green { background: var(--green-bg); color: var(--green); }
+    .tag.orange { background: var(--orange-bg); color: var(--orange); }
+    .tag.red { background: var(--red-bg); color: var(--red); }
+    .tag.purple { background: var(--purple-bg); color: var(--purple); }
+    .tag.gray { background: var(--gray-bg); color: var(--muted); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      padding: 16px;
+    }
+    .card h3 { margin-top: 0; }
+
+    .flow {
+      background: #fbfbfa;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 16px 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre-wrap;
+      color: #333;
+      line-height: 1.65;
+    }
+
+    .small { font-size: 13px; color: var(--muted); }
+
+    .toc-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .notion-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 24px 0;
+    }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: relative; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+      main { padding: 28px 16px 70px; }
+      .hero { padding: 30px 24px; }
+      h1 { font-size: 30px; }
+      section { padding: 24px 18px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      aside { display: none; }
+      .layout { display: block; }
+      body { background: #fff; }
+      main { max-width: none; padding: 0; }
+      section, .hero { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="toc-title">
+      <h2>目录</h2>
+      <span class="tag gray">Notion Style</span>
+    </div>
+    <a href="#purpose">0. 这个体系怎么用</a>
+    <a href="#overview">1. A-T 总分类</a>
+    <a href="#component">2. A-J 模型组件分类</a>
+    <a href="#paper-type">3. K-T 论文类型分类</a>
+    <a href="#formula">4. U 公式/算子创新标签</a>
+    <a href="#workflow">5. 读论文归类流程</a>
+    <a href="#tables">6. 速查表</a>
+    <a href="#templates">7. 摘抄模板</a>
+    <a href="#examples">8. 典型论文示例</a>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <h1>论文方法组件化笔记体系</h1>
+      <p class="subtitle">一个可以长期使用的读论文分类坐标系：把论文里的好方法拆成「组件、公式、任务、实验」四类信息，方便以后写综述、找创新点、改模型。</p>
+      <div class="meta-row">
+        <span class="pill">📌 适用：深度学习 / 遥感 / 高光谱 / 土壤 / Mamba / SSM / PINN</span>
+        <span class="pill">🧩 核心：A-J 拆模型，K-T 拆论文，U 标记公式创新</span>
+        <span class="pill">🗂️ 用法：看论文时直接归类摘抄</span>
+      </div>
+    </div>
+
+    <section id="purpose">
+      <h2>0. 这个体系怎么用</h2>
+      <div class="callout blue">
+        <div class="icon">💡</div>
+        <div><strong>一句话：</strong>以后你读论文，不是只记"这篇论文叫什么"，而是问：它改了模型哪一步？用了什么公式？解决什么痛点？能不能迁移到你的土壤/遥感/高光谱任务里？</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>层级</th><th>你要判断的问题</th><th>结果放到哪里</th><th>例子</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>第一层：论文类型</td><td>它是方法、数据集、综述、理论、应用，还是系统部署？</td><td>K-T 分类</td><td>Survey 放 S；数据集放 K；部署论文放 Q</td></tr>
+            <tr><td>第二层：模型组件</td><td>它改了输入、特征、交互、记忆、融合、训练、加速，还是知识约束？</td><td>A-J 分类</td><td>Mamba 放 D/E/I；S2Mamba 放 A/D/G</td></tr>
+            <tr><td>第三层：公式标签</td><td>它是不是主要改了一个公式、算子、矩阵分解、损失函数？</td><td>U 标签</td><td>PINN 放 U6；Hyena 放 U4/U5</td></tr>
+            <tr><td>第四层：为我所用</td><td>它能不能用到我的方向？需要什么实验来证明？</td><td>个人应用笔记</td><td>CNN + Mamba + SoilML Loss</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="overview">
+      <h2>1. A-T 总分类</h2>
+      <p>最终建议用 <strong>A-T 二十类体系</strong>：A-J 负责拆模型组件，K-T 负责拆论文类型和研究价值。额外加一个横向标签 <strong>U：公式/算子/损失函数创新</strong>。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>编号</th><th>大类</th><th>主要记录什么</th><th>看论文时摘什么</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>A</td><td>输入编码类</td><td>原始数据如何变成 token / 特征</td><td>Patch、Token、位置编码、扫描方式、光谱编码</td></tr>
+            <tr><td>B</td><td>局部特征类</td><td>局部纹理、邻域、短程模式</td><td>CNN、大核卷积、多尺度卷积、局部窗口</td></tr>
+            <tr><td>C</td><td>全局交互类</td><td>不同位置、token、模态之间如何交互</td><td>Attention、Cross-Attention、Linear Attention</td></tr>
+            <tr><td>D</td><td>长程建模类</td><td>如何处理长序列、长上下文、高分辨率图像</td><td>SSM、Mamba、Hyena、RetNet、RWKV、xLSTM</td></tr>
+            <tr><td>E</td><td>记忆更新类</td><td>历史状态如何写入、遗忘、读取、编辑</td><td>Gate、Selective Update、Delta Update</td></tr>
+            <tr><td>F</td><td>选择/注意力类</td><td>哪些通道、空间、时间、波段重要</td><td>SENet、CBAM、ECA、光谱注意力、状态门控</td></tr>
+            <tr><td>G</td><td>特征融合类</td><td>多路特征如何合并</td><td>Add、Concat、Gate、Cross-Attention、Mixture Gate</td></tr>
+            <tr><td>H</td><td>训练稳定类</td><td>如何让模型训得稳、收敛快、不过拟合</td><td>Residual、Norm、Init、Regularization、Aux Loss</td></tr>
+            <tr><td>I</td><td>计算加速类</td><td>如何更快、更省显存、更适合硬件</td><td>Flash、Scan、FFT、结构化矩阵、KV Cache 压缩</td></tr>
+            <tr><td>J</td><td>任务/知识约束类</td><td>如何让模型符合物理、土壤、光谱、领域规律</td><td>PINN、SoilML、SCORPAN、光谱先验、不确定性</td></tr>
+            <tr><td>K</td><td>数据与基准类</td><td>数据集、benchmark、标注方式</td><td>数据来源、样本量、标注规则、任务设置</td></tr>
+            <tr><td>L</td><td>评价指标类</td><td>如何评价模型好坏</td><td>Accuracy、F1、mIoU、RMSE、R²、ECE、复杂度</td></tr>
+            <tr><td>M</td><td>优化算法类</td><td>优化器、学习率、训练策略、损失权重</td><td>AdamW、scheduler、loss reweighting、gradient trick</td></tr>
+            <tr><td>N</td><td>学习范式类</td><td>如何学习：监督、自监督、半监督、迁移、多任务</td><td>Pretraining、Contrastive、SSL、Fine-tuning、MTL</td></tr>
+            <tr><td>O</td><td>可解释性类</td><td>模型为什么这么预测</td><td>SHAP、Attention Map、Band Importance、Feature Attribution</td></tr>
+            <tr><td>P</td><td>可信学习类</td><td>鲁棒性、不确定性、分布外、校准</td><td>UQ、OOD、Robustness、Calibration</td></tr>
+            <tr><td>Q</td><td>部署系统类</td><td>模型如何上设备、上硬件、上系统</td><td>量化、剪枝、蒸馏、边缘部署、NPU/GPU 优化</td></tr>
+            <tr><td>R</td><td>理论分析类</td><td>复杂度、收敛性、表达能力、泛化边界</td><td>Proof、Theorem、Complexity、Stability Analysis</td></tr>
+            <tr><td>S</td><td>综述地图类</td><td>领域路线图、taxonomy、survey</td><td>分类体系、发展脉络、开放问题</td></tr>
+            <tr><td>T</td><td>应用任务类</td><td>具体任务场景</td><td>土壤有机碳、遥感分类、高光谱、气象、医学图像</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="component">
+      <h2>2. A-J 模型组件分类</h2>
+      <p>这一部分是你以后看"方法类论文"最常用的分类。它对应模型从输入到输出的各个环节。</p>
+      <div class="flow">原始数据
+  ↓ A 输入编码
+  ↓ B 局部特征
+  ↓ C 全局交互 / D 长程建模
+  ↓ E 记忆更新 / F 选择注意力
+  ↓ G 特征融合
+  ↓ H 训练稳定
+  ↓ I 计算加速
+  ↓ J 任务/知识约束
+  ↓ 输出：分类 / 回归 / 分割 / 预测 / 生成</div>
+
+      <h3>A. 输入编码类</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>子类</th><th>通俗理解</th><th>典型技术</th><th>适合任务</th><th>可画图方式</th></tr></thead>
+          <tbody>
+            <tr><td>Patch Embedding</td><td>把图像切成小块</td><td>ViT Patch、Overlap Patch</td><td>图像、遥感、医学图像</td><td>Image → Patch → Token</td></tr>
+            <tr><td>Tokenization</td><td>把输入变成 token</td><td>Word Token、Pixel Token、Band Token</td><td>文本、图像、高光谱</td><td>Raw Input → Token Sequence</td></tr>
+            <tr><td>位置编码</td><td>告诉模型每个 token 在哪里</td><td>RoPE、ALiBi、2D PE、Relative PE</td><td>NLP、视觉、遥感</td><td>Token + Position</td></tr>
+            <tr><td>扫描方式</td><td>模型按什么路线读数据</td><td>Cross Scan、双向扫描、蛇形扫描</td><td>Vision Mamba、高光谱</td><td>2D/3D Data → Scan Path</td></tr>
+            <tr><td>光谱编码</td><td>把波段当成序列</td><td>Band Tokenization、Spectral Embedding</td><td>高光谱、土壤反演</td><td>Bands → Spectral Tokens</td></tr>
+            <tr><td>图编码</td><td>把对象当成节点和边</td><td>Node/Edge Embedding、Graph PE</td><td>点云、交通、图数据</td><td>Graph → Node/Edge Features</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>B. 局部特征类</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>子类</th><th>主要作用</th><th>典型模块</th><th>论文表达</th><th>适合摘抄点</th></tr></thead>
+          <tbody>
+            <tr><td>普通卷积</td><td>提取局部纹理、边缘</td><td>Conv、Depthwise Conv</td><td>local feature extraction</td><td>卷积核大小、分组方式</td></tr>
+            <tr><td>大核卷积</td><td>扩大感受野</td><td>LSKNet、EPLKB、Large Kernel Block</td><td>large-kernel context modeling</td><td>如何降低大核计算成本</td></tr>
+            <tr><td>多尺度卷积</td><td>同时看小尺度和大尺度</td><td>Inception、PKINet、EMCAD</td><td>multi-scale representation</td><td>多分支结构怎么融合</td></tr>
+            <tr><td>空洞卷积</td><td>扩大感受野但少加参数</td><td>Dilated Conv、DilateFormer</td><td>dilated context aggregation</td><td>dilation rate 设计</td></tr>
+            <tr><td>局部窗口</td><td>只在局部区域交互</td><td>Window Attention、Local Attention</td><td>window-based modeling</td><td>窗口大小、移动窗口策略</td></tr>
+            <tr><td>CNN + Mamba</td><td>CNN 抓局部，Mamba 抓长程</td><td>Conv-SSM Hybrid</td><td>local-global hybrid backbone</td><td>局部分支与长程分支分工</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>C-D-E. 全局交互、长程建模、记忆更新</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>类别</th><th>子类/模型</th><th>通俗理解</th><th>核心优势</th><th>主要记录字段</th></tr></thead>
+          <tbody>
+            <tr><td>C 全局交互</td><td>标准 Attention</td><td>每个 token 都能看其他 token</td><td>内容寻址强、表达力强</td><td>复杂度、Q/K/V、注意力范围</td></tr>
+            <tr><td>C 全局交互</td><td>Cross-Attention</td><td>一种特征去查询另一种特征</td><td>适合多模态、多分支融合</td><td>Query 来自哪一路，Key/Value 来自哪一路</td></tr>
+            <tr><td>C 全局交互</td><td>Linear Attention</td><td>不显式构造完整 L×L 注意力矩阵</td><td>降低复杂度</td><td>核函数、递推形式、近似误差</td></tr>
+            <tr><td>D 长程建模</td><td>S4 / S5 / SSM</td><td>把历史压缩进状态</td><td>长序列、理论基础好</td><td>状态矩阵 A、离散化、scan/conv 实现</td></tr>
+            <tr><td>D 长程建模</td><td>Mamba</td><td>让状态根据输入选择性更新</td><td>线性复杂度、状态小</td><td>选择机制、selective scan、状态大小</td></tr>
+            <tr><td>D 长程建模</td><td>Mamba-2 / SSD</td><td>把 SSM 与 attention 用结构化矩阵统一</td><td>更快、更硬件友好</td><td>semiseparable matrix、block decomposition</td></tr>
+            <tr><td>D 长程建模</td><td>Hyena</td><td>长卷积 + 门控替代注意力</td><td>超长上下文高效</td><td>long convolution、gating、FFT</td></tr>
+            <tr><td>E 记忆更新</td><td>门控更新</td><td>用门控制写入和遗忘</td><td>减少状态污染、缓解梯度问题</td><td>gate 公式、写入/遗忘对象</td></tr>
+            <tr><td>E 记忆更新</td><td>选择性更新</td><td>当前输入决定哪些信息保留</td><td>内容选择能力强</td><td>A/B/C/Δ 是否输入依赖</td></tr>
+            <tr><td>E 记忆更新</td><td>Delta 更新</td><td>像编辑记忆表一样更新状态</td><td>更精细地擦写压缩记忆</td><td>erase/write 机制、关联记忆形式</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>F-G. 选择注意力与融合类</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>类别</th><th>子类</th><th>代表模块</th><th>解决痛点</th><th>可迁移方向</th></tr></thead>
+          <tbody>
+            <tr><td>F</td><td>通道注意力</td><td>SENet、ECA、SKNet</td><td>哪些通道更重要</td><td>遥感图像、医学图像、CNN backbone</td></tr>
+            <tr><td>F</td><td>空间注意力</td><td>CBAM、DANet、SimAM</td><td>哪些空间位置更重要</td><td>检测、分割、变化检测</td></tr>
+            <tr><td>F</td><td>时间注意力</td><td>PAM、CT-MSA、Trend-aware</td><td>哪些时间片更关键</td><td>时间序列预测、传感器数据</td></tr>
+            <tr><td>F</td><td>光谱注意力</td><td>Spectral Gate、Band Attention</td><td>哪些波段更重要</td><td>高光谱、SOC 预测</td></tr>
+            <tr><td>G</td><td>Add / Concat</td><td>ResNet Add、U-Net Concat</td><td>基础融合</td><td>所有任务</td></tr>
+            <tr><td>G</td><td>Gate Fusion</td><td>GFU、Mixture Gate</td><td>动态决定不同分支占比</td><td>空间-光谱融合、局部-全局融合</td></tr>
+            <tr><td>G</td><td>Cross-Attention Fusion</td><td>Cross-Attn</td><td>一种模态主动查询另一种模态</td><td>多模态、遥感+文本、图像+光谱</td></tr>
+            <tr><td>G</td><td>Knowledge Fusion</td><td>SoilML、Physics-guided ML</td><td>把领域知识融入模型</td><td>土壤、气象、水文、科学计算</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>H-I-J. 训练稳定、计算加速、知识约束</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>类别</th><th>子类</th><th>通俗理解</th><th>典型技术</th><th>记录重点</th></tr></thead>
+          <tbody>
+            <tr><td>H</td><td>残差连接</td><td>给梯度一条捷径</td><td>Residual、Skip Connection</td><td>放在 block 内还是 block 外</td></tr>
+            <tr><td>H</td><td>归一化</td><td>稳定特征分布</td><td>LayerNorm、RMSNorm、BatchNorm</td><td>PreNorm/PostNorm、归一化维度</td></tr>
+            <tr><td>H</td><td>初始化</td><td>让模型一开始别乱</td><td>HiPPO、stable init</td><td>状态矩阵 A 如何初始化</td></tr>
+            <tr><td>I</td><td>注意力加速</td><td>避免完整 L×L 矩阵</td><td>Sparse/Linear Attention、FlashAttention</td><td>时间复杂度、显存、是否改变数学结果</td></tr>
+            <tr><td>I</td><td>状态递推加速</td><td>把一步步递推并行起来</td><td>Parallel Scan、Selective Scan、SSD</td><td>scan 类型、是否硬件友好</td></tr>
+            <tr><td>I</td><td>结构化矩阵</td><td>让矩阵有特殊结构，便于快速计算</td><td>Diagonal、DPLR、Semiseparable</td><td>矩阵结构、复杂度下降</td></tr>
+            <tr><td>J</td><td>物理约束</td><td>预测不能违反物理规律</td><td>PINN、PIML</td><td>PDE residual、边界条件、守恒项</td></tr>
+            <tr><td>J</td><td>土壤知识约束</td><td>预测要符合土壤规律</td><td>SoilML、SCORPAN</td><td>土壤先验、深度一致性、合理范围</td></tr>
+            <tr><td>J</td><td>光谱先验</td><td>波段有连续性和物理含义</td><td>Spectral Smoothness、Band Prior</td><td>波段重要性、吸收峰、噪声波段</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="paper-type">
+      <h2>3. K-T 论文类型分类</h2>
+      <div class="callout green">
+        <div class="icon">🧭</div>
+        <div>A-J 解决"模型怎么拆"，K-T 解决"论文怎么读"。有些论文不是提出新模块，而是提出数据集、指标、理论、部署方案、综述地图，这时用 K-T。</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>编号</th><th>论文类型</th><th>判断标准</th><th>摘抄重点</th><th>常见价值</th></tr></thead>
+          <tbody>
+            <tr><td>K</td><td>数据与基准</td><td>主要贡献是新数据集或 benchmark</td><td>数据规模、标注方式、任务设置、划分方式</td><td>以后实验可用</td></tr>
+            <tr><td>L</td><td>评价指标</td><td>主要讨论如何评价模型</td><td>指标公式、适用场景、优缺点</td><td>写实验部分可用</td></tr>
+            <tr><td>M</td><td>优化算法</td><td>主要改 optimizer、scheduler、loss weighting</td><td>更新公式、收敛速度、训练稳定性</td><td>提升训练效果</td></tr>
+            <tr><td>N</td><td>学习范式</td><td>自监督、半监督、迁移、多任务、预训练</td><td>预训练任务、伪标签、迁移方式</td><td>小样本任务很重要</td></tr>
+            <tr><td>O</td><td>可解释性</td><td>解释模型为什么这么预测</td><td>解释方法、可视化、波段/特征重要性</td><td>科学任务加分</td></tr>
+            <tr><td>P</td><td>可信学习</td><td>鲁棒性、不确定性、OOD、校准</td><td>不确定性估计、分布外检测、鲁棒测试</td><td>让模型更可靠</td></tr>
+            <tr><td>Q</td><td>部署系统</td><td>量化、剪枝、蒸馏、硬件加速</td><td>模型大小、速度、功耗、设备平台</td><td>边缘智能感知可用</td></tr>
+            <tr><td>R</td><td>理论分析</td><td>主要是证明、复杂度、泛化、稳定性</td><td>定理结论、假设条件、证明思路</td><td>增强论文严谨性</td></tr>
+            <tr><td>S</td><td>综述地图</td><td>survey、taxonomy、路线图</td><td>分类方式、发展脉络、开放问题</td><td>写开题/综述可用</td></tr>
+            <tr><td>T</td><td>应用任务</td><td>主要落在具体场景</td><td>任务定义、数据、评价、实际痛点</td><td>连接你的研究方向</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="formula">
+      <h2>4. U：公式 / 算子 / 损失函数创新标签</h2>
+      <p>很多高级论文的核心不是复杂结构图，而是一个关键公式：它改变了状态更新、矩阵计算、损失约束或信息流动方式。因此 U 不是单独文件夹，而是<strong>横向标签</strong>：一篇论文可以同时属于 D/E/I，又带 U1/U3 标签。</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>编号</th><th>公式创新类型</th><th>改的是哪里</th><th>典型例子</th><th>摘抄重点</th></tr></thead>
+          <tbody>
+            <tr><td>U1</td><td>状态更新公式</td><td>h_t 如何由 h_{t-1} 和 x_t 得到</td><td>SSM、Mamba、xLSTM、DeltaNet</td><td>写入、遗忘、读取规则</td></tr>
+            <tr><td>U2</td><td>注意力公式</td><td>QKᵀV 怎么改</td><td>Linear Attention、RetNet、HiLo</td><td>复杂度、表达能力、近似方式</td></tr>
+            <tr><td>U3</td><td>矩阵参数化公式</td><td>A、K、Toeplitz、低秩矩阵怎么表示</td><td>S4、Mamba-2、Hyena</td><td>为什么更快、更稳、更省显存</td></tr>
+            <tr><td>U4</td><td>卷积/滤波公式</td><td>长卷积、频域滤波怎么做</td><td>Hyena、TCN、ModernTCN</td><td>感受野、FFT、长程依赖</td></tr>
+            <tr><td>U5</td><td>门控公式</td><td>哪些信息通过，哪些被压制</td><td>GLU、Mamba Gate、SENet</td><td>门控对象：通道/空间/状态/波段</td></tr>
+            <tr><td>U6</td><td>损失函数公式</td><td>Loss 如何组成</td><td>PINN、SoilML、Contrastive Loss</td><td>每一项 loss 的物理或任务意义</td></tr>
+            <tr><td>U7</td><td>归一化/优化公式</td><td>梯度和特征怎么稳定</td><td>LayerNorm、RMSNorm、AdamW</td><td>训练稳定性、收敛速度</td></tr>
+            <tr><td>U8</td><td>采样/权重公式</td><td>样本、token、collocation point 如何加权</td><td>RAR、Focal Loss、Hard Mining</td><td>难样本、边界点、稀缺样本如何处理</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout orange">
+        <div class="icon">⚠️</div>
+        <div><strong>判断公式创新是否有价值：</strong>它是否解决真实痛点？是否更快、更稳、更准、更符合物理/土壤规律？是否有复杂度分析和消融实验？如果只是把符号写复杂，价值不大。</div>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <h2>5. 读论文归类流程</h2>
+      <div class="flow">Step 1：判断论文类型
+  方法 / 数据集 / 综述 / 理论 / 应用 / 系统 / 优化 / 可信学习
+
+Step 2：判断模型改了哪一步
+  输入编码 → 局部特征 → 全局交互 → 长程建模 → 记忆更新 → 选择注意力 → 融合 → 训练稳定 → 计算加速 → 知识约束
+
+Step 3：判断是否有公式创新
+  状态更新 / 注意力 / 矩阵参数化 / 长卷积 / 门控 / 损失函数 / 优化 / 采样
+
+Step 4：判断能否为我所用
+  能不能迁移到：土壤有机碳预测 / 高光谱分类 / 遥感分割 / 时序传感器 / 边缘智能硬件
+
+Step 5：记录证据
+  消融实验 / 复杂度分析 / 可解释性 / 不确定性 / 多数据集验证</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>论文中出现的内容</th><th>优先归类</th><th>可能附加标签</th><th>你要追问</th></tr></thead>
+          <tbody>
+            <tr><td>新 patch、新 token、新扫描路线</td><td>A 输入编码</td><td>U8 采样/权重</td><td>为什么这种排列更适合数据结构？</td></tr>
+            <tr><td>新 CNN、大核、多尺度结构</td><td>B 局部特征</td><td>G 融合 / I 加速</td><td>感受野变大了吗？计算变贵了吗？</td></tr>
+            <tr><td>新 attention、cross-attention</td><td>C 全局交互</td><td>U2 注意力公式</td><td>复杂度是否降低？交互能力是否保留？</td></tr>
+            <tr><td>新 SSM、Mamba、Hyena、xLSTM</td><td>D 长程建模</td><td>E 记忆更新 / I 加速 / U1-U4</td><td>历史放在哪里？怎么更新？怎么加速？</td></tr>
+            <tr><td>新 gate、新 state update</td><td>E 记忆更新</td><td>U1 / U5</td><td>它控制写入、遗忘、读取中的哪一步？</td></tr>
+            <tr><td>通道/空间/光谱/时间注意力</td><td>F 选择注意力</td><td>U5 门控公式</td><td>它选择什么？选择依据是什么？</td></tr>
+            <tr><td>多分支、多模态、多尺度融合</td><td>G 特征融合</td><td>C Cross-Attention / U5</td><td>融合权重是固定还是自适应？</td></tr>
+            <tr><td>Norm、Residual、Init、Regularization</td><td>H 训练稳定</td><td>U7 优化公式</td><td>解决梯度、状态稳定还是过拟合？</td></tr>
+            <tr><td>Flash、Scan、FFT、低秩、结构化矩阵</td><td>I 计算加速</td><td>U3 / U4</td><td>少算、快算、少存，还是更硬件友好？</td></tr>
+            <tr><td>物理、土壤、光谱、SCORPAN 约束</td><td>J 知识约束</td><td>U6 损失函数</td><td>这个约束是否真符合领域规律？</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="tables">
+      <h2>6. 速查表</h2>
+      <h3>6.1 创新类型速查</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>你看到的创新</th><th>它通常属于</th><th>强创新的判断标准</th><th>弱创新的风险</th></tr></thead>
+          <tbody>
+            <tr><td>多加一个注意力模块</td><td>F / C</td><td>明确解决噪声、尺度、光谱、空间选择问题</td><td>只是堆模块</td></tr>
+            <tr><td>改一个状态更新公式</td><td>E / U1</td><td>更会记、更会忘、更稳定、更适合长序列</td><td>只是换符号</td></tr>
+            <tr><td>改一个矩阵结构</td><td>I / U3</td><td>复杂度或显存显著下降，数值稳定性提升</td><td>数学包装，实验无提升</td></tr>
+            <tr><td>改一个 loss</td><td>J / U6</td><td>每一项都有物理/任务含义，消融有效</td><td>损失项乱加，权重难调</td></tr>
+            <tr><td>设计多分支融合</td><td>G</td><td>每个分支有明确分工，融合自适应</td><td>concat 后参数变多</td></tr>
+            <tr><td>设计轻量模型</td><td>I / Q</td><td>速度、显存、参数、精度都报告清楚</td><td>只报参数不报真实速度</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>6.2 实验证明速查</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>你提出的东西</th><th>必须做什么实验</th><th>最好再补什么</th></tr></thead>
+          <tbody>
+            <tr><td>新模块</td><td>消融实验：去掉模块是否下降</td><td>可视化模块作用</td></tr>
+            <tr><td>新公式</td><td>与旧公式对比 + 复杂度分析</td><td>理论解释或稳定性分析</td></tr>
+            <tr><td>新融合方式</td><td>与 Add / Concat / Attention 融合对比</td><td>展示不同分支权重变化</td></tr>
+            <tr><td>新加速算法</td><td>速度、显存、FLOPs、吞吐量</td><td>不同序列长度/分辨率下曲线</td></tr>
+            <tr><td>新知识约束</td><td>有/无约束对比</td><td>合理性、误差分布、可解释性</td></tr>
+            <tr><td>新遥感/土壤模型</td><td>多数据集、多指标、消融</td><td>波段重要性、空间可视化、不确定性</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="templates">
+      <h2>7. 摘抄模板</h2>
+      <h3>7.1 方法组件摘抄模板</h3>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th>字段</th><th>填写内容</th></tr>
+            <tr><td>方法名称</td><td>例如：Selective Scan / Patch Cross Scanning / Spatial-spectral Mixture Gate</td></tr>
+            <tr><td>所属大类</td><td>A-T 中的主类，例如 D 长程建模 + I 计算加速</td></tr>
+            <tr><td>公式标签</td><td>U1-U8，例如 U1 状态更新公式</td></tr>
+            <tr><td>解决的问题</td><td>它针对什么痛点：长序列、显存、噪声、小样本、物理一致性</td></tr>
+            <tr><td>核心操作</td><td>一句话写清楚怎么做</td></tr>
+            <tr><td>能否画图</td><td>可以画成输入 → 模块 → 输出，或者公式流程图</td></tr>
+            <tr><td>可迁移方向</td><td>土壤、高光谱、遥感、时序、边缘设备</td></tr>
+            <tr><td>可组合模块</td><td>能和 CNN / Mamba / Attention / SoilML / PINN 哪些结合</td></tr>
+            <tr><td>实验证明</td><td>消融、复杂度、可解释性、不确定性、多数据集</td></tr>
+            <tr><td>论文表达句</td><td>以后写论文可复用的英文/中文表述</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>7.2 公式创新摘抄模板</h3>
+      <div class="table-wrap">
+        <table>
+          <tbody>
+            <tr><th>字段</th><th>填写内容</th></tr>
+            <tr><td>公式名称</td><td>例如：input-dependent state transition</td></tr>
+            <tr><td>原公式</td><td>旧方法怎么写</td></tr>
+            <tr><td>新公式</td><td>作者怎么改</td></tr>
+            <tr><td>改了哪一项</td><td>A / B / C / Δ / gate / loss / norm / sampling</td></tr>
+            <tr><td>改动含义</td><td>通俗解释它代表什么</td></tr>
+            <tr><td>解决痛点</td><td>计算、记忆、梯度、物理约束、泛化</td></tr>
+            <tr><td>复杂度变化</td><td>O(N²) → O(N)？显存是否下降？</td></tr>
+            <tr><td>实验支持</td><td>消融、速度、显存、鲁棒性、泛化</td></tr>
+            <tr><td>是否能迁移</td><td>能否用于高光谱、土壤、遥感、传感器序列</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="examples">
+      <h2>8. 典型论文示例</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>论文/方法</th><th>主分类</th><th>U 标签</th><th>一句话总结</th><th>可迁移想法</th></tr></thead>
+          <tbody>
+            <tr><td>Mamba</td><td><span class="tag blue">D 长程建模</span><span class="tag green">E 记忆更新</span><span class="tag orange">I 加速</span></td><td>U1 / U3 / U5</td><td>让 SSM 参数随输入变化，实现选择性记忆，并用硬件友好 scan 加速</td><td>光谱序列、长时间序列、遥感图像扫描</td></tr>
+            <tr><td>S4</td><td><span class="tag blue">D 长程建模</span><span class="tag orange">I 加速</span><span class="tag purple">H 稳定</span></td><td>U1 / U3</td><td>用结构化状态矩阵和高效计算路径处理长程依赖</td><td>连续传感器、音频、长时序、科学序列</td></tr>
+            <tr><td>S5</td><td><span class="tag blue">D 长程建模</span><span class="tag orange">I 加速</span><span class="tag purple">H 稳定</span></td><td>U1 / U3</td><td>用 MIMO SSM 和 parallel scan 简化 S4 实现</td><td>需要高效递推和不规则采样的序列任务</td></tr>
+            <tr><td>Hyena</td><td><span class="tag blue">D 长程建模</span><span class="tag green">E 门控</span><span class="tag orange">I 加速</span></td><td>U4 / U5</td><td>用长卷积和数据控制门控替代 attention</td><td>长光谱、长文本、基因、时序</td></tr>
+            <tr><td>Vision Mamba</td><td><span class="tag blue">A 输入编码</span><span class="tag blue">D 长程建模</span><span class="tag orange">I 加速</span></td><td>U1 / U5</td><td>把图像序列化后用双向 Mamba 做视觉 backbone</td><td>高分辨率遥感图像、变化检测</td></tr>
+            <tr><td>S2Mamba</td><td><span class="tag blue">A 输入编码</span><span class="tag blue">D 长程建模</span><span class="tag green">G 融合</span></td><td>U1 / U5</td><td>空间扫描 + 光谱扫描 + 空间-光谱门控融合</td><td>SOC 预测、高光谱土壤属性反演</td></tr>
+            <tr><td>PINN</td><td><span class="tag red">J 知识约束</span><span class="tag purple">M 优化</span></td><td>U6 / U8</td><td>把 PDE 残差、边界条件、数据误差写进 loss</td><td>土壤水分、地球系统、物理约束遥感</td></tr>
+            <tr><td>SoilML</td><td><span class="tag red">J 土壤知识</span><span class="tag purple">O 可解释</span><span class="tag gray">T 应用</span></td><td>U6</td><td>把土壤知识、观测先验、规则约束加入 ML</td><td>土壤有机碳、数字土壤制图、多深度预测</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+</main>
+</div>
+</body>
+</html>
