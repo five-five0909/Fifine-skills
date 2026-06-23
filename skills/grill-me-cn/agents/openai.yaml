@@ -1,0 +1,5 @@
+interface:
+  display_name: "Grill Me CN"
+  short_description: "Pressure-test a plan, workflow, or execution path before acting."
+  icon: "sparkles"
+  brand_color: "#7C3AED"

@@ -1,16 +1,17 @@
 {
   "skills": [
-    "paper-weaver",
-    "lit-speed-read",
     "grill-me-cn",
+    "idea-hook-forge",
+    "lit-speed-read",
     "llm-research-grill",
-    "write-research-grill",
+    "paper-weaver",
+    "parallel-executor-with-trellis",
     "prompt-amplifier",
+    "ref-classify",
+    "ref-rename",
     "tavily-search",
     "topic-refiner",
-    "ref-rename",
-    "ref-classify",
     "trellis-task-orchestrator",
-    "parallel-executor-with-trellis"
+    "write-research-grill"
   ]
 }

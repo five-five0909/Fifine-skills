@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ref Rename"
+  short_description: "Batch rename research PDFs from extracted metadata and title inference."
+  icon: "sparkles"
+  brand_color: "#7C3AED"

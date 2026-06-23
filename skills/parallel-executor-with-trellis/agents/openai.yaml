@@ -1,0 +1,5 @@
+interface:
+  display_name: "Parallel Executor With Trellis"
+  short_description: "Split and execute larger Trellis tasks in parallel workstreams."
+  icon: "sparkles"
+  brand_color: "#7C3AED"

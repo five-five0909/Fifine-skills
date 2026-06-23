@@ -1,5 +1,0 @@
-interface:
-  display_name: "LLM Research Grill"
-  short_description: "Rigorous self-grilling for LLM, PyTorch, datasets, papers, and experiments."
-  icon: "🧪"
-  brand_color: "#7C3AED"

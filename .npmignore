@@ -1,3 +1,16 @@
 __pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
+.venv/
+.cache/
+.paddlex/
+dist/
+build/
+.DS_Store
+.env
+.env.*
+*.log
+.trellis/
+.claude/
+.codex/

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Prompt Amplifier"
+  short_description: "Rewrite a user instruction into a stronger execution prompt."
+  icon: "sparkles"
+  brand_color: "#7C3AED"

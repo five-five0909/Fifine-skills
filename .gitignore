@@ -1,8 +1,17 @@
 node_modules/
+.venv/
 __pycache__/
+**/__pycache__/
 *.pyc
 *.pyo
+.cache/
+.paddlex/
+dist/
+build/
+.DS_Store
 .env
+.env.*
+*.log
 .codegraph/
 .trellis/.runtime/
 .trellis/tasks/

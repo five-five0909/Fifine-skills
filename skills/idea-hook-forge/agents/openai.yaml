@@ -1,0 +1,5 @@
+interface:
+  display_name: "Idea Hook Forge"
+  short_description: "Extract hooks and structured idea artifacts from a paper PDF."
+  icon: "sparkles"
+  brand_color: "#7C3AED"

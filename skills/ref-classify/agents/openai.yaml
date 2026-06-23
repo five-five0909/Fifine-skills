@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ref Classify"
+  short_description: "Classify research PDFs into topic folders with confidence checks."
+  icon: "sparkles"
+  brand_color: "#7C3AED"

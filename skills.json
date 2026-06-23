@@ -1,0 +1,72 @@
+{
+  "name": "Fifine Skills",
+  "description": "A collection of reusable AI agent skills.",
+  "repository": "five-five0909/Fifine-skills",
+  "skills": [
+    {
+      "name": "grill-me-cn",
+      "path": "skills/grill-me-cn",
+      "description": "Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction."
+    },
+    {
+      "name": "idea-hook-forge",
+      "path": "skills/idea-hook-forge",
+      "description": "Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output."
+    },
+    {
+      "name": "lit-speed-read",
+      "path": "skills/lit-speed-read",
+      "description": "Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review."
+    },
+    {
+      "name": "llm-research-grill",
+      "path": "skills/llm-research-grill",
+      "description": "Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense."
+    },
+    {
+      "name": "paper-weaver",
+      "path": "skills/paper-weaver",
+      "description": "Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments."
+    },
+    {
+      "name": "parallel-executor-with-trellis",
+      "path": "skills/parallel-executor-with-trellis",
+      "description": "Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification."
+    },
+    {
+      "name": "prompt-amplifier",
+      "path": "skills/prompt-amplifier",
+      "description": "Use this skill when the user wants an instruction rewritten into a stronger execution prompt before handing it to another model or workflow, especially when adherence and precision matter."
+    },
+    {
+      "name": "ref-classify",
+      "path": "skills/ref-classify",
+      "description": "Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches."
+    },
+    {
+      "name": "ref-rename",
+      "path": "skills/ref-rename",
+      "description": "Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices."
+    },
+    {
+      "name": "tavily-search",
+      "path": "skills/tavily-search",
+      "description": "Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory."
+    },
+    {
+      "name": "topic-refiner",
+      "path": "skills/topic-refiner",
+      "description": "Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem."
+    },
+    {
+      "name": "trellis-task-orchestrator",
+      "path": "skills/trellis-task-orchestrator",
+      "description": "Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks."
+    },
+    {
+      "name": "write-research-grill",
+      "path": "skills/write-research-grill",
+      "description": "Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting."
+    }
+  ]
+}

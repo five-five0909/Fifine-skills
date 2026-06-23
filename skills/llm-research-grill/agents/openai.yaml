@@ -1,0 +1,5 @@
+interface:
+  display_name: "LLM Research Grill"
+  short_description: "Audit LLM and ML research plans, datasets, and experiments."
+  icon: "sparkles"
+  brand_color: "#7C3AED"

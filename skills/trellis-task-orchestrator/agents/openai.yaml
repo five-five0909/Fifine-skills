@@ -1,0 +1,5 @@
+interface:
+  display_name: "Trellis Task Orchestrator"
+  short_description: "Generate Trellis task plans, PRDs, and execution scaffolding."
+  icon: "sparkles"
+  brand_color: "#7C3AED"
