@@ -16,6 +16,17 @@ description: >
 - **公式必须原文保真。** 公式本体要和论文一致；解释、注释、符号说明可以额外补充，但不能篡改公式。
 - **引用统一使用 reference_key 命名规则：** `{year}_{title}_{authors}`。
 
+## 输出目录确认
+
+在进入主流程前，AI **必须**先询问用户输出文件存放位置：
+
+> 生成的所有文件将存放在哪里？  
+> 默认路径：**PDF 所在目录下的 `idea/` 子文件夹**  
+> 例如 PDF 在 `/papers/gpt4.pdf`，则默认输出到 `/papers/idea/`  
+> 如需自定义，请告知完整路径。
+
+用户确认后，将路径作为 `--output-dir` 参数传给脚本。若用户直接回车/不填，使用默认路径。
+
 ## 用户入口
 - `@idea-hook-forge <pdf路径>`
 - `@idea-hook-forge <pdf路径> 全流程`
@@ -53,7 +64,7 @@ description: >
 
 ## 脚本入口
 ```bash
-python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "<用户原话>"
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "<用户原话>" --output-dir <确认后的输出目录>
 ```
 
 ## 输出结构
@@ -83,6 +94,21 @@ final_report.md
 ## 引用命名规则
 统一生成：
 `2010_Using data mining to model and interpret soil diffuse reflectance spectra_Viscarra Rossel & Behrens`
+
+## 公式审查步骤（收尾阶段）
+
+HTML 生成后，脚本自动在同目录输出 `formula_manifest.json`。
+AI 必须执行以下逐条审查：
+
+1. 读取 `formula_manifest.json`
+2. 对每条 `status: pending` 的公式逐条检查 `raw` 字段：
+   - HTML 实体残留（`&lt;` `&gt;` `&amp;`）→ 修改 HTML 中对应公式，status 改为 `fixed`
+   - 括号 `{}` 不平衡 → status 改为 `flagged`，note 填写原因
+   - `\begin` / `\end` 不配对 → status 改为 `flagged`
+   - 公式内容为空 → status 改为 `flagged`
+   - 无问题 → status 改为 `ok`
+3. 全部审查后将更新后的 manifest 写回文件
+4. 打印摘要：ok N 条 / fixed N 条 / flagged N 条
 
 ## 重要说明
 - 这个 skill 的目标不是生成传统 Abstract/Introduction/Related Work 精读报告。

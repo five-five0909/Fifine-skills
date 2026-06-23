@@ -34,6 +34,17 @@ description: >
    - 用户可以多选模块
    - 但模块执行顺序仍由脚本固定，不允许自由调换
 
+## 输出目录确认
+
+在进入主流程前，AI **必须**先询问用户输出文件存放位置：
+
+> 生成的所有文件将存放在哪里？  
+> 默认路径：**PDF 所在目录下的 `weave/` 子文件夹**  
+> 例如 PDF 在 `/papers/gpt4.pdf`，则默认输出到 `/papers/weave/`  
+> 如需自定义，请告知完整路径。
+
+用户确认后，将路径作为 `--output-dir` 参数传给脚本。若用户直接回车/不填，使用默认路径。
+
 ## 用户入口
 
 对用户来说，标准使用方式就是：
@@ -68,7 +79,7 @@ description: >
 内部执行时应始终调用**当前已安装 skill 目录**中的主控脚本，而不是假设仓库根目录或 Claude 全局目录：
 
 ```bash
-python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "<用户原话>"
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "<用户原话>" --output-dir <确认后的输出目录>
 ```
 
 主控脚本在全部阶段通过后，会自动额外生成：
@@ -79,11 +90,11 @@ python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto
 高级用法：
 
 ```bash
-python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode first-pass
-python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode second-pass
-python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode custom --modules abstract,introduction,experiments
-python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看实验"
-python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看摘要和实验"
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode first-pass --output-dir <输出目录>
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode second-pass --output-dir <输出目录>
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode custom --modules abstract,introduction,experiments --output-dir <输出目录>
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看实验" --output-dir <输出目录>
+python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto --request-text "只看摘要和实验" --output-dir <输出目录>
 ```
 
 ## 硬编码主流程
@@ -130,6 +141,21 @@ python <当前skill目录>/scripts/run_pipeline.py --pdf <paper.pdf> --mode auto
   - “视角切换” 采用居中的结构化卡片块，不再依赖容易炸掉的 LaTeX `cases` 展示
   - 允许保留概念卡和总结，但主体必须更像论文精读笔记，而不是模板拼接
 - `experiments`：实验主张-证据链、消融与效率判断
+
+## 公式审查步骤（收尾阶段）
+
+HTML 生成后，脚本自动在同目录输出 `formula_manifest.json`。
+AI 必须执行以下逐条审查：
+
+1. 读取 `formula_manifest.json`
+2. 对每条 `status: pending` 的公式逐条检查 `raw` 字段：
+   - HTML 实体残留（`&lt;` `&gt;` `&amp;`）→ 修改 HTML 中对应公式，status 改为 `fixed`
+   - 括号 `{}` 不平衡 → status 改为 `flagged`，note 填写原因
+   - `\begin` / `\end` 不配对 → status 改为 `flagged`
+   - 公式内容为空 → status 改为 `flagged`
+   - 无问题 → status 改为 `ok`
+3. 全部审查后将更新后的 manifest 写回文件
+4. 打印摘要：ok N 条 / fixed N 条 / flagged N 条
 
 ## 重要说明
 

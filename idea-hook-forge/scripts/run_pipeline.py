@@ -243,6 +243,12 @@ def main() -> int:
             'HTML 主报告已生成，请优先查看 final_report.html\n', encoding='utf-8'
         )
         print(output_root / 'final_report.html')
+        # 硬编码收尾：提取公式清单供 AI 逐条审查
+        import importlib.util as _ilu
+        _cf_spec = _ilu.spec_from_file_location("check_formula", Path(__file__).parent / "check_formula.py")
+        _cf_mod = _ilu.module_from_spec(_cf_spec)
+        _cf_spec.loader.exec_module(_cf_mod)
+        _cf_mod.run_check(output_root / "final_report.html", engine="mathjax")
     else:
         print(output_root)
         print('请补齐各阶段 values.json 中的字段后重新运行。')

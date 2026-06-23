@@ -176,6 +176,12 @@ def main() -> int:
     html_path = render_workspace_html(workspace)
     print(f"[COMPLETE] 全部阶段完成，已生成总报告：{workspace / 'final_report.md'}")
     print(f"[COMPLETE] 已生成 HTML 报告：{html_path}")
+    # 硬编码收尾：提取公式清单供 AI 逐条审查
+    import importlib.util as _ilu
+    _cf_spec = _ilu.spec_from_file_location("check_formula", Path(__file__).parent / "check_formula.py")
+    _cf_mod = _ilu.module_from_spec(_cf_spec)
+    _cf_spec.loader.exec_module(_cf_mod)
+    _cf_mod.run_check(html_path, engine="katex")
     return 0
 
 
