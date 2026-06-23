@@ -1,0 +1,7 @@
+{"file": ".trellis/tasks/06-23-html-formula-check-paper-weaver-idea-hook-forge-html/prd.md", "reason": "完整需求：manifest 字段设计、两种 engine 正则、run_pipeline 集成方式、SKILL.md 补充内容"}
+{"file": "pdf-paper-weaver/scripts/run_pipeline.py", "reason": "weaver 主控脚本末尾集成点，HTML 渲染后追加调用 check_formula"}
+{"file": "pdf-paper-weaver/scripts/render_html_report.py", "reason": "KaTeX 公式在 HTML 中的实际结构：<div class='math-block'>$$...$$</div>"}
+{"file": "pdf-paper-weaver/SKILL.md", "reason": "需补充 AI 公式审查步骤节"}
+{"file": "idea-hook-forge/scripts/run_pipeline.py", "reason": "forge 主控脚本末尾集成点"}
+{"file": "idea-hook-forge/scripts/render_html_report.py", "reason": "MathJax 公式在 HTML 中的实际结构：\\[...\\] in formula-math div"}
+{"file": "idea-hook-forge/SKILL.md", "reason": "需补充 AI 公式审查步骤节"}
