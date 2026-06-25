@@ -1,0 +1,5 @@
+interface:
+  display_name: "Dev Done Flow"
+  short_description: "Structured development workflow guide with local docs, stage-ordered TODO tracking, and AI judgment space for optional stages."
+  icon: "workflow"
+  brand_color: "#0F766E"

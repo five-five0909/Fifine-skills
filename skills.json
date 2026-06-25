@@ -4,6 +4,11 @@
   "repository": "five-five0909/Fifine-skills",
   "skills": [
     {
+      "name": "dev-done-flow",
+      "path": "skills/dev-done-flow",
+      "description": "Use this skill when the user wants to start, plan, structure, diagnose, or iterate on a development task, especially to get structured workflow documents, stage-ordered TODO tracking, and guided discovery through requirements, design, implementation, and verification."
+    },
+    {
       "name": "grill-me-cn",
       "path": "skills/grill-me-cn",
       "description": "Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction."
