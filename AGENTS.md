@@ -37,6 +37,8 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | Skill | Description |
 |-------|-------------|
 | dev-done-flow | 通用开发工作流引导工具，硬编码阶段序列 + required/optional 标记 + TODO 动态追踪 |
+| rethlas | AI 驱动的数学公式形式化证明工具，驱动完整证明工作流 |
+| idea-hook-forge | 论文 PDF 结构化解构工具，提取 hook 并输出 HTML 分析报告 |
 | paper-weaver | 统一论文阅读 skill，支持 first-pass / second-pass / full / custom 模式 |
 | lit-speed-read | 学术文献速读/精读引导工具，输出 HTML 阅读报告 |
 | topic-refiner | 研究选题精炼工具 |

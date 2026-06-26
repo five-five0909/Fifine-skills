@@ -30,6 +30,7 @@ npm install github:five-five0909/Fifine-skills
 
 ## Skills
 
+- `dev-done-flow`: Use this skill when the user wants to start, plan, structure, diagnose, or iterate on a development task through a guided workflow.
 - `grill-me-cn`: Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction.
 - `idea-hook-forge`: Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output.
 - `lit-speed-read`: Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review.
@@ -41,6 +42,7 @@ npm install github:five-five0909/Fifine-skills
 - `ref-rename`: Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices.
 - `tavily-search`: Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory.
 - `topic-refiner`: Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem.
+- `rethlas`: Use this skill when the user wants to prove a math problem using the Rethlas AI-driven formal proof system.
 - `trellis-task-orchestrator`: Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks.
 - `write-research-grill`: Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting.
 
