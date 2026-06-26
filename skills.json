@@ -72,6 +72,11 @@
       "name": "write-research-grill",
       "path": "skills/write-research-grill",
       "description": "Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting."
+    },
+    {
+      "name": "rethlas",
+      "path": "skills/rethlas",
+      "description": "Use this skill when the user wants to formally prove a math problem. Claude Code acts as the reasoning agent, driving the full proof pipeline (explore → plan → prove → verify) using in-context reasoning and MCP memory tools. Outputs a verified blueprint_verified.md."
     }
   ]
 }
