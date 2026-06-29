@@ -1,7 +1,7 @@
 ---
 name: humanizer
 version: 2.8.0
-description: Use this skill when the user wants to remove AI-generated writing patterns from text to make it sound more natural. Trigger: /humanizer, humanize, ai writing, de-ai, make it sound human, AI味. Detects 33 patterns from Wikipedia's Signs of AI writing guide.
+description: Use this skill when the user wants to remove AI-generated writing patterns from text to make it sound more natural. Trigger: /humanizer, humanize, ai writing, de-ai, make it sound human, AI味. Detects 33 patterns from Wikipedia's Signs of AI writing guide. Not for code, math, or planning tasks.
 license: MIT
 compatibility: claude-code opencode
 allowed-tools: Read, Write, Edit, Grep, Glob, AskUserQuestion
