@@ -1,0 +1,5 @@
+interface:
+  display_name: "Rethlas"
+  short_description: "AI-driven math formula formal proof tool."
+  icon: "function"
+  brand_color: "#0EA5E9"

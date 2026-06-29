@@ -44,6 +44,7 @@ npm install github:five-five0909/Fifine-skills
 - `topic-refiner`: Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem.
 - `rethlas`: Use this skill when the user wants to prove a math problem using the Rethlas AI-driven formal proof system.
 - `trellis-task-orchestrator`: Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks.
+- `humanizer`: Use this skill when the user wants to remove AI-generated writing patterns from text, making it sound more natural and human-written, based on Wikipedia's 33 AI writing pattern guide.
 - `write-research-grill`: Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting.
 
 ## Development

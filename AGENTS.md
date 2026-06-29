@@ -47,6 +47,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | grill-me-cn | 方案压力测试工具 |
 | llm-research-grill | LLM/PyTorch 研究方向自检 |
 | write-research-grill | 写稿前结构化审问 |
+| humanizer | 去除文本中的 AI 写作痕迹，基于 Wikipedia 的 33 条 AI 写作模式检测与修正规则 |
 | prompt-amplifier | 指令强化工具 |
 | tavily-search | Tavily 实时网络搜索 |
 | trellis-task-orchestrator | Trellis 任务编排器 |
