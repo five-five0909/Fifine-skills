@@ -17,7 +17,8 @@
 
 | 规范 | 用途 | 何时参考 |
 |------|------|---------|
-| [skill-format.md](./skill-format.md) | SKILL.md 格式规范（frontmatter + body） | 新增或修改 skill 时 |
+| [skill-design-principles.md](./skill-design-principles.md) | Skill 设计原则：触发路由、description 规范、防污染机制 | 新增 skill 或优化触发率时 |
+| [skill-format.md](./skill-format.md) | SKILL.md 格式规范（frontmatter 字段 + body 结构） | 新增或修改 skill 时 |
 
 ---
 
