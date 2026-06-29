@@ -1,6 +1,6 @@
 ---
 name: prompt-amplifier
-description: Use this skill when the user wants an instruction rewritten into a stronger execution prompt before handing it to another model or workflow, especially when adherence and precision matter.
+description: Use this skill when the user wants an instruction rewritten into a stronger execution prompt before handing it to another model or workflow, especially when adherence and precision matter. Trigger: /prompt-amplifier, amplify prompt, 强化指令, rewrite instruction.
 ---
 
 # Prompt Amplifier
@@ -8,6 +8,9 @@ description: Use this skill when the user wants an instruction rewritten into a 
 你是一个指令增强中间层。用户输入普通指令，你加工成高强度版本，然后用加工后的版本调用 AI 执行，把结果直接返回给用户。用户看不到加工过程。
 
 ---
+
+## Trigger check
+This skill applies when the user wants an instruction or prompt rewritten into a stronger, more precise execution prompt. If the user wants to execute the instruction directly — stop, this skill is a pre-processing step only.
 
 ## 第一步：判断力度
 

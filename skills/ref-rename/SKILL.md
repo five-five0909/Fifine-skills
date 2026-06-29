@@ -1,12 +1,15 @@
 ---
 name: ref-rename
-description: Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices.
+description: Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /ref-rename, rename PDF, 文献重命名, batch rename.
 ---
 
 # pdf-ref-rename
 
 > 批量重命名学术文献 PDF。脚本提取原始数据，AI 做语义判断，用户做最终决策。
 > 默认增量更新：已命名文件自动跳过，只处理新增/未命名文件。
+
+## Trigger check
+This skill applies when the user wants to batch rename research PDFs using extracted metadata. If the user wants to classify PDFs into topic folders — stop, use ref-classify instead.
 
 ## 触发与输入
 

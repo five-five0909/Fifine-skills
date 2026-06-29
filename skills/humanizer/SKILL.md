@@ -1,7 +1,7 @@
 ---
 name: humanizer
 version: 2.8.0
-description: Remove signs of AI-generated writing from text. Use when editing text to sound more natural and human-written. Detects 33 patterns from Wikipedia's Signs of AI writing guide.
+description: Use this skill when the user wants to remove AI-generated writing patterns from text to make it sound more natural. Trigger: /humanizer, humanize, ai writing, de-ai, make it sound human, AI味. Detects 33 patterns from Wikipedia's Signs of AI writing guide.
 license: MIT
 compatibility: claude-code opencode
 allowed-tools: Read, Write, Edit, Grep, Glob, AskUserQuestion
@@ -10,6 +10,9 @@ allowed-tools: Read, Write, Edit, Grep, Glob, AskUserQuestion
 # Humanizer: Remove AI Writing Patterns
 
 You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup.
+
+## Trigger check
+This skill applies when the user has text they want to make sound less AI-generated. If the user is asking for research, code generation, math, or planning — stop, this skill doesn't apply.
 
 ## Your Task
 

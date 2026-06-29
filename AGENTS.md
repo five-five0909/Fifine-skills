@@ -53,6 +53,27 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | trellis-task-orchestrator | Trellis 任务编排器 |
 | parallel-executor-with-trellis | Trellis 并行任务执行器 |
 
+## Skill Routing
+
+| 用户意图 | Skill |
+|----------|-------|
+| 写作/文本有 AI 味，想让它更自然 | humanizer |
+| 证明数学题，形式化验证 | rethlas |
+| 开发任务启动、规划工作流 | dev-done-flow |
+| 方案压力测试、找逻辑漏洞 | grill-me-cn |
+| 论文 PDF 结构化拆解、提取 hook | idea-hook-forge |
+| 文献快速阅读、输出摘要报告 | lit-speed-read |
+| LLM/PyTorch 研究方向审查 | llm-research-grill |
+| 论文全流程精读（摘要/引言/方法/实验） | paper-weaver |
+| 大任务拆分为并行子流程 | parallel-executor-with-trellis |
+| 强化/改写一条 AI 指令 | prompt-amplifier |
+| PDF 文献自动分类到主题桶 | ref-classify |
+| PDF 文献按元数据批量重命名 | ref-rename |
+| 需要实时联网搜索当前信息 | tavily-search |
+| 研究选题模糊，需要聚焦精炼 | topic-refiner |
+| Trellis 任务编排、生成 PRD | trellis-task-orchestrator |
+| 写稿/论文前的结构化自我审问 | write-research-grill |
+
 ## Distribution targets
 
 | Tool | Skills path |

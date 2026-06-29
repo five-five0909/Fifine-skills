@@ -1,9 +1,12 @@
 ---
 name: tavily-search
-description: Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory.
+description: Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory. Trigger: /tavily-search, search web, 联网搜索, current info, live search.
 ---
 
 # Tavily Search Skill
+
+## Trigger check
+This skill applies when the user needs current, real-time information from the web that the model's training data cannot reliably provide. If the question can be answered from the existing codebase or static knowledge — stop, this skill doesn't apply.
 
 ## 核心原则
 

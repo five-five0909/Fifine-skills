@@ -1,9 +1,12 @@
 ---
 name: topic-refiner
-description: Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem.
+description: Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem. Trigger: /topic-refiner, refine topic, 选题精炼, research question, 研究问题.
 ---
 
 # Topic Refiner Skill
+
+## Trigger check
+This skill applies when the user has a broad or vague research direction and wants to turn it into a focused, defensible research question. If the user already has a clear research question and wants to write — stop, use write-research-grill instead.
 
 ## 一句话描述
 把宽泛的研究方向或已有成果，转化为一个有问号、有谜题、可回答的研究问题。

@@ -1,9 +1,12 @@
 ---
 name: lit-speed-read
-description: Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review.
+description: Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review. Trigger: /lit-speed-read, speed read, 速读, paper summary, 文献摘要.
 ---
 
 # lit-speed-read
+
+## Trigger check
+This skill applies when the user wants a fast structured reading of a paper, URL, PDF, or HTML source. If the user wants deep multi-stage analysis with full pipeline output — stop, use paper-weaver instead.
 
 ## 触发与输入
 

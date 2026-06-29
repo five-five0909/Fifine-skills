@@ -1,9 +1,12 @@
 ---
 name: dev-done-flow
-description: universal development workflow guide for software engineering, java backend work, llm applications, agent/rag projects, architecture refactoring, bug diagnosis, performance/security work, and long-running engineering goals. use when the user wants to start, plan, structure, diagnose, or iterate on a development task and expects the AI assistant to create local markdown workflow documents under `.dev-done-flow/`, update `Agents.md` or `AGENTS.md`, ask structured questions, record answers, and guide the project through discovery, requirements, design, planning, implementation, verification, release, observability, feedback, and iteration.
+description: universal development workflow guide for software engineering, java backend work, llm applications, agent/rag projects, architecture refactoring, bug diagnosis, performance/security work, and long-running engineering goals. use when the user wants to start, plan, structure, diagnose, or iterate on a development task and expects the AI assistant to create local markdown workflow documents under `.dev-done-flow/`, update `Agents.md` or `AGENTS.md`, ask structured questions, record answers, and guide the project through discovery, requirements, design, planning, implementation, verification, release, observability, feedback, and iteration. Trigger: /dev-done-flow, start task, dev workflow, 开发流程, 任务规划.
 ---
 
 # Dev Done Flow
+
+## Trigger check
+This skill applies when the user wants to plan, structure, or guide a software development task from start to finish. If the user wants to execute a single quick inline change — stop, this skill doesn't apply.
 
 ## 核心原则
 

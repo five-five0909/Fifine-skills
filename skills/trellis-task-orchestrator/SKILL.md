@@ -1,6 +1,6 @@
 ---
 name: trellis-task-orchestrator
-description: Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks.
+description: Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks. Trigger: /trellis-task-orchestrator, trellis plan, task orchestration, PRD, 任务拆解.
 ---
 
 # Trellis Task Orchestrator
@@ -8,6 +8,9 @@ description: Use this skill when the user needs a Trellis-oriented task plan for
 将任意任务按 Trellis 最佳实践拆解、编排、生成可直接粘贴到 Claude Code 的完整启动套件。
 
 ---
+
+## Trigger check
+This skill applies when the user needs a Trellis-managed implementation plan with PRD, execution steps, and acceptance checks for a non-trivial task. If the task is a simple inline change — stop, this skill is for complex multi-step work only.
 
 ## 第一步：任务类型判断
 

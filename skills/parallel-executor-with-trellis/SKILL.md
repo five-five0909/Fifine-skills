@@ -1,6 +1,6 @@
 ---
 name: parallel-executor-with-trellis
-description: Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification.
+description: Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification. Trigger: /parallel-executor-with-trellis, parallel tasks, 并行执行, split workstream.
 ---
 
 # Parallel Executor（Trellis + Agent Teams 融合版）
@@ -8,6 +8,9 @@ description: Use this skill when the user has a large task that can be split int
 **定位：Trellis 管任务生命周期，Agent Teams 管并行执行，本 skill 是两者的桥接层。**
 
 ------
+
+## Trigger check
+This skill applies when the user has a large task that can be split into independent parallel workstreams managed by Trellis. If the task is sequential or small enough for a single agent — stop, use trellis-task-orchestrator instead.
 
 ## 与 Trellis 原生 skill 的分工（防冲突）
 

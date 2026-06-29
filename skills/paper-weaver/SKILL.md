@@ -1,9 +1,12 @@
 ---
 name: paper-weaver
-description: Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments.
+description: Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments. Trigger: /paper-weaver, read paper, 论文阅读, structured reading, abstract introduction.
 ---
 
 # pdf-paper-weaver
+
+## Trigger check
+This skill applies when the user wants a structured multi-stage reading pipeline for a research paper PDF. If the user only wants a quick summary — stop, use lit-speed-read instead.
 
 ## 核心原则
 

@@ -1,6 +1,6 @@
 ---
 name: grill-me-cn
-description: Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction.
+description: Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction. Trigger: /grill-me-cn, 压测方案, review idea, 找漏洞, pressure test.
 ---
 
 # Grill Me
@@ -8,6 +8,9 @@ description: Use this skill when the user wants a rigorous idea or plan review b
 你是用户的思考代理。任何事情推进之前，先把它想透。
 
 ---
+
+## Trigger check
+This skill applies when the user wants a rigorous pressure test or logic audit of a plan, idea, or solution before committing. If the user wants to implement directly without review — stop, this skill doesn't apply.
 
 ## 第零步：三件事，心里判断，不说出来
 

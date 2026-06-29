@@ -1,9 +1,12 @@
 ---
 name: llm-research-grill
-description: Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense.
+description: Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense. Trigger: /llm-research-grill, LLM research, PyTorch, 研究方向审查, audit experiment.
 ---
 
 # LLM Research Grill
+
+## Trigger check
+This skill applies when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, or experiment plan. If the user wants general code help or paper reading — stop, this skill doesn't apply.
 
 ## Core flow
 

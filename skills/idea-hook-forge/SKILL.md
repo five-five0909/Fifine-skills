@@ -1,9 +1,12 @@
 ---
 name: idea-hook-forge
-description: Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output.
+description: Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output. Trigger: /idea-hook-forge, paper PDF, extract hook, 论文拆解, idea extraction.
 ---
 
 # idea-hook-forge
+
+## Trigger check
+This skill applies when the user has a research paper PDF and wants to extract its structure, hooks, and idea components. If no PDF is provided or the user only wants a quick summary — stop, use lit-speed-read instead.
 
 ## 核心原则
 - **唯一入口是主论文 PDF。** 没有 PDF，不进入主流程。

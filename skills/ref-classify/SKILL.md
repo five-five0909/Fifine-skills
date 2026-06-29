@@ -1,11 +1,14 @@
 ---
 name: ref-classify
-description: Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches.
+description: Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches. Trigger: /ref-classify, classify references, 文献分类, PDF bucket.
 ---
 
 # pdf-ref-classify
 
 > 三种匹配技巧依次兜底，置信度不足时问用户，不猜测、不静默移错。
+
+## Trigger check
+This skill applies when the user has a folder of research PDFs that need to be classified into topic buckets. If the user wants to rename files rather than classify them — stop, use ref-rename instead.
 
 ## 触发与输入
 

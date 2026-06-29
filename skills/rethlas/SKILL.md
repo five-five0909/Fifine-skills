@@ -1,6 +1,6 @@
 ---
 name: rethlas
-description: Prove a math problem using the Rethlas system. You (Claude Code) ARE the reasoning agent — read AGENTS.md and drive the full proof workflow using MCP tools. All output files land in a single folder named after the problem, inside the user's current directory. Use when the user wants to prove a math problem, check results, or manage the verification service.
+description: Use this skill when the user wants to prove a math problem using the Rethlas formal verification system. Trigger: /rethlas, prove, math proof, 证明, 形式化证明. Drives full proof workflow via MCP tools; output lands in a folder named after the problem.
 tools: PowerShell, Read, Write
 ---
 
@@ -12,6 +12,9 @@ The skill directory is shown at the top of this file as "Base directory for this
 Use `<skill_dir>` to construct all CLI command paths below.
 
 ---
+
+## Trigger check
+This skill applies when the user wants formal verification or proof of a math problem using the Rethlas system. If the user is asking about general math concepts, code, or writing — stop, this skill doesn't apply.
 
 ## Output file structure
 

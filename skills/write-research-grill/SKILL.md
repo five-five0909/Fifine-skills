@@ -1,9 +1,12 @@
 ---
 name: write-research-grill
-description: Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting.
+description: Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting. Trigger: /write-research-grill, 写稿审问, pre-writing, paper draft, 写作前.
 ---
 
 # Write Research Grill
+
+## Trigger check
+This skill applies when the user is about to write a paper, report, or argument and needs structured interrogation to clarify the claim and structure before drafting. If the user wants to start writing immediately — stop, this skill is a pre-writing step.
 
 ## 核心流程
 
