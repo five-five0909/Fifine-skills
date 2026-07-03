@@ -1,0 +1,22 @@
+name: pinn-soilml
+description: 物理信息神经网络 / 科学机器学习 / SoilML 方向
+primary_tags:
+  - J
+  - M
+  - P
+formula_tags:
+  - U6
+  - U8
+keywords:
+  - physics-informed machine learning
+  - physics-informed neural networks
+  - scientific machine learning
+  - PDE loss
+  - physics-guided learning
+  - knowledge-guided machine learning
+  - SoilML
+  - soil science-informed machine learning
+  - physics-informed soil
+  - neural operator
+  - equation discovery
+  - symbolic regression

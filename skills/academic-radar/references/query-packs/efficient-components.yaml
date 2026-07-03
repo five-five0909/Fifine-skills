@@ -1,0 +1,26 @@
+name: efficient-components
+description: 高效注意力 / 门控模块 / 特征融合等组件创新方向
+primary_tags:
+  - B
+  - C
+  - F
+  - G
+  - I
+formula_tags:
+  - U2
+  - U4
+  - U5
+keywords:
+  - channel attention
+  - spatial attention
+  - multi-scale attention
+  - feature fusion
+  - gated fusion
+  - large kernel convolution
+  - linear attention
+  - efficient attention
+  - state space attention
+  - lightweight neural network
+  - efficient vision backbone
+  - depthwise convolution
+  - multi-scale feature

@@ -1,0 +1,29 @@
+name: mamba-ssm
+description: Mamba / SSM / S4 / 线性 RNN 等状态空间模型方向
+primary_tags:
+  - D
+  - E
+  - I
+formula_tags:
+  - U1
+  - U3
+  - U4
+keywords:
+  - Mamba
+  - Mamba-2
+  - state space model
+  - selective state space
+  - structured state space
+  - SSM
+  - S4
+  - S5
+  - linear attention
+  - DeltaNet
+  - xLSTM
+  - RetNet
+  - Hyena
+  - long convolution
+  - selective scan
+  - state space duality
+  - semiseparable matrix
+  - RWKV

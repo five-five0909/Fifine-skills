@@ -1,0 +1,24 @@
+name: hyperspectral
+description: 高光谱图像分类 / 空间-光谱建模方向
+primary_tags:
+  - A
+  - F
+  - G
+  - O
+  - T
+formula_tags:
+  - U2
+  - U5
+keywords:
+  - hyperspectral image classification
+  - spatial-spectral Mamba
+  - spectral state space model
+  - spectral attention
+  - band selection
+  - hyperspectral transformer
+  - hyperspectral soil
+  - spectral scanning
+  - spatial spectral fusion
+  - hyperspectral segmentation
+  - hyperspectral unmixing
+  - vis-NIR

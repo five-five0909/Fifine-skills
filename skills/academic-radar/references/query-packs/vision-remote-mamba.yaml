@@ -1,0 +1,24 @@
+name: vision-remote-mamba
+description: Vision Mamba / 视觉状态空间 / 遥感 Mamba 方向
+primary_tags:
+  - A
+  - D
+  - G
+  - I
+  - T
+formula_tags:
+  - U1
+  - U3
+keywords:
+  - Vision Mamba
+  - Visual State Space
+  - VMamba
+  - Vim
+  - Mamba remote sensing
+  - remote sensing Mamba
+  - Mamba image classification
+  - Mamba segmentation
+  - Mamba change detection
+  - visual state space model
+  - bidirectional Mamba
+  - omnidirectional scan

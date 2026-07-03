@@ -77,6 +77,16 @@
       "name": "rethlas",
       "path": "skills/rethlas",
       "description": "Use this skill when the user wants to formally prove a math problem. Claude Code acts as the reasoning agent, driving the full proof pipeline (explore → plan → prove → verify) using in-context reasoning and MCP memory tools. Outputs a verified blueprint_verified.md."
+    },
+    {
+      "name": "academic-radar",
+      "path": "skills/academic-radar",
+      "description": "Use this skill when the user wants to track the latest papers in a research direction (Mamba, SSM, hyperspectral, SOC, PINN, etc.), run a keyword search across arXiv/OpenAlex/Semantic Scholar, classify papers by A-T+U taxonomy, and generate an H1/H2/H3 priority HTML report."
+    },
+    {
+      "name": "academic-search",
+      "path": "skills/academic-search",
+      "description": "Use this skill when the user needs to search academic literature, query paper metadata (DOI, BibTeX, PDF, citations, code links), verify open-access status, or perform discipline-aware multi-platform retrieval with deduplication and structured output."
     }
   ]
 }

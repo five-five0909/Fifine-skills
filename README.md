@@ -46,6 +46,8 @@ npm install github:five-five0909/Fifine-skills
 - `trellis-task-orchestrator`: Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks.
 - `humanizer`: Use this skill when the user wants to remove AI-generated writing patterns from text, making it sound more natural and human-written, based on Wikipedia's 33 AI writing pattern guide.
 - `write-research-grill`: Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting.
+- `academic-radar`: Use this skill when the user wants to track the latest papers in a research direction (Mamba, SSM, hyperspectral, SOC, PINN, etc.) and generate an H1/H2/H3 priority HTML report via Node.js scripts calling arXiv, OpenAlex, and Semantic Scholar.
+- `academic-search`: Use this skill when the user needs to search academic literature, query paper metadata (DOI, BibTeX, PDF, citations, code links), or perform discipline-aware multi-platform retrieval with deduplication and structured output.
 
 ## Development
 
