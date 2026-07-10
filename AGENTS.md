@@ -52,6 +52,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | academic-radar | 论文方向追踪雷达，调用 Node 脚本检索 arXiv/OpenAlex/S2，生成 H1/H2/H3 分级 HTML 报告 |
 | academic-search | 学术检索方法论知识库 skill，提供平台路由、API 优先策略、元数据 schema 和站点经验 |
 | prompt-amplifier | 指令强化工具 |
+| media-transcript | 本地视频/音频转文稿工具，使用 ffmpeg + DashScope ASR 输出 transcript.txt |
 | tavily-search | Tavily 实时网络搜索 |
 | trellis-task-orchestrator | Trellis 任务编排器 |
 | parallel-executor-with-trellis | Trellis 并行任务执行器 |
@@ -67,6 +68,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 论文 PDF 结构化拆解、提取 hook | idea-hook-forge |
 | 文献快速阅读、输出摘要报告 | lit-speed-read |
 | LLM/PyTorch 研究方向审查 | llm-research-grill |
+| 本地视频或音频转文稿 | media-transcript |
 | 论文全流程精读（摘要/引言/方法/实验） | paper-weaver |
 | OCR、解析扫描件/图片/PDF 为 Markdown | paddleocr-vl |
 | 大任务拆分为并行子流程 | parallel-executor-with-trellis |

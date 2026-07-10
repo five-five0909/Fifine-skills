@@ -1,0 +1,4 @@
+interface:
+  display_name: "Media Transcript"
+  short_description: "Transcribe local video or audio files with DashScope ASR."
+  default_prompt: "Transcribe this video or audio file."

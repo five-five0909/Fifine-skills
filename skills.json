@@ -29,6 +29,11 @@
       "description": "Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense."
     },
     {
+      "name": "media-transcript",
+      "path": "skills/media-transcript",
+      "description": "Transcribe local video or audio files into text using ffmpeg plus Alibaba DashScope ASR. Use only when the user asks to process a local video/audio file, extract a transcript, convert media speech to text, or generate a text稿/文稿/subtitle-like plain transcript. Do not use for URL downloading, web scraping, Douyin link parsing, PDFs, images, or general text files."
+    },
+    {
       "name": "paper-weaver",
       "path": "skills/paper-weaver",
       "description": "Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments."
