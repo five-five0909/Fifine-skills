@@ -1,14 +1,6 @@
 ---
 name: academic-search
-description: |
-  学术检索方法论 Skill。当 AI 需要在学术平台搜索论文、提取元数据、判断开放获取状态时，
-  提供平台选择策略、查询扩展方法、多源去重规则、学科路由、站点经验和统一元数据 schema。
-  触发词：帮我查文献、查一下这篇论文、找这个作者的论文、查引用数、搜索学术、academic-search、
-  搜 Google Scholar、搜 CNKI、找 BibTeX、查 DOI、找 PDF、开放获取。
-  负向排除：如果用户要追踪某个方向的最新论文并生成雷达报告，使用 academic-radar；
-  如果用户只是要阅读一篇已有 PDF，使用 paper-weaver 或 lit-speed-read。
-metadata:
-  version: "1.0.0"
+description: 学术检索方法论 Skill。当 AI 需要在学术平台搜索论文、提取元数据、判断开放获取状态时，提供平台选择策略、查询扩展方法、多源去重规则、学科路由、站点经验和统一元数据 schema。触发词：帮我查文献、查一下这篇论文、找这个作者的论文、查引用数、搜索学术、academic-search、搜 Google Scholar、搜 CNKI、找 BibTeX、查 DOI、找 PDF、开放获取。负向排除：如果用户要追踪某个方向的最新论文并生成雷达报告，使用 academic-radar；如果用户只是要阅读一篇已有 PDF，使用 paper-weaver 或 lit-speed-read。
 ---
 
 # Academic Search Skill

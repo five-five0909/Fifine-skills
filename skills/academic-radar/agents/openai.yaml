@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Radar"
+  short_description: "Track recent papers for a research direction and generate prioritized radar reports."
+  default_prompt: "Search recent papers for this research direction and generate a radar report."

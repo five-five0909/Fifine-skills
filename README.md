@@ -36,6 +36,7 @@ npm install github:five-five0909/Fifine-skills
 - `lit-speed-read`: Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review.
 - `llm-research-grill`: Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense.
 - `paper-weaver`: Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments.
+- `paddleocr-vl`: Use this skill when the user wants to parse PDFs, screenshots, scans, images, or image-only documents into Markdown through the official PaddleOCR-VL AI Studio API.
 - `parallel-executor-with-trellis`: Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification.
 - `prompt-amplifier`: Use this skill when the user wants an instruction rewritten into a stronger execution prompt before handing it to another model or workflow, especially when adherence and precision matter.
 - `ref-classify`: Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Search"
+  short_description: "Search academic literature, metadata, citations, PDFs, and open-access status."
+  default_prompt: "Search the academic literature for this topic or paper."

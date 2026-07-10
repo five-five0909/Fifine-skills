@@ -40,6 +40,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | rethlas | AI 驱动的数学公式形式化证明工具，驱动完整证明工作流 |
 | idea-hook-forge | 论文 PDF 结构化解构工具，提取 hook 并输出 HTML 分析报告 |
 | paper-weaver | 统一论文阅读 skill，支持 first-pass / second-pass / full / custom 模式 |
+| paddleocr-vl | PaddleOCR-VL 官方 AI Studio API 文档解析工具，将 PDF/图片/扫描件解析为 Markdown 和图片资产 |
 | lit-speed-read | 学术文献速读/精读引导工具，输出 HTML 阅读报告 |
 | topic-refiner | 研究选题精炼工具 |
 | ref-rename | 文献文件批量重命名 |
@@ -67,6 +68,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 文献快速阅读、输出摘要报告 | lit-speed-read |
 | LLM/PyTorch 研究方向审查 | llm-research-grill |
 | 论文全流程精读（摘要/引言/方法/实验） | paper-weaver |
+| OCR、解析扫描件/图片/PDF 为 Markdown | paddleocr-vl |
 | 大任务拆分为并行子流程 | parallel-executor-with-trellis |
 | 强化/改写一条 AI 指令 | prompt-amplifier |
 | PDF 文献自动分类到主题桶 | ref-classify |

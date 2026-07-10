@@ -1,13 +1,6 @@
 ---
 name: academic-radar
-description: |
-  论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，
-  按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。
-  触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、academic-radar。
-  负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 paper-weaver 或 lit-speed-read，不触发本 skill。
-metadata:
-  version: "2.0.0"
-  node: "22+"
+description: 论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、academic-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 paper-weaver 或 lit-speed-read，不触发本 skill。
 ---
 
 # Academic Component Hook Radar Skill

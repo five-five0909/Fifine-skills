@@ -34,6 +34,11 @@
       "description": "Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments."
     },
     {
+      "name": "paddleocr-vl",
+      "path": "skills/paddleocr-vl",
+      "description": "Use PaddleOCR-VL through the official AI Studio HTTP API to parse PDFs, screenshots, scans, images, and image-only documents into Markdown. Trigger when the user asks to OCR, parse, extract text/layout/tables/charts, convert a PDF/image to Markdown, or use PaddleOCR/PaddleOCR-VL without MCP."
+    },
+    {
       "name": "parallel-executor-with-trellis",
       "path": "skills/parallel-executor-with-trellis",
       "description": "Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification."

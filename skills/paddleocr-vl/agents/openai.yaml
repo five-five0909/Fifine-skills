@@ -1,0 +1,4 @@
+interface:
+  display_name: "PaddleOCR VL"
+  short_description: "Use PaddleOCR-VL AI Studio API to parse PDFs and images."
+  default_prompt: "Use PaddleOCR VL to parse this file."
