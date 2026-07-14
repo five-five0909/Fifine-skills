@@ -15,6 +15,7 @@
     "tavily-search",
     "topic-refiner",
     "trellis-task-orchestrator",
-    "write-research-grill"
+    "write-research-grill",
+    "writing-style"
   ]
 }

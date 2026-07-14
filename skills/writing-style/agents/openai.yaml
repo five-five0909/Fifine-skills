@@ -1,0 +1,5 @@
+interface:
+  display_name: "Writing Style"
+  short_description: "Write or rewrite text through selectable style roles."
+  icon: "pen-line"
+  brand_color: "#7C3AED"

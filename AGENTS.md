@@ -49,6 +49,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | llm-research-grill | LLM/PyTorch 研究方向自检 |
 | write-research-grill | 写稿前结构化审问 |
 | humanizer | 去除文本中的 AI 写作痕迹，基于 Wikipedia 的 33 条 AI 写作模式检测与修正规则 |
+| writing-style | 可选择角色的写作风格工具，支持按角色特点写作/改写，并通过 original/final 自动学习风格规则 |
 | academic-radar | 论文方向追踪雷达，调用 Node 脚本检索 arXiv/OpenAlex/S2，生成 H1/H2/H3 分级 HTML 报告 |
 | academic-search | 学术检索方法论知识库 skill，提供平台路由、API 优先策略、元数据 schema 和站点经验 |
 | prompt-amplifier | 指令强化工具 |
@@ -62,6 +63,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 用户意图 | Skill |
 |----------|-------|
 | 写作/文本有 AI 味，想让它更自然 | humanizer |
+| 写作/改写时需要先选择角色、按角色特点输出 | writing-style |
 | 证明数学题，形式化验证 | rethlas |
 | 开发任务启动、规划工作流 | dev-done-flow |
 | 方案压力测试、找逻辑漏洞 | grill-me-cn |

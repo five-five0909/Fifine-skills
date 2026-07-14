@@ -84,6 +84,11 @@
       "description": "Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting."
     },
     {
+      "name": "writing-style",
+      "path": "skills/writing-style",
+      "description": "Use this skill when the user wants to write, rewrite, adapt, or polish text through a selectable writing role, reusable personal style, or platform-specific voice."
+    },
+    {
       "name": "rethlas",
       "path": "skills/rethlas",
       "description": "Use this skill when the user wants to formally prove a math problem. Claude Code acts as the reasoning agent, driving the full proof pipeline (explore → plan → prove → verify) using in-context reasoning and MCP memory tools. Outputs a verified blueprint_verified.md."
