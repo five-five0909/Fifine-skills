@@ -1,0 +1,19 @@
+{
+  "name": "trans-criptase",
+  "owner": {
+    "name": "Scotlight"
+  },
+  "description": "Session-transcript resume + cross-session semantic search for Claude Code.",
+  "plugins": [
+    {
+      "name": "trans",
+      "source": "./",
+      "description": "Session transcript resume + cross-session semantic search: read old session JSONL, extract ORIGINAL TASK → DONE → BREAKPOINT → REMAINING for resumption, plus keyword/vector/hybrid search with line-level context expansion.",
+      "homepage": "https://github.com/Scotlight/trans-criptase",
+      "repository": "https://github.com/Scotlight/trans-criptase",
+      "license": "MIT",
+      "keywords": ["transcript", "resume", "semantic-search", "rag", "session", "memory"],
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# Codex CLI / OpenAI Skills 生态清单：与根目录 SKILL.md 描述同一个 Skill，供不读取 Claude 专属
+# frontmatter 的客户端发现。触发规则、模式选择、降级链的权威定义仍在 SKILL.md，本文件只是元数据清单。
+interface:
+  display_name: "Trans Local Retrieval"
+  short_description: "Search indexed local session transcripts, code, and documents using exact, semantic, or hybrid retrieval."
+
+skill:
+  name: trans
+  entry: ../SKILL.md
+  mcp_server:
+    transport: stdio
+    command: node
+    args: ["../mcp/server.mjs"]
+
+capabilities:
+  - session-transcript-resume
+  - cross-session-semantic-search
+  - local-code-search
+  - local-document-search
+
+tools:
+  - trans_search
+  - trans_scan
+  - trans_list
+  - trans_projects
+  - trans_expand
+  - trans_index
+  - trans_code_query
+  - trans_code_index
+  - trans_code_status
+  - trans_code_read
+  - trans_code_config_check
+
+triggers:
+  - "/trans"
+  - "resume session"
+  - "continue where we left off"
+  - "search local code"
+  - "find implementation"

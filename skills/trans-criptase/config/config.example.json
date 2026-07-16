@@ -1,0 +1,28 @@
+{
+    "version": 1,
+    "embedding": {
+        "provider": "api",
+        "baseUrl": "https://api.mistral.ai/v1",
+        "apiKeyEnv": "TRANS_EMBED_API_KEY",
+        "model": "mistral-embed",
+        "rerankModel": "",
+        "dimensions": null,
+        "batchSize": 32,
+        "maxChars": 800,
+        "stride": 720,
+        "local": { "enabled": false, "dtype": "q8", "modelPath": "embedder/embedder.mjs" }
+    },
+    "transcript": {
+        "autoRefresh": true,
+        "autoRefreshMaxChunks": 300
+    },
+    "codeSearch": {
+        "enabled": true,
+        "defaultMode": "hybrid",
+        "indexPath": "./data/code-index",
+        "maxFileSizeBytes": 2097152,
+        "ignore": { "useGitignore": true, "extra": [] },
+        "security": { "allowedRoots": [] }
+    },
+    "clients": { "claude": { "installed": null }, "codex": { "installed": null } }
+}

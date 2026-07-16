@@ -74,6 +74,11 @@
       "description": "Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem."
     },
     {
+      "name": "trans-criptase",
+      "path": "skills/trans-criptase",
+      "description": "Use this skill to resume interrupted Claude/Codex sessions from transcript JSONL, search past session history, and query local code or document indexes through the trans MCP tools."
+    },
+    {
       "name": "trellis-task-orchestrator",
       "path": "skills/trellis-task-orchestrator",
       "description": "Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks."

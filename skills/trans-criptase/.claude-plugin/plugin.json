@@ -1,0 +1,11 @@
+{
+  "name": "trans",
+  "description": "Session transcript resume + cross-session semantic search: read old session JSONL, extract ORIGINAL TASK → DONE → BREAKPOINT → REMAINING for resumption, plus keyword/vector/hybrid search with line-level context expansion.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Scotlight"
+  },
+  "homepage": "https://github.com/Scotlight/trans-criptase",
+  "repository": "https://github.com/Scotlight/trans-criptase",
+  "license": "MIT"
+}
