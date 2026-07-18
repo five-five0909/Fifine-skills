@@ -104,6 +104,11 @@ async function handleCall(name, a) {
             const idx = await lib.autoRefreshIndex(a.project)
             const added = idx.filter(l => l.includes('+')).length
             if (added) notes.push(...idx)
+            if (a.allProjects) {
+                const codexIdx = await lib.autoRefreshCodexIndex()
+                const codexAdded = codexIdx.filter(l => l.includes('+')).length
+                if (codexAdded) notes.push(...codexIdx)
+            }
         } catch (e) {
             notes.push(`(index auto-refresh failed, using existing index: ${String(e.message).slice(0, 120)})`)
         }

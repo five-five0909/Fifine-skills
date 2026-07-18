@@ -37,7 +37,7 @@ Codex CLI keeps its own session logs at `~/.codex/sessions/YYYY/MM/DD/rollout-*.
 
 `trans_scan({id})` and `trans_expand({sessionId})` support Codex rollout files directly. ID lookup checks the current Claude project, all Claude transcript dirs, and then `~/.codex/sessions` with a bounded recursive scan. It must not fall back to `find /` or broad semantic indexing just to locate a known Codex session id.
 
-`trans_search` remains a Claude transcript index/search tool for now. Use `trans_scan` with the Codex session id, or pass `path` when you already have the exact rollout file.
+`trans_search --allProjects` also maintains a keyword index for Codex rollout files under a virtual project named `~/.codex/sessions (Codex CLI)`. This makes exact recall work for recent Codex conversations without knowing the rollout path first. `trans_scan({id})` remains the most precise way to resume or audit one Codex session when you already know its id/prefix.
 
 ## Verify
 

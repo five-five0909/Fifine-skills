@@ -17,6 +17,7 @@ export const CONFIG_PATH = LEGACY_CONFIG_PATH
 export const INDEX_ROOT = process.env.TRANS_INDEX_ROOT || path.join(SKILL_DIR, 'index')
 export const PROJECTS_ROOT = process.env.TRANS_PROJECTS_ROOT || path.join(os.homedir(), '.claude', 'projects')
 export const CODEX_SESSIONS_ROOT = process.env.TRANS_CODEX_SESSIONS_ROOT || path.join(os.homedir(), '.codex', 'sessions')
+export const CODEX_INDEX_ENC = '-codex-sessions'
 
 // 配置加载委派给共享层（新 config/config.json 优先，否则回退 embed-config.json），
 // 字段形状与旧版 CFG 完全一致，行为零变化。
@@ -36,6 +37,10 @@ function cut(s, n, flat = true) {
     return s.length <= n ? s : s.slice(0, n) + '…'
 }
 const stampOf = (j) => j?.timestamp ? String(j.timestamp).slice(0, 16).replace('T', ' ') : ''
+function shortSid(sid) {
+    const m = String(sid || '').match(/([0-9a-f]{8})-[0-9a-f-]+$/i)
+    return m ? m[1] : String(sid || '').slice(0, 8)
+}
 
 function msgText(c) {
     if (typeof c === 'string') return c
@@ -175,25 +180,39 @@ function transcriptCwd(file) {
 // 跨项目检索的第一步：AI 先调这个拿到目标项目的真实路径，再把路径传给 trans_search 的 project 参数，
 // 定向搜单个项目——而不是 allProjects 把每个项目的索引全量轮询一遍（项目一多就废）。
 export function projectsLines({ limit = 40, query = '' } = {}) {
-    if (!fs.existsSync(PROJECTS_ROOT)) return ['尚无任何项目转录目录']
     const rows = []
-    for (const d of fs.readdirSync(PROJECTS_ROOT)) {
-        const pd = path.join(PROJECTS_ROOT, d)
-        let st
-        try { st = fs.statSync(pd) } catch { continue }
-        if (!st.isDirectory()) continue
-        const files = fs.readdirSync(pd).filter(f => f.endsWith('.jsonl')).map(f => path.join(pd, f))
-        if (!files.length) continue
-        const newest = files.map(f => ({ f, m: fs.statSync(f).mtimeMs })).sort((a, b) => b.m - a.m)[0]
+    if (fs.existsSync(PROJECTS_ROOT)) {
+        for (const d of fs.readdirSync(PROJECTS_ROOT)) {
+            const pd = path.join(PROJECTS_ROOT, d)
+            let st
+            try { st = fs.statSync(pd) } catch { continue }
+            if (!st.isDirectory()) continue
+            const files = fs.readdirSync(pd).filter(f => f.endsWith('.jsonl')).map(f => path.join(pd, f))
+            if (!files.length) continue
+            const newest = files.map(f => ({ f, m: fs.statSync(f).mtimeMs })).sort((a, b) => b.m - a.m)[0]
+            rows.push({
+                enc: d,
+                cwd: transcriptCwd(newest.f) || `(未知路径，编码名: ${d})`,
+                sessions: files.length,
+                mtime: newest.m,
+                preview: firstUserMsg(newest.f),
+                indexed: fs.existsSync(indexPaths(d).state),
+            })
+        }
+    }
+    const codexFiles = codexSessionFiles()
+    if (codexFiles.length) {
+        const newest = codexFiles.map(f => ({ f, m: fs.statSync(f).mtimeMs })).sort((a, b) => b.m - a.m)[0]
         rows.push({
-            enc: d,
-            cwd: transcriptCwd(newest.f) || `(未知路径，编码名: ${d})`,
-            sessions: files.length,
+            enc: CODEX_INDEX_ENC,
+            cwd: `${CODEX_SESSIONS_ROOT} (Codex CLI)`,
+            sessions: codexFiles.length,
             mtime: newest.m,
             preview: firstUserMsg(newest.f),
-            indexed: fs.existsSync(indexPaths(d).state),
+            indexed: fs.existsSync(indexPaths(CODEX_INDEX_ENC).state),
         })
     }
+    if (!rows.length) return ['尚无任何 Claude/Codex 转录']
     let filtered = rows
     if (query && query.trim()) {
         const q = query.trim().toLowerCase()
@@ -500,7 +519,7 @@ function extractFileChunks(file, fromLine) {
 
 export async function buildIndexLines(transcriptDir, opts = {}) {
     const out = []
-    const enc = path.basename(transcriptDir)
+    const enc = opts.enc || path.basename(transcriptDir)
     const P = indexPaths(enc)
     fs.mkdirSync(P.iDir, { recursive: true })
 
@@ -529,7 +548,7 @@ async function buildIndexLinesLocked(transcriptDir, opts, out, enc, P) {
         fs.rmSync(P.vec, { force: true })
     }
     state.mode = mode
-    let files = fs.readdirSync(transcriptDir).filter(f => f.endsWith('.jsonl')).map(f => path.join(transcriptDir, f))
+    let files = opts.files || fs.readdirSync(transcriptDir).filter(f => f.endsWith('.jsonl')).map(f => path.join(transcriptDir, f))
     if (opts.skipLatest && files.length > 1) {
         const byMtime = files.map(f => ({ f, m: fs.statSync(f).mtimeMs })).sort((a, b) => b.m - a.m)
         files = byMtime.slice(1).map(e => e.f)  // 跳过 mtime 最新者（当前活跃会话，交给 SessionEnd hook/显式 index）
@@ -584,7 +603,7 @@ async function buildIndexLinesLocked(transcriptDir, opts, out, enc, P) {
         state.files[sid] = { lines: totalLines, mtimeMs: st.mtimeMs }
         writeStateSync(P, state)
         totalNew += chunks.length
-        if (chunks.length) out.push(`  ${sid.slice(0, 8)}: +${chunks.length} 块`)
+        if (chunks.length) out.push(`  ${shortSid(sid)}: +${chunks.length} 块`)
     }
     const tailNote = opts.noEmbed && !opts.dry ? '（纯关键词索引，查询走 exact；填好 key 后 force 重建升级混合）' : ''
     if (budgetHit) out.push(`  预算已满(${opts.maxChunks}块)，剩余会话本次未索引（下次查询或 SessionEnd 后台会继续补）`)
@@ -593,13 +612,17 @@ async function buildIndexLinesLocked(transcriptDir, opts, out, enc, P) {
 }
 
 export async function indexCommand(opts = {}) {
-    const dirs = opts.all
+    const out = []
+    const dirs = opts.all && fs.existsSync(PROJECTS_ROOT)
         ? fs.readdirSync(PROJECTS_ROOT).map(d => path.join(PROJECTS_ROOT, d)).filter(d => fs.statSync(d).isDirectory())
         : [projectTranscriptDir(opts.project)]
-    const out = []
     for (const d of dirs) {
         if (!fs.existsSync(d)) { out.push(`目录不存在: ${d}`); continue }
         out.push(...await buildIndexLines(d, opts))
+    }
+    if (opts.all) {
+        const files = codexSessionFiles()
+        if (files.length) out.push(...await buildIndexLines(CODEX_SESSIONS_ROOT, { ...opts, enc: CODEX_INDEX_ENC, files }))
     }
     return out
 }
@@ -615,6 +638,23 @@ export async function autoRefreshIndex(project) {
     const noEmbed = state ? state.mode === 'kw' : true
     const out = await buildIndexLines(dir, { noEmbed, skipLatest: true, maxChunks: CFG.autoRefreshMaxChunks })
     if (!state) out.push('（首次仅建关键词索引：语义/混合检索请先跑一次 trans_index 建立向量）')
+    return out
+}
+
+export async function autoRefreshCodexIndex() {
+    if (!CFG.autoRefresh) return []
+    const files = codexSessionFiles()
+    if (!files.length) return []
+    const P = indexPaths(CODEX_INDEX_ENC)
+    const state = fs.existsSync(P.state) ? JSON.parse(fs.readFileSync(P.state, 'utf8')) : null
+    const noEmbed = state ? state.mode === 'kw' : true
+    const out = await buildIndexLines(CODEX_SESSIONS_ROOT, {
+        noEmbed,
+        enc: CODEX_INDEX_ENC,
+        files,
+        maxChunks: CFG.autoRefreshMaxChunks,
+    })
+    if (!state) out.push('（Codex 首次仅建关键词索引：语义/混合检索请先跑一次 trans_index --all 建立向量）')
     return out
 }
 
@@ -760,7 +800,7 @@ export async function queryLines(text, opts = {}) {
     }
     for (const h of picked) {
         const m = h.meta
-        out.push(`${h.score.toFixed(4)}  ${m.sid.slice(0, 8)}:${m.line}  [${m.role}${m.ts ? ' ' + m.ts : ''}]${m.part ? ` (段${m.part + 1})` : ''} ${cut(m.text, 180)}`)
+        out.push(`${h.score.toFixed(4)}  ${shortSid(m.sid)}:${m.line}  [${m.role}${m.ts ? ' ' + m.ts : ''}]${m.part ? ` (段${m.part + 1})` : ''} ${cut(m.text, 180)}`)
     }
     out.push('', '→ 放大上下文: trans_expand(sessionId, line) 或 scan-transcript.ps1 -Id <前缀> -Detail <行号>')
     return out

@@ -31,7 +31,8 @@ export function assertPathAllowed(targetPath, allowedRoots = []) {
 /** 校验 relOrAbs（相对或绝对）解析后仍落在 root 内，拒绝 ".." 穿越。返回规范化绝对路径。 */
 export function assertNoTraversal(root, relOrAbs) {
     const resolvedRoot = path.resolve(root)
-    const full = path.isAbsolute(relOrAbs) ? path.resolve(relOrAbs) : path.resolve(resolvedRoot, relOrAbs)
+    const normalizedInput = String(relOrAbs).replace(/[\\/]+/g, path.sep)
+    const full = path.isAbsolute(normalizedInput) ? path.resolve(normalizedInput) : path.resolve(resolvedRoot, normalizedInput)
     if (full !== resolvedRoot && !full.startsWith(resolvedRoot + path.sep)) {
         throw new Error(`路径穿越: ${relOrAbs} 逃逸出 ${resolvedRoot}`)
     }
