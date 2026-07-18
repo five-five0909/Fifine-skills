@@ -31,9 +31,13 @@ Codex CLI's `hooks.json` schema is byte-for-byte identical to Claude Code's (`ho
 
 Practical effect: the `UserPromptSubmit` continuation-intent hint and the `SessionEnd` background incremental indexing (both in `hooks/hooks.json`) do not fire automatically on the Codex side. All 11 MCP tools work identically regardless — you (or the model) just call `trans_scan`/`trans_search`/`trans_code_query`/etc. directly instead of relying on the soft nudge. This is a documented gap, not a bug; replicating Claude's auto-load behavior would require per-project Codex hook installation, which is out of scope for this pass.
 
-## Also out of scope this pass: Codex's own session transcripts
+## Codex's own session transcripts
 
-Codex CLI keeps its own session logs at `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl`, with a different event schema (`session_meta`, etc.) than Claude Code's `~/.claude/projects/*.jsonl` (`type: user/assistant/summary`). The transcript-resume subsystem in this repo (`trans_scan`/`trans_search`/etc.) only understands the Claude Code format. Reading Codex's own transcripts would need a second parser — a real feature request, not implemented here, since the original ask was cross-client MCP/Skill parity, not a second transcript format.
+Codex CLI keeps its own session logs at `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl`, with a different event schema (`session_meta`, `event_msg`, `response_item.payload`) than Claude Code's `~/.claude/projects/*.jsonl` (`type: user/assistant/summary`).
+
+`trans_scan({id})` and `trans_expand({sessionId})` support Codex rollout files directly. ID lookup checks the current Claude project, all Claude transcript dirs, and then `~/.codex/sessions` with a bounded recursive scan. It must not fall back to `find /` or broad semantic indexing just to locate a known Codex session id.
+
+`trans_search` remains a Claude transcript index/search tool for now. Use `trans_scan` with the Codex session id, or pass `path` when you already have the exact rollout file.
 
 ## Verify
 

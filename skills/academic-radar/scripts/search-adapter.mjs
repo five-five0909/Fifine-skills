@@ -39,35 +39,39 @@ function emptyPaper(overrides = {}) {
   };
 }
 
-/** 安全 fetch，失败返回 null */
-async function safeFetch(url, options = {}, timeoutMs = 15000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    const resp = await fetch(url, {
-      signal: controller.signal,
-      headers: {
-        'User-Agent': 'AcademicRadar/1.0 (research tool; contact: research@example.com)',
-        'Accept': 'application/json',
-        ...options.headers
-      },
-      ...options
-    });
-    clearTimeout(timer);
-    if (!resp.ok) {
+/** 安全 fetch，失败返回 null；对开放学术 API 做短重试，避免偶发代理/握手抖动 */
+async function safeFetch(url, options = {}, timeoutMs = 20000) {
+  const attempts = options.attempts || 3;
+  const retryStatuses = new Set([408, 429, 500, 502, 503, 504]);
+  const { attempts: _attempts, headers, ...fetchOptions } = options;
+
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const resp = await fetch(url, {
+        signal: controller.signal,
+        headers: {
+          'User-Agent': 'AcademicRadar/1.1 (research tool; mailto:research@example.com)',
+          'Accept': 'application/json',
+          ...headers
+        },
+        ...fetchOptions
+      });
+      clearTimeout(timer);
+      if (resp.ok) return resp;
+
       console.warn(`[search-adapter] HTTP ${resp.status} for ${url}`);
-      return null;
+      if (!retryStatuses.has(resp.status) || attempt === attempts) return null;
+    } catch (e) {
+      clearTimeout(timer);
+      const reason = e.name === 'AbortError' ? '超时' : `请求失败: ${e.message}`;
+      console.warn(`[search-adapter] ${reason}: ${url}`);
+      if (attempt === attempts) return null;
     }
-    return resp;
-  } catch (e) {
-    clearTimeout(timer);
-    if (e.name === 'AbortError') {
-      console.warn(`[search-adapter] 超时: ${url}`);
-    } else {
-      console.warn(`[search-adapter] 请求失败: ${url} — ${e.message}`);
-    }
-    return null;
+    await sleep(600 * attempt);
   }
+  return null;
 }
 
 /** sleep，避免请求过快 */
@@ -154,9 +158,11 @@ export async function searchArxiv(query, { days = 1, max = 20, queryPack = '' } 
   // 取前3个关键词构造 title+abstract OR 查询（比 all: 更精准）
   const terms = query.split(/\s+OR\s+/i).map(t => t.trim()).filter(Boolean);
   const primaryTerms = terms.slice(0, 3);
-  const arxivParts = primaryTerms.map(t =>
-    `(ti:${encodeURIComponent(t)}+OR+abs:${encodeURIComponent(t)})`
-  );
+  const arxivParts = primaryTerms.map(t => {
+    const normalized = t.replace(/^["']|["']$/g, '').replace(/\s+/g, ' ');
+    const arxivTerm = /\s/.test(normalized) ? `"${normalized}"` : normalized;
+    return `(ti:${encodeURIComponent(arxivTerm)}+OR+abs:${encodeURIComponent(arxivTerm)})`;
+  });
   const arxivQuery = arxivParts.join('+OR+');
   // 多抓一些，客户端过滤日期
   const fetchMax = Math.max(max * 3, 50);
@@ -235,25 +241,81 @@ export async function searchSemanticScholar(query, { max = 20, queryPack = '' } 
 // OpenAlex 检索
 // ============================================================
 
-export async function searchOpenAlex(query, { days = 7, max = 20, queryPack = '', csOnly = true } = {}) {
+function openAlexConceptFilters(queryPack) {
+  const conceptsByPack = {
+    'mamba-ssm': ['C41008148'],              // Computer Science
+    'vision-remote-mamba': ['C41008148'],    // Computer Science
+    'hyperspectral': ['C41008148'],
+    'efficient-components': ['C41008148'],
+    'soil-soc': [],
+    'pinn-soilml': []                        // Too broad: keep query-driven
+  };
+  return conceptsByPack[queryPack] || [];
+}
+
+function isRelevantToQuery(paper, query) {
+  const text = `${paper.title || ''} ${paper.abstract || ''}`.toLowerCase();
+  const normalizedQuery = query.toLowerCase().replace(/[-_]/g, ' ').replace(/\s+/g, ' ').trim();
+  if (normalizedQuery && text.includes(normalizedQuery)) return true;
+
+  const stop = new Set([
+    'prediction', 'predictive', 'estimation', 'estimating', 'model', 'models',
+    'modeling', 'modelling', 'machine', 'learning', 'digital', 'mapping',
+    'function', 'using', 'based', 'near', 'infrared'
+  ]);
+  const tokens = normalizedQuery
+    .split(/\W+/)
+    .filter(t => t.length >= 3 && !stop.has(t));
+
+  if (tokens.length === 0) return true;
+  if (normalizedQuery.split(/\W+/).length > 1 && tokens.length < 2) return false;
+  if (tokens.length === 1) return text.includes(tokens[0]);
+
+  const matched = tokens.filter(t => text.includes(t)).length;
+  return matched >= Math.ceil(tokens.length * 0.75);
+}
+
+function isRelevantToPack(paper, queryPack) {
+  if (queryPack !== 'soil-soc') return true;
+  const text = `${paper.title || ''} ${paper.abstract || ''}`.toLowerCase();
+  const strongPatterns = [
+    /soil organic carbon/,
+    /soil organic matter/,
+    /\bsoc\b/,
+    /\bsom\b/,
+    /soil spectroscop/,
+    /vis[\s-]?nir/,
+    /near infrared spectroscop/,
+    /digital soil mapping/,
+    /soil carbon/
+  ];
+  return strongPatterns.some(pattern => pattern.test(text));
+}
+
+export async function searchOpenAlex(query, { days = 7, max = 20, queryPack = '', conceptIds = null } = {}) {
   const fromDate = daysAgoISO(days);
-  // CS 领域过滤：OpenAlex concept C41008148 = Computer Science
-  // topics.domain.id:3 是 Physical Sciences，不够精准；改用 concepts.id
-  const filters = [`from_publication_date:${fromDate}`];
-  if (csOnly) filters.push('concepts.id:C41008148');
+  const today = new Date().toISOString().split('T')[0];
+  const filters = [
+    `from_publication_date:${fromDate}`,
+    `to_publication_date:${today}`,
+    `title_and_abstract.search:${query}`
+  ];
+  const conceptFilters = conceptIds ?? openAlexConceptFilters(queryPack);
+  for (const conceptId of conceptFilters) filters.push(`concepts.id:${conceptId}`);
   const filter = filters.join(',');
-  const url = `https://api.openalex.org/works?search=${encodeURIComponent(query)}&filter=${filter}&per-page=${max}&sort=publication_date:desc&select=title,authorships,publication_year,publication_date,primary_location,doi,abstract_inverted_index,cited_by_count,open_access,ids`;
+  const url = `https://api.openalex.org/works?filter=${encodeURIComponent(filter)}&per-page=${max}&sort=publication_date:desc&select=title,authorships,publication_year,publication_date,primary_location,doi,abstract_inverted_index,cited_by_count,open_access,ids`;
 
   const resp = await safeFetch(url, {
-    headers: { 'Accept': 'application/json', 'User-Agent': 'AcademicRadar/1.0 (mailto:research@example.com)' }
-  });
+    headers: { 'Accept': 'application/json', 'User-Agent': 'AcademicRadar/1.1 (mailto:research@example.com)' },
+    attempts: 3
+  }, 25000);
   if (!resp) return [];
 
   let data;
   try { data = await resp.json(); } catch { return []; }
 
   const nowYear = new Date().getFullYear();
-  return (data.results || []).filter(item => {
+  const papers = (data.results || []).filter(item => {
     // 过滤未来异常日期（OpenAlex 预印本/在线优先发表有时日期错误）
     const year = item.publication_year;
     return !year || year <= nowYear + 1;
@@ -294,6 +356,8 @@ export async function searchOpenAlex(query, { days = 7, max = 20, queryPack = ''
       query_pack: queryPack
     });
   });
+
+  return papers.filter(p => isRelevantToQuery(p, query) && isRelevantToPack(p, queryPack));
 }
 
 // ============================================================
@@ -443,8 +507,12 @@ export async function searchForPack(pack, { days = 1, max = 20, sources = ['arxi
 
   if (sources.includes('openalex')) {
     console.log(`[search] OpenAlex: ${queryTerms.substring(0, 60)}...`);
-    const oaResults = await searchOpenAlex(queryTerms, { days, max: perSourceMax, queryPack: packName, csOnly: true });
-    results.push(...oaResults);
+    const perKeywordMax = Math.max(3, Math.ceil(perSourceMax / Math.min(keywords.length || 1, 5)));
+    for (const keyword of keywords.slice(0, 5)) {
+      const oaResults = await searchOpenAlex(keyword, { days, max: perKeywordMax, queryPack: packName });
+      results.push(...oaResults);
+      await sleep(250);
+    }
     await sleep(500);
   }
 

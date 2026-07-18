@@ -28,11 +28,11 @@ const TRANSCRIPT_TOOLS = [
     },
     {
         name: 'trans_scan',
-        description: 'Scan a historical session transcript and produce a five-part resumption brief: session size / compacted summary / user message thread (with line numbers) / tail overview / breakpoint detail (full Edit/Write input). The core tool for resuming interrupted sessions (/trans). Omit id to auto-pick the second-newest session (newest = current session, auto-skipped). After getting the brief, you MUST reconcile with git status / working tree before continuing.',
+        description: 'Scan a historical Claude Code or Codex CLI session transcript and produce a five-part resumption brief: session size / compacted summary / user message thread (with line numbers) / tail overview / breakpoint detail. The core tool for resuming interrupted sessions (/trans). With id, lookup checks ~/.claude/projects and ~/.codex/sessions with bounded directory scans only, never a full-disk find. Omit id to auto-pick the second-newest Claude project session (newest = current session, auto-skipped). After getting the brief, you MUST reconcile with git status / working tree before continuing.',
         inputSchema: {
             type: 'object',
             properties: {
-                id: { type: 'string', description: 'Session UUID or prefix; omit to auto-pick second-newest' },
+                id: { type: 'string', description: 'Session UUID or prefix; Claude ids and Codex rollout ids are both supported' },
                 path: { type: 'string', description: 'Direct transcript file path' },
                 project: { type: 'string', description: 'Project path, default: current working directory' },
                 tail: { type: 'number', description: 'Tail overview record count, default 60' },
@@ -65,7 +65,7 @@ const TRANSCRIPT_TOOLS = [
     },
     {
         name: 'trans_expand',
-        description: 'Expand context around a specific transcript position: given a sessionId + line number from trans_search / trans_scan results, returns the full records around that line (including tool calls and result summaries). This is step 2 after a search hit: "found it → now read the details."',
+        description: 'Expand context around a specific Claude Code or Codex CLI transcript position: given a sessionId + line number from trans_search / trans_scan results, returns the full records around that line (including tool calls and result summaries). This is step 2 after a search hit: "found it → now read the details."',
         inputSchema: {
             type: 'object',
             properties: {

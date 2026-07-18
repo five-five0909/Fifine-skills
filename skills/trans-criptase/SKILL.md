@@ -1,5 +1,5 @@
 ---
-name: trans
+name: trans-criptase
 description: 转录续接（DNA 式 transcription）：把中断/旧会话的 JSONL 转录读出来，提取「原任务 → 已完成 → 断点 → 剩余」，报告后接着干；同时提供对任意本地项目目录的 exact/semantic/hybrid 代码与文档检索（trans_code_*）。当用户说「/trans / 恢复会话 / 接着上次 / 续接 xxx 会话 / resume session / 上次聊到哪了」，或要求在本地代码/文档中定位符号、报错、相关实现时使用。
 argument-hint: "[会话ID或前缀] [尾部记录数，默认60]"
 ---
@@ -9,6 +9,8 @@ argument-hint: "[会话ID或前缀] [尾部记录数，默认60]"
 DNA central dogma approach: **transcribe** (read the dead session's JSONL into intelligence) → **translate** (produce a resumption report) → **express** (continue the work). Read-only on transcript files, never modifies them.
 
 > **MCP first**: if this session has the `trans` MCP server connected (transcript tools `trans_scan` / `trans_list` / `trans_search` / `trans_expand` / `trans_index` / `trans_projects`, plus code-search tools `trans_code_query` / `trans_code_index` / `trans_code_status` / `trans_code_read` / `trans_code_config_check` — see section 7), call the tools directly and skip the script commands below; they are semantically equivalent, and the transcript tools auto-refresh the index. The scripts below are a fallback when MCP is unavailable (code search has no script fallback yet; use `node scripts/semantic.mjs code-query/code-index` if available, otherwise fall back to normal Grep/Read).
+
+> **Codex fast path**: `trans_scan({id})` / `trans_expand({sessionId})` supports Codex CLI rollout JSONL files under `~/.codex/sessions/YYYY/MM/DD/rollout-...-<session-id>.jsonl`. ID lookup is bounded to `~/.claude/projects` and `~/.codex/sessions` and must not fall back to `find /` or broad semantic indexing just to locate a known session id. Use `path` only when the user gives an exact file path.
 
 ## 1. Transcribe: run the scan script (one call, full intelligence)
 
@@ -20,7 +22,7 @@ DNA central dogma approach: **transcribe** (read the dead session's JSONL into i
 
 | Param | Purpose |
 |---|---|
-| `-Id <prefix>` | Session UUID or prefix; searches current project first, then globally |
+| `-Id <prefix>` | Session UUID or prefix; searches current Claude project, all Claude transcript dirs, then bounded Codex sessions (`~/.codex/sessions`) |
 | (no args) | Auto-picks the **second-newest** transcript in current project (newest = this session, auto-skipped) |
 | `-List` | List candidate sessions (mtime desc + first user message preview); use when user didn't provide an ID |
 | `-Tail <n>` | Tail overview record count, default 60 |
@@ -35,7 +37,7 @@ If output is truncated on long sessions: reduce `-MaxMsgs`/`-Tail` for partial r
 
 ## 2. Manual fallback (if scripts are missing/broken)
 
-Transcripts live at `~/.claude/projects/<encoded>/*.jsonl`, where encoded = project cwd with **all non-alphanumeric chars replaced by `-`**. Each line is one JSON record: `type` ∈ `user`/`assistant`/`summary`; `message.content` is a string or block array (`text`/`tool_use`/`tool_result`). Extract with `Get-Content -Tail` + `ConvertFrom-Json` layer by layer: tail overview first, then full real user messages (filter `^\s*<` noise and `isSidechain`), then extract assistant tool_use inputs from the last task message onward. **Never read a large file whole into context.**
+Claude transcripts live at `~/.claude/projects/<encoded>/*.jsonl`, where encoded = project cwd with **all non-alphanumeric chars replaced by `-`**. Codex CLI transcripts live at `~/.codex/sessions/YYYY/MM/DD/rollout-...-<session-id>.jsonl`. Claude records use `type` ∈ `user`/`assistant`/`summary` with `message.content`; Codex records use `session_meta`, `event_msg`, and `response_item.payload` (`message`, `function_call`, `function_call_output`). Extract with bounded tail/context reads first, then full real user messages, then assistant/tool actions from the last task message onward. **Never read a large file whole into context and never run a full-disk search to locate a known session id.**
 
 ## 3. Verify: reconcile with disk (mandatory)
 

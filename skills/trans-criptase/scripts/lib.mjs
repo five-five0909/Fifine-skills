@@ -16,6 +16,7 @@ export const CONFIG_PATH = LEGACY_CONFIG_PATH
 // 但 smoke test 可指向临时目录，从而完全不碰用户的真实转录与索引（可复现、零污染）。
 export const INDEX_ROOT = process.env.TRANS_INDEX_ROOT || path.join(SKILL_DIR, 'index')
 export const PROJECTS_ROOT = process.env.TRANS_PROJECTS_ROOT || path.join(os.homedir(), '.claude', 'projects')
+export const CODEX_SESSIONS_ROOT = process.env.TRANS_CODEX_SESSIONS_ROOT || path.join(os.homedir(), '.codex', 'sessions')
 
 // 配置加载委派给共享层（新 config/config.json 优先，否则回退 embed-config.json），
 // 字段形状与旧版 CFG 完全一致，行为零变化。
@@ -27,6 +28,7 @@ export const encodeProject = (p) => p.replace(/[^A-Za-z0-9]/g, '-')
 export const projectTranscriptDir = (project) => path.join(PROJECTS_ROOT, encodeProject(project || process.cwd()))
 
 const CONTROL = /^(\[Request interrupted|Continue from where you left off|\[Image)|^#\S+$/
+const CODEX_WALK_LIMIT = Number(process.env.TRANS_CODEX_WALK_LIMIT || 20000)
 
 function cut(s, n, flat = true) {
     if (!s) return ''
@@ -37,17 +39,48 @@ const stampOf = (j) => j?.timestamp ? String(j.timestamp).slice(0, 16).replace('
 
 function msgText(c) {
     if (typeof c === 'string') return c
-    if (Array.isArray(c)) return c.filter(b => b.type === 'text').map(b => b.text).join(' ')
+    if (Array.isArray(c)) {
+        return c
+            .filter(b => ['text', 'input_text', 'output_text'].includes(b.type))
+            .map(b => b.text)
+            .filter(Boolean)
+            .join(' ')
+    }
     return ''
+}
+
+function codexPayload(j) {
+    return j?.type === 'response_item' ? j.payload : null
+}
+
+function codexMessageText(j) {
+    const p = codexPayload(j)
+    if (p?.type !== 'message') return ''
+    return (msgText(p.content) || '').trim()
+}
+
+function isRealUserText(t) {
+    return !!(t && !/^\s*</.test(t) && !CONTROL.test(t) && t.length > 5)
 }
 
 export function extractRecord(j) {
     if (j.isSidechain) return null
     if (j.type === 'summary') return j.summary ? { role: 'summary', text: String(j.summary) } : null
+    if (j.type === 'compacted') {
+        const text = String(j.payload?.message || j.payload?.summary || '').trim()
+        return text ? { role: 'summary', text } : null
+    }
+    const p = codexPayload(j)
+    if (p?.type === 'message' && (p.role === 'user' || p.role === 'assistant')) {
+        const text = codexMessageText(j)
+        if (!text || text.length <= 5) return null
+        if (p.role === 'user' && !isRealUserText(text)) return null
+        return { role: p.role === 'user' ? 'user' : 'ai', text }
+    }
     if (j.type !== 'user' && j.type !== 'assistant') return null
     const text = (msgText(j.message?.content) || '').trim()
     if (!text || text.length <= 5) return null
-    if (j.type === 'user' && (/^\s*</.test(text) || CONTROL.test(text))) return null
+    if (j.type === 'user' && !isRealUserText(text)) return null
     return { role: j.type === 'user' ? 'user' : 'ai', text }
 }
 
@@ -63,15 +96,59 @@ function readRecords(file) {
     return { records: out, totalLines: lines.length }
 }
 
+function safeStat(p) {
+    try { return fs.statSync(p) } catch { return null }
+}
+
+function codexSessionFiles() {
+    if (!fs.existsSync(CODEX_SESSIONS_ROOT)) return []
+    const out = []
+    const stack = [CODEX_SESSIONS_ROOT]
+    let seen = 0
+    while (stack.length) {
+        const dir = stack.pop()
+        let entries
+        try { entries = fs.readdirSync(dir, { withFileTypes: true }) } catch { continue }
+        entries.sort((a, b) => b.name.localeCompare(a.name))
+        for (const e of entries) {
+            if (++seen > CODEX_WALK_LIMIT) break
+            const p = path.join(dir, e.name)
+            if (e.isDirectory()) stack.push(p)
+            else if (e.isFile() && e.name.endsWith('.jsonl')) out.push(p)
+        }
+        if (seen > CODEX_WALK_LIMIT) break
+    }
+    return out
+        .map(f => ({ f, st: safeStat(f) }))
+        .filter(e => e.st)
+        .sort((a, b) => b.st.mtimeMs - a.st.mtimeMs)
+        .map(e => e.f)
+}
+
+function codexMatches(id) {
+    if (!id) return []
+    return codexSessionFiles().filter(f => path.basename(f).includes(id))
+}
+
+function recordTimestamp(j) {
+    return j?.timestamp || j?.payload?.timestamp || ''
+}
+
 function firstUserMsg(file) {
     const lines = fs.readFileSync(file, 'utf8').split('\n').slice(0, 400)
     for (const l of lines) {
         if (!l.trim()) continue
         let j
         try { j = JSON.parse(l) } catch { continue }
+        const cp = codexPayload(j)
+        if (cp?.type === 'message' && cp.role === 'user') {
+            const t = codexMessageText(j)
+            if (isRealUserText(t)) return cut(t, 120)
+            continue
+        }
         if (j.type !== 'user' || j.isSidechain) continue
         const t = (msgText(j.message?.content) || '').trim()
-        if (t && !/^\s*</.test(t) && t.length > 5) return cut(t, 120)
+        if (isRealUserText(t)) return cut(t, 120)
     }
     return '(前 400 行内无真实用户消息)'
 }
@@ -85,6 +162,11 @@ function transcriptCwd(file) {
         let j
         try { j = JSON.parse(l) } catch { continue }
         if (typeof j.cwd === 'string' && j.cwd) return j.cwd
+        if (typeof j.payload?.cwd === 'string' && j.payload.cwd) return j.payload.cwd
+        const envs = j.payload?.state?.environments || {}
+        for (const v of Object.values(envs)) {
+            if (typeof v?.cwd === 'string' && v.cwd) return v.cwd
+        }
     }
     return null
 }
@@ -161,17 +243,18 @@ export function resolveTranscript({ id, path: p, project } = {}) {
     }
     if (id) {
         const dir = projectTranscriptDir(project)
-        let found = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.startsWith(id) && f.endsWith('.jsonl')).map(f => path.join(dir, f)) : []
+        let found = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.includes(id) && f.endsWith('.jsonl')).map(f => path.join(dir, f)) : []
         if (!found.length && fs.existsSync(PROJECTS_ROOT)) {
             for (const d of fs.readdirSync(PROJECTS_ROOT)) {
                 const pd = path.join(PROJECTS_ROOT, d)
                 if (!fs.statSync(pd).isDirectory()) continue
                 for (const f of fs.readdirSync(pd)) {
-                    if (f.startsWith(id) && f.endsWith('.jsonl')) found.push(path.join(pd, f))
+                    if (f.includes(id) && f.endsWith('.jsonl')) found.push(path.join(pd, f))
                 }
             }
         }
-        if (!found.length) throw new Error(`未找到匹配 '${id}*' 的转录`)
+        if (!found.length) found = codexMatches(id)
+        if (!found.length) throw new Error(`未找到匹配 '${id}' 的 Claude/Codex 转录；已检查 ${PROJECTS_ROOT} 与 ${CODEX_SESSIONS_ROOT}，未做全盘搜索`)
         if (found.length > 1) throw new Error(`匹配到 ${found.length} 个转录，请用更长前缀：\n` + found.join('\n'))
         return { file: found[0], note: '' }
     }
@@ -184,11 +267,49 @@ function realUserMsgs(records) {
     const out = []
     for (const r of records) {
         const j = r.j
+        const cp = codexPayload(j)
+        if (cp?.type === 'message' && cp.role === 'user') {
+            const t = codexMessageText(j)
+            if (isRealUserText(t)) out.push({ line: r.line, stamp: stampOf({ timestamp: recordTimestamp(j) }), text: t })
+            continue
+        }
         if (j.type !== 'user' || j.isSidechain) continue
         const t = (msgText(j.message?.content) || '').trim()
-        if (t && !/^\s*</.test(t) && t.length > 5) out.push({ line: r.line, stamp: stampOf(j), text: t })
+        if (isRealUserText(t)) out.push({ line: r.line, stamp: stampOf(j), text: t })
     }
     return out
+}
+
+function tailLine(r) {
+    const j = r.j
+    if (j.isSidechain) return null
+    if (j.type === 'summary') return `[${r.line}] SUMMARY: ${cut(j.summary, 300)}`
+    if (j.type === 'compacted') return `[${r.line}] SUMMARY: ${cut(j.payload?.message || j.payload?.summary, 300)}`
+    const cp = codexPayload(j)
+    if (cp) {
+        if (cp.type === 'message') {
+            const t = codexMessageText(j)
+            if (!t) return null
+            const who = cp.role === 'user' ? 'USER' : cp.role === 'assistant' ? 'AI' : cp.role?.toUpperCase()
+            return who ? `[${r.line}] ${who}: ${cut(t, 300)}` : null
+        }
+        if (cp.type === 'function_call') return `[${r.line}] TOOL_CALL ${cp.name || '(unknown)'}`
+        if (cp.type === 'function_call_output') return `[${r.line}] TOOL_RESULT: ${cut(cp.output || '', 220)}`
+        if (j.type === 'event_msg' && cp.type) return `[${r.line}] EVENT ${cp.type}`
+        return null
+    }
+    if (j.type === 'user') {
+        const t = msgText(j.message?.content)
+        if (t) return `[${r.line}] USER: ${cut(t, 300)}`
+        if (Array.isArray(j.message?.content) && j.message.content.some(b => b.type === 'tool_result')) return `[${r.line}] TOOL_RESULT`
+    } else if (j.type === 'assistant') {
+        const t = msgText(j.message?.content)
+        const tools = Array.isArray(j.message?.content) ? j.message.content.filter(b => b.type === 'tool_use').map(b => b.name).join(',') : ''
+        let s = t ? 'AI: ' + cut(t, 300) : ''
+        if (tools) s = s ? `${s} [${tools}]` : `AI [${tools}]`
+        if (s) return `[${r.line}] ${s}`
+    }
+    return null
 }
 
 export function scanLines({ id, path: p, project, tail = 60, maxMsgs = 60, detailLine = 0 } = {}) {
@@ -213,20 +334,8 @@ export function scanLines({ id, path: p, project, tail = 60, maxMsgs = 60, detai
 
     out.push('', `=== 尾部概览（最后 ${tail} 条记录）===`)
     for (const r of records.slice(-tail)) {
-        const j = r.j
-        if (j.isSidechain) continue
-        if (j.type === 'summary') out.push(`[${r.line}] SUMMARY: ${cut(j.summary, 300)}`)
-        else if (j.type === 'user') {
-            const t = msgText(j.message?.content)
-            if (t) out.push(`[${r.line}] USER: ${cut(t, 300)}`)
-            else if (Array.isArray(j.message?.content) && j.message.content.some(b => b.type === 'tool_result')) out.push(`[${r.line}] TOOL_RESULT`)
-        } else if (j.type === 'assistant') {
-            const t = msgText(j.message?.content)
-            const tools = Array.isArray(j.message?.content) ? j.message.content.filter(b => b.type === 'tool_use').map(b => b.name).join(',') : ''
-            let s = t ? 'AI: ' + cut(t, 300) : ''
-            if (tools) s = s ? `${s} [${tools}]` : `AI [${tools}]`
-            if (s) out.push(`[${r.line}] ${s}`)
-        }
+        const line = tailLine(r)
+        if (line) out.push(line)
     }
 
     let anchorMsg = null
@@ -237,7 +346,18 @@ export function scanLines({ id, path: p, project, tail = 60, maxMsgs = 60, detai
     out.push('', `=== 断点明细（锚点 [${anchor}] ${detailLine > 0 ? '手动指定' : anchorMsg ? cut(anchorMsg.text, 80) : ''}）===`)
     const acts = []
     for (const r of records) {
-        if (r.line < anchor || r.j.type !== 'assistant' || r.j.isSidechain) continue
+        if (r.line < anchor || r.j.isSidechain) continue
+        const cp = codexPayload(r.j)
+        if (cp) {
+            if (cp.type === 'message' && cp.role === 'assistant') {
+                const t = codexMessageText(r.j)
+                if (t) acts.push(`[${r.line}] 文本: ${cut(t, 600)}`)
+            } else if (cp.type === 'function_call') {
+                acts.push(`[${r.line}] ${cp.name || 'tool_call'}: ${cut(cp.arguments || cp.input || '', 1200)}`)
+            }
+            continue
+        }
+        if (r.j.type !== 'assistant') continue
         for (const b of r.j.message?.content ?? []) {
             if (b.type === 'text') acts.push(`[${r.line}] 文本: ${cut(b.text, 600)}`)
             else if (b.type === 'tool_use') {
@@ -266,6 +386,20 @@ export function expandLines({ sessionId, line, before = 6, after = 14, project }
         if (r.line < line - before || r.line > line + after) continue
         const j = r.j
         const mark = r.line === line ? ' ◀◀' : ''
+        if (j.type === 'compacted') { out.push(`[${r.line}] SUMMARY: ${cut(j.payload?.message || j.payload?.summary, 800)}${mark}`); continue }
+        const cp = codexPayload(j)
+        if (cp) {
+            if (cp.type === 'message') {
+                const who = cp.role === 'user' ? 'USER' : cp.role === 'assistant' ? 'AI' : cp.role?.toUpperCase()
+                const t = codexMessageText(j)
+                if (who && t) out.push(`[${r.line}${stampOf({ timestamp: recordTimestamp(j) }) ? ' ' + stampOf({ timestamp: recordTimestamp(j) }) : ''}] ${who}: ${cut(t, 1200, false)}${mark}`)
+            } else if (cp.type === 'function_call') {
+                out.push(`[${r.line}] TOOL_CALL ${cp.name || '(unknown)'}: ${cut(cp.arguments || cp.input || '', 800)}${mark}`)
+            } else if (cp.type === 'function_call_output') {
+                out.push(`[${r.line}] TOOL_RESULT: ${cut(cp.output || '', 300)}${mark}`)
+            }
+            continue
+        }
         if (j.type === 'summary') { out.push(`[${r.line}] SUMMARY: ${cut(j.summary, 800)}${mark}`); continue }
         if (j.type !== 'user' && j.type !== 'assistant') continue
         const who = j.type === 'user' ? 'USER' : 'AI'
