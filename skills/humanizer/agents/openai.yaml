@@ -1,5 +1,0 @@
-interface:
-  display_name: "Humanizer"
-  short_description: "Remove signs of AI-generated writing from text."
-  icon: "edit-3"
-  brand_color: "#2563EB"

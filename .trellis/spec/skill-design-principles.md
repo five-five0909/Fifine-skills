@@ -45,13 +45,10 @@ Use this skill when [具体触发情境，包括用户意图和上下文线索].
 
 ```yaml
 # ❌ 错：描述 skill 身份，而非触发条件
-description: The humanizer skill analyzes text and removes AI writing patterns using 33 rules.
+description: The academic-humanizer skill revises scholarly prose while preserving claims, evidence strength, terminology, and logic.
 
 # ✅ 对：触发条件 + 关键词 + 产出 + 排除
-description: Use this skill when the user wants to remove AI-generated writing patterns
-  from text to make it sound more natural. Trigger: /humanizer, humanize, ai writing,
-  de-ai, make it sound human, AI味. Detects 33 patterns from Wikipedia's Signs of AI
-  writing guide. Not for code, math, or planning tasks.
+description: Use this skill when the user wants to revise academic prose without changing meaning. Trigger: /academic-humanizer, de-AI academic writing, academic prose audit, 学术润色. Produces fact-preserving revisions. Not for detector evasion or adding unsupported claims.
 ```
 
 ### 关键注意事项
@@ -108,8 +105,8 @@ This skill applies when [触发条件]. If [负向条件], stop — [替代行�
 
 | 用户意图 | Skill |
 |----------|-------|
-| 写作有 AI 味，想更自然 | humanizer |
-| 证明数学题 | rethlas |
+| 学术写作有模板化或 AI 味，需保留事实与逻辑 | academic-humanizer |
+| 证明数学题 | math-rethlas |
 | ...      | ...   |
 ```
 

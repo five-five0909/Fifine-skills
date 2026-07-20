@@ -11,6 +11,28 @@ const packageRoot = path.resolve(__dirname, "..");
 const skillsRoot = path.join(packageRoot, "skills");
 const publishableSkillsPath = path.join(__dirname, "publishable-skills.json");
 
+// Accept configuration written before the category-prefix migration.
+const legacySkillNames = Object.freeze({
+  "dev-done-flow": "workflow-dev-done-flow",
+  "grill-me-cn": "review-grill-me-cn",
+  "humanizer": "academic-humanizer",
+  "idea-hook-forge": "academic-idea-hook-forge",
+  "lit-speed-read": "academic-lit-speed-read",
+  "llm-research-grill": "academic-llm-research-grill",
+  "paddleocr-vl": "document-paddleocr-vl",
+  "paper-weaver": "academic-paper-weaver",
+  "parallel-executor-with-trellis": "workflow-parallel-executor-with-trellis",
+  "prompt-amplifier": "writing-prompt-amplifier",
+  "ref-classify": "academic-ref-classify",
+  "ref-rename": "academic-ref-rename",
+  "rethlas": "math-rethlas",
+  "tavily-search": "web-tavily-search",
+  "topic-refiner": "academic-topic-refiner",
+  "trans-criptase": "agent-trans-criptase",
+  "trellis-task-orchestrator": "workflow-trellis-task-orchestrator",
+  "write-research-grill": "academic-write-research-grill"
+});
+
 function readJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) {
     return fallback;
@@ -24,19 +46,28 @@ function readJson(filePath, fallback) {
 
 function readPublishableSkills() {
   const fallback = [
-    "grill-me-cn",
-    "idea-hook-forge",
-    "lit-speed-read",
-    "llm-research-grill",
-    "paper-weaver",
-    "parallel-executor-with-trellis",
-    "prompt-amplifier",
-    "ref-classify",
-    "ref-rename",
-    "tavily-search",
-    "topic-refiner",
-    "trellis-task-orchestrator",
-    "write-research-grill"
+    "academic-humanizer",
+    "academic-idea-hook-forge",
+    "academic-lit-speed-read",
+    "academic-llm-research-grill",
+    "academic-paper-weaver",
+    "academic-radar",
+    "academic-ref-classify",
+    "academic-ref-rename",
+    "academic-search",
+    "academic-topic-refiner",
+    "academic-write-research-grill",
+    "agent-trans-criptase",
+    "document-paddleocr-vl",
+    "math-rethlas",
+    "media-transcript",
+    "review-grill-me-cn",
+    "web-tavily-search",
+    "workflow-dev-done-flow",
+    "workflow-parallel-executor-with-trellis",
+    "workflow-trellis-task-orchestrator",
+    "writing-prompt-amplifier",
+    "writing-style"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;
@@ -81,8 +112,11 @@ function main() {
   const config = readProjectConfig();
   const publishableSkills = readPublishableSkills();
   const available = getAvailableSkills(publishableSkills);
-  const toInstall = Array.isArray(config.include)
-    ? available.filter((skill) => config.include.includes(skill))
+  const requestedSkills = Array.isArray(config.include)
+    ? config.include.map((skill) => legacySkillNames[skill] ?? skill)
+    : null;
+  const toInstall = requestedSkills
+    ? available.filter((skill) => requestedSkills.includes(skill))
     : available;
 
   const allTargets = [
