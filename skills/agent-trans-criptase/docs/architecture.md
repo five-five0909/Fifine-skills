@@ -16,7 +16,7 @@ flowchart TB
     end
 
     ClaudeLink["~/.claude/skills/trans\n(Junction/symlink)"] --> Repo
-    CodexLink["~/.agents/skills/trans\n(Junction/symlink)"] --> Repo
+    CodexLink["~/.codex/skills/trans\n(Junction/symlink)"] --> Repo
 
     ClaudeCLI[Claude Code] -- stdio MCP --> MCP
     CodexCLI[Codex CLI] -- stdio MCP --> MCP

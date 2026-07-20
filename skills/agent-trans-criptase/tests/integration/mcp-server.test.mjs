@@ -62,8 +62,38 @@ test('代码检索全链路：index(noEmbed) → query(exact) → read，沙箱�
     const rBody = JSON.parse(r.lines[0].result.content[0].text)
     assert.ok(rBody.content.includes(needle))
 
+    fs.writeFileSync(path.join(sandboxRoot, 'pipeline.py'), 'def replacement_checkpoint():\n    return False\n')
+    await rpc(call('trans_code_index', { root_path: sandboxRoot, noEmbed: true }), env)
+    const stale = await rpc(call('trans_code_query', { root_path: sandboxRoot, query: needle, mode: 'exact' }), env)
+    assert.equal(JSON.parse(stale.lines[0].result.content[0].text).results.length, 0)
+
+    fs.unlinkSync(path.join(sandboxRoot, 'pipeline.py'))
+    await rpc(call('trans_code_index', { root_path: sandboxRoot, noEmbed: true }), env)
+    const deleted = await rpc(call('trans_code_query', { root_path: sandboxRoot, query: 'replacement_checkpoint', mode: 'exact' }), env)
+    assert.equal(JSON.parse(deleted.lines[0].result.content[0].text).results.length, 0)
+
     fs.rmSync(sandboxRoot, { recursive: true, force: true })
     fs.rmSync(codeIndexRoot, { recursive: true, force: true })
+})
+
+test('Codex-only sessions can list and scan without an ID', async () => {
+    const codexRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'trans-mcp-codex-'))
+    const projectRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'trans-mcp-projects-'))
+    const sessionDir = path.join(codexRoot, '2026', '07', '20')
+    fs.mkdirSync(sessionDir, { recursive: true })
+    const session = path.join(sessionDir, 'rollout-2026-07-20T00-00-00-abcdef12-3456-7890-abcd-ef1234567890.jsonl')
+    fs.writeFileSync(session, [
+        JSON.stringify({ type: 'session_meta', payload: { cwd: '/tmp/codex-project' } }),
+        JSON.stringify({ type: 'response_item', payload: { type: 'message', role: 'user', content: [{ type: 'input_text', text: 'Resume this sufficiently long Codex task now.' }] } }),
+    ].join('\n'))
+    const env = { TRANS_CODEX_SESSIONS_ROOT: codexRoot, TRANS_PROJECTS_ROOT: projectRoot }
+    const call = (name) => [{ jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name, arguments: {} } }]
+    const listed = await rpc(call('trans_list'), env)
+    assert.match(listed.lines[0].result.content[0].text, /Codex/)
+    const scanned = await rpc(call('trans_scan'), env)
+    assert.match(scanned.lines[0].result.content[0].text, /会话文件/)
+    fs.rmSync(codexRoot, { recursive: true, force: true })
+    fs.rmSync(projectRoot, { recursive: true, force: true })
 })
 
 test('trans_code_read 拒绝越界穿越', async () => {

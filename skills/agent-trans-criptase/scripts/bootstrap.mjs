@@ -142,7 +142,7 @@ export async function bootstrap({ project = resolveProjectRoot(), startIndex = t
         checks.claudeMcp = ensureMcp('claude')
     }
     if (clients.includes('codex')) {
-        checks.codexSkill = ensureSkillLink(path.join(home, '.agents', 'skills', 'trans'))
+        checks.codexSkill = ensureSkillLink(path.join(home, '.codex', 'skills', 'trans'))
         checks.codexMcp = ensureMcp('codex')
     }
     const embedding = await checkEmbedding(loadSharedConfig())

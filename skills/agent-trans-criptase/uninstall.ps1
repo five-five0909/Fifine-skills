@@ -40,7 +40,7 @@ foreach ($c in $Clients) {
         }
         'codex' {
             Write-Host "`n[Codex CLI]"
-            Remove-SkillLink -Target (Join-Path $HOME '.agents\skills\trans')
+            Remove-SkillLink -Target (Join-Path $HOME '.codex\skills\trans')
             if (Get-Command codex -ErrorAction SilentlyContinue) {
                 try { codex mcp remove trans *>$null; Write-Host '  ✓ 已移除 Codex MCP 注册' -ForegroundColor Green }
                 catch { Write-Host '  ⚠ 移除 Codex MCP 注册失败（可能本就未注册）' -ForegroundColor Yellow }

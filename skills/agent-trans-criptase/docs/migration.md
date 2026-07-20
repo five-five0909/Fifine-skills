@@ -32,7 +32,7 @@ If you skip this, everything keeps working off `embed-config.json` — `lib/shar
 ```powershell
 .\install.ps1 -Clients codex
 ```
-This only touches the Codex side (new `~/.agents/skills/trans` link + `codex mcp add`); your existing Claude Code setup is untouched.
+This only touches the Codex side (new `~/.codex/skills/trans` link + `codex mcp add`); your existing Claude Code setup is untouched.
 
 ### Verify after migrating
 

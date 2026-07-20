@@ -109,10 +109,22 @@ export async function buildCodeIndex(rootPath, opts = {}) {
             useGitignore: cs.ignore.useGitignore,
         })
 
+        const currentFiles = Object.fromEntries(files.map((f) => [f.relPath, { mtimeMs: f.mtimeMs, size: f.size }]))
+        const staleEntries = Object.entries(state.files || {}).some(([relPath, previous]) => {
+            const current = currentFiles[relPath]
+            return !current || current.mtimeMs !== previous.mtimeMs || current.size !== previous.size
+        })
+        if (staleEntries) {
+            out.push('检测到已修改或删除的文件，完整重建索引以清除过期结果')
+            if (!opts.dry) {
+                state = { model: cfg.model, dims: 0, mode, root: path.resolve(rootPath), files: {} }
+                fs.rmSync(P.meta, { force: true })
+                fs.rmSync(P.vec, { force: true })
+            }
+        }
+
         let totalNew = 0
-        const seen = new Set()
         for (const f of files) {
-            seen.add(f.relPath)
             const prev = state.files[f.relPath]
             if (prev && prev.mtimeMs === f.mtimeMs && !opts.force) continue
             let text

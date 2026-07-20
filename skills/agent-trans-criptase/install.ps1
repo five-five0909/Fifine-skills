@@ -72,7 +72,7 @@ function Install-ClaudeClient {
 }
 
 function Install-CodexClient {
-    $target = Join-Path $HOME '.agents\skills\trans'
+    $target = Join-Path $HOME '.codex\skills\trans'
     New-SkillLink -Target $target -Source $skillDir
     if (Get-Command codex -ErrorAction SilentlyContinue) {
         try {
@@ -120,6 +120,6 @@ Write-Host "`n── 安装完成 ──" -ForegroundColor Cyan
 Write-Host "  共享源目录   : $skillDir"
 Write-Host "  MCP Server   : $serverPath"
 Write-Host "  Claude Skill : $(Join-Path $HOME '.claude\skills\trans')"
-Write-Host "  Codex Skill  : $(Join-Path $HOME '.agents\skills\trans')"
+Write-Host "  Codex Skill  : $(Join-Path $HOME '.codex\skills\trans')"
 Write-Host "  验证         : node scripts\doctor.mjs"
 Write-Host "  卸载         : .\uninstall.ps1 -Clients claude,codex        （加 -Purge 连索引/配置一起删）"

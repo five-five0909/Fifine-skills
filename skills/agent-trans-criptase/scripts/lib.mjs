@@ -245,9 +245,17 @@ function sessionFiles(project) {
 }
 
 export function listLines({ project, limit = 12 } = {}) {
-    const files = sessionFiles(project).slice(0, limit)
-    const out = ['=== 候选会话（mtime 降序；最新的通常是当前会话本身）===']
-    files.forEach((e, i) => {
+    let files
+    let source = 'Claude'
+    try {
+        files = sessionFiles(project)
+    } catch (error) {
+        files = codexSessionFiles().map(f => ({ f, st: safeStat(f) })).filter(e => e.st)
+        source = 'Codex'
+        if (!files.length) throw error
+    }
+    const out = [`=== 候选会话（${source}，mtime 降序；最新的通常是当前会话本身）===`]
+    files.slice(0, limit).forEach((e, i) => {
         const tag = i === 0 ? ' ←可能是当前会话' : ''
         out.push(`${i + 1}. ${path.basename(e.f, '.jsonl')}  ${stampOf({ timestamp: e.st.mtime.toISOString() })}  ${(e.st.size / 1024).toFixed(0)}KB${tag}`)
         out.push('   首条: ' + firstUserMsg(e.f))
@@ -277,9 +285,17 @@ export function resolveTranscript({ id, path: p, project } = {}) {
         if (found.length > 1) throw new Error(`匹配到 ${found.length} 个转录，请用更长前缀：\n` + found.join('\n'))
         return { file: found[0], note: '' }
     }
-    const files = sessionFiles(project)
+    let files
+    let source = 'Claude'
+    try {
+        files = sessionFiles(project)
+    } catch (error) {
+        files = codexSessionFiles().map(f => ({ f, st: safeStat(f) })).filter(e => e.st)
+        source = 'Codex'
+        if (!files.length) throw error
+    }
     const pick = files.length >= 2 ? files[1] : files[0]
-    return { file: pick.f, note: `（未给 ID：跳过最新的 ${path.basename(files[0].f, '.jsonl')}（疑似当前会话），取次新）` }
+    return { file: pick.f, note: `（未给 ID：${source} 跳过最新的 ${path.basename(files[0].f, '.jsonl')}（疑似当前会话），取次新）` }
 }
 
 function realUserMsgs(records) {
@@ -802,7 +818,7 @@ export async function queryLines(text, opts = {}) {
         const m = h.meta
         out.push(`${h.score.toFixed(4)}  ${shortSid(m.sid)}:${m.line}  [${m.role}${m.ts ? ' ' + m.ts : ''}]${m.part ? ` (段${m.part + 1})` : ''} ${cut(m.text, 180)}`)
     }
-    out.push('', '→ 放大上下文: trans_expand(sessionId, line) 或 scan-transcript.ps1 -Id <前缀> -Detail <行号>')
+    out.push('', '→ 放大上下文: trans_expand(sessionId, line) 或 python <skill-dir>/scripts/scan_transcript.py --id <前缀> --detail <行号>')
     return out
 }
 

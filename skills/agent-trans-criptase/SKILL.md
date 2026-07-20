@@ -26,8 +26,8 @@ The bootstrap is idempotent and must run without asking the user to repeat setup
 
 > When MCP is available: `trans_scan({id})` is equivalent; if unsure which session to resume, call `trans_list()` first.
 
-```powershell
-& "$env:USERPROFILE\.claude\skills\trans\scripts\scan-transcript.ps1" -Id <ID-prefix>
+```bash
+python <skill-dir>/scripts/scan_transcript.py --id <ID-prefix>
 ```
 
 | Param | Purpose |
@@ -69,7 +69,7 @@ Scenario: user mentions an old detail not in the current context — "how did we
 
 > When MCP is available: `trans_search({query})` → on hit `trans_expand({sessionId, line})`; the index auto-refreshes before search, zero maintenance. CLI commands below are fallback.
 
-**One-time setup**: edit `~/.claude/skills/trans/embed-config.json` with `baseUrl` (OpenAI-compatible, ending in `/v1`) and `apiKey`; or set env vars `TRANS_EMBED_BASE_URL` / `TRANS_EMBED_API_KEY` (recommended — keeps the key out of files). Default model: `BAAI/bge-m3` (best for Chinese retrieval); reranker default: `BAAI/bge-reranker-v2-m3`.
+**One-time setup**: edit `<skill-dir>/config/config.json` with `baseUrl` (OpenAI-compatible, ending in `/v1`) and `apiKey`; or set env vars `TRANS_EMBED_BASE_URL` / `TRANS_EMBED_API_KEY` (recommended — keeps the key out of files). Default model: `BAAI/bge-m3` (best for Chinese retrieval); reranker default: `BAAI/bge-reranker-v2-m3`.
 
 ```powershell
 # Build/update index for current project (incremental: only new lines, unchanged sessions skipped)
@@ -89,7 +89,7 @@ node ...\semantic.mjs query "..." --all         # search across all projects
 node ...\semantic.mjs status           # index stats per project: model/dims/chunks/size
 ```
 
-After a hit: `scan-transcript.ps1 -Id <session-prefix> -Detail <line>` to expand that section's full context.
+After a hit: `python <skill-dir>/scripts/scan_transcript.py --id <session-prefix> --detail <line>` to expand that section's full context.
 
 ## 6. Cross-project recall: find work done in a DIFFERENT project
 
@@ -102,7 +102,7 @@ Correct workflow — **locate first, then target one project**:
 
 > When MCP is available: `trans_projects({query})`. CLI fallback: `node ...\semantic.mjs projects [--query <kw>] [--limit 40]`.
 
-Key facts: vector binary is stored at `~/.claude/skills/trans/index/<project-encoded>/`, no database dependency; incremental indexing tracks per-session processed lines via `state.json`; switching embedding models triggers auto-rebuild (dimension-mismatched queries are skipped with a warning).
+Key facts: vector binary is stored at `<skill-dir>/index/<project-encoded>/`, no database dependency; incremental indexing tracks per-session processed lines via `state.json`; switching embedding models triggers auto-rebuild (dimension-mismatched queries are skipped with a warning).
 
 ## 7. Code / document retrieval (arbitrary local directories, separate from session transcripts)
 

@@ -42,7 +42,7 @@ for c in "${CLIENT_LIST[@]}"; do
             ;;
         codex)
             echo ""; echo "[Codex CLI]"
-            remove_skill_link "$HOME/.agents/skills/trans"
+            remove_skill_link "$HOME/.codex/skills/trans"
             command -v codex >/dev/null 2>&1 && (codex mcp remove trans >/dev/null 2>&1 && echo "  ✓ 已移除 Codex MCP 注册" || echo "  ⚠ 移除 Codex MCP 注册失败（可能本就未注册）")
             ;;
         *) echo "未知客户端: $c（支持 claude / codex）" ;;

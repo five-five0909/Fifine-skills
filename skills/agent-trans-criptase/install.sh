@@ -67,7 +67,7 @@ install_claude() {
 }
 
 install_codex() {
-    new_skill_link "$HOME/.agents/skills/trans" "$skill"
+    new_skill_link "$HOME/.codex/skills/trans" "$skill"
     if command -v codex >/dev/null 2>&1; then
         if codex mcp add trans -- node "$server" >/dev/null 2>&1; then
             echo "  ✓ Codex MCP 已注册"
@@ -108,6 +108,6 @@ echo "── 安装完成 ──"
 echo "  共享源目录   : $skill"
 echo "  MCP Server   : $server"
 echo "  Claude Skill : $HOME/.claude/skills/trans"
-echo "  Codex Skill  : $HOME/.agents/skills/trans"
+echo "  Codex Skill  : $HOME/.codex/skills/trans"
 echo "  验证         : node scripts/doctor.mjs"
 echo "  卸载         : ./uninstall.sh --clients claude,codex        （加 --purge 连索引/配置一起删）"

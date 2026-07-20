@@ -225,7 +225,7 @@ node scripts/semantic.mjs query "..." --all                  # across all projec
 node scripts/semantic.mjs index                              # incremental index (seconds)
 node scripts/semantic.mjs projects                           # list known projects (real cwd) for cross-project search
 node scripts/semantic.mjs projects --query epub              # narrow by path/preview substring
-pwsh scripts/scan-transcript.ps1 -Id <session-prefix>        # resumption brief (also -List)
+python scripts/scan_transcript.py --id <session-prefix>      # resumption brief (--list lists candidates)
 ```
 
 **Cross-project search.** By default `query` / `index` only touch the current project. To pull a detail from a *different* project, first run `projects` to get that project's real working-directory path, then pass it explicitly:
@@ -313,7 +313,7 @@ npm test
                                        │
                     ┌──────────────────┴──────────────────┐
           Claude Code Skill                        Codex CLI Skill
-      ~/.claude/skills/trans (Junction)        ~/.agents/skills/trans (Junction)
+      ~/.claude/skills/trans (Junction)        ~/.codex/skills/trans (Junction)
                     └──────────────────┬──────────────────┘
                             mcp/server.mjs (single stdio MCP process)
                     ┌──────────────────┴──────────────────┐
@@ -358,12 +358,12 @@ query: vector dot-product top200 ─┐
 ├── embed-config.json             legacy config format, still read as a fallback (blocked by .gitignore)
 ├── index/                        transcript vector index (blocked by .gitignore)
 ├── data/code-index/              code/document index, one namespace per indexed root_path (blocked by .gitignore)
-├── install.ps1 / install.sh      dual-client installer (-Clients claude,codex; skips a missing CLI, doesn't abort)
-├── uninstall.ps1 / uninstall.sh  -KeepData (default) or -Purge
+├── scripts/bootstrap.mjs         dual-client bootstrap (skips a missing CLI, doesn't abort)
+├── uninstall.sh                  cleanup helper
 └── embedder/                     local-model option (transformers.js + your own model files)
 ```
 
-Claude Code and Codex CLI each get a Skill directory (`~/.claude/skills/trans`, `~/.agents/skills/trans`) created as a Junction (Windows, no admin rights needed) or symlink (macOS/Linux) pointing at wherever you cloned this repo — **one codebase, one config, one set of indexes**, two independent client registrations. Each client's MCP registration is separate (`claude mcp add` / `codex mcp add`) but both point at the same `mcp/server.mjs`. Scripts derive their own location via `import.meta.url` (`lib/shared/paths.mjs`), so nothing is hardcoded to a specific install path.
+Claude Code and Codex CLI each get a Skill directory (`~/.claude/skills/trans`, `~/.codex/skills/trans`) created as a Junction (Windows, no admin rights needed) or symlink (macOS/Linux) pointing at wherever you cloned this repo — **one codebase, one config, one set of indexes**, two independent client registrations. Each client's MCP registration is separate (`claude mcp add` / `codex mcp add`) but both point at the same `mcp/server.mjs`. Scripts derive their own location via `import.meta.url` (`lib/shared/paths.mjs`), so nothing is hardcoded to a specific install path.
 
 ## FAQ
 
@@ -377,7 +377,7 @@ HF's Xet CDN (`cas-bridge.xethub.hf.co`) denies access from some network egresse
 bge-m3-class embedding is dirt cheap: a full index of 700+ chunks is ~500K input tokens once, then incremental is nearly free; each query is ~50–200 tokens.
 
 **Q: Cross-platform?**
-The core (MCP/CLI) is pure Node, works on all three platforms. `scan-transcript.ps1` needs pwsh and is a fallback — the MCP `trans_scan` is its cross-platform equivalent.
+The core is Node with a stdlib-only Python scan/list adapter, so the CLI and MCP paths work on Windows, macOS, and Linux without PowerShell.
 
 ## License
 
