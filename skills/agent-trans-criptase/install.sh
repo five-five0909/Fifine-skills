@@ -68,6 +68,9 @@ install_claude() {
 
 install_codex() {
     new_skill_link "$HOME/.codex/skills/trans" "$skill"
+    # 通用 agent 目录：部分 CLI/agent（含 Codex）以及未来客户端会去 ~/.agents/skills 发现 Skill，
+    # 与上面 Codex 专属链接并存，两条都指向同一份源目录。
+    new_skill_link "$HOME/.agents/skills/trans" "$skill"
     if command -v codex >/dev/null 2>&1; then
         if codex mcp add trans -- node "$server" >/dev/null 2>&1; then
             echo "  ✓ Codex MCP 已注册"
@@ -109,5 +112,6 @@ echo "  共享源目录   : $skill"
 echo "  MCP Server   : $server"
 echo "  Claude Skill : $HOME/.claude/skills/trans"
 echo "  Codex Skill  : $HOME/.codex/skills/trans"
+echo "  Agents Skill : $HOME/.agents/skills/trans"
 echo "  验证         : node scripts/doctor.mjs"
 echo "  卸载         : ./uninstall.sh --clients claude,codex        （加 --purge 连索引/配置一起删）"

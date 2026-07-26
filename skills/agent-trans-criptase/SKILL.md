@@ -16,7 +16,25 @@ Before handling the first `/trans` request in an installation, run:
 node "<skill-dir>/scripts/bootstrap.mjs" --project "<current-project-root>"
 ```
 
-The bootstrap is idempotent and must run without asking the user to repeat setup steps. It checks the Claude Code and Codex skill links and MCP registrations, registers a missing `trans` server through the available CLI, performs a JSON-RPC MCP handshake test, checks the embedding provider, and starts a detached initial transcript index. It never overwrites a normal user directory or prints API keys. If embedding is not configured or the probe fails, report that semantic retrieval is unavailable, continue with exact retrieval, and tell the user which configuration value is missing.
+The bootstrap is idempotent and must run without asking the user to repeat setup steps. It links the skill into **three** locations — `~/.claude/skills/trans` (Claude Code), `~/.codex/skills/trans` (Codex CLI), and `~/.agents/skills/trans` (generic convention other CLIs/agents discover Skills from) — registers a missing `trans` MCP server through the Claude/Codex CLI (the generic `.agents` link has no CLI to register against, it's link-only), performs a JSON-RPC MCP handshake test, checks the embedding provider, and starts a detached initial transcript index. It never overwrites a normal user directory or prints API keys. Pass `--clients claude,codex,agents` (default) or a subset to skip targets that don't apply.
+
+If embedding is not configured or the probe fails, retrieval still works in exact/keyword-only mode — don't block on this. But before reporting bootstrap complete, **ask the user once** (not per missing field, one combined question) whether they want semantic/hybrid search configured now, since it needs values only they know:
+
+| Field | What to tell the user | Required? |
+|---|---|---|
+| Provider | `api` (remote OpenAI-compatible endpoint) or `local` (zero-upload, needs a model file per `docs/local-model.md`) or skip entirely (exact-only, no setup) | choose one |
+| `baseUrl` | Their embedding endpoint, must end in `/v1` (e.g. `https://api.mistral.ai/v1`, `https://api.siliconflow.cn/v1`) | required for `api` |
+| `apiKey` | Recommend setting env var `TRANS_EMBED_API_KEY` instead of passing it here — keeps it out of files and this conversation | required for `api` (env var preferred) |
+| `model` | Embedding model name their endpoint supports (e.g. `mistral-embed`, `codestral-embed`, `BAAI/bge-m3`) — default `BAAI/bge-m3` if they don't know | optional, has default |
+| `rerankModel` | Optional reranker model name; leave blank to skip reranking | optional |
+
+Apply their answer non-interactively — never prompt for the key in-band, only ask them to set the env var themselves:
+
+```bash
+node "<skill-dir>/scripts/write-config.mjs" --provider api --baseUrl "<their baseUrl>" --model "<their model>"
+```
+
+Changing `provider`/`baseUrl`/`model` changes the embedding dimensions, which invalidates any existing index. After writing config, force-rebuild: `node "<skill-dir>/scripts/semantic.mjs" index --force --all`. Then re-run `doctor.mjs` (`node "<skill-dir>/scripts/doctor.mjs"`) and confirm `总体状态: PASS` before telling the user setup is done.
 
 > **MCP first**: if this session has the `trans` MCP server connected (transcript tools `trans_scan` / `trans_list` / `trans_search` / `trans_expand` / `trans_index` / `trans_projects`, plus code-search tools `trans_code_query` / `trans_code_index` / `trans_code_status` / `trans_code_read` / `trans_code_config_check` — see section 7), call the tools directly and skip the script commands below; they are semantically equivalent, and the transcript tools auto-refresh the index. The scripts below are a fallback when MCP is unavailable (code search has no script fallback yet; use `node scripts/semantic.mjs code-query/code-index` if available, otherwise fall back to normal Grep/Read).
 

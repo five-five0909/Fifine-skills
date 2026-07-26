@@ -74,6 +74,10 @@ function Install-ClaudeClient {
 function Install-CodexClient {
     $target = Join-Path $HOME '.codex\skills\trans'
     New-SkillLink -Target $target -Source $skillDir
+    # 通用 agent 目录：部分 CLI/agent（含 Codex）以及未来客户端会去 ~/.agents/skills 发现 Skill，
+    # 与上面 Codex 专属链接并存，两条都指向同一份源目录。
+    $agentsTarget = Join-Path $HOME '.agents\skills\trans'
+    New-SkillLink -Target $agentsTarget -Source $skillDir
     if (Get-Command codex -ErrorAction SilentlyContinue) {
         try {
             codex mcp add trans -- node $serverPath *>$null
@@ -121,5 +125,6 @@ Write-Host "  共享源目录   : $skillDir"
 Write-Host "  MCP Server   : $serverPath"
 Write-Host "  Claude Skill : $(Join-Path $HOME '.claude\skills\trans')"
 Write-Host "  Codex Skill  : $(Join-Path $HOME '.codex\skills\trans')"
+Write-Host "  Agents Skill : $(Join-Path $HOME '.agents\skills\trans')"
 Write-Host "  验证         : node scripts\doctor.mjs"
 Write-Host "  卸载         : .\uninstall.ps1 -Clients claude,codex        （加 -Purge 连索引/配置一起删）"

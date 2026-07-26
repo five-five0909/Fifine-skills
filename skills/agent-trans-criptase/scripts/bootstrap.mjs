@@ -133,7 +133,7 @@ async function checkEmbedding(cfg) {
     }
 }
 
-export async function bootstrap({ project = resolveProjectRoot(), startIndex = true, clients = ['claude', 'codex'] } = {}) {
+export async function bootstrap({ project = resolveProjectRoot(), startIndex = true, clients = ['claude', 'codex', 'agents'] } = {}) {
     ensureConfigTemplate()
     const home = os.homedir()
     const checks = { mcpProbe: await probeMcpServer() }
@@ -144,6 +144,11 @@ export async function bootstrap({ project = resolveProjectRoot(), startIndex = t
     if (clients.includes('codex')) {
         checks.codexSkill = ensureSkillLink(path.join(home, '.codex', 'skills', 'trans'))
         checks.codexMcp = ensureMcp('codex')
+    }
+    if (clients.includes('agents')) {
+        // 通用 agent 目录：非 Claude/Codex 的其他 CLI/agent（以及未来客户端）按约定去 ~/.agents/skills
+        // 发现 Skill；只建链接，不注册 MCP —— 这个目录不对应任何单一 CLI，没有 `mcp add` 可跑。
+        checks.agentsSkill = ensureSkillLink(path.join(home, '.agents', 'skills', 'trans'))
     }
     const embedding = await checkEmbedding(loadSharedConfig())
     checks.embedding = embedding
