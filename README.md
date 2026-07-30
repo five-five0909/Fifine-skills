@@ -33,7 +33,9 @@ npm install github:five-five0909/Fifine-skills
 Prefix names are filesystem-safe equivalents of logical namespaces such as `academic:humanizer`.
 
 - `academic-*`: academic writing, literature search, reading, paper analysis, reference management, research review, and topic refinement.
+- `ai-research-writing-skill`: evidence-backed AI research paper drafting and submission packages.
 - `document-paddleocr-vl`: parse PDFs, scans, screenshots, and images into Markdown.
+- `research-paper-writing`: ML/CV/NLP paper section writing, rewriting, and reviewer self-review.
 - `writing-*`: writing roles and prompt refinement.
 - `workflow-*`: guided development and Trellis task orchestration.
 - `review-grill-me-cn`: pressure-test an idea or plan.

@@ -36,6 +36,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 
 | Skill | Description |
 |-------|-------------|
+| ai-research-writing-skill | 从代码、实验日志、笔记和会议模板生成证据驱动的 LaTeX 论文草稿与投稿包 |
 | workflow-dev-done-flow | 通用开发工作流引导工具，硬编码阶段序列 + required/optional 标记 + TODO 动态追踪 |
 | math-rethlas | AI 驱动的数学公式形式化证明工具，驱动完整证明工作流 |
 | academic-idea-hook-forge | 论文 PDF 结构化解构工具，提取 hook 并输出 HTML 分析报告 |
@@ -54,6 +55,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | academic-search | 学术检索方法论知识库 skill，提供平台路由、API 优先策略、元数据 schema 和站点经验 |
 | writing-prompt-amplifier | 指令强化工具 |
 | media-transcript | 本地视频/音频转文稿工具，使用 ffmpeg + DashScope ASR 输出 transcript.txt |
+| research-paper-writing | ML/CV/NLP 论文 Abstract / Introduction / Method / Experiments / Conclusion 写作与改写 |
 | web-tavily-search | Tavily 实时网络搜索 |
 | workflow-trellis-task-orchestrator | Trellis 任务编排器 |
 | workflow-parallel-executor-with-trellis | Trellis 并行任务执行器 |
@@ -63,6 +65,8 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 
 | 用户意图 | Skill |
 |----------|-------|
+| 从代码、实验日志、研究笔记生成可审计 LaTeX 论文草稿/投稿包 | ai-research-writing-skill |
+| ML/CV/NLP 论文分章节写作、改写、段落逻辑和审稿人自检 | research-paper-writing |
 | 学术写作有模板化或 AI 味，需在不改变事实的前提下修订 | academic-humanizer |
 | 写作/改写时需要先选择角色、按角色特点输出 | writing-style |
 | 证明数学题，形式化验证 | math-rethlas |

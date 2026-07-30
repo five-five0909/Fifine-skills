@@ -46,6 +46,7 @@ function readJson(filePath, fallback) {
 
 function readPublishableSkills() {
   const fallback = [
+    "ai-research-writing-skill",
     "academic-humanizer",
     "academic-idea-hook-forge",
     "academic-lit-speed-read",
@@ -61,6 +62,7 @@ function readPublishableSkills() {
     "document-paddleocr-vl",
     "math-rethlas",
     "media-transcript",
+    "research-paper-writing",
     "review-grill-me-cn",
     "web-tavily-search",
     "workflow-dev-done-flow",
