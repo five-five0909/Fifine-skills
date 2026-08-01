@@ -41,6 +41,7 @@ Prefix names are filesystem-safe equivalents of logical namespaces such as `acad
 - `review-grill-me-cn`: pressure-test an idea or plan.
 - `math-rethlas`: formal mathematics proof workflow.
 - `media-transcript`: local audio/video transcription.
+- `handoff`: compact the current conversation into a redacted continuation document in the OS temporary directory.
 - `web-tavily-search`: live web search.
 - `agent-trans-criptase`: session continuation and local code/document retrieval.
 

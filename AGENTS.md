@@ -42,6 +42,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | academic-idea-hook-forge | 论文 PDF 结构化解构工具，提取 hook 并输出 HTML 分析报告 |
 | academic-paper-weaver | 统一论文阅读 skill，支持 first-pass / second-pass / full / custom 模式 |
 | document-paddleocr-vl | PaddleOCR-VL 官方 AI Studio API 文档解析工具，将 PDF/图片/扫描件解析为 Markdown 和图片资产 |
+| handoff | 将当前会话压缩为脱敏的临时目录交接文档，供下一位 agent 继续工作 |
 | academic-lit-speed-read | 学术文献速读/精读引导工具，输出 HTML 阅读报告 |
 | academic-topic-refiner | 研究选题精炼工具 |
 | academic-ref-rename | 文献文件批量重命名 |
@@ -78,6 +79,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 本地视频或音频转文稿 | media-transcript |
 | 论文全流程精读（摘要/引言/方法/实验） | academic-paper-weaver |
 | OCR、解析扫描件/图片/PDF 为 Markdown | document-paddleocr-vl |
+| 需要把当前会话交接给下一位 agent | handoff |
 | 大任务拆分为并行子流程 | workflow-parallel-executor-with-trellis |
 | 强化/改写一条 AI 指令 | writing-prompt-amplifier |
 | PDF 文献自动分类到主题桶 | academic-ref-classify |

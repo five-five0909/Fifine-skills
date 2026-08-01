@@ -74,6 +74,11 @@
       "description": "Use PaddleOCR-VL through the official AI Studio HTTP API to parse PDFs, screenshots, scans, images, and image-only documents into Markdown. Trigger when the user asks to OCR, parse, extract text/layout/tables/charts, convert a PDF/image to Markdown, or use PaddleOCR/PaddleOCR-VL without MCP."
     },
     {
+      "name": "handoff",
+      "path": "skills/handoff",
+      "description": "Compact the current conversation into a handoff document for another agent to pick up."
+    },
+    {
       "name": "math-rethlas",
       "path": "skills/math-rethlas",
       "description": "Use this skill when the user wants to prove a math problem using the Rethlas formal verification system. Trigger: /rethlas, prove, math proof, 证明, 形式化证明. Drives full proof workflow via MCP tools; output lands in a folder named after the problem."

@@ -60,6 +60,7 @@ function readPublishableSkills() {
     "academic-write-research-grill",
     "agent-trans-criptase",
     "document-paddleocr-vl",
+    "handoff",
     "math-rethlas",
     "media-transcript",
     "research-paper-writing",
