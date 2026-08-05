@@ -1,0 +1,11 @@
+interface:
+  display_name: "Session Handoff"
+  short_description: "Compact the current conversation into a redacted continuation document for another agent."
+  default_prompt: "Create a concise handoff document for the next agent."
+
+triggers:
+  - "/fifine-handoff"
+  - "handoff"
+  - "continue in a new session"
+  - "交接文档"
+  - "会话续接"

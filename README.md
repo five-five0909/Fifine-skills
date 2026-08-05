@@ -30,17 +30,13 @@ npm install github:five-five0909/Fifine-skills
 
 ## Skills
 
-All publishable skills use the `skills-<category>-<capability>` namespace.
+All publishable skills use the `fifine-<original-name>` namespace. The prefix is
+the only namespace marker; the remainder keeps the familiar skill name.
 
-- `skills-research-*`: topic refinement, literature search, radar tracking, paper reading, and hook extraction.
-- `skills-writing-*`: evidence-backed paper drafting, section writing, prose humanization, style, and prompt refinement.
-- `skills-review-*`: research, writing, and plan pressure tests.
-- `skills-library-*`: reference classification and metadata-based renaming.
-- `skills-workflow-*`: development workflow and Trellis orchestration.
-- `skills-session-*`: transcript continuation and session handoff.
-- `skills-convert-*`: document OCR and local media transcription.
-- `skills-web-search`: live web search.
-- `skills-math-proof`: formal mathematics proof workflow.
+Examples include `fifine-live-humanizer`, `fifine-paper-weaver`,
+`fifine-ref-classify`, `fifine-dev-done-flow`, and
+`fifine-trellis-task-orchestrator`. The former AI research writing skill is
+retired and is no longer published.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 
