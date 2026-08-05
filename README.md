@@ -30,20 +30,17 @@ npm install github:five-five0909/Fifine-skills
 
 ## Skills
 
-Prefix names are filesystem-safe equivalents of logical namespaces such as `academic:humanizer`.
+All publishable skills use the `skills-<category>-<capability>` namespace.
 
-- `academic-*`: academic writing, literature search, reading, paper analysis, reference management, research review, and topic refinement.
-- `ai-research-writing-skill`: evidence-backed AI research paper drafting and submission packages.
-- `document-paddleocr-vl`: parse PDFs, scans, screenshots, and images into Markdown.
-- `research-paper-writing`: ML/CV/NLP paper section writing, rewriting, and reviewer self-review.
-- `writing-*`: writing roles and prompt refinement.
-- `workflow-*`: guided development and Trellis task orchestration.
-- `review-grill-me-cn`: pressure-test an idea or plan.
-- `math-rethlas`: formal mathematics proof workflow.
-- `media-transcript`: local audio/video transcription.
-- `handoff`: compact the current conversation into a redacted continuation document in the OS temporary directory.
-- `web-tavily-search`: live web search.
-- `agent-trans-criptase`: session continuation and local code/document retrieval.
+- `skills-research-*`: topic refinement, literature search, radar tracking, paper reading, and hook extraction.
+- `skills-writing-*`: evidence-backed paper drafting, section writing, prose humanization, style, and prompt refinement.
+- `skills-review-*`: research, writing, and plan pressure tests.
+- `skills-library-*`: reference classification and metadata-based renaming.
+- `skills-workflow-*`: development workflow and Trellis orchestration.
+- `skills-session-*`: transcript continuation and session handoff.
+- `skills-convert-*`: document OCR and local media transcription.
+- `skills-web-search`: live web search.
+- `skills-math-proof`: formal mathematics proof workflow.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

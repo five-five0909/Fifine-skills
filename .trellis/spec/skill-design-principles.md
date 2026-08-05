@@ -45,10 +45,10 @@ Use this skill when [具体触发情境，包括用户意图和上下文线索].
 
 ```yaml
 # ❌ 错：描述 skill 身份，而非触发条件
-description: The academic-humanizer skill revises scholarly prose while preserving claims, evidence strength, terminology, and logic.
+description: The skills-writing-humanizer skill revises scholarly prose while preserving claims, evidence strength, terminology, and logic.
 
 # ✅ 对：触发条件 + 关键词 + 产出 + 排除
-description: Use this skill when the user wants to revise academic prose without changing meaning. Trigger: /academic-humanizer, de-AI academic writing, academic prose audit, 学术润色. Produces fact-preserving revisions. Not for detector evasion or adding unsupported claims.
+description: Use this skill when the user wants to revise academic prose without changing meaning. Trigger: /skills-writing-humanizer, de-AI academic writing, academic prose audit, 学术润色. Produces fact-preserving revisions. Not for detector evasion or adding unsupported claims.
 ```
 
 ### 关键注意事项
@@ -105,8 +105,8 @@ This skill applies when [触发条件]. If [负向条件], stop — [替代行�
 
 | 用户意图 | Skill |
 |----------|-------|
-| 学术写作有模板化或 AI 味，需保留事实与逻辑 | academic-humanizer |
-| 证明数学题 | math-rethlas |
+| 学术写作有模板化或 AI 味，需保留事实与逻辑 | skills-writing-humanizer |
+| 证明数学题 | skills-math-proof |
 | ...      | ...   |
 ```
 
@@ -197,3 +197,20 @@ IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning.
 ```bash
 node scripts/validate-skills.mjs
 ```
+
+## 八、发布 Skill 命名空间
+
+所有发布 skill 使用统一的 `skills-<category>-<capability>` kebab-case 名称，且目录名、`SKILL.md` frontmatter 的 `name`、`skills.json` 的 `name`/`path` 必须完全一致。
+
+当前分类前缀包括：
+
+- `skills-research-*`
+- `skills-writing-*`
+- `skills-review-*`
+- `skills-library-*`
+- `skills-workflow-*`
+- `skills-session-*`
+- `skills-convert-*`
+- `skills-web-*` 与 `skills-math-*`
+
+重命名 skill 时，`scripts/postinstall.js` 必须保留旧名称到新 canonical name 的兼容映射，避免消费项目中的 `skills.json` 配置失效。新的 canonical name 应用于发布清单、触发命令和文档；旧名称只允许出现在 legacy alias 或迁移说明中。

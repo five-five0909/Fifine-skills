@@ -4,129 +4,129 @@
   "repository": "five-five0909/Fifine-skills",
   "skills": [
     {
-      "name": "ai-research-writing-skill",
-      "path": "skills/ai-research-writing-skill",
+      "name": "skills-writing-research-paper",
+      "path": "skills/skills-writing-research-paper",
       "description": "End-to-end research paper generation, review, and revision for ML/AI/CV/NLP projects from repositories, notes, experiment logs, drafts, and conference templates. Use when building a paper story, mapping claims to evidence, writing or revising sections, producing figures and tables, verifying citations, acting as a skeptical reviewer, running venue or build checks, or preparing a LaTeX/Overleaf/Git submission package."
     },
     {
-      "name": "academic-humanizer",
-      "path": "skills/academic-humanizer",
+      "name": "skills-writing-humanizer",
+      "path": "skills/skills-writing-humanizer",
       "description": "Draft, audit, or minimally revise English- or Chinese-language academic prose while preserving claims, evidence strength, terminology identity, logical relations, document-level variation, and scholarly register."
     },
     {
-      "name": "academic-idea-hook-forge",
-      "path": "skills/academic-idea-hook-forge",
-      "description": "Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output. Trigger: /academic-idea-hook-forge, paper PDF, extract hook, 论文拆解, idea extraction."
+      "name": "skills-research-hook-forge",
+      "path": "skills/skills-research-hook-forge",
+      "description": "Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output. Trigger: /skills-research-hook-forge, paper PDF, extract hook, 论文拆解, idea extraction."
     },
     {
-      "name": "academic-lit-speed-read",
-      "path": "skills/academic-lit-speed-read",
-      "description": "Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review. Trigger: /academic-lit-speed-read, speed read, 速读, paper summary, 文献摘要."
+      "name": "skills-research-quick-read",
+      "path": "skills/skills-research-quick-read",
+      "description": "Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review. Trigger: /skills-research-quick-read, speed read, 速读, paper summary, 文献摘要."
     },
     {
-      "name": "academic-llm-research-grill",
-      "path": "skills/academic-llm-research-grill",
-      "description": "Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense. Trigger: /academic-llm-research-grill, LLM research, PyTorch, 研究方向审查, audit experiment."
+      "name": "skills-review-research",
+      "path": "skills/skills-review-research",
+      "description": "Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense. Trigger: /skills-review-research, LLM research, PyTorch, 研究方向审查, audit experiment."
     },
     {
-      "name": "academic-paper-weaver",
-      "path": "skills/academic-paper-weaver",
-      "description": "Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments. Trigger: /academic-paper-weaver, read paper, 论文阅读, structured reading, abstract introduction."
+      "name": "skills-research-deep-read",
+      "path": "skills/skills-research-deep-read",
+      "description": "Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments. Trigger: /skills-research-deep-read, read paper, 论文阅读, structured reading, abstract introduction."
     },
     {
-      "name": "academic-radar",
-      "path": "skills/academic-radar",
-      "description": "论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、academic-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 paper-weaver 或 lit-speed-read，不触发本 skill。"
+      "name": "skills-research-radar",
+      "path": "skills/skills-research-radar",
+      "description": "论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、skills-research-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 skills-research-deep-read 或 skills-research-quick-read，不触发本 skill。"
     },
     {
-      "name": "academic-ref-classify",
-      "path": "skills/academic-ref-classify",
-      "description": "Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches. Trigger: /academic-ref-classify, classify references, 文献分类, PDF bucket."
+      "name": "skills-library-classify",
+      "path": "skills/skills-library-classify",
+      "description": "Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches. Trigger: /skills-library-classify, classify references, 文献分类, PDF bucket."
     },
     {
-      "name": "academic-ref-rename",
-      "path": "skills/academic-ref-rename",
-      "description": "Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /academic-ref-rename, rename PDF, 文献重命名, batch rename."
+      "name": "skills-library-rename",
+      "path": "skills/skills-library-rename",
+      "description": "Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /skills-library-rename, rename PDF, 文献重命名, batch rename."
     },
     {
-      "name": "academic-search",
-      "path": "skills/academic-search",
-      "description": "学术检索方法论 Skill。当 AI 需要在学术平台搜索论文、提取元数据、判断开放获取状态时，提供平台选择策略、查询扩展方法、多源去重规则、学科路由、站点经验和统一元数据 schema。触发词：帮我查文献、查一下这篇论文、找这个作者的论文、查引用数、搜索学术、academic-search、搜 Google Scholar、搜 CNKI、找 BibTeX、查 DOI、找 PDF、开放获取。负向排除：如果用户要追踪某个方向的最新论文并生成雷达报告，使用 academic-radar；如果用户只是要阅读一篇已有 PDF，使用 paper-weaver 或 lit-speed-read。"
+      "name": "skills-research-search",
+      "path": "skills/skills-research-search",
+      "description": "学术检索方法论 Skill。当 AI 需要在学术平台搜索论文、提取元数据、判断开放获取状态时，提供平台选择策略、查询扩展方法、多源去重规则、学科路由、站点经验和统一元数据 schema。触发词：帮我查文献、查一下这篇论文、找这个作者的论文、查引用数、搜索学术、skills-research-search、搜 Google Scholar、搜 CNKI、找 BibTeX、查 DOI、找 PDF、开放获取。负向排除：如果用户要追踪某个方向的最新论文并生成雷达报告，使用 skills-research-radar；如果用户只是要阅读一篇已有 PDF，使用 skills-research-deep-read 或 skills-research-quick-read。"
     },
     {
-      "name": "academic-topic-refiner",
-      "path": "skills/academic-topic-refiner",
-      "description": "Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem. Trigger: /academic-topic-refiner, refine topic, 选题精炼, research question, 研究问题."
+      "name": "skills-research-topic",
+      "path": "skills/skills-research-topic",
+      "description": "Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem. Trigger: /skills-research-topic, refine topic, 选题精炼, research question, 研究问题."
     },
     {
-      "name": "academic-write-research-grill",
-      "path": "skills/academic-write-research-grill",
-      "description": "Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting. Trigger: /academic-write-research-grill, 写稿审问, pre-writing, paper draft, 写作前."
+      "name": "skills-review-writing",
+      "path": "skills/skills-review-writing",
+      "description": "Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting. Trigger: /skills-review-writing, 写稿审问, pre-writing, paper draft, 写作前."
     },
     {
-      "name": "agent-trans-criptase",
-      "path": "skills/agent-trans-criptase",
+      "name": "skills-session-trans-criptase",
+      "path": "skills/skills-session-trans-criptase",
       "description": "转录续接（DNA 式 transcription）：把中断/旧会话的 JSONL 转录读出来，提取「原任务 → 已完成 → 断点 → 剩余」，报告后接着干；同时提供对任意本地项目目录的 exact/semantic/hybrid 代码与文档检索（trans_code_*）。当用户说「/trans / 恢复会话 / 接着上次 / 续接 xxx 会话 / resume session / 上次聊到哪了」，或要求在本地代码/文档中定位符号、报错、相关实现时使用。"
     },
     {
-      "name": "document-paddleocr-vl",
-      "path": "skills/document-paddleocr-vl",
+      "name": "skills-convert-document",
+      "path": "skills/skills-convert-document",
       "description": "Use PaddleOCR-VL through the official AI Studio HTTP API to parse PDFs, screenshots, scans, images, and image-only documents into Markdown. Trigger when the user asks to OCR, parse, extract text/layout/tables/charts, convert a PDF/image to Markdown, or use PaddleOCR/PaddleOCR-VL without MCP."
     },
     {
-      "name": "handoff",
-      "path": "skills/handoff",
-      "description": "Compact the current conversation into a handoff document for another agent to pick up."
+      "name": "skills-session-handoff",
+      "path": "skills/skills-session-handoff",
+      "description": "Compact the current conversation into a redacted continuation document for another agent to pick up. Trigger: /skills-session-handoff, handoff, 会话交接."
     },
     {
-      "name": "math-rethlas",
-      "path": "skills/math-rethlas",
-      "description": "Use this skill when the user wants to prove a math problem using the Rethlas formal verification system. Trigger: /rethlas, prove, math proof, 证明, 形式化证明. Drives full proof workflow via MCP tools; output lands in a folder named after the problem."
+      "name": "skills-math-proof",
+      "path": "skills/skills-math-proof",
+      "description": "Use this skill when the user wants to prove a math problem using the Rethlas formal verification system. Trigger: /skills-math-proof, /rethlas (legacy), prove, math proof, 证明, 形式化证明. Drives full proof workflow via MCP tools; output lands in a folder named after the problem."
     },
     {
-      "name": "media-transcript",
-      "path": "skills/media-transcript",
+      "name": "skills-convert-media",
+      "path": "skills/skills-convert-media",
       "description": "Transcribe local video or audio files into text using ffmpeg plus Alibaba DashScope ASR. Use only when the user asks to process a local video/audio file, extract a transcript, convert media speech to text, or generate a text稿/文稿/subtitle-like plain transcript. Do not use for URL downloading, web scraping, Douyin link parsing, PDFs, images, or general text files."
     },
     {
-      "name": "review-grill-me-cn",
-      "path": "skills/review-grill-me-cn",
-      "description": "Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction. Trigger: /review-grill-me-cn, 压测方案, review idea, 找漏洞, pressure test."
+      "name": "skills-review-plan",
+      "path": "skills/skills-review-plan",
+      "description": "Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction. Trigger: /skills-review-plan, 压测方案, review idea, 找漏洞, pressure test."
     },
     {
-      "name": "research-paper-writing",
-      "path": "skills/research-paper-writing",
+      "name": "skills-writing-paper-sections",
+      "path": "skills/skills-writing-paper-sections",
       "description": "Improve academic paper writing quality for ML/CV/NLP-style papers with clear section structure, paragraph flow, and reviewer-facing presentation. Use when drafting or revising Abstract, Introduction, Related Work, Method, Experiments, or Conclusion; polishing figures/tables; checking claim-support alignment; or performing self-review before submission."
     },
     {
-      "name": "web-tavily-search",
-      "path": "skills/web-tavily-search",
-      "description": "Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory. Trigger: /web-tavily-search, search web, 联网搜索, current info, live search."
+      "name": "skills-web-search",
+      "path": "skills/skills-web-search",
+      "description": "Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory. Trigger: /skills-web-search, search web, 联网搜索, current info, live search."
     },
     {
-      "name": "workflow-dev-done-flow",
-      "path": "skills/workflow-dev-done-flow",
-      "description": "universal development workflow guide for software engineering, java backend work, llm applications, agent/rag projects, architecture refactoring, bug diagnosis, performance/security work, and long-running engineering goals. use when the user wants to start, plan, structure, diagnose, or iterate on a development task and expects the AI assistant to create local markdown workflow documents under `.dev-done-flow/`, update `Agents.md` or `AGENTS.md`, ask structured questions, record answers, and guide the project through discovery, requirements, design, planning, implementation, verification, release, observability, feedback, and iteration. Trigger: /workflow-dev-done-flow, start task, dev workflow, 开发流程, 任务规划."
+      "name": "skills-workflow-dev",
+      "path": "skills/skills-workflow-dev",
+      "description": "universal development workflow guide for software engineering, java backend work, llm applications, agent/rag projects, architecture refactoring, bug diagnosis, performance/security work, and long-running engineering goals. use when the user wants to start, plan, structure, diagnose, or iterate on a development task and expects the AI assistant to create local markdown workflow documents under `.dev-done-flow/`, update `Agents.md` or `AGENTS.md`, ask structured questions, record answers, and guide the project through discovery, requirements, design, planning, implementation, verification, release, observability, feedback, and iteration. Trigger: /skills-workflow-dev, start task, dev workflow, 开发流程, 任务规划."
     },
     {
-      "name": "workflow-parallel-executor-with-trellis",
-      "path": "skills/workflow-parallel-executor-with-trellis",
-      "description": "Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification. Trigger: /workflow-parallel-executor-with-trellis, parallel tasks, 并行执行, split workstream."
+      "name": "skills-workflow-parallel",
+      "path": "skills/skills-workflow-parallel",
+      "description": "Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification. Trigger: /skills-workflow-parallel, parallel tasks, 并行执行, split workstream."
     },
     {
-      "name": "workflow-trellis-task-orchestrator",
-      "path": "skills/workflow-trellis-task-orchestrator",
-      "description": "Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks. Trigger: /workflow-trellis-task-orchestrator, trellis plan, task orchestration, PRD, 任务拆解."
+      "name": "skills-workflow-trellis",
+      "path": "skills/skills-workflow-trellis",
+      "description": "Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks. Trigger: /skills-workflow-trellis, trellis plan, task orchestration, PRD, 任务拆解."
     },
     {
-      "name": "writing-prompt-amplifier",
-      "path": "skills/writing-prompt-amplifier",
-      "description": "Use this skill when the user wants an instruction rewritten into a stronger execution prompt before handing it to another model or workflow, especially when adherence and precision matter. Trigger: /writing-prompt-amplifier, amplify prompt, 强化指令, rewrite instruction."
+      "name": "skills-writing-prompt",
+      "path": "skills/skills-writing-prompt",
+      "description": "Use this skill when the user wants an instruction rewritten into a stronger execution prompt before handing it to another model or workflow, especially when adherence and precision matter. Trigger: /skills-writing-prompt, amplify prompt, 强化指令, rewrite instruction."
     },
     {
-      "name": "writing-style",
-      "path": "skills/writing-style",
-      "description": "Use this skill when the user wants to write, rewrite, adapt, or polish text in a selected writing role or reusable personal style. Trigger: /writing-style, writing style, 写作风格, 改写风格, 角色写作, 模仿风格, 选择角色, platform copywriting."
+      "name": "skills-writing-style",
+      "path": "skills/skills-writing-style",
+      "description": "Use this skill when the user wants to write, rewrite, adapt, or polish text in a selected writing role or reusable personal style. Trigger: /skills-writing-style, writing style, 写作风格, 改写风格, 角色写作, 模仿风格, 选择角色, platform copywriting."
     }
   ]
 }
