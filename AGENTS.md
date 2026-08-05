@@ -51,8 +51,8 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-write-research-grill | 写稿前结构化审问 |
 | fifine-live-humanizer | 中文创作与改稿，保留材料事实、自然中文韵律和活人感 |
 | fifine-writing-style | 可选择角色的写作风格工具，支持按角色特点写作/改写，并通过 original/final 自动学习风格规则 |
-| fifine-radar | 论文方向追踪雷达，调用 Node 脚本检索 arXiv/OpenAlex/S2，生成 H1/H2/H3 分级 HTML 报告 |
-| fifine-search | 学术检索方法论知识库 skill，提供平台路由、API 优先策略、元数据 schema 和站点经验 |
+| fifine-research-radar | 论文方向追踪雷达，调用 Node 脚本检索 arXiv/OpenAlex/S2，生成 H1/H2/H3 分级 HTML 报告 |
+| fifine-research-search | 学术检索方法论知识库 skill，提供平台路由、API 优先策略、元数据 schema 和站点经验 |
 | fifine-prompt-amplifier | 指令强化工具 |
 | fifine-media-transcript | 本地视频/音频转文稿工具，使用 ffmpeg + DashScope ASR 输出 transcript.txt |
 | fifine-research-paper-writing | ML/CV/NLP 论文 Abstract / Introduction / Method / Experiments / Conclusion 写作与改写 |

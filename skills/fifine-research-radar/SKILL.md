@@ -1,6 +1,6 @@
 ---
-name: fifine-radar
-description: 论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、fifine-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read，不触发本 skill。
+name: fifine-research-radar
+description: 论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、fifine-research-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read，不触发本 skill。
 ---
 
 # Academic Component Hook Radar Skill
@@ -61,7 +61,7 @@ description: 论文方向追踪雷达 Skill。根据用户输入的研究方向�
 ### Step 2：确定执行命令
 
 **脚本位置**：本 skill 的脚本在 `<本 skill 的 SKILL.md 所在目录>/scripts/daily-component-radar.mjs`。
-安装后通常位于 `.claude/skills/fifine-radar/scripts/daily-component-radar.mjs`（相对于消费者项目根目录）。
+安装后通常位于 `.claude/skills/fifine-research-radar/scripts/daily-component-radar.mjs`（相对于消费者项目根目录）。
 
 根据用户意图，选择执行方式：
 
@@ -92,20 +92,20 @@ node <skill-dir>/scripts/daily-component-radar.mjs --mock
 | `--sources` | `arxiv,openalex` | 默认数据源，S2 因限速不默认开启 |
 | `--name` | `latest` | 输出文件名（不含扩展名） |
 
-**示例命令**（`<skill-dir>` 替换为实际路径，如 `.claude/skills/fifine-radar`）：
+**示例命令**（`<skill-dir>` 替换为实际路径，如 `.claude/skills/fifine-research-radar`）：
 
 ```bash
 # 用户说"搜一下最近 Mamba 论文"
-node .claude/skills/fifine-radar/scripts/daily-component-radar.mjs --pack mamba-ssm --days 7 --max 30
+node .claude/skills/fifine-research-radar/scripts/daily-component-radar.mjs --pack mamba-ssm --days 7 --max 30
 
 # 用户说"找找 DeltaNet 和 xLSTM 的最新进展"
-node .claude/skills/fifine-radar/scripts/daily-component-radar.mjs --keywords "DeltaNet,xLSTM,linear recurrence" --days 14 --max 20
+node .claude/skills/fifine-research-radar/scripts/daily-component-radar.mjs --keywords "DeltaNet,xLSTM,linear recurrence" --days 14 --max 20
 
 # 用户说"搜最近一个月高光谱的论文，多搜一些"
-node .claude/skills/fifine-radar/scripts/daily-component-radar.mjs --pack hyperspectral --days 30 --max 50
+node .claude/skills/fifine-research-radar/scripts/daily-component-radar.mjs --pack hyperspectral --days 30 --max 50
 
 # 用户说"全部方向都跑一遍"
-node .claude/skills/fifine-radar/scripts/daily-component-radar.mjs --days 7 --max 20
+node .claude/skills/fifine-research-radar/scripts/daily-component-radar.mjs --days 7 --max 20
 ```
 
 ### Step 3：执行脚本，等待完成

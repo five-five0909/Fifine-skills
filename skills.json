@@ -29,9 +29,9 @@
       "description": "Use this skill when the user wants a structured paper-reading pipeline driven from a PDF, especially to produce staged outputs for abstract, introduction, related work, method, formulas, and experiments. Trigger: /fifine-paper-weaver, read paper, 论文阅读, structured reading, abstract introduction."
     },
     {
-      "name": "fifine-radar",
-      "path": "skills/fifine-radar",
-      "description": "论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、fifine-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read，不触发本 skill。"
+      "name": "fifine-research-radar",
+      "path": "skills/fifine-research-radar",
+      "description": "论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、fifine-research-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read，不触发本 skill。"
     },
     {
       "name": "fifine-ref-classify",
@@ -44,9 +44,9 @@
       "description": "Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /fifine-ref-rename, rename PDF, 文献重命名, batch rename."
     },
     {
-      "name": "fifine-search",
-      "path": "skills/fifine-search",
-      "description": "学术检索方法论 Skill。当 AI 需要在学术平台搜索论文、提取元数据、判断开放获取状态时，提供平台选择策略、查询扩展方法、多源去重规则、学科路由、站点经验和统一元数据 schema。触发词：帮我查文献、查一下这篇论文、找这个作者的论文、查引用数、搜索学术、fifine-search、搜 Google Scholar、搜 CNKI、找 BibTeX、查 DOI、找 PDF、开放获取。负向排除：如果用户要追踪某个方向的最新论文并生成雷达报告，使用 fifine-radar；如果用户只是要阅读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read。"
+      "name": "fifine-research-search",
+      "path": "skills/fifine-research-search",
+      "description": "学术检索方法论 Skill。当 AI 需要在学术平台搜索论文、提取元数据、判断开放获取状态时，提供平台选择策略、查询扩展方法、多源去重规则、学科路由、站点经验和统一元数据 schema。触发词：帮我查文献、查一下这篇论文、找这个作者的论文、查引用数、搜索学术、fifine-research-search、搜 Google Scholar、搜 CNKI、找 BibTeX、查 DOI、找 PDF、开放获取。负向排除：如果用户要追踪某个方向的最新论文并生成雷达报告，使用 fifine-research-radar；如果用户只是要阅读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read。"
     },
     {
       "name": "fifine-topic-refiner",
