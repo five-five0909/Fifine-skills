@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 grill.py — Grill Me 会话记录器
-把每次 grill 过程存到当前项目的 .claude/.grill-me/YYYY-MM-DD/HH-MM-SS.md
+把每次 grill 过程存到当前项目的 .fifine/grill/YYYY-MM-DD/HH-MM-SS.md
 """
 import sys, argparse
 from datetime import datetime
@@ -24,8 +24,8 @@ def main():
     time_str  = now.strftime('%H-%M-%S')
     mode_name = {'A': '方案审查', 'B': '执行任务', 'D': '工作流审计'}.get(args.mode, args.mode)
 
-    # 存到当前工作目录下的 .claude/.grill-me/
-    out_dir = Path.cwd() / '.claude' / '.grill-me' / date_str
+    # 存到当前项目根目录下的 .fifine/grill/
+    out_dir = Path.cwd() / '.fifine' / 'grill' / date_str
     out_dir.mkdir(parents=True, exist_ok=True)
     out_file = out_dir / f'{time_str}.md'
 

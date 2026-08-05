@@ -140,5 +140,5 @@ python <当前skill目录>/grill.py \
   --outcome "<结论或下一步>"
 ```
 
-脚本会自动存到当前项目的 `.claude/.grill-me/YYYY-MM-DD/HH-MM-SS.md`。
+脚本会自动存到当前项目根目录的 `.fifine/grill/YYYY-MM-DD/HH-MM-SS.md`。
 
