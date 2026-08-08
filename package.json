@@ -7,6 +7,7 @@
     "README.md",
     "skills.json",
     "skills",
+    "prompts",
     "scripts/postinstall.js",
     "scripts/publishable-skills.json",
     "scripts/validate-skills.mjs"
