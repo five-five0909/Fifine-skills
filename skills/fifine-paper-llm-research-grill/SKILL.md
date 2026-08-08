@@ -1,6 +1,6 @@
 ---
-name: fifine-llm-research-grill
-description: Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense. Trigger: /fifine-llm-research-grill, LLM research, PyTorch, 研究方向审查, audit experiment.
+name: fifine-paper-llm-research-grill
+description: Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense. Trigger: /fifine-paper-llm-research-grill, LLM research, PyTorch, 研究方向审查, audit experiment.
 ---
 
 # LLM Research Grill

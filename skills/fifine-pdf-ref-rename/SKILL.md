@@ -1,6 +1,6 @@
 ---
-name: fifine-ref-rename
-description: Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /fifine-ref-rename, rename PDF, 文献重命名, batch rename.
+name: fifine-pdf-ref-rename
+description: Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /fifine-pdf-ref-rename, rename PDF, 文献重命名, batch rename.
 ---
 
 # pdf-ref-rename
@@ -9,7 +9,7 @@ description: Use this skill when the user wants to batch rename research PDFs fr
 > 默认增量更新：已命名文件自动跳过，只处理新增/未命名文件。
 
 ## Trigger check
-This skill applies when the user wants to batch rename research PDFs using extracted metadata. If the user wants to classify PDFs into topic folders — stop, use fifine-ref-classify instead.
+This skill applies when the user wants to batch rename research PDFs using extracted metadata. If the user wants to classify PDFs into topic folders — stop, use fifine-pdf-ref-classify instead.
 
 ## 触发与输入
 
@@ -22,7 +22,7 @@ This skill applies when the user wants to batch rename research PDFs using extra
 ## 依赖
 
 - Python 3.7+、PyMuPDF (`pip install PyMuPDF`)
-- 脚本位置：`skills/fifine-ref-rename/scripts/`
+- 脚本位置：`skills/fifine-pdf-ref-rename/scripts/`
 
 ---
 
@@ -31,7 +31,7 @@ This skill applies when the user wants to batch rename research PDFs using extra
 **默认使用增量模式**，跳过已按 `YYYY_Title_Author.pdf` 格式命名的文件：
 
 ```bash
-python <repo_root>/skills/fifine-ref-rename/scripts/scan_refs.py "<用户路径>" --incremental -o <temp_scan.json>
+python <repo_root>/skills/fifine-pdf-ref-rename/scripts/scan_refs.py "<用户路径>" --incremental -o <temp_scan.json>
 ```
 
 如果需要重新扫描全部文件（如校验已有命名），加 `--all` 不加 `--incremental`。
@@ -153,7 +153,7 @@ Windows 系统限制完整路径不超过 260 字符。`do_rename.py` 内置了�
 2. 先运行 dry-run 预览：
 
 ```bash
-python <repo_root>/skills/fifine-ref-rename/scripts/do_rename.py <plan.json> --dry-run
+python <repo_root>/skills/fifine-pdf-ref-rename/scripts/do_rename.py <plan.json> --dry-run
 ```
 
 3. 展示预览，再次确认
@@ -161,7 +161,7 @@ python <repo_root>/skills/fifine-ref-rename/scripts/do_rename.py <plan.json> --d
 4. 正式执行：
 
 ```bash
-python <repo_root>/skills/fifine-ref-rename/scripts/do_rename.py <plan.json>
+python <repo_root>/skills/fifine-pdf-ref-rename/scripts/do_rename.py <plan.json>
 ```
 
 5. 执行后：
@@ -170,7 +170,7 @@ python <repo_root>/skills/fifine-ref-rename/scripts/do_rename.py <plan.json>
    - 若项目中有引用这些 PDF 的 Markdown 索引文件，**主动提醒**用户是否更新
    - 若当前目录是 `plans/PISFM_Enhance/参考文献/`，**主动提示**：
      ```
-     ✅ 重命名完成。如需将文件归入 A-F 板块子目录，可接着运行 /fifine-ref-classify。
+     ✅ 重命名完成。如需将文件归入 A-F 板块子目录，可接着运行 /fifine-pdf-ref-classify。
      ```
 
 ---

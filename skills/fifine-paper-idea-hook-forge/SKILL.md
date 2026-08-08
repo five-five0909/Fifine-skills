@@ -1,6 +1,6 @@
 ---
-name: fifine-idea-hook-forge
-description: Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output. Trigger: /fifine-idea-hook-forge, paper PDF, extract hook, 论文拆解, idea extraction.
+name: fifine-paper-idea-hook-forge
+description: Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output. Trigger: /fifine-paper-idea-hook-forge, paper PDF, extract hook, 论文拆解, idea extraction.
 ---
 
 # idea-hook-forge
@@ -28,11 +28,11 @@ This skill applies when the user has a research paper PDF and wants to extract i
 用户确认后，将路径作为 `--output-dir` 参数传给脚本。若用户直接回车/不填，使用默认路径。
 
 ## 用户入口
-- `@fifine-idea-hook-forge <pdf路径>`
-- `@fifine-idea-hook-forge <pdf路径> 全流程`
-- `@fifine-idea-hook-forge <pdf路径> 只提取 hook`
-- `@fifine-idea-hook-forge <pdf路径> 只做分类`
-- `@fifine-idea-hook-forge <pdf路径> 生成 HTML 报告`
+- `@fifine-paper-idea-hook-forge <pdf路径>`
+- `@fifine-paper-idea-hook-forge <pdf路径> 全流程`
+- `@fifine-paper-idea-hook-forge <pdf路径> 只提取 hook`
+- `@fifine-paper-idea-hook-forge <pdf路径> 只做分类`
+- `@fifine-paper-idea-hook-forge <pdf路径> 生成 HTML 报告`
 
 ## 模式
 1. `scan`

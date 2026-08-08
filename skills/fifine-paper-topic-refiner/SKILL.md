@@ -1,12 +1,12 @@
 ---
-name: fifine-topic-refiner
-description: Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem. Trigger: /fifine-topic-refiner, refine topic, 选题精炼, research question, 研究问题.
+name: fifine-paper-topic-refiner
+description: Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem. Trigger: /fifine-paper-topic-refiner, refine topic, 选题精炼, research question, 研究问题.
 ---
 
 # Topic Refiner Skill
 
 ## Trigger check
-This skill applies when the user has a broad or vague research direction and wants to turn it into a focused, defensible research question. If the user already has a clear research question and wants to write — stop, use fifine-write-research-grill instead.
+This skill applies when the user has a broad or vague research direction and wants to turn it into a focused, defensible research question. If the user already has a clear research question and wants to write — stop, use fifine-paper-write-research-grill instead.
 
 ## 一句话描述
 把宽泛的研究方向或已有成果，转化为一个有问号、有谜题、可回答的研究问题。

@@ -1,6 +1,6 @@
 ---
-name: fifine-write-research-grill
-description: Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting. Trigger: /fifine-write-research-grill, 写稿审问, pre-writing, paper draft, 写作前.
+name: fifine-paper-write-research-grill
+description: Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting. Trigger: /fifine-paper-write-research-grill, 写稿审问, pre-writing, paper draft, 写作前.
 ---
 
 # Write Research Grill

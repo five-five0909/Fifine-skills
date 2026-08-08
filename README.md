@@ -34,9 +34,9 @@ All publishable skills use the `fifine-<original-name>` namespace. The prefix is
 the only namespace marker; the remainder keeps the familiar skill name.
 
 Examples include `fifine-live-humanizer`, `fifine-paper-weaver`,
-`fifine-ref-classify`, `fifine-dev-done-flow`, and
-`fifine-trellis-task-orchestrator`. The former AI research writing skill is
-retired and is no longer published.
+`fifine-pdf-ref-classify`, `fifine-paper-idea-hook-forge`, and
+`fifine-media-to-txt`. The former AI research writing skill is retired and is
+no longer published.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

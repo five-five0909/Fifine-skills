@@ -1,6 +1,6 @@
 ---
-name: fifine-ref-classify
-description: Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches. Trigger: /fifine-ref-classify, classify references, 文献分类, PDF bucket.
+name: fifine-pdf-ref-classify
+description: Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches. Trigger: /fifine-pdf-ref-classify, classify references, 文献分类, PDF bucket.
 ---
 
 # pdf-ref-classify
@@ -8,7 +8,7 @@ description: Use this skill when the user needs to classify research PDF referen
 > 三种匹配技巧依次兜底，置信度不足时问用户，不猜测、不静默移错。
 
 ## Trigger check
-This skill applies when the user has a folder of research PDFs that need to be classified into topic buckets. If the user wants to rename files rather than classify them — stop, use fifine-ref-rename instead.
+This skill applies when the user has a folder of research PDFs that need to be classified into topic buckets. If the user wants to rename files rather than classify them — stop, use fifine-pdf-ref-rename instead.
 
 ## 触发与输入
 
@@ -38,7 +38,7 @@ This skill applies when the user has a folder of research PDFs that need to be c
 调用脚本列出所有待分类 PDF（根目录下的，不含已在子目录中的）：
 
 ```bash
-python <repo_root>/skills/fifine-ref-classify/scripts/scan_pdfs.py "<目标路径>"
+python <repo_root>/skills/fifine-pdf-ref-classify/scripts/scan_pdfs.py "<目标路径>"
 ```
 
 输出：文件名列表 + 每个文件的 `already_classified`（是否已在 A-F 子目录中）状态。
@@ -172,7 +172,7 @@ python <repo_root>/skills/fifine-ref-classify/scripts/scan_pdfs.py "<目标路�
 4. 用户确认后调用脚本执行：
 
 ```bash
-python <repo_root>/skills/fifine-ref-classify/scripts/do_classify.py "<计划JSON路径>"
+python <repo_root>/skills/fifine-pdf-ref-classify/scripts/do_classify.py "<计划JSON路径>"
 ```
 
 ---
@@ -193,16 +193,16 @@ python <repo_root>/skills/fifine-ref-classify/scripts/do_classify.py "<计划JSO
 
 ---
 
-## 与 fifine-ref-rename 的联动
+## 与 fifine-pdf-ref-rename 的联动
 
-**fifine-ref-rename** 和 **ref-classify** 是同一工作流的两个阶段：
+**fifine-pdf-ref-rename** 和 **ref-classify** 是同一工作流的两个阶段：
 
 ```
 下载原始 PDF（任意文件名）
         ↓
-   /fifine-ref-rename  →  YYYY_Title_Author.pdf（规范命名）
+   /fifine-pdf-ref-rename  →  YYYY_Title_Author.pdf（规范命名）
         ↓
-  /fifine-ref-classify →  A-F 子目录（板块归档）
+  /fifine-pdf-ref-classify →  A-F 子目录（板块归档）
 ```
 
 **检测到未规范命名文件时**（文件名不以 4 位年份开头），优先提示用户：
@@ -212,7 +212,7 @@ python <repo_root>/skills/fifine-ref-classify/scripts/do_classify.py "<计划JSO
   - xxx.pdf
   - yyy.pdf
 
-建议先运行 /fifine-ref-rename 完成重命名，再回来分类。
+建议先运行 /fifine-pdf-ref-rename 完成重命名，再回来分类。
 是否跳过这些文件，仅分类已命名的？（是 / 否，先去重命名）
 ```
 
@@ -225,14 +225,14 @@ python <repo_root>/skills/fifine-ref-classify/scripts/do_classify.py "<计划JSO
 | PDF 密码保护，Read 失败 | 技巧三降级为仅凭文件名问用户 |
 | 文件已在 A-F 子目录中 | 自动跳过，不重复移动 |
 | 目标子目录已有同名文件 | 提示用户，不覆盖 |
-| 文件名不含年份（非规范命名） | 触发上方联动提示，让用户决定是否先跑 fifine-ref-rename |
+| 文件名不含年份（非规范命名） | 触发上方联动提示，让用户决定是否先跑 fifine-pdf-ref-rename |
 
 ---
 
 ## 依赖
 
 - Python 3.8+（无第三方依赖，标准库即可）
-- 脚本位置：`skills/fifine-ref-classify/scripts/`
+- 脚本位置：`skills/fifine-pdf-ref-classify/scripts/`
 - 关联 spec：`.trellis/spec/reference-classification.md`
 
 ---

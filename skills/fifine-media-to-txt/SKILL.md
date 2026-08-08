@@ -1,5 +1,5 @@
 ---
-name: fifine-media-transcript
+name: fifine-media-to-txt
 description: Transcribe local video or audio files into text using ffmpeg plus Alibaba DashScope ASR. Use only when the user asks to process a local video/audio file, extract a transcript, convert media speech to text, or generate a text稿/文稿/subtitle-like plain transcript. Do not use for URL downloading, web scraping, Douyin link parsing, PDFs, images, or general text files.
 ---
 

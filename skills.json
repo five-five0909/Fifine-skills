@@ -9,9 +9,9 @@
       "description": "通用中文创作与改稿工具，适用于知乎回答、论坛长帖、公众号文章、故事、评论、教程、评测、小说和演讲稿，强调材料充分、事实核验、自然中文韵律与活人感。 Trigger: /fifine-live-humanizer, 活人感写作, 中文创作, 中文改稿."
     },
     {
-      "name": "fifine-idea-hook-forge",
-      "path": "skills/fifine-idea-hook-forge",
-      "description": "Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output. Trigger: /fifine-idea-hook-forge, paper PDF, extract hook, 论文拆解, idea extraction."
+      "name": "fifine-paper-idea-hook-forge",
+      "path": "skills/fifine-paper-idea-hook-forge",
+      "description": "Use this skill when the user wants to decompose a research paper PDF into structured components, extract hooks, and generate idea, experiment, and writing artifacts with an HTML report as the main output. Trigger: /fifine-paper-idea-hook-forge, paper PDF, extract hook, 论文拆解, idea extraction."
     },
     {
       "name": "fifine-lit-speed-read",
@@ -19,9 +19,9 @@
       "description": "Use this skill when the user needs a fast but structured reading workflow for a paper, URL, PDF, or HTML source, especially to summarize the core claim and generate a report for academic review. Trigger: /fifine-lit-speed-read, speed read, 速读, paper summary, 文献摘要."
     },
     {
-      "name": "fifine-llm-research-grill",
-      "path": "skills/fifine-llm-research-grill",
-      "description": "Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense. Trigger: /fifine-llm-research-grill, LLM research, PyTorch, 研究方向审查, audit experiment."
+      "name": "fifine-paper-llm-research-grill",
+      "path": "skills/fifine-paper-llm-research-grill",
+      "description": "Use this skill when the user needs a rigorous audit of an LLM or PyTorch research direction, dataset, experiment, or paper understanding, especially before committing to implementation or defense. Trigger: /fifine-paper-llm-research-grill, LLM research, PyTorch, 研究方向审查, audit experiment."
     },
     {
       "name": "fifine-paper-weaver",
@@ -34,14 +34,14 @@
       "description": "论文方向追踪雷达 Skill。根据用户输入的研究方向或关键词，从 arXiv / OpenAlex / Semantic Scholar 检索最新论文，按 A-T+U 分类体系打标签，提取 8 类 Hook，生成 H1/H2/H3 优先级，输出 HTML + Markdown 报告。触发词：帮我搜、检索最新、找论文、雷达、有没有新论文、追踪、mamba / ssm / 高光谱 / soc / pinn 方向、fifine-research-radar。负向排除：如果用户只是要阅读或精读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read，不触发本 skill。"
     },
     {
-      "name": "fifine-ref-classify",
-      "path": "skills/fifine-ref-classify",
-      "description": "Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches. Trigger: /fifine-ref-classify, classify references, 文献分类, PDF bucket."
+      "name": "fifine-pdf-ref-classify",
+      "path": "skills/fifine-pdf-ref-classify",
+      "description": "Use this skill when the user needs to classify research PDF references into predefined topic buckets, especially for batch organization of literature folders with fallback confirmation on uncertain matches. Trigger: /fifine-pdf-ref-classify, classify references, 文献分类, PDF bucket."
     },
     {
-      "name": "fifine-ref-rename",
-      "path": "skills/fifine-ref-rename",
-      "description": "Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /fifine-ref-rename, rename PDF, 文献重命名, batch rename."
+      "name": "fifine-pdf-ref-rename",
+      "path": "skills/fifine-pdf-ref-rename",
+      "description": "Use this skill when the user wants to batch rename research PDFs from extracted metadata, especially for incremental cleanup of literature libraries with user confirmation on naming choices. Trigger: /fifine-pdf-ref-rename, rename PDF, 文献重命名, batch rename."
     },
     {
       "name": "fifine-research-search",
@@ -49,14 +49,14 @@
       "description": "学术检索方法论 Skill。当 AI 需要在学术平台搜索论文、提取元数据、判断开放获取状态时，提供平台选择策略、查询扩展方法、多源去重规则、学科路由、站点经验和统一元数据 schema。触发词：帮我查文献、查一下这篇论文、找这个作者的论文、查引用数、搜索学术、fifine-research-search、搜 Google Scholar、搜 CNKI、找 BibTeX、查 DOI、找 PDF、开放获取。负向排除：如果用户要追踪某个方向的最新论文并生成雷达报告，使用 fifine-research-radar；如果用户只是要阅读一篇已有 PDF，使用 fifine-paper-weaver 或 fifine-lit-speed-read。"
     },
     {
-      "name": "fifine-topic-refiner",
-      "path": "skills/fifine-topic-refiner",
-      "description": "Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem. Trigger: /fifine-topic-refiner, refine topic, 选题精炼, research question, 研究问题."
+      "name": "fifine-paper-topic-refiner",
+      "path": "skills/fifine-paper-topic-refiner",
+      "description": "Use this skill when the user has a broad research direction, weak paper framing, or an unclear question, especially to turn raw ideas into a focused and defensible research problem. Trigger: /fifine-paper-topic-refiner, refine topic, 选题精炼, research question, 研究问题."
     },
     {
-      "name": "fifine-write-research-grill",
-      "path": "skills/fifine-write-research-grill",
-      "description": "Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting. Trigger: /fifine-write-research-grill, 写稿审问, pre-writing, paper draft, 写作前."
+      "name": "fifine-paper-write-research-grill",
+      "path": "skills/fifine-paper-write-research-grill",
+      "description": "Use this skill when the user is preparing to write a paper, proposal, report, or argument and needs a structured pre-writing interrogation before drafting. Trigger: /fifine-paper-write-research-grill, 写稿审问, pre-writing, paper draft, 写作前."
     },
     {
       "name": "fifine-trans-criptase",
@@ -79,8 +79,8 @@
       "description": "Use this skill when the user wants to prove a math problem using the Rethlas formal verification system. Trigger: /fifine-rethlas, /rethlas (legacy), prove, math proof, 证明, 形式化证明. Drives full proof workflow via MCP tools; output lands in a folder named after the problem."
     },
     {
-      "name": "fifine-media-transcript",
-      "path": "skills/fifine-media-transcript",
+      "name": "fifine-media-to-txt",
+      "path": "skills/fifine-media-to-txt",
       "description": "Transcribe local video or audio files into text using ffmpeg plus Alibaba DashScope ASR. Use only when the user asks to process a local video/audio file, extract a transcript, convert media speech to text, or generate a text稿/文稿/subtitle-like plain transcript. Do not use for URL downloading, web scraping, Douyin link parsing, PDFs, images, or general text files."
     },
     {
@@ -99,19 +99,9 @@
       "description": "Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory. Trigger: /fifine-tavily-search, search web, 联网搜索, current info, live search."
     },
     {
-      "name": "fifine-dev-done-flow",
-      "path": "skills/fifine-dev-done-flow",
-      "description": "universal development workflow guide for software engineering, java backend work, llm applications, agent/rag projects, architecture refactoring, bug diagnosis, performance/security work, and long-running engineering goals. use when the user wants to start, plan, structure, diagnose, or iterate on a development task and expects the AI assistant to create local markdown workflow documents under `.dev-done-flow/`, update `Agents.md` or `AGENTS.md`, ask structured questions, record answers, and guide the project through discovery, requirements, design, planning, implementation, verification, release, observability, feedback, and iteration. Trigger: /fifine-dev-done-flow, start task, dev workflow, 开发流程, 任务规划."
-    },
-    {
       "name": "fifine-parallel-executor-with-trellis",
       "path": "skills/fifine-parallel-executor-with-trellis",
       "description": "Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification. Trigger: /fifine-parallel-executor-with-trellis, parallel tasks, 并行执行, split workstream."
-    },
-    {
-      "name": "fifine-trellis-task-orchestrator",
-      "path": "skills/fifine-trellis-task-orchestrator",
-      "description": "Use this skill when the user needs a Trellis-oriented task plan for implementation, bug fixing, refactoring, or spec work, especially to produce a PRD, execution steps, and acceptance checks. Trigger: /fifine-trellis-task-orchestrator, trellis plan, task orchestration, PRD, 任务拆解."
     },
     {
       "name": "fifine-prompt-amplifier",

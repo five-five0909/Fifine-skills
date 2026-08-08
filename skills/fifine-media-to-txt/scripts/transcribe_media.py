@@ -36,7 +36,7 @@ def safe_stem(path: Path) -> str:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Transcribe one local video/audio file.")
     parser.add_argument("media_path", help="Local video/audio file path.")
-    parser.add_argument("--output-dir", default=None, help="Output directory. Default: ./fifine-media-transcript-output/<name>-<timestamp>")
+    parser.add_argument("--output-dir", default=None, help="Output directory. Default: ./fifine-media-to-txt-output/<name>-<timestamp>")
     parser.add_argument("--api-key", default=os.getenv("DASHSCOPE_API_KEY"))
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--sample-rate", type=int, default=DEFAULT_SAMPLE_RATE)
@@ -127,7 +127,7 @@ def main() -> int:
         return 1
 
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    output_dir = Path(args.output_dir) if args.output_dir else Path.cwd() / "fifine-media-transcript-output" / f"{safe_stem(media_path)}-{timestamp}"
+    output_dir = Path(args.output_dir) if args.output_dir else Path.cwd() / "fifine-media-to-txt-output" / f"{safe_stem(media_path)}-{timestamp}"
     output_dir.mkdir(parents=True, exist_ok=True)
     audio_path = output_dir / "audio.wav"
     transcript_path = output_dir / "transcript.txt"
