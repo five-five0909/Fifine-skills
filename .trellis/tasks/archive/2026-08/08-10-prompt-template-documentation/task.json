@@ -15,12 +15,14 @@
   "branch": null,
   "base_branch": "main",
   "worktree_path": null,
-  "commit": null,
+  "commit": "58bcc4f",
   "pr_url": null,
   "subtasks": [],
   "children": [],
   "parent": null,
-  "relatedFiles": [],
-  "notes": "",
+  "relatedFiles": [
+    "README.md"
+  ],
+  "notes": "QA boundary repair: README targets are limited to tracked prompt files; unrelated Trellis paths remain in the working tree but are excluded from the net delivery; verification evidence is recorded in evidence.md.",
   "meta": {}
 }
