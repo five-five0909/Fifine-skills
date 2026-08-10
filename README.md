@@ -35,8 +35,9 @@ the only namespace marker; the remainder keeps the familiar skill name.
 
 Examples include `fifine-live-humanizer`, `fifine-paper-weaver`,
 `fifine-pdf-ref-classify`, `fifine-paper-idea-hook-forge`, and
-`fifine-media-to-txt`. The former AI research writing skill is retired and is
-no longer published.
+`fifine-media-to-txt`. The imported `fifine-science-research-writing-skills`
+skill provides an active STEMM paper-writing assistant for drafting, revising,
+reviewing, and section-by-section guidance.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

@@ -11,10 +11,10 @@ const packageRoot = path.resolve(__dirname, "..");
 const skillsRoot = path.join(packageRoot, "skills");
 const publishableSkillsPath = path.join(__dirname, "publishable-skills.json");
 
-// Accept pre-namespace and previous category-prefix names while publishing
-// only the current fifine-* namespace. The retired AI research writing skill
-// is intentionally absent and is not redirected to another skill.
+// Accept pre-namespace and previous category-prefix names while publishing only
+// the current fifine-* namespace.
 const legacySkillNames = Object.freeze({
+  "Science-Research-Writing-Skills": "fifine-science-research-writing-skills",
   "grill-me-cn": "fifine-grill-me-cn",
   "humanizer": "fifine-live-humanizer",
   "idea-hook-forge": "fifine-paper-idea-hook-forge",
@@ -113,7 +113,8 @@ function readPublishableSkills() {
     "fifine-tavily-search",
     "fifine-parallel-executor-with-trellis",
     "fifine-prompt-amplifier",
-    "fifine-writing-style"
+    "fifine-writing-style",
+    "fifine-science-research-writing-skills"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;

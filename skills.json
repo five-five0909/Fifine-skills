@@ -112,6 +112,11 @@
       "name": "fifine-writing-style",
       "path": "skills/fifine-writing-style",
       "description": "Use this skill when the user wants to write, rewrite, adapt, or polish text in a selected writing role or reusable personal style. Trigger: /fifine-writing-style, writing style, 写作风格, 改写风格, 角色写作, 模仿风格, 选择角色, platform copywriting."
+    },
+    {
+      "name": "fifine-science-research-writing-skills",
+      "path": "skills/fifine-science-research-writing-skills",
+      "description": "Active writing assistant for STEMM research papers, dissertations, and journal manuscripts. Supports drafting, revising, reviewing, reverse-engineering published articles, and interactive section guidance."
     }
   ]
 }

@@ -21,15 +21,20 @@ function parseFrontmatter(filePath) {
     return null;
   }
   const fields = {};
+  let currentField = null;
   for (const line of match[1].split(/\r?\n/)) {
     if (!line.trim()) {
       continue;
     }
     const parsed = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
     if (!parsed) {
+      if (currentField && /^\s+-\s+\S/.test(line)) {
+        continue;
+      }
       fail(`Unsupported frontmatter line in ${path.relative(repoRoot, filePath)}: ${line}`);
       continue;
     }
+    currentField = parsed[1];
     fields[parsed[1]] = parsed[2];
   }
   return fields;
