@@ -23,6 +23,6 @@
   "relatedFiles": [
     "README.md"
   ],
-  "notes": "QA boundary repair: README targets are limited to tracked prompt files; unrelated Trellis paths remain in the working tree but are excluded from the net delivery; verification evidence is recorded in evidence.md.",
+  "notes": "Integration baseline f00318b tracks 22 prompt templates. README catalogs all 22 without changing template contents; unrelated Trellis paths remain excluded from the net delivery; verification evidence is recorded in evidence.md.",
   "meta": {}
 }

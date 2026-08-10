@@ -51,12 +51,12 @@ Converted the repository into a skills collection layout, validated the scanner-
 
 ### Summary
 
-Documented the prompt templates available in a clean checkout, corrected the task delivery boundary, and passed repository validation.
+Documented all prompt templates available in the integrated clean checkout, corrected the task delivery boundary, and passed repository validation.
 
 ### Main Changes
 
-- Updated `README.md` to link only the two prompt templates tracked by Git.
-- Preserved twenty untracked role templates as parallel work owned outside this task.
+- Updated `README.md` with a categorized directory covering all 22 prompt templates tracked after integration commit `f00318b`.
+- Left the two general templates and twenty role templates unchanged.
 - Removed nine unrelated Trellis paths from the task's net delivery without deleting their working-tree files.
 - Replaced seed-only task context and placeholder journal content with the specs, implementation details, and checks actually used.
 
@@ -65,11 +65,12 @@ Documented the prompt templates available in a clean checkout, corrected the tas
 | Hash | Message |
 |------|---------|
 | `58bcc4f` | (see git log) |
+| `f00318b` | Integrated the twenty role prompt templates referenced by the final catalog. |
 
 ### Testing
 
 - [OK] `npm run validate` passed for 22 publishable skills.
-- [OK] Tracked prompt-link closure passed: 2 links, 2 tracked targets, 0 unresolved, 0 stale.
+- [OK] HEAD tracked prompt-link closure passed: 22 links, 22 tracked targets, 0 unresolved, 0 stale.
 - [OK] Range, README-only, and working-tree `git diff --check` commands passed.
 - [OK] Archived task status and context manifests passed consistency checks.
 
