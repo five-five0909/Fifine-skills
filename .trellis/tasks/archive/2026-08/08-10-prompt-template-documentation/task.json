@@ -15,7 +15,7 @@
   "branch": null,
   "base_branch": "main",
   "worktree_path": null,
-  "commit": "58bcc4f",
+  "commit": "9eca832",
   "pr_url": null,
   "subtasks": [],
   "children": [],
@@ -23,6 +23,6 @@
   "relatedFiles": [
     "README.md"
   ],
-  "notes": "Integration baseline f00318b tracks 22 prompt templates. README catalogs all 22 without changing template contents; unrelated Trellis paths remain excluded from the net delivery; verification evidence is recorded in evidence.md.",
+  "notes": "Reproduction commit 9eca832 completes the 22/22 README catalog on integration baseline f00318b without changing template contents. Unrelated Trellis paths remain excluded from the net delivery; verification evidence is recorded in evidence.md.",
   "meta": {}
 }

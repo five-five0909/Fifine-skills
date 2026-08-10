@@ -66,11 +66,13 @@ Documented all prompt templates available in the integrated clean checkout, corr
 |------|---------|
 | `58bcc4f` | (see git log) |
 | `f00318b` | Integrated the twenty role prompt templates referenced by the final catalog. |
+| `9eca832` | Completed the reproducible 22/22 README catalog and synchronized Trellis evidence. |
 
 ### Testing
 
 - [OK] `npm run validate` passed for 22 publishable skills.
-- [OK] HEAD tracked prompt-link closure passed: 22 links, 22 tracked targets, 0 unresolved, 0 stale.
+- [OK] Commit `9eca832` prompt-link closure passed: 22 links, 22 tracked targets, 0 unresolved, 0 stale.
+- [OK] Reproduction baseline is fixed at `9eca832` (`9eca8326df5fa54f91d6e3c518f5b8a52ae093e2`).
 - [OK] Range, README-only, and working-tree `git diff --check` commands passed.
 - [OK] Archived task status and context manifests passed consistency checks.
 

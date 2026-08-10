@@ -10,7 +10,8 @@
 
 ## Verification
 
+- Reproduction baseline: commit `9eca832` (`9eca8326df5fa54f91d6e3c518f5b8a52ae093e2`) is the completed 22/22 documentation snapshot.
 - `npm run validate`: passed; 22 publishable skills validated.
-- HEAD tracked prompt-target check: 22 README links, 22 unique links, 22 tracked targets, 0 unresolved targets, 0 stale tracked targets.
-- `git diff --check f00318b..HEAD`, `git diff --check -- README.md`, and `git diff --check`: passed.
+- Commit `9eca832` prompt-target check: 22 README links, 22 unique links, 22 tracked targets, 0 unresolved targets, 0 stale tracked targets.
+- `git diff --check f00318b..9eca832` and `git diff --check 9eca832^..9eca832`: passed.
 - Trellis archive check: task status is `completed`; both context manifests contain real entries and no `_example` row; unrelated Trellis paths are absent from the net delivery.
