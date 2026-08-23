@@ -203,3 +203,12 @@ node scripts/validate-skills.mjs
 所有发布 skill 使用统一的 `fifine-<original-name>` kebab-case 名称。`fifine-` 是唯一命名空间前缀，后半段保留原有的能力名；目录名、`SKILL.md` frontmatter 的 `name`、`skills.json` 的 `name`/`path` 必须完全一致。
 
 重命名 skill 时，`scripts/postinstall.js` 必须保留旧名称到新 canonical name 的兼容映射，避免消费项目中的 `skills.json` 配置失效。新的 canonical name 应用于发布清单、触发命令和文档；旧名称只允许出现在 legacy alias 或迁移说明中。已经退役的 `ai-research-writing-skill` 不得重新发布或重定向。
+
+## 九、伴随脚本的契约校验
+
+带有 `scripts/` 的 skill 必须让正文、reference 和 CLI 实际行为保持一致：
+
+- 文档写明的默认值（例如未指定目标语言时的 fallback）应在输入校验前生效，并通过一个无显式选项的 smoke test 覆盖。
+- 分块器的 hard limit 是包含边界的上限，分隔符恰好位于边界时也不得生成超限片段；应测试边界值而不是只测试普通文本。
+- 依赖稳定 ID 合并的流程必须拒绝重复 ID、缺失 ID 和额外 ID，不能静默覆盖后继续生成结果。
+- 输出渲染器应先验证目标语言、块 ID、顺序、源文本和每个目标译文，再写入 HTML/Markdown 文件。

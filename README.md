@@ -35,7 +35,9 @@ the only namespace marker; the remainder keeps the familiar skill name.
 
 Examples include `fifine-live-humanizer`, `fifine-paper-weaver`,
 `fifine-pdf-ref-classify`, `fifine-paper-idea-hook-forge`, and
-`fifine-media-to-txt`. The imported `fifine-science-research-writing-skills`
+`fifine-media-to-txt`. `fifine-translation-multiple-kanban` handles
+structured single- or multi-file translation with resumable JobID chunks and
+selectable HTML/Markdown output. The imported `fifine-science-research-writing-skills`
 skill provides an active STEMM paper-writing assistant for drafting, revising,
 reviewing, and section-by-section guidance.
 

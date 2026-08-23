@@ -1,0 +1,11 @@
+interface:
+  display_name: "Multiple Translation"
+  short_description: "Translate structured and multi-file content with aligned outputs."
+  default_prompt: "Translate this content while preserving its structure."
+policy:
+  products:
+    - "chatgpt"
+    - "codex"
+    - "api"
+    - "atlas"
+  allow_implicit_invocation: true

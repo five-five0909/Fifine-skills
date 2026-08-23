@@ -84,6 +84,11 @@
       "description": "Transcribe local video or audio files into text using ffmpeg plus Alibaba DashScope ASR. Use only when the user asks to process a local video/audio file, extract a transcript, convert media speech to text, or generate a text稿/文稿/subtitle-like plain transcript. Do not use for URL downloading, web scraping, Douyin link parsing, PDFs, images, or general text files."
     },
     {
+      "name": "fifine-translation-multiple-kanban",
+      "path": "skills/fifine-translation-multiple-kanban",
+      "description": "Use this skill when the user wants substantial content translated from images, PDFs, documents, text, or mixed batches while preserving structure, or needs multi-language output, chunking, resumable JobID tracking, or selectable HTML/Markdown artifacts. Trigger: /fifine-translation-multiple-kanban, multiple translation, batch translation, document translation, 多语言翻译, 批量翻译, 论文翻译. Produces faithful aligned translations and optional HTML/Markdown files. Not for OCR-only extraction, literature search, or media transcription."
+    },
+    {
       "name": "fifine-grill-me-cn",
       "path": "skills/fifine-grill-me-cn",
       "description": "Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction. Trigger: /fifine-grill-me-cn, 压测方案, review idea, 找漏洞, pressure test."

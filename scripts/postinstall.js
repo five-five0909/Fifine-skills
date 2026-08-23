@@ -76,7 +76,8 @@ const legacySkillNames = Object.freeze({
   "skills-web-search": "fifine-tavily-search",
   "skills-workflow-parallel": "fifine-parallel-executor-with-trellis",
   "skills-writing-prompt": "fifine-prompt-amplifier",
-  "skills-writing-style": "fifine-writing-style"
+  "skills-writing-style": "fifine-writing-style",
+  "multiple-translation": "fifine-translation-multiple-kanban"
 });
 
 function readJson(filePath, fallback) {
@@ -108,6 +109,7 @@ function readPublishableSkills() {
     "fifine-handoff",
     "fifine-rethlas",
     "fifine-media-to-txt",
+    "fifine-translation-multiple-kanban",
     "fifine-research-paper-writing",
     "fifine-grill-me-cn",
     "fifine-tavily-search",

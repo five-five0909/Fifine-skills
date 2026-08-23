@@ -54,6 +54,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-research-search | 学术检索方法论知识库 skill，提供平台路由、API 优先策略、元数据 schema 和站点经验 |
 | fifine-prompt-amplifier | 指令强化工具 |
 | fifine-media-to-txt | 本地视频/音频转文稿工具，使用 ffmpeg + DashScope ASR 输出 transcript.txt |
+| fifine-translation-multiple-kanban | 多语言/批量文档翻译工具，保留结构并支持 JobID 分块、可选 HTML/Markdown 输出 |
 | fifine-research-paper-writing | ML/CV/NLP 论文 Abstract / Introduction / Method / Experiments / Conclusion 写作与改写 |
 | fifine-tavily-search | Tavily 实时网络搜索 |
 | fifine-parallel-executor-with-trellis | Trellis 并行任务执行器 |
@@ -72,6 +73,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 文献快速阅读、输出摘要报告 | fifine-lit-speed-read |
 | LLM/PyTorch 研究方向审查 | fifine-paper-llm-research-grill |
 | 本地视频或音频转文稿 | fifine-media-to-txt |
+| 多语言、批量或文件翻译，并保留段落/表格结构 | fifine-translation-multiple-kanban |
 | 论文全流程精读（摘要/引言/方法/实验） | fifine-paper-weaver |
 | OCR、解析扫描件/图片/PDF 为 Markdown | fifine-paddleocr-vl |
 | 需要把当前会话交接给下一位 agent | fifine-handoff |
