@@ -85,6 +85,21 @@ function walkDirectories(root, names, found = []) {
   return found;
 }
 
+function walkFiles(root, fileName, found = []) {
+  if (!fs.existsSync(root)) {
+    return found;
+  }
+  for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
+    const fullPath = path.join(root, entry.name);
+    if (entry.isDirectory()) {
+      walkFiles(fullPath, fileName, found);
+    } else if (entry.isFile() && entry.name === fileName) {
+      found.push(path.relative(repoRoot, fullPath));
+    }
+  }
+  return found;
+}
+
 if (!fs.existsSync(skillsRoot) || !fs.statSync(skillsRoot).isDirectory()) {
   fail("Missing skills/ directory.");
 }
@@ -177,6 +192,69 @@ const forbiddenDirs = [
 const foundForbidden = walkDirectories(repoRoot, forbiddenDirs);
 for (const forbidden of foundForbidden) {
   fail(`Forbidden directory present: ${forbidden}`);
+}
+
+const forbiddenPublishDirs = [
+  ".agents",
+  ".claude",
+  ".codex",
+  ".claude-plugin",
+  ".git",
+  ".github",
+  ".pytest_cache",
+  ".trellis",
+  "__pycache__",
+  ".cache",
+  "dist",
+  "build",
+  "node_modules",
+  "test",
+  "tests"
+];
+
+const foundForbiddenPublishDirs = walkDirectories(skillsRoot, forbiddenPublishDirs);
+for (const forbidden of foundForbiddenPublishDirs) {
+  fail(`Non-publishable directory present in skills payload: ${forbidden}`);
+}
+
+const expectedSkillFiles = new Set(skillDirs.map((entry) => `skills/${entry.name}/SKILL.md`));
+const foundSkillFiles = walkFiles(skillsRoot, "SKILL.md");
+for (const skillFile of foundSkillFiles) {
+  if (!expectedSkillFiles.has(skillFile)) {
+    fail(`Nested SKILL.md is not allowed in publishable skills: ${skillFile}`);
+  }
+}
+
+const forbiddenPublishFiles = [
+  "AGENTS.md",
+  "CLAUDE.md",
+  "GEMINI.md",
+  "Goal.md",
+  ".mcp.json",
+  ".gitignore",
+  ".gitattributes",
+  "embed-config.json"
+];
+
+const forbiddenRootPublishDirs = [
+  "data",
+  "index"
+];
+
+for (const skillDir of skillDirs) {
+  for (const dirName of forbiddenRootPublishDirs) {
+    const dirPath = path.join(skillsRoot, skillDir.name, dirName);
+    if (fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory()) {
+      fail(`Generated state directory present in skills payload: skills/${skillDir.name}/${dirName}`);
+    }
+  }
+
+  for (const fileName of forbiddenPublishFiles) {
+    const filePath = path.join(skillsRoot, skillDir.name, fileName);
+    if (fs.existsSync(filePath)) {
+      fail(`Non-publishable file present in skills payload: skills/${skillDir.name}/${fileName}`);
+    }
+  }
 }
 
 if (errors.length > 0) {

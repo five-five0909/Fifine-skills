@@ -8,10 +8,6 @@
   "engines": {
     "node": ">=18"
   },
-  "scripts": {
-    "test": "node --test \"test/*.test.mjs\" \"tests/unit/*.test.mjs\" \"tests/integration/*.test.mjs\"",
-    "smoke": "node test/smoke.mjs"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Scotlight/trans-criptase.git"
