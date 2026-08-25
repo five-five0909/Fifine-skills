@@ -56,6 +56,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-media-to-txt | 本地视频/音频转文稿工具，使用 ffmpeg + DashScope ASR 输出 transcript.txt |
 | fifine-translation-multiple-kanban | 多语言/批量文档翻译工具，保留结构并支持 JobID 分块、可选 HTML/Markdown 输出 |
 | fifine-research-paper-writing | ML/CV/NLP 论文 Abstract / Introduction / Method / Experiments / Conclusion 写作与改写 |
+| fifine-english-research-write | 英文科技论文写作与润色，按 IMRaD 章节调用短语库、时态/衔接/语态规则和句式基线 |
 | fifine-tavily-search | Tavily 实时网络搜索 |
 | fifine-parallel-executor-with-trellis | Trellis 并行任务执行器 |
 | fifine-trans-criptase | 会话续接与本地代码/文档检索工具 |
@@ -65,6 +66,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 用户意图 | Skill |
 |----------|-------|
 | ML/CV/NLP 论文分章节写作、改写、段落逻辑和审稿人自检 | fifine-research-paper-writing |
+| 英文科技论文句子/段落/IMRaD 章节润色，需短语库、时态、衔接和语态指导 | fifine-english-research-write |
 | 学术写作有模板化或 AI 味，需在不改变事实的前提下修订 | fifine-live-humanizer |
 | 写作/改写时需要先选择角色、按角色特点输出 | fifine-writing-style |
 | 证明数学题，形式化验证 | fifine-rethlas |

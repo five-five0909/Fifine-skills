@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "description": "Per-section stylistic baseline derived from Example Corpus (sentences excerpted from published research articles in the source book).",
+    "purpose": [
+      "display",
+      "fidelity_check",
+      "generation_hard_constraint"
+    ],
+    "usage": "SKILL.md generation mode MUST read this file and require generated drafts to approximate avg_words_per_example_sentence and tense_distribution_approx.",
+    "caveats": [
+      "tense_distribution is APPROXIMATE (surface heuristic, no POS).",
+      "paragraph_rhythm is APPROXIMATE (inferred from blank-line grouping).",
+      "Baselines reflect the source book's excerpted examples, not a universal rule."
+    ]
+  },
+  "sections": {
+    "introduction": {
+      "vocab_count": 278,
+      "example_sentence_count": 35,
+      "avg_words_per_example_sentence": 20.8,
+      "min_words": 8,
+      "max_words": 69,
+      "tense_distribution_approx": {
+        "counts": {
+          "past": 5,
+          "present": 13,
+          "perfect": 4,
+          "mixed": 10,
+          "unknown": 3
+        },
+        "proportions_approx": {
+          "past": 0.143,
+          "present": 0.371,
+          "perfect": 0.114,
+          "mixed": 0.286,
+          "unknown": 0.086
+        },
+        "method_note": "Approximate heuristic over surface verb forms (no POS tagging). 'past'=Past Simple markers, 'present'=Present Simple markers, 'perfect'=has/have+participle, 'mixed'=both past&present markers."
+      },
+      "paragraph_rhythm_approx": {
+        "group_count": 1,
+        "sentences_per_group": {
+          "35": 1
+        },
+        "avg_sentences_per_group": 35.0,
+        "note": "Approximate: groups inferred from blank-line separation in the extracted corpus."
+      }
+    },
+    "method": {
+      "vocab_count": 275,
+      "example_sentence_count": 41,
+      "avg_words_per_example_sentence": 27.5,
+      "min_words": 8,
+      "max_words": 132,
+      "tense_distribution_approx": {
+        "counts": {
+          "past": 3,
+          "present": 8,
+          "perfect": 1,
+          "mixed": 27,
+          "unknown": 2
+        },
+        "proportions_approx": {
+          "past": 0.073,
+          "present": 0.195,
+          "perfect": 0.024,
+          "mixed": 0.659,
+          "unknown": 0.049
+        },
+        "method_note": "Approximate heuristic over surface verb forms (no POS tagging). 'past'=Past Simple markers, 'present'=Present Simple markers, 'perfect'=has/have+participle, 'mixed'=both past&present markers."
+      },
+      "paragraph_rhythm_approx": {
+        "group_count": 1,
+        "sentences_per_group": {
+          "41": 1
+        },
+        "avg_sentences_per_group": 41.0,
+        "note": "Approximate: groups inferred from blank-line separation in the extracted corpus."
+      }
+    },
+    "results": {
+      "vocab_count": 9,
+      "example_sentence_count": 55,
+      "avg_words_per_example_sentence": 19.1,
+      "min_words": 9,
+      "max_words": 58,
+      "tense_distribution_approx": {
+        "counts": {
+          "past": 7,
+          "present": 18,
+          "perfect": 1,
+          "mixed": 27,
+          "unknown": 2
+        },
+        "proportions_approx": {
+          "past": 0.127,
+          "present": 0.327,
+          "perfect": 0.018,
+          "mixed": 0.491,
+          "unknown": 0.036
+        },
+        "method_note": "Approximate heuristic over surface verb forms (no POS tagging). 'past'=Past Simple markers, 'present'=Present Simple markers, 'perfect'=has/have+participle, 'mixed'=both past&present markers."
+      },
+      "paragraph_rhythm_approx": {
+        "group_count": 1,
+        "sentences_per_group": {
+          "55": 1
+        },
+        "avg_sentences_per_group": 55.0,
+        "note": "Approximate: groups inferred from blank-line separation in the extracted corpus."
+      }
+    },
+    "discussion": {
+      "vocab_count": 99,
+      "example_sentence_count": 55,
+      "avg_words_per_example_sentence": 17.3,
+      "min_words": 9,
+      "max_words": 52,
+      "tense_distribution_approx": {
+        "counts": {
+          "past": 13,
+          "present": 18,
+          "perfect": 0,
+          "mixed": 16,
+          "unknown": 8
+        },
+        "proportions_approx": {
+          "past": 0.236,
+          "present": 0.327,
+          "perfect": 0.0,
+          "mixed": 0.291,
+          "unknown": 0.145
+        },
+        "method_note": "Approximate heuristic over surface verb forms (no POS tagging). 'past'=Past Simple markers, 'present'=Present Simple markers, 'perfect'=has/have+participle, 'mixed'=both past&present markers."
+      },
+      "paragraph_rhythm_approx": {
+        "group_count": 1,
+        "sentences_per_group": {
+          "55": 1
+        },
+        "avg_sentences_per_group": 55.0,
+        "note": "Approximate: groups inferred from blank-line separation in the extracted corpus."
+      }
+    },
+    "conclusion": {
+      "vocab_count": 18,
+      "example_sentence_count": 13,
+      "avg_words_per_example_sentence": 20.2,
+      "min_words": 10,
+      "max_words": 30,
+      "tense_distribution_approx": {
+        "counts": {
+          "past": 0,
+          "present": 1,
+          "perfect": 3,
+          "mixed": 9,
+          "unknown": 0
+        },
+        "proportions_approx": {
+          "past": 0.0,
+          "present": 0.077,
+          "perfect": 0.231,
+          "mixed": 0.692,
+          "unknown": 0.0
+        },
+        "method_note": "Approximate heuristic over surface verb forms (no POS tagging). 'past'=Past Simple markers, 'present'=Present Simple markers, 'perfect'=has/have+participle, 'mixed'=both past&present markers."
+      },
+      "paragraph_rhythm_approx": {
+        "group_count": 1,
+        "sentences_per_group": {
+          "13": 1
+        },
+        "avg_sentences_per_group": 13.0,
+        "note": "Approximate: groups inferred from blank-line separation in the extracted corpus."
+      }
+    }
+  }
+}

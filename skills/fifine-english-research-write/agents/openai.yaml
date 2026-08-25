@@ -1,0 +1,5 @@
+interface:
+  display_name: "English Research Writing"
+  short_description: "Scientific English drafting and IMRaD prose polishing"
+  default_prompt: "Use $fifine-english-research-write to polish or draft scientific English for my research paper."
+

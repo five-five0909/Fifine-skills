@@ -57,6 +57,7 @@ description: Use this skill when the user wants to revise academic prose without
 - 简单单步查询（"读这个文件"）即使 description 完全匹配也不会触发——skill 只对**复杂多步骤任务**可靠触发
 - 中英双语关键词覆盖中文用户的自然语言输入
 - description 必须是**单行**（本仓库 validator 不支持多行 YAML 块标量）
+- description 含有 `Trigger:`、`Not for:` 等冒号空格时，整段必须用 YAML 引号包起来，否则严格 YAML 校验会失败；单行要求仍然不变
 
 ---
 

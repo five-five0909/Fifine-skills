@@ -37,9 +37,12 @@ Examples include `fifine-live-humanizer`, `fifine-paper-weaver`,
 `fifine-pdf-ref-classify`, `fifine-paper-idea-hook-forge`, and
 `fifine-media-to-txt`. `fifine-translation-multiple-kanban` handles
 structured single- or multi-file translation with resumable JobID chunks and
-selectable HTML/Markdown output. The imported `fifine-science-research-writing-skills`
-skill provides an active STEMM paper-writing assistant for drafting, revising,
-reviewing, and section-by-section guidance.
+selectable HTML/Markdown output. `fifine-english-research-write` supports
+scientific English drafting and IMRaD prose polishing with phrase banks,
+section templates, and sentence-level style baselines. The imported
+`fifine-science-research-writing-skills` skill remains available as a broader
+STEMM paper-writing assistant for drafting, revising, reviewing, and
+section-by-section guidance.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

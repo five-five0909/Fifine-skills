@@ -99,6 +99,11 @@
       "description": "Improve academic paper writing quality for ML/CV/NLP-style papers with clear section structure, paragraph flow, and reviewer-facing presentation. Use when drafting or revising Abstract, Introduction, Related Work, Method, Experiments, or Conclusion; polishing figures/tables; checking claim-support alignment; or performing self-review before submission."
     },
     {
+      "name": "fifine-english-research-write",
+      "path": "skills/fifine-english-research-write",
+      "description": "Use this skill when the user needs English scientific research writing help at the sentence, paragraph, or IMRaD-section level using phrase banks, tense/linking/voice rules, macro section templates, and published-sentence baselines. Trigger: /fifine-english-research-write, English research writing, scientific English, IMRaD writing, academic English polishing, 科技英语写作, 英文学术润色. Produces section plans, revised prose, phrase-level diagnostics, or draft text with evidence placeholders. Not for broad ML/CV/NLP paper-story review — use fifine-research-paper-writing instead."
+    },
+    {
       "name": "fifine-tavily-search",
       "path": "skills/fifine-tavily-search",
       "description": "Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory. Trigger: /fifine-tavily-search, search web, 联网搜索, current info, live search."
