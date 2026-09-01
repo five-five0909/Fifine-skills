@@ -1,7 +1,7 @@
 # Codex CLI / OpenAI Skills 生态清单：与根目录 SKILL.md 描述同一个 Skill，供不读取 Claude 专属
 # frontmatter 的客户端发现。触发规则、模式选择、降级链的权威定义仍在 SKILL.md，本文件只是元数据清单。
 interface:
-  display_name: "Trans Local Retrieval"
+  display_name: "fifine-trans-criptase"
   short_description: "Search indexed local session transcripts, code, and documents using exact, semantic, or hybrid retrieval."
 
 skill:

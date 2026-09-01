@@ -1,5 +1,5 @@
 interface:
-  display_name: "Multiple Translation"
+  display_name: "fifine-translation-multiple-kanban"
   short_description: "Translate structured and multi-file content with aligned outputs."
   default_prompt: "Translate this content while preserving its structure."
 policy:

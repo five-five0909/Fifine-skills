@@ -1,5 +1,5 @@
 interface:
-  display_name: "Ref Rename"
+  display_name: "fifine-pdf-ref-rename"
   short_description: "Batch rename research PDFs from extracted metadata and title inference."
   icon: "sparkles"
   brand_color: "#7C3AED"

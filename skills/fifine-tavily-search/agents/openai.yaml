@@ -1,5 +1,5 @@
 interface:
-  display_name: "Tavily Search"
+  display_name: "fifine-tavily-search"
   short_description: "Use Tavily for live web search, documentation lookup, and fact checks."
   icon: "sparkles"
   brand_color: "#7C3AED"

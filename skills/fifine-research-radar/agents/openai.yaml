@@ -1,4 +1,4 @@
 interface:
-  display_name: "Academic Radar"
+  display_name: "fifine-research-radar"
   short_description: "Track recent papers for a research direction and generate prioritized radar reports."
   default_prompt: "Search recent papers for this research direction and generate a radar report."

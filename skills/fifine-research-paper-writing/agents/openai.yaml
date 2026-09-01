@@ -1,4 +1,4 @@
 interface:
-  display_name: "Research Paper Writing"
+  display_name: "fifine-research-paper-writing"
   short_description: "Academic paper writing and section-level refinement"
   default_prompt: "Use $fifine-research-paper-writing to improve my paper's structure, flow, and section writing quality."

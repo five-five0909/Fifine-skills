@@ -1,5 +1,5 @@
 interface:
-  display_name: "Write Research Grill"
+  display_name: "fifine-paper-write-research-grill"
   short_description: "Interrogate a writing plan before drafting a research deliverable."
   icon: "sparkles"
   brand_color: "#7C3AED"

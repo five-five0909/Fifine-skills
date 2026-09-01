@@ -1,5 +1,5 @@
 interface:
-  display_name: "Topic Refiner"
+  display_name: "fifine-paper-topic-refiner"
   short_description: "Turn broad research ideas into focused, defensible questions."
   icon: "sparkles"
   brand_color: "#7C3AED"

@@ -1,5 +1,5 @@
 interface:
-  display_name: "Paper Weaver"
+  display_name: "fifine-paper-weaver"
   short_description: "Run a staged PDF paper-weaving workflow and render structured outputs."
   icon: "sparkles"
   brand_color: "#7C3AED"

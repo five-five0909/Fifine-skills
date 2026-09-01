@@ -149,6 +149,8 @@ for (const entry of skillDirs) {
     const yaml = parseOpenAiYaml(yamlPath);
     if (!yaml.interface?.display_name || !yaml.interface?.short_description) {
       fail(`agents/openai.yaml must contain interface.display_name and interface.short_description: skills/${dirName}`);
+    } else if (yaml.interface.display_name !== dirName) {
+      fail(`agents/openai.yaml interface.display_name must match directory name: skills/${dirName}`);
     }
   }
 

@@ -1,5 +1,5 @@
 interface:
-  display_name: "Prompt Amplifier"
+  display_name: "fifine-prompt-amplifier"
   short_description: "Rewrite a user instruction into a stronger execution prompt."
   icon: "sparkles"
   brand_color: "#7C3AED"

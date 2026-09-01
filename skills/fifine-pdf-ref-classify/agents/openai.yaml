@@ -1,5 +1,5 @@
 interface:
-  display_name: "Ref Classify"
+  display_name: "fifine-pdf-ref-classify"
   short_description: "Classify research PDFs into topic folders with confidence checks."
   icon: "sparkles"
   brand_color: "#7C3AED"

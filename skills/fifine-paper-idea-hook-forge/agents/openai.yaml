@@ -1,5 +1,5 @@
 interface:
-  display_name: "Idea Hook Forge"
+  display_name: "fifine-paper-idea-hook-forge"
   short_description: "Extract hooks and structured idea artifacts from a paper PDF."
   icon: "sparkles"
   brand_color: "#7C3AED"

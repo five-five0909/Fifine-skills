@@ -1,4 +1,4 @@
 interface:
-  display_name: "Science Research Writing"
+  display_name: "fifine-science-research-writing-skills"
   short_description: "Active STEMM paper drafting, revision, and review assistant"
   default_prompt: "Use $fifine-science-research-writing-skills to help draft, revise, or review my research paper."

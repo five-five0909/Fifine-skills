@@ -1,5 +1,5 @@
 interface:
-  display_name: "Writing Style"
+  display_name: "fifine-writing-style"
   short_description: "Write or rewrite text through selectable style roles."
   icon: "pen-line"
   brand_color: "#7C3AED"

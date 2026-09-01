@@ -1,5 +1,5 @@
 interface:
-  display_name: "Lit Speed Read"
+  display_name: "fifine-lit-speed-read"
   short_description: "Run a structured speed-read workflow for papers and research sources."
   icon: "sparkles"
   brand_color: "#7C3AED"
