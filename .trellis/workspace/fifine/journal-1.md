@@ -178,3 +178,28 @@ Adapted a 36-section source document into the repository's publishable skill con
 ### Next Steps
 
 - Commit the journal, then run `/trellis:finish-work` to archive the task.
+
+
+## Session 4: Add fifine-adaptive-runtime-orchestrator skill
+
+**Date**: 2026-09-05
+**Task**: Add fifine-adaptive-runtime-orchestrator skill
+**Branch**: `main`
+
+### Summary
+
+Added the fifine-adaptive-runtime-orchestrator skill: adaptive runtime discovery, executor/shell selection, long-job launching and adaptive polling. Source was 36 sections, split into a 2477-word SKILL.md plus four lazily-loaded references to stay within the 5000-word body guideline. Registered in skills.json, publishable whitelist, postinstall fallback, README, and AGENTS.md. Quality check found and fixed 4 real defects, most severely a launch snippet where TASK_DIR stayed literal inside single quotes so exit_code was never written, silently defeating the DONE/FAILED state machine. Also synced the Trellis 0.6.10 framework upgrade and platform-local payloads that were already dirty in the tree.
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `11b7a3e` | (see git log) |
+| `adad508` | (see git log) |
+| `1e20a24` | (see git log) |
+| `8f75d11` | (see git log) |
+| `bd27e4c` | (see git log) |
+
+### Status
+
+[OK] **Completed**
