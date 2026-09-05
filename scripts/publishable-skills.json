@@ -24,6 +24,7 @@
     "fifine-parallel-executor-with-trellis",
     "fifine-prompt-amplifier",
     "fifine-writing-style",
-    "fifine-science-research-writing-skills"
+    "fifine-science-research-writing-skills",
+    "fifine-adaptive-runtime-orchestrator"
   ]
 }

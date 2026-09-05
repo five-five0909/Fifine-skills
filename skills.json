@@ -127,6 +127,11 @@
       "name": "fifine-science-research-writing-skills",
       "path": "skills/fifine-science-research-writing-skills",
       "description": "Active writing assistant for STEMM research papers, dissertations, and journal manuscripts. Supports drafting, revising, reviewing, reverse-engineering published articles, and interactive section guidance."
+    },
+    {
+      "name": "fifine-adaptive-runtime-orchestrator",
+      "path": "skills/fifine-adaptive-runtime-orchestrator",
+      "description": "Use this skill when a command, build, training run, download, or remote job may outlive one tool call, or when the agent must decide which shell, executor, host, or wait strategy to use without asking. Trigger: /fifine-adaptive-runtime-orchestrator, long-running task, background job, poll, sleep, nohup, timeout, SSH long task, SSH 长任务, 后台任务, 长任务, 轮询, 卡死检测, wait for job, Slurm, tmux, Start-Process. Produces a discovered Runtime Profile, an executor/shell choice, a launched job with a real Job ID, and an adaptive polling loop that stops on DONE/FAILED. Not for short one-shot commands that return in seconds — just run those directly."
     }
   ]
 }

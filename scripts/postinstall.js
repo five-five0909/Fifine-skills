@@ -118,7 +118,8 @@ function readPublishableSkills() {
     "fifine-parallel-executor-with-trellis",
     "fifine-prompt-amplifier",
     "fifine-writing-style",
-    "fifine-science-research-writing-skills"
+    "fifine-science-research-writing-skills",
+    "fifine-adaptive-runtime-orchestrator"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;

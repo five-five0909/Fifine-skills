@@ -42,7 +42,10 @@ scientific English drafting and IMRaD prose polishing with phrase banks,
 section templates, and sentence-level style baselines. The imported
 `fifine-science-research-writing-skills` skill remains available as a broader
 STEMM paper-writing assistant for drafting, revising, reviewing, and
-section-by-section guidance.
+section-by-section guidance. `fifine-adaptive-runtime-orchestrator` discovers
+the real execution environment, picks an executor and shell automatically, and
+waits on long builds, training runs, and remote jobs with adaptive polling
+instead of guessed `sleep` calls.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 
