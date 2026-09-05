@@ -199,6 +199,22 @@ IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning.
 node scripts/validate-skills.mjs
 ```
 
+### 7.1 验证失败先判断是否与本次改动相关
+
+`forbiddenDirs` 检查（`__pycache__`、`node_modules`、`.venv` 等）**递归扫描整个仓库**，不局限于 `skills/`。因此运行 Trellis 脚本产生的 `.trellis/scripts/**/__pycache__` 会让它失败，即使本次改动完全没碰 Python 代码。
+
+排查顺序：
+
+```bash
+npm run validate                    # 看失败项落在哪个路径
+git diff --ignore-cr-at-eol --stat  # 确认自己的改动范围
+```
+
+- 失败路径在 `.trellis/` 或已 gitignore → 是与本次改动无关的构建产物，删除后重跑即可，不要改 validator 去豁免。
+- 失败路径在 `skills/` 内 → 是真实问题，修 skill 本身。
+
+`git diff` 对整文件重写也可能放大观感：本仓库部分文件在 `HEAD` 与工作树之间存在行尾差异，用 `git diff --ignore-cr-at-eol` 才能看到真实改动量。
+
 ## 八、发布 Skill 命名空间
 
 所有发布 skill 使用统一的 `fifine-<original-name>` kebab-case 名称。`fifine-` 是唯一命名空间前缀，后半段保留原有的能力名；目录名、`SKILL.md` frontmatter 的 `name`、`skills.json` 的 `name`/`path`、`agents/openai.yaml` 的 `interface.display_name` 必须完全一致。
