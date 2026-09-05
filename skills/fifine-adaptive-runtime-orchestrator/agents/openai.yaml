@@ -1,0 +1,15 @@
+interface:
+  display_name: "fifine-adaptive-runtime-orchestrator"
+  short_description: "Detect the runtime, choose an executor and shell, and poll long jobs adaptively."
+  default_prompt: "Run this long task in the background and tell me when it finishes."
+
+triggers:
+  - "/fifine-adaptive-runtime-orchestrator"
+  - "long-running task"
+  - "background job"
+  - "wait for job"
+  - "长任务"
+  - "后台任务"
+  - "轮询"
+  - "nohup"
+  - "timeout"
