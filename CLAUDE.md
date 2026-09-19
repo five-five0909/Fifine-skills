@@ -49,6 +49,16 @@ When a consumer project runs `npm install github:five-five0909/Fifine-skills`:
 
 ---
 
+## Runtime and performance rule
+
+For long-running commands, background jobs, remote execution, benchmark/profiling, or performance
+optimization, route to `fifine-adaptive-runtime-orchestrator`. Keep the detailed rule set canonical
+in `skills/fifine-adaptive-runtime-orchestrator/SKILL.md` and
+`skills/fifine-adaptive-runtime-orchestrator/references/performance-diagnosis.md` rather than
+duplicating it here. Short form: detect the real runtime target, baseline before tuning, optimize
+effective output instead of raw utilization, benchmark one main hypothesis at a time, preserve
+correctness/reproducibility, and monitor hardware safety.
+
 ## Trellis Task System
 
 ```bash

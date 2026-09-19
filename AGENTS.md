@@ -60,7 +60,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-tavily-search | Tavily 实时网络搜索 |
 | fifine-parallel-executor-with-trellis | Trellis 并行任务执行器 |
 | fifine-trans-criptase | 会话续接与本地代码/文档检索工具 |
-| fifine-adaptive-runtime-orchestrator | 自适应运行时编排：自动探测执行环境、选择执行器与 Shell，并用自适应轮询等待长任务 |
+| fifine-adaptive-runtime-orchestrator | 自适应运行时编排与性能诊断：自动探测执行环境、选择执行器与 Shell、自适应轮询长任务，并按 measure-first 方法做性能优化 |
 
 ## Skill Routing
 
@@ -89,6 +89,18 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 写稿/论文前的结构化自我审问 | fifine-paper-write-research-grill |
 | 命令、构建、训练或远程任务可能超出单次调用，需要后台运行与等待 | fifine-adaptive-runtime-orchestrator |
 | 不确定该用 Bash 还是 PowerShell、能等多久、任务是否还活着 | fifine-adaptive-runtime-orchestrator |
+| 需要性能诊断/优化、benchmark/profiling、并发度选择、GPU/CPU 利用率解释或吞吐量提升 | fifine-adaptive-runtime-orchestrator |
+
+## Runtime and performance rule
+
+For long-running commands, background jobs, remote execution, benchmark/profiling, or performance
+optimization, use `fifine-adaptive-runtime-orchestrator`. The canonical detailed rules live in
+`skills/fifine-adaptive-runtime-orchestrator/SKILL.md` and
+`skills/fifine-adaptive-runtime-orchestrator/references/performance-diagnosis.md`; do not duplicate
+the full rule set in tool-specific config. Summary: detect the real target/runtime, establish a
+fair baseline before tuning, optimize effective task throughput/latency rather than utilization
+itself, benchmark one main hypothesis at a time, preserve correctness/reproducibility, and protect
+hardware safety.
 
 ## Distribution targets
 

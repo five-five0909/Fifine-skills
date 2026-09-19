@@ -6,6 +6,10 @@
 #   [projects."/abs/path/to/this/repo"]
 #   trust_level = "trusted"
 
+
+# Runtime/performance policy is intentionally not duplicated here. Codex reads
+# AGENTS.md via project_doc_fallback_filenames; AGENTS.md points to the canonical
+# fifine-adaptive-runtime-orchestrator skill and performance-diagnosis reference.
 # Keep AGENTS.md as the primary project instruction file.
 project_doc_fallback_filenames = ["AGENTS.md"]
 

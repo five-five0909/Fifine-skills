@@ -43,9 +43,10 @@ section templates, and sentence-level style baselines. The imported
 `fifine-science-research-writing-skills` skill remains available as a broader
 STEMM paper-writing assistant for drafting, revising, reviewing, and
 section-by-section guidance. `fifine-adaptive-runtime-orchestrator` discovers
-the real execution environment, picks an executor and shell automatically, and
-waits on long builds, training runs, and remote jobs with adaptive polling
-instead of guessed `sleep` calls.
+the real execution environment, picks an executor and shell automatically,
+waits on long builds, training runs, and remote jobs with adaptive polling, and
+can run measure-first performance diagnosis/optimization without chasing raw
+CPU/GPU utilization for its own sake.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

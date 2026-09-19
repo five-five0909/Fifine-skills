@@ -1,6 +1,6 @@
 ---
 name: fifine-adaptive-runtime-orchestrator
-description: "Use this skill when a command, build, training run, download, or remote job may outlive one tool call, or when the agent must decide which shell, executor, host, or wait strategy to use without asking. Trigger: /fifine-adaptive-runtime-orchestrator, long-running task, background job, poll, sleep, nohup, timeout, SSH long task, SSH 长任务, 后台任务, 长任务, 轮询, 卡死检测, wait for job, Slurm, tmux, Start-Process. Produces a discovered Runtime Profile, an executor/shell choice, a launched job with a real Job ID, and an adaptive polling loop that stops on DONE/FAILED. Not for short one-shot commands that return in seconds — just run those directly."
+description: "Use this skill when a command, build, training run, download, benchmark, performance diagnosis, or remote job may outlive one tool call, or when the agent must decide which shell, executor, host, wait, profiling, or benchmarking strategy to use without asking. Trigger: /fifine-adaptive-runtime-orchestrator, long-running task, performance tuning, benchmark, profiling, background job, poll, sleep, nohup, timeout, SSH long task, SSH 长任务, 性能诊断, 性能优化, 后台任务, 长任务, 轮询, 卡死检测, wait for job, Slurm, tmux, Start-Process. Produces a discovered Runtime Profile, an executor/shell choice, a launched job with a real Job ID, adaptive polling, and optional measure-first performance optimization. Not for short one-shot commands that return in seconds — just run those directly."
 ---
 
 # Adaptive Runtime Orchestrator
@@ -8,9 +8,10 @@ description: "Use this skill when a command, build, training run, download, or r
 ## Trigger check
 
 This skill applies when the work may exceed a single tool call, or when the correct executor,
-shell, host, or wait strategy is not already known — long builds, model training, large
-downloads, batch conversions, SSH/container/scheduler jobs, or any task where the agent would
-otherwise be tempted to guess `sleep 300`.
+shell, host, wait strategy, profiling method, or benchmark loop is not already known — long
+builds, model training, large downloads, batch conversions, performance diagnosis/optimization,
+SSH/container/scheduler jobs, or any task where the agent would otherwise be tempted to guess
+`sleep 300` or tune resources without measurement.
 
 Stop and just run the command directly when it is a short one-shot that returns in seconds and
 needs no backgrounding. Stop and use `fifine-parallel-executor-with-trellis` when the real need
@@ -24,11 +25,66 @@ is splitting a large task into parallel workstreams, not waiting on one job.
 Discover → Decide → Execute → Baseline → Observe → Estimate → Wait Safely → Poll → Adapt → Remember
 ```
 
+When the user asks for performance diagnosis or optimization, extend the loop:
+
+```text
+Understand project → Detect hardware/runtime → Baseline → Bottleneck hypothesis → One change → Benchmark → Compare → Keep/Rollback → Report
+```
+
 Never degrade into:
 
 ```text
 Launch → guess a sleep → guess another sleep → guess another sleep
 ```
+
+---
+
+## Performance diagnosis and optimization mode
+
+Use this mode when the user asks to optimize speed, throughput, resource efficiency, GPU/CPU
+utilization, concurrency, batch size, training/inference/runtime performance, or when a long job
+needs a measured better execution plan. Runtime orchestration still applies: choose the right
+executor, launch safely, poll adaptively, and preserve logs/artifacts.
+
+Highest principle: **Measure first. Optimize second.** Do not optimize the monitoring panel;
+optimize the project's effective output per unit time while preserving correctness, stability,
+reproducibility, and hardware safety.
+
+Required method:
+
+1. Understand the project path before tuning: entry command, code path, config, data flow,
+   dependencies, scheduler/runner, current processes, and which knobs affect correctness versus
+   only performance.
+2. Detect the real execution environment. Do not assume hardware. Capture relevant CPU, RAM,
+   NUMA, disk, network, GPU/VRAM, driver, CUDA/ROCm, Python/runtime, and framework versions when
+   they matter to the task.
+3. Establish a comparable baseline before changes: wall-clock time plus the task's meaningful
+   throughput/latency metric, concurrency, CPU/RAM, GPU/VRAM/utilization/power/temperature/clocks,
+   and I/O/network signals when relevant. Omit irrelevant metrics, but record why.
+4. Diagnose the bottleneck from multiple signals, not a single utilization number. Valid outcomes
+   include CPU/GPU compute bound, memory or VRAM bandwidth, I/O/network, preprocessing/DataLoader,
+   host-device transfer, kernel launch/synchronization/runtime overhead, lock contention, batch or
+   worker mis-sizing, task granularity, thermal/power/clock limits, NUMA/PCIe, or "low utilization
+   is normal; no change needed."
+5. Optimize experimentally: `Observe → Hypothesis → Change → Benchmark → Compare → Keep/Rollback`.
+   Change one main variable per important test so the result is attributable.
+6. Prefer reversible, local changes. Never silently change data, data split, output semantics,
+   evaluation metrics, core algorithm meaning, precision requirements, randomness, or business
+   logic. Any potentially semantic optimization needs an explicit correctness check.
+7. If single-job speed is saturated or the job is too small to fill the machine, switch the goal
+   from single-task latency to whole-machine aggregate throughput and benchmark concurrency `N`
+   instead of guessing it. Evaluate aggregate throughput, per-job slowdown, total completion time,
+   contention, RAM/VRAM pressure, I/O, temperature, power, and stability.
+8. Watch hardware safety during benchmarks: temperature, power, clocks/throttling, OOM, swap, disk
+   pressure, and system stability. Back off and diagnose unsafe conditions; do not overdrive a
+   machine merely to raise utilization.
+9. Avoid pseudo-optimization. CPU/GPU/VRAM utilization increases count only when the core task
+   metric improves without unacceptable correctness or stability cost.
+10. Final report must include: Environment, Baseline, Bottleneck, Evidence, Optimization Attempts,
+    Benchmark comparisons, Failed Attempts, Final Configuration, Concurrency recommendation when
+    applicable, Expected Performance, Remaining Bottlenecks, and Next Steps.
+
+Detailed checklist and copy-ready metric ideas: `references/performance-diagnosis.md`.
 
 ---
 
@@ -354,6 +410,11 @@ Avoid: `Ask → Ask → Ask → Execute`.
 23. Never overwrite logs, checkpoints, results, or raw data.
 24. Never let the polling mechanism change the task's correctness.
 25. Re-confirm the target-level Runtime Profile on every new execution target.
+26. Measure first; optimize second.
+27. Do not treat CPU/GPU/VRAM utilization as the objective; use effective throughput/latency/time-to-solution.
+28. Baseline before tuning and benchmark each meaningful change against that baseline.
+29. Preserve correctness and reproducibility; validate or roll back semantic or numerical changes.
+30. Protect hardware safety; back off on thermal throttling, OOM, swap, or instability.
 
 ---
 
@@ -369,3 +430,6 @@ Avoid: `Ask → Ask → Ask → Execute`.
 - `references/polling-playbook.md` — timeout derivation, the dynamic algorithm with all numeric
   factors, stall diagnosis, decision-log format, and copy-ready one-shot `KEY=VALUE` probes.
   Read while the job is running.
+- `references/performance-diagnosis.md` — measure-first performance diagnosis checklist,
+  bottleneck taxonomy, experimental method, safety rules, concurrency benchmarking, and final
+  report schema. Read when tuning performance or diagnosing low/unstable utilization.
