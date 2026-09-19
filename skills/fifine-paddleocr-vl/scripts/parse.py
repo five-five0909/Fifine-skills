@@ -23,6 +23,42 @@ except ImportError as exc:  # pragma: no cover - user environment dependent
 JOB_URL = "https://paddleocr.aistudio-app.com/api/v2/ocr/jobs"
 DEFAULT_MODEL = "PaddleOCR-VL-1.6"
 
+PRIVATE_ENV_PATHS = (
+    os.getenv("FIFINE_SKILLS_ENV", ""),
+    str(Path.home() / ".config" / "fifine-skills" / "secrets.env"),
+    str(Path.home() / ".config" / "fifine-skills" / "fifine-paddleocr-vl.env"),
+)
+
+
+def _parse_env_value(value: str) -> str:
+    value = value.strip()
+    if (value.startswith('"') and value.endswith('"')) or (value.startswith("'") and value.endswith("'")):
+        value = value[1:-1]
+    return value.replace(r"\n", "\n")
+
+
+def load_private_env() -> None:
+    """Load optional local plaintext env files without committing secrets to the skill repo."""
+    for env_path in PRIVATE_ENV_PATHS:
+        if not env_path:
+            continue
+        path = Path(env_path).expanduser()
+        if not path.exists():
+            continue
+        for raw_line in path.read_text(encoding="utf-8").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            if line.startswith("export "):
+                line = line[len("export "):].lstrip()
+            key, value = line.split("=", 1)
+            key = key.strip()
+            if key and key not in os.environ:
+                os.environ[key] = _parse_env_value(value)
+
+
+load_private_env()
+
 
 def safe_name(value: str) -> str:
     name = Path(urlparse(value).path).stem if value.startswith(("http://", "https://")) else Path(value).stem

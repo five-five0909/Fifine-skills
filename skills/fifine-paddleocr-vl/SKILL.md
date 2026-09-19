@@ -9,12 +9,31 @@ description: Use PaddleOCR-VL through the official AI Studio HTTP API to parse P
 
 Use this skill for on-demand OCR/document parsing with PaddleOCR-VL. It does not use MCP and does not start a persistent server; it calls the official AI Studio job API, polls until completion, and downloads JSONL results, Markdown pages, and images by default.
 
+## Token setup
+
+The parser checks token sources in this order:
+
+1. `--token TOKEN` for one run.
+2. `PADDLEOCR_AISTUDIO_TOKEN` from the current environment.
+3. Local plaintext env files loaded automatically, without needing to pass flags:
+   - path from `FIFINE_SKILLS_ENV` if set
+   - `~/.config/fifine-skills/secrets.env`
+   - `~/.config/fifine-skills/fifine-paddleocr-vl.env`
+
+Example local env file content:
+
+```env
+PADDLEOCR_AISTUDIO_TOKEN=your-ai-studio-token
+PADDLEOCR_MODEL=PaddleOCR-VL-1.6
+```
+
+Do not commit real tokens into this publishable skill repository.
+
 ## Quick Start
 
-Run the bundled parser script:
+Run the bundled parser script after token setup:
 
 ```powershell
-$env:PADDLEOCR_AISTUDIO_TOKEN = "<your-ai-studio-token>"
 python .\scripts\parse.py "<absolute-path-to-file.pdf>"
 ```
 

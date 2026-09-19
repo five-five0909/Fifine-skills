@@ -5,11 +5,43 @@
 //        否则回退旧 embed-config.json（行为与改造前逐字段一致，见 Goal.md 13.2 字段映射表）。
 // 环境变量始终最高优先级（沿用旧行为，不新增环境变量语义）。
 import fs from 'node:fs'
+import os from 'node:os'
 import path from 'node:path'
 import { INSTALL_ROOT } from './paths.mjs'
 
 export const LEGACY_CONFIG_PATH = path.join(INSTALL_ROOT, 'embed-config.json')
 export const SHARED_CONFIG_PATH = path.join(INSTALL_ROOT, 'config', 'config.json')
+
+const PRIVATE_ENV_PATHS = [
+    process.env.FIFINE_SKILLS_ENV || '',
+    path.join(os.homedir(), '.config', 'fifine-skills', 'secrets.env'),
+    path.join(os.homedir(), '.config', 'fifine-skills', 'fifine-trans-criptase.env'),
+]
+
+function parseEnvValue(value) {
+    let v = value.trim()
+    if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+        v = v.slice(1, -1)
+    }
+    return v.replace(/\\n/g, '\n')
+}
+
+function loadPrivateEnv() {
+    for (const envPath of PRIVATE_ENV_PATHS) {
+        if (!envPath || !fs.existsSync(envPath)) continue
+        const body = fs.readFileSync(envPath, 'utf8')
+        for (const rawLine of body.split(/\r?\n/)) {
+            const line = rawLine.trim()
+            if (!line || line.startsWith('#')) continue
+            const match = line.match(/^(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$/)
+            if (!match) continue
+            const [, key, rawValue] = match
+            if (process.env[key] === undefined) process.env[key] = parseEnvValue(rawValue)
+        }
+    }
+}
+
+loadPrivateEnv()
 
 function readJson(p) {
     if (!fs.existsSync(p)) return null
