@@ -71,7 +71,7 @@
     {
       "name": "fifine-handoff",
       "path": "skills/fifine-handoff",
-      "description": "Compact the current conversation into a redacted continuation document for another agent to pick up. Trigger: /fifine-handoff, handoff, 会话交接."
+      "description": "Goal-directed session handoff for a fresh agent thread: a disposable handoff file plus a paste-ready first message, driven by the next-session goal. Trigger: /fifine-handoff, handoff, 会话交接."
     },
     {
       "name": "fifine-rethlas",

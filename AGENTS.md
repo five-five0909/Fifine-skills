@@ -40,7 +40,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-paper-idea-hook-forge | 论文 PDF 结构化解构工具，提取 hook 并输出 HTML 分析报告 |
 | fifine-paper-weaver | 统一论文阅读 skill，支持 first-pass / second-pass / full / custom 模式 |
 | fifine-paddleocr-vl | PaddleOCR-VL 官方 AI Studio API 文档解析工具，将 PDF/图片/扫描件解析为 Markdown 和图片资产 |
-| fifine-handoff | 将当前会话压缩为脱敏的临时目录交接文档，供下一位 agent 继续工作 |
+| fifine-handoff | 面向新会话目标的交接文档：写出一次性 handoff 文件 + 可直接粘贴的首条消息，让下一位 agent 带着目标继续 |
 | fifine-lit-speed-read | 学术文献速读/精读引导工具，输出 HTML 阅读报告 |
 | fifine-paper-topic-refiner | 研究选题精炼工具 |
 | fifine-pdf-ref-rename | 文献文件批量重命名 |
@@ -79,7 +79,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 多语言、批量或文件翻译，并保留段落/表格结构 | fifine-translation-multiple-kanban |
 | 论文全流程精读（摘要/引言/方法/实验） | fifine-paper-weaver |
 | OCR、解析扫描件/图片/PDF 为 Markdown | fifine-paddleocr-vl |
-| 需要把当前会话交接给下一位 agent | fifine-handoff |
+| 需要把当前会话按明确目标交接到新会话，并生成可直接粘贴的首条消息 | fifine-handoff |
 | 大任务拆分为并行子流程 | fifine-parallel-executor-with-trellis |
 | 强化/改写一条 AI 指令 | fifine-prompt-amplifier |
 | PDF 文献自动分类到主题桶 | fifine-pdf-ref-classify |
