@@ -1,0 +1,13 @@
+interface:
+  display_name: "fifine-session-memory-curator"
+  short_description: "Curate preferences and lessons into auditable, correctable global agent memory."
+  default_prompt: "Review this session, preserve durable user preferences and lessons, correct weak or conflicting inferences, and update my global agent memory."
+
+triggers:
+  - "/fifine-session-memory-curator"
+  - "session memory"
+  - "user scoop"
+  - "用户偏好归纳"
+  - "踩坑经验总结"
+  - "写入全局agent配置"
+  - "update global agent memory"

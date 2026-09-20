@@ -61,6 +61,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-parallel-executor-with-trellis | Trellis 并行任务执行器 |
 | fifine-trans-criptase | 会话续接与本地代码/文档检索工具 |
 | fifine-adaptive-runtime-orchestrator | 自适应运行时编排与性能诊断：自动探测执行环境、选择执行器与 Shell、自适应轮询长任务，并按 measure-first 方法做性能优化 |
+| fifine-session-memory-curator | 将会话偏好、纠错、踩坑和经验整理为可审计、可修订的全局 agent 记忆 |
 
 ## Skill Routing
 
@@ -87,6 +88,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 需要实时联网搜索当前信息 | fifine-tavily-search |
 | 研究选题模糊，需要聚焦精炼 | fifine-paper-topic-refiner |
 | 写稿/论文前的结构化自我审问 | fifine-paper-write-research-grill |
+| 归纳当前会话的用户偏好、纠错和踩坑经验，并维护可修订的全局 agent 记忆 | fifine-session-memory-curator |
 | 命令、构建、训练或远程任务可能超出单次调用，需要后台运行与等待 | fifine-adaptive-runtime-orchestrator |
 | 不确定该用 Bash 还是 PowerShell、能等多久、任务是否还活着 | fifine-adaptive-runtime-orchestrator |
 | 需要性能诊断/优化、benchmark/profiling、并发度选择、GPU/CPU 利用率解释或吞吐量提升 | fifine-adaptive-runtime-orchestrator |

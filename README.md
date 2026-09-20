@@ -46,7 +46,9 @@ section-by-section guidance. `fifine-adaptive-runtime-orchestrator` discovers
 the real execution environment, picks an executor and shell automatically,
 waits on long builds, training runs, and remote jobs with adaptive polling, and
 can run measure-first performance diagnosis/optimization without chasing raw
-CPU/GPU utilization for its own sake.
+CPU/GPU utilization for its own sake. `fifine-session-memory-curator` preserves durable preferences, corrections,
+pitfalls, and lessons in an auditable ledger, while promoting only grounded,
+correctable rules into global agent instructions.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

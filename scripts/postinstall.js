@@ -78,7 +78,10 @@ const legacySkillNames = Object.freeze({
   "skills-workflow-parallel": "fifine-parallel-executor-with-trellis",
   "skills-writing-prompt": "fifine-prompt-amplifier",
   "skills-writing-style": "fifine-writing-style",
-  "multiple-translation": "fifine-translation-multiple-kanban"
+  "multiple-translation": "fifine-translation-multiple-kanban",
+  "user-scoop": "fifine-session-memory-curator",
+  "fifine-user-scoop": "fifine-session-memory-curator",
+  "session-memory-curator": "fifine-session-memory-curator"
 });
 
 function readJson(filePath, fallback) {
@@ -119,7 +122,8 @@ function readPublishableSkills() {
     "fifine-prompt-amplifier",
     "fifine-writing-style",
     "fifine-science-research-writing-skills",
-    "fifine-adaptive-runtime-orchestrator"
+    "fifine-adaptive-runtime-orchestrator",
+    "fifine-session-memory-curator"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;
