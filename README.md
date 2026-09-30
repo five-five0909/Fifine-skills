@@ -28,6 +28,32 @@ This repository can also still be installed through npm:
 npm install github:five-five0909/Fifine-skills
 ```
 
+## Environment variables
+
+Skills that need credentials read them from a local plaintext env file instead of
+the repository or the agent config. Resolution order, first path wins:
+
+1. The file pointed at by `FIFINE_SKILLS_ENV` (optional override).
+2. `~/.config/fifine-skills/secrets.env` (shared across all Fifine skills).
+3. `~/.config/fifine-skills/<skill-name>.env` (skill-specific).
+
+Existing process env always wins; the loader never overwrites a variable that is
+already set (`skills/fifine-trans-criptase/lib/shared/config.mjs`). Values are
+read once when the skill's config module loads, and a stdio MCP subprocess
+freezes its environment at startup — restart the MCP server / agent after
+editing an env file.
+
+Credentials are needed only by two skills today: `fifine-trans-criptase`
+(embedding provider endpoint, key, and model for semantic/hybrid transcript and
+code search) and `fifine-paddleocr-vl` (AI Studio token for OCR parsing). Copy
+[`examples/fifine-skills-secrets.env.example`](examples/fifine-skills-secrets.env.example)
+to `~/.config/fifine-skills/secrets.env`, fill in real values, and keep the file
+at permissions `600`. That file lives outside the repository on purpose: **never
+commit real keys or tokens here**. `fifine-trans-criptase` also publishes an
+[`docs/environment.md`](skills/fifine-trans-criptase/docs/environment.md) with
+the full variable list, precedence rules, verified provider facts, and proxy
+setup.
+
 ## Skills
 
 All publishable skills use the `fifine-<original-name>` namespace. The prefix is
@@ -100,6 +126,13 @@ the npm package for users who want to reuse or adapt them manually.
 ```bash
 npm run validate
 ```
+
+This is a publishable skill tree, so `npm run validate` rejects build artifacts
+and private state anywhere in the repository — `node_modules/`, `.venv/`,
+`__pycache__/`, `dist/`, `build/`, plus index directories such as `data/` and
+`index/`. Never run `npm install` inside `skills/` to pull a dependency for a
+skill script: put runtime dependencies in a directory outside the repository (for
+example `~/sdk-tools/mcp-proxy`) and point the skill's config at that path.
 
 ## Structure
 

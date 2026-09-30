@@ -29,6 +29,22 @@ PADDLEOCR_MODEL=PaddleOCR-VL-1.6
 
 Do not commit real tokens into this publishable skill repository.
 
+## Environment
+
+| Variable | Required | Default | Purpose |
+| --- | --- | --- | --- |
+| `PADDLEOCR_AISTUDIO_TOKEN` | Yes (unless `--token` is passed) | — | AI Studio API access token. |
+| `PADDLEOCR_MODEL` | No | `PaddleOCR-VL-1.6` | Model served by the AI Studio endpoint. |
+| `FIFINE_SKILLS_ENV` | No | — | Override path for the local env file with the highest precedence. |
+
+`--token` always wins over every env source, so a one-off run never needs env edits. Put recurring credentials in `~/.config/fifine-skills/secrets.env` (permissions `600`).
+
+The parser depends on `requests`; install it once per machine runtime:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
 ## Quick Start
 
 Run the bundled parser script after token setup:

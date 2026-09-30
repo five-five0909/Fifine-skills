@@ -87,7 +87,7 @@ Scenario: user mentions an old detail not in the current context — "how did we
 
 > When MCP is available: `trans_search({query})` → on hit `trans_expand({sessionId, line})`; the index auto-refreshes before search, zero maintenance. CLI commands below are fallback.
 
-**One-time setup**: edit `<skill-dir>/config/config.json` with `baseUrl` (OpenAI-compatible, ending in `/v1`) and `apiKey`; or set env vars `TRANS_EMBED_BASE_URL` / `TRANS_EMBED_API_KEY` (recommended). The skill also auto-loads local plaintext env files before reading config: the path in `FIFINE_SKILLS_ENV`, then `~/.config/fifine-skills/secrets.env`, then `~/.config/fifine-skills/fifine-trans-criptase.env`. Default model: `BAAI/bge-m3` (best for Chinese retrieval); reranker default: `BAAI/bge-reranker-v2-m3`.
+**One-time setup**: edit `<skill-dir>/config/config.json` with `baseUrl` (OpenAI-compatible, ending in `/v1`) and `apiKey`; or set env vars `TRANS_EMBED_BASE_URL` / `TRANS_EMBED_API_KEY` (recommended). The skill also auto-loads local plaintext env files before reading config: the path in `FIFINE_SKILLS_ENV`, then `~/.config/fifine-skills/secrets.env`, then `~/.config/fifine-skills/fifine-trans-criptase.env`. Default model: `BAAI/bge-m3` (best for Chinese retrieval); reranker default: `BAAI/bge-reranker-v2-m3`. Full environment reference (all env vars, precedence, verified provider facts, proxy setup): see `docs/environment.md`. Env files are read once when the config module loads and a stdio MCP subprocess freezes its environment at startup, so after editing `secrets.env` or the MCP client config you must restart the MCP server / agent for changes to take effect.
 
 ```powershell
 # Build/update index for current project (incremental: only new lines, unchanged sessions skipped)
