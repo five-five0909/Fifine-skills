@@ -37,7 +37,7 @@
 
 > 注意「只加载一次」的后果：env 文件在模块 import 时读取，而 MCP stdio 子进程的环境在启动时冻结。**新建或修改 secrets.env 后必须重启 agent / MCP 连接才生效**；在同一台机器上改文件不会热更新。
 
-密钥不要写进 skills 仓库。仓库 `.gitignore` 屏蔽 `.env` 与 `.env.*`，可提交的模板只有 `examples/fifine-skills-secrets.env.example`。
+密钥不要写进 skills 仓库。仓库根 `.gitignore` 屏蔽 `.env`、`.env.*` 与 `*.env`（后者覆盖 `secrets.local.env` 这类「前缀 + .env」文件名），可提交的模板只有 `examples/fifine-skills-secrets.env.example`。
 
 ## 3. 已验证的 provider 事实
 

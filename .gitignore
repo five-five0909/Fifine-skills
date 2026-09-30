@@ -16,3 +16,4 @@ build/
 .trellis/.runtime/
 .trellis/tasks/
 TODO.md
+*.env
