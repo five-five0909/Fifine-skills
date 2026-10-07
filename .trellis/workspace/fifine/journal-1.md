@@ -203,3 +203,44 @@ Added the fifine-adaptive-runtime-orchestrator skill: adaptive runtime discovery
 ### Status
 
 [OK] **Completed**
+
+
+## Session 5: Add fifine-file-naming-organizer skill
+
+**Date**: 2026-10-07
+**Task**: Add fifine-file-naming-organizer skill
+**Branch**: `main`
+
+### Summary
+
+Added the fifine-file-naming-organizer skill, turning the 状态标签+YYYYMMDD+核心信息+版本号 convention into a checkable grammar plus a deterministic audit → confirm → dry-run → apply → mapping-log → undo pipeline. Three stdlib-only Python scripts share naming_lib.py so the read-only auditor and the executor can never disagree; SKILL.md keeps 核心信息 as the agent's semantic judgement and never scripts that part. Registered in all five publish points.
+
+### Main Changes
+
+- SKILL.md: mode A names new files without touching disk; mode B tidies existing folders through Step 1-5 with a mandatory confirmation table before any rename
+- audit_names.py: Chinese actionable diagnostics, salvage() reuses tag/date/version from broken names, and every printed suggestion is self-validated so the tool never proposes a name it would itself reject
+- apply_naming.py: LOCKED-REFUSE on 定稿/归档 main names (pure same-name moves still allowed), conflict refusal with no auto-suffixing, case-insensitive slot check, .naming-tmp two-phase hop for rename cycles, created-directory ledger powering --undo
+- Fixed 7 doc/code and grammar defects found while verifying: char-counted name limit missed the 255-byte component ceiling (added a 200-byte budget); a generic two-segment extension group swallowed the dot in -V1.2.pptx and marked a documented anti-pattern compliant (now one segment plus four whitelisted composite suffixes); plan fields bump/action and helpers bump_version()/project_from_path() were documented but uncalled (removed, so the confirmed new_name is exactly what lands); --undo orphaned intermediate created dirs; the archive root's own name polluted every suggestion; an impossible date 20261332 was reused in a suggestion; and platform-safety.md advised replacing a colon with a spaced hyphen, which the grammar itself rejects
+
+### Git Commits
+
+| Hash | Message |
+|------|---------|
+| `f702f33` | (see git log) |
+
+### Testing
+
+- [OK] [OK] npm run validate passes; 28 publishable skills == 28 skills.json entries; postinstall fallback array matches publishable-skills.json in order and content; skills.json description is byte-identical to the SKILL.md frontmatter
+- [OK] [OK] Grammar table 30/30: canonical example, locked 定稿/归档, tags outside the closed set, 6-keyword reject, V0 reject, V1.10 accepted, Windows reserved names, dot-file skip, 40-char keyword / 100-char stem / 200-byte / 240-path budgets, dir tag and version bans, depth-1 date requirement vs depth-2 exemption
+- [OK] [OK] Fixture end-to-end: audit → plan → dry-run → apply → re-audit reports 6/6 compliant → re-apply the same plan yields 0 moves → --undo restores the file set byte-exactly and removes the dirs it created
+- [OK] [OK] Guard paths exercised for real: 定稿 main-name edit refused, 归档 pure move allowed, duplicate target refused as CONFLICT without auto-suffix, A<->B swap completed through one temp hop with no leftover .naming-tmp and undone correctly
+- [OK] [OK] Install surface simulated under node_modules/@fifine/skills: distributed to both .claude/skills and .agents/skills with a file tree identical to source, and the installed scripts run standalone from an unrelated cwd
+
+### Status
+
+[OK] **Completed**
+
+### Next Steps
+
+- The 【】 tags are legal Unicode and pass the Windows illegal-character check, but real-machine behaviour on OneDrive/坚果云 sync clients is still unverified; the skill already tells users to pilot 1-2 files before a batch
+- Task 08-25-clean-publishable-skill-payloads still shows completed-but-unarchived from an earlier session
