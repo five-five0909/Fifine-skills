@@ -74,7 +74,10 @@ waits on long builds, training runs, and remote jobs with adaptive polling, and
 can run measure-first performance diagnosis/optimization without chasing raw
 CPU/GPU utilization for its own sake. `fifine-session-memory-curator` preserves durable preferences, corrections,
 pitfalls, and lessons in an auditable ledger, while promoting only grounded,
-correctable rules into global agent instructions.
+correctable rules into global agent instructions. `fifine-file-naming-organizer`
+applies the 【状态标签】+YYYYMMDD+核心信息+版本号 formula: it proposes canonical names
+for new files, audits an existing folder read-only, and executes a confirmed
+rename/move plan with 定稿 locking, conflict refusal, a mapping log, and rollback.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

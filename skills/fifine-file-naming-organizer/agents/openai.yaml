@@ -1,0 +1,18 @@
+interface:
+  display_name: "fifine-file-naming-organizer"
+  short_description: "Audit and enforce the 状态标签+日期+核心信息+版本号 naming rule for files and folders."
+  default_prompt: "Inspect this folder, list files that break the 状态标签+YYYYMMDD+核心信息+版本号 rule, propose target names, and rename only after I confirm the plan."
+
+triggers:
+  - "/fifine-file-naming-organizer"
+  - "file naming"
+  - "naming convention"
+  - "folder structure"
+  - "rename files"
+  - "整理文件"
+  - "整理文件夹"
+  - "命名规范"
+  - "文件重命名"
+  - "状态标签"
+  - "版本号"
+  - "定稿锁定"

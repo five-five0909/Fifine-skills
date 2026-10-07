@@ -137,6 +137,11 @@
       "name": "fifine-session-memory-curator",
       "path": "skills/fifine-session-memory-curator",
       "description": "Curate durable preferences, pitfalls, and lessons from the current session into reusable agent memory, then draft or update global agent instructions. Trigger: /fifine-session-memory-curator, session memory, user scoop, 用户偏好归纳, 踩坑经验总结, 写入全局agent配置."
+    },
+    {
+      "name": "fifine-file-naming-organizer",
+      "path": "skills/fifine-file-naming-organizer",
+      "description": "Use this skill when the user creates a file or folder that should follow the 【状态标签】+YYYYMMDD+核心信息+版本号 convention, or asks to audit, tidy, unify, version-bump, or rename existing files and folders. Trigger: /fifine-file-naming-organizer, file naming, naming convention, folder structure, rename files, 整理文件, 整理文件夹, 命名规范, 文件重命名, 状态标签, 版本号, 定稿锁定. Produces compliance diagnostics, proposed target names, and an executed rename/move plan with mapping log and rollback. Not for research-PDF title renaming — use fifine-pdf-ref-rename; not for literature topic buckets — use fifine-pdf-ref-classify."
     }
   ]
 }

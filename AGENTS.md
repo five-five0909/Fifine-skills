@@ -62,6 +62,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-trans-criptase | 会话续接与本地代码/文档检索工具 |
 | fifine-adaptive-runtime-orchestrator | 自适应运行时编排与性能诊断：自动探测执行环境、选择执行器与 Shell、自适应轮询长任务，并按 measure-first 方法做性能优化 |
 | fifine-session-memory-curator | 将会话偏好、纠错、踩坑和经验整理为可审计、可修订的全局 agent 记忆 |
+| fifine-file-naming-organizer | 文件/文件夹命名与整理：【状态标签】+YYYYMMDD+核心信息+版本号，只读体检存量并按确认计划改名/移动，含定稿锁定、冲突拒绝、映射日志与回滚 |
 
 ## Skill Routing
 
@@ -92,6 +93,8 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 命令、构建、训练或远程任务可能超出单次调用，需要后台运行与等待 | fifine-adaptive-runtime-orchestrator |
 | 不确定该用 Bash 还是 PowerShell、能等多久、任务是否还活着 | fifine-adaptive-runtime-orchestrator |
 | 需要性能诊断/优化、benchmark/profiling、并发度选择、GPU/CPU 利用率解释或吞吐量提升 | fifine-adaptive-runtime-orchestrator |
+| 新建文件/文件夹需要按【状态标签】+日期+核心信息+版本号命名，或统一存量文件与目录结构 | fifine-file-naming-organizer |
+| 需要版本号升降级规则、定稿锁定、改名映射记录与回滚 | fifine-file-naming-organizer |
 
 ## Runtime and performance rule
 

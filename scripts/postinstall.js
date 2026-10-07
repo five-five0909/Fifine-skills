@@ -123,7 +123,8 @@ function readPublishableSkills() {
     "fifine-writing-style",
     "fifine-science-research-writing-skills",
     "fifine-adaptive-runtime-orchestrator",
-    "fifine-session-memory-curator"
+    "fifine-session-memory-curator",
+    "fifine-file-naming-organizer"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;
