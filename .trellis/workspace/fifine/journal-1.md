@@ -230,11 +230,11 @@ Added the fifine-file-naming-organizer skill, turning the 状态标签+YYYYMMDD+
 
 ### Testing
 
-- [OK] [OK] npm run validate passes; 28 publishable skills == 28 skills.json entries; postinstall fallback array matches publishable-skills.json in order and content; skills.json description is byte-identical to the SKILL.md frontmatter
-- [OK] [OK] Grammar table 30/30: canonical example, locked 定稿/归档, tags outside the closed set, 6-keyword reject, V0 reject, V1.10 accepted, Windows reserved names, dot-file skip, 40-char keyword / 100-char stem / 200-byte / 240-path budgets, dir tag and version bans, depth-1 date requirement vs depth-2 exemption
-- [OK] [OK] Fixture end-to-end: audit → plan → dry-run → apply → re-audit reports 6/6 compliant → re-apply the same plan yields 0 moves → --undo restores the file set byte-exactly and removes the dirs it created
-- [OK] [OK] Guard paths exercised for real: 定稿 main-name edit refused, 归档 pure move allowed, duplicate target refused as CONFLICT without auto-suffix, A<->B swap completed through one temp hop with no leftover .naming-tmp and undone correctly
-- [OK] [OK] Install surface simulated under node_modules/@fifine/skills: distributed to both .claude/skills and .agents/skills with a file tree identical to source, and the installed scripts run standalone from an unrelated cwd
+- [OK] npm run validate passes; 28 publishable skills == 28 skills.json entries; postinstall fallback array matches publishable-skills.json in order and content; skills.json description is byte-identical to the SKILL.md frontmatter
+- [OK] Grammar table 30/30: canonical example, locked 定稿/归档, tags outside the closed set, 6-keyword reject, V0 reject, V1.10 accepted, Windows reserved names, dot-file skip, 40-char keyword / 100-char stem / 200-byte / 240-path budgets, dir tag and version bans, depth-1 date requirement vs depth-2 exemption
+- [OK] Fixture end-to-end: audit → plan → dry-run → apply → re-audit reports 6/6 compliant → re-apply the same plan yields 0 moves → --undo restores the file set byte-exactly and removes the dirs it created
+- [OK] Guard paths exercised for real: 定稿 main-name edit refused, 归档 pure move allowed, duplicate target refused as CONFLICT without auto-suffix, A<->B swap completed through one temp hop with no leftover .naming-tmp and undone correctly
+- [OK] Install surface simulated under node_modules/@fifine/skills: distributed to both .claude/skills and .agents/skills with a file tree identical to source, and the installed scripts run standalone from an unrelated cwd
 
 ### Status
 
