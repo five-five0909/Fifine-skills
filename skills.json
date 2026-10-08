@@ -177,6 +177,11 @@
       "name": "nature-figure",
       "path": "skills/nature-figure",
       "description": "Submission-grade Nature/high-impact journal figure workflow for Python or R, covering manuscript figure creation, revision, audit, polish, and journal-ready SVG/PDF/TIFF outputs."
+    },
+    {
+      "name": "fifine-visual-creation-orchestrator",
+      "path": "skills/fifine-visual-creation-orchestrator",
+      "description": "Global visual-creation routing skill that classifies drawing requests and delegates to the most appropriate image, figure, diagram, UI, STEM, or publication-figure skill."
     }
   ]
 }

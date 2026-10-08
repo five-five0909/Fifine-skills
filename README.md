@@ -83,8 +83,10 @@ correctable rules into global agent instructions. `fifine-file-naming-organizer`
 applies the 【状态标签】+YYYYMMDD+核心信息+版本号 formula: it proposes canonical names
 for new files, audits an existing folder read-only, and executes a confirmed
 rename/move plan with 定稿 locking, conflict refusal, a mapping log, and rollback.
-The imported visual creation skills include `generative-ui` for interactive
-HTML/SVG widgets, `scientific-figure-making`, `academic-figure-skill`, and
+The visual creation family includes `fifine-visual-creation-orchestrator` as the
+global entry point for classifying drawing requests and delegating to one
+specialized visual skill. It routes to `generative-ui` for interactive HTML/SVG
+widgets, `scientific-figure-making`, `academic-figure-skill`, and
 `nature-figure` for publication and high-impact journal figures,
 `baoyu-image-gen` and `stem-illustration` for AI image and STEM illustration
 generation, and `tech-diagrams` for architecture and system diagrams.

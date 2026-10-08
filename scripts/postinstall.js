@@ -131,7 +131,8 @@ function readPublishableSkills() {
     "stem-illustration",
     "tech-diagrams",
     "academic-figure-skill",
-    "nature-figure"
+    "nature-figure",
+    "fifine-visual-creation-orchestrator"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;
