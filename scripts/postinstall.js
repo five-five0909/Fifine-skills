@@ -130,7 +130,8 @@ function readPublishableSkills() {
     "baoyu-image-gen",
     "stem-illustration",
     "tech-diagrams",
-    "academic-figure-skill"
+    "academic-figure-skill",
+    "nature-figure"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;

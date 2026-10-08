@@ -172,6 +172,11 @@
       "name": "academic-figure-skill",
       "path": "skills/academic-figure-skill",
       "description": "Academic-grade scientific figure creation for Nature/Cell/Science-style manuscript submission, including figure planning, styling, QA, and export guidance."
+    },
+    {
+      "name": "nature-figure",
+      "path": "skills/nature-figure",
+      "description": "Submission-grade Nature/high-impact journal figure workflow for Python or R, covering manuscript figure creation, revision, audit, polish, and journal-ready SVG/PDF/TIFF outputs."
     }
   ]
 }

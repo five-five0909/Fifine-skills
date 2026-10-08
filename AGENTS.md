@@ -70,6 +70,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | stem-illustration | 面向科研、教育、工程的 STEM 机制图、流程图、信息图和教学插图生成 |
 | tech-diagrams | 生成系统架构、C4、网络、数据流、序列等专业技术图 |
 | academic-figure-skill | 面向 Nature/Cell/Science 风格投稿的学术图表规划、润色、QA 与导出 |
+| nature-figure | 面向 Nature/高影响力期刊的 Python/R 投稿级科学图表工作流 |
 
 ## Skill Routing
 
@@ -108,6 +109,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 需要科研机制图、实验流程图、STEM 教学插图、学术海报或概念信息图 | stem-illustration |
 | 需要系统架构图、C4、网络图、数据流、序列图或云架构技术图 | tech-diagrams |
 | 需要 Nature/Cell/Science 风格学术图表规划、润色、QA 或投稿导出 | academic-figure-skill |
+| 需要 Python 或 R 制作、审查、润色 Nature/高影响力期刊投稿级科学图表 | nature-figure |
 
 ## Runtime and performance rule
 

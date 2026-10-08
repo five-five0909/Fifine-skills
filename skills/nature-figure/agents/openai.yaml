@@ -1,0 +1,5 @@
+interface:
+  display_name: "nature-figure"
+  short_description: "Create and polish Nature-style manuscript figures."
+  icon: "chart-line"
+  brand_color: "#0F766E"
