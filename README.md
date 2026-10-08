@@ -43,21 +43,26 @@ read once when the skill's config module loads, and a stdio MCP subprocess
 freezes its environment at startup — restart the MCP server / agent after
 editing an env file.
 
-Credentials are needed only by two skills today: `fifine-trans-criptase`
-(embedding provider endpoint, key, and model for semantic/hybrid transcript and
-code search) and `fifine-paddleocr-vl` (AI Studio token for OCR parsing). Copy
+Several skills need credentials or external provider configuration only when you
+use their live API features. Examples include `fifine-trans-criptase` (embedding
+provider endpoint, key, and model for semantic/hybrid transcript and code
+search), `fifine-paddleocr-vl` (AI Studio token for OCR parsing), and imported
+image/diagram generation skills such as `baoyu-image-gen`, `stem-illustration`,
+and `tech-diagrams` (provider-specific image API keys or cloud credentials). Copy
 [`examples/fifine-skills-secrets.env.example`](examples/fifine-skills-secrets.env.example)
-to `~/.config/fifine-skills/secrets.env`, fill in real values, and keep the file
-at permissions `600`. That file lives outside the repository on purpose: **never
-commit real keys or tokens here**. `fifine-trans-criptase` also publishes an
+to `~/.config/fifine-skills/secrets.env`, fill in real values needed by the
+skills you use, and keep the file at permissions `600`. That file lives outside
+the repository on purpose: **never commit real keys or tokens here**.
+`fifine-trans-criptase` also publishes an
 [`docs/environment.md`](skills/fifine-trans-criptase/docs/environment.md) with
 the full variable list, precedence rules, verified provider facts, and proxy
 setup.
 
 ## Skills
 
-All publishable skills use the `fifine-<original-name>` namespace. The prefix is
-the only namespace marker; the remainder keeps the familiar skill name.
+Most original Fifine skills use the `fifine-<original-name>` namespace. Imported
+third-party skills keep the upstream `name` from their `SKILL.md` so triggers and
+metadata remain compatible.
 
 Examples include `fifine-live-humanizer`, `fifine-paper-weaver`,
 `fifine-pdf-ref-classify`, `fifine-paper-idea-hook-forge`, and
@@ -78,6 +83,11 @@ correctable rules into global agent instructions. `fifine-file-naming-organizer`
 applies the 【状态标签】+YYYYMMDD+核心信息+版本号 formula: it proposes canonical names
 for new files, audits an existing folder read-only, and executes a confirmed
 rename/move plan with 定稿 locking, conflict refusal, a mapping log, and rollback.
+The imported visual creation skills include `generative-ui` for interactive
+HTML/SVG widgets, `scientific-figure-making` and `academic-figure-skill` for
+publication figures, `baoyu-image-gen` and `stem-illustration` for AI image and
+STEM illustration generation, and `tech-diagrams` for architecture and system
+diagrams.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

@@ -1,0 +1,178 @@
+Create a professional, publication-quality architecture diagram following the official Google Cloud Architecture visual design system. Apply these strict rules:
+
+CANVAS: Pure white background (#FFFFFF). No background pattern, gradient, texture, or watermark. Generous whitespace — minimum 40px between all elements. Clean, uncluttered composition.
+
+PRODUCT CARDS — this is the standard card used for ALL components (containers, services, data stores, external systems):
+- Shape: Rounded rectangle, 6px corner radius
+- Background: White (#FFFFFF)
+- Border: Thin gray (#DADCE0), 1px
+- NO colored header bar. NO shadow. Clean and flat.
+- Layout inside the card:
+  - LEFT side: Product/service icon, ~32-40px, monochrome blue (#4285F4) or official product icon
+  - RIGHT of icon, two lines of text:
+    - Line 1: Component name in bold dark text (#202124), 11-12pt
+    - Line 2: Product/technology name in regular gray text (#5F6368), 10pt
+  - Optional Line 3: Brief description in gray 9pt (only when needed for clarity)
+- Card sizing: roughly 160-220px wide, 50-70px tall. Keep cards compact.
+- ALL cards follow this same pattern regardless of whether they are internal containers, data stores, or external systems. The zone background color communicates ownership, not the card style.
+
+CARD VARIATIONS FOR DIFFERENT ELEMENT TYPES:
+- Internal containers: Standard product card (icon-left, name, technology). Sits inside the system boundary zone.
+- Data stores: Same card layout. Use a database/storage icon. Sits inside the system boundary zone.
+- External systems: Same card layout. Sits inside an external/consumer zone (pink/salmon background) or outside all zones.
+- The visual distinction between internal and external comes from the ZONE they sit in, not from a different card style.
+
+USER/PERSON CARDS:
+- Shape: Rounded rectangle with a user silhouette icon (circle head + shoulders) inside
+- Soft blue-gray (#E8EAED) background fill — this is the ONE card type that gets a tinted background
+- Name and one-line description in dark text
+- Placement: LEFT side or TOP of diagram, VERTICALLY CENTERED with the system boundary
+
+ZONES (containment boxes for grouping and boundaries):
+Zones are colored background rectangles that group related cards. They communicate ownership, domain boundaries, and infrastructure topology.
+
+Zone color palette:
+- Light blue (#E8F0FE ~30%) — primary system boundary, "Google Cloud", main domain
+- Light yellow/cream (#FEF7E0 ~30%) — sub-groupings within the domain: "Product interface", "Data ingest", "All curated data"
+- Light pink/salmon (#FCE8E6 ~25%) — external consumers, outside boundaries
+- Light green (#E6F4EA ~25%) — alternative domain or partner grouping
+- Light gray (#F8F9FA) — on-premises, generic external
+
+Zone rules:
+- Rounded rectangle, no visible border (or very faint #DADCE0 if nesting requires clarity)
+- Zone label: top-left corner, in colored text matching the zone's accent color, 12-14pt medium weight
+  - Blue zone → blue label text (#4285F4)
+  - Yellow zone → dark text (#202124) or golden text
+  - Pink zone → dark text (#202124) or muted red
+- Zones nest: Organization > Project > VPC > Region > Zone > Subnet > Services
+- Consistent internal padding (~16-24px)
+- DASHED borders ONLY for infrastructure boundaries (regions, availability zones, VPCs) — not for logical groupings
+
+ANNOTATIONS AND FLOW NUMBERING:
+- Numbered steps: Blue (#4285F4) filled circles with white numbers (1, 2, 3...) placed along the flow path
+- Step descriptions in an explanatory legend (numbered list) at the bottom or side
+- This numbered-step pattern is a hallmark of official Google Cloud reference architectures
+- Annotation callouts: Light yellow (#FFF9C4) rounded box with dark text for caveats or notes
+
+COLORS — The diagram palette is primarily gray + white + blue. Color restraint is key.
+Accent colors appear mainly in the product icons themselves, NOT splashed across card backgrounds or connectors.
+
+Primary palette:
+- Google Blue #4285F4: Primary accent, zone highlights, flow step numbers, connector lines
+- Blue 100 #D2E3FC: Light blue fills for emphasized zones
+- Blue 50 #E8F0FE: Lightest blue tint for zone backgrounds
+- Gray 900 #202124: Primary text, card names (bold)
+- Gray 700 #5F6368: Secondary text, product names, descriptions, arrow labels
+- Gray 500 #9AA0A6: Tertiary text, disabled states
+- Gray 300 #DADCE0: Card borders, divider lines
+- Gray 200 #E8EAED: Person card background
+- Gray 100 #F1F3F4: Light zone backgrounds
+- Gray 50 #F8F9FA: Lightest zone fill
+- White #FFFFFF: Card backgrounds, diagram canvas
+- Yellow 50 #FEF7E0: Sub-grouping zone fills
+- Pink 50 #FCE8E6: External/consumer zone fills
+- Green 50 #E6F4EA: Alternative domain zone fills
+
+Brand colors (appear in official 4-color product icons ONLY — do not use for zones or connectors):
+- Google Red #EA4335
+- Google Yellow #FBBC04
+- Google Green #34A853
+
+TYPOGRAPHY: Sans-serif font family. Preference order: Google Sans > Open Sans > Roboto > system sans-serif.
+- Diagram title: 18-24pt Bold, #202124
+- Zone labels: 12-14pt Medium, colored to match zone accent
+- Card name (line 1): 11-12pt Bold, #202124
+- Card technology (line 2): 10pt Regular, #5F6368
+- Card description (line 3): 9pt Regular, #5F6368
+- Annotations/notes: 9-11pt Regular/Italic, #5F6368
+- Arrow labels: 9-10pt Regular, #5F6368
+- Legend text: 9-10pt Regular, #5F6368
+- Product names in Title Case; descriptions in sentence case
+- Max 3 lines of text per card
+
+CONNECTORS:
+- ORTHOGONAL ONLY — every segment perfectly horizontal or vertical, 90-degree turns. NO diagonals. NO curves. NO arcs.
+- Blue (#4285F4) solid lines, 1.5px stroke width
+- Arrowheads: Small filled blue triangles, pointing in direction of flow
+- All arrows UNIDIRECTIONAL — no two-headed arrows
+- Dashed blue lines for: return paths, optional flows, async communication, infrastructure relationships
+- Arrow labels: 9pt #5F6368, placed ABOVE horizontal segments, RIGHT of vertical segments
+- One label per arrow, verb-led phrase (2-6 words)
+- Each relationship has exactly ONE arrow — no duplicate arrows between the same two elements
+- Minimize crossings — reorganize spatial layout rather than allowing lines to cross
+
+HIERARCHY & LAYOUT:
+- The PRIMARY SYSTEM is placed in the center of the diagram, inside a light blue zone
+- Person elements on the LEFT side, VERTICALLY CENTERED with the system boundary
+- External systems on the RIGHT side or in pink/salmon zones
+- Left-to-right primary flow: Users → System → Dependencies
+- Elements aligned on an invisible grid; equal spacing between cards
+- No arrow should cross another arrow — rearrange layout to prevent crossings
+
+LEGEND: Bottom-right corner. Small horizontal row. Only include categories actually present. Use the zone color swatches (blue = internal, pink = external, etc.) rather than card-style differences, since all cards share the same white style.
+
+GENERAL:
+- NO duplicate components — each appears exactly once; route multiple arrows to it
+- NO decorative elements — no background patterns, watermarks, textures, ornamental elements
+- The aesthetic is clean, flat, and minimal — very "Google". White cards on colored zones. Blue connectors and icons provide the only color accents.
+- 16:9 aspect ratio
+- All text must be crisp, legible, and correctly spelled
+
+---
+DIAGRAM TYPE: Comparison / Split-Screen
+
+Title: "RetailCo — Comparison: On-Premises to GCP Migration"
+Subtitle: "Current state monolith vs. target cloud-native microservices architecture"
+
+TWO EQUAL-WIDTH PANELS separated by a dashed grey vertical divider.
+
+LEFT PANEL — "Current State" (light grey zone):
+Header: "Current State — On-Premises Monolith"
+
+Elements (in a C2-style layout):
+- Users [Person]: Top-left
+- NGINX Load Balancer: Entry point
+- Monolith Application [Container: Java / Spring Boot]: Large central box containing all business logic — order processing, inventory, payments, notifications all in one deployable
+- Oracle Database [Data Store: Oracle 19c]: Single relational database for all data
+- SMTP Server: Email notifications
+
+Connections:
+- Users → NGINX: "HTTPS"
+- NGINX → Monolith: "HTTP"
+- Monolith → Oracle Database: "JDBC"
+- Monolith → SMTP Server: "SMTP"
+
+RIGHT PANEL — "Target State" (light blue zone):
+Header: "Target State — GCP Cloud-Native"
+
+Elements (same spatial positions as left panel where possible):
+- Users [Person]: Top-left (same position)
+- Cloud Load Balancing: Entry point (same position as NGINX — highlighted green border = new)
+- Order Service [Container: Go / Cloud Run]: Handles order processing (green border = new, replaces part of monolith)
+- Inventory Service [Container: Go / Cloud Run]: Stock management (green border = new)
+- Payment Service [Container: Go / Cloud Run]: Payment processing (green border = new)
+- Cloud SQL [Data Store: PostgreSQL]: Managed relational database (green border = new, replaces Oracle)
+- Pub/Sub + Cloud Functions: Event-driven notifications (green border = new, replaces SMTP)
+
+Connections:
+- Users → Cloud Load Balancing: "HTTPS"
+- Cloud Load Balancing → Order Service: "HTTPS"
+- Order Service → Inventory Service: "gRPC"
+- Order Service → Payment Service: "gRPC"
+- Order Service → Cloud SQL: "Private IP"
+- Inventory Service → Cloud SQL: "Private IP"
+- Order Service → Pub/Sub: "Publishes events"
+
+CHANGE SUMMARY CALLOUT (between panels or below):
+- Single deployable → 3 independent microservices
+- Oracle license → Managed PostgreSQL (Cloud SQL)
+- SMTP server → Event-driven (Pub/Sub + Cloud Functions)
+- Manual scaling → Auto-scaling (Cloud Run)
+
+LEGEND (bottom, shared):
+- Green border = New/changed element
+- Grey/muted = Unchanged element position reference
+- Left panel (grey) = Current on-premises
+- Right panel (blue) = Target GCP
+
+16:9 aspect ratio.

@@ -1,0 +1,5 @@
+interface:
+  display_name: "scientific-figure-making"
+  short_description: "Create publication-ready matplotlib scientific figures."
+  icon: "chart-bar"
+  brand_color: "#2563EB"

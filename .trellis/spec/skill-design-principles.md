@@ -217,7 +217,7 @@ git diff --ignore-cr-at-eol --stat  # 确认自己的改动范围
 
 ## 八、发布 Skill 命名空间
 
-所有发布 skill 使用统一的 `fifine-<original-name>` kebab-case 名称。`fifine-` 是唯一命名空间前缀，后半段保留原有的能力名；目录名、`SKILL.md` frontmatter 的 `name`、`skills.json` 的 `name`/`path`、`agents/openai.yaml` 的 `interface.display_name` 必须完全一致。
+原创 Fifine 发布 skill 默认使用 `fifine-<original-name>` kebab-case 名称；导入的第三方 skill 可以保留上游 `SKILL.md` 中声明的 kebab-case `name`，以维持触发词、文档和上游兼容性。无论是否带 `fifine-` 前缀，目录名、`SKILL.md` frontmatter 的 `name`、`skills.json` 的 `name`/`path`、`scripts/publishable-skills.json`、`scripts/postinstall.js` fallback 列表、`AGENTS.md`/`README.md` 文档以及 `agents/openai.yaml` 的 `interface.display_name` 必须完全一致。
 
 重命名 skill 时，`scripts/postinstall.js` 必须保留旧名称到新 canonical name 的兼容映射，避免消费项目中的 `skills.json` 配置失效。新的 canonical name 应用于发布清单、触发命令和文档；旧名称只允许出现在 legacy alias 或迁移说明中。已经退役的 `ai-research-writing-skill` 不得重新发布或重定向。
 

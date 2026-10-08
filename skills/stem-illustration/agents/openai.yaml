@@ -1,0 +1,5 @@
+interface:
+  display_name: "stem-illustration"
+  short_description: "Generate STEM research and education illustrations."
+  icon: "beaker"
+  brand_color: "#0EA5E9"

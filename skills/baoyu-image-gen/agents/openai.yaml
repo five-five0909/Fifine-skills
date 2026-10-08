@@ -1,0 +1,5 @@
+interface:
+  display_name: "baoyu-image-gen"
+  short_description: "Generate images through multiple AI image providers."
+  icon: "image"
+  brand_color: "#EC4899"

@@ -1,0 +1,5 @@
+interface:
+  display_name: "academic-figure-skill"
+  short_description: "Create and polish academic manuscript figures."
+  icon: "chart-line"
+  brand_color: "#16A34A"

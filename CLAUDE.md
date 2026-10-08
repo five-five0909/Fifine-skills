@@ -7,12 +7,15 @@ It contains reusable SKILL.md files and companion scripts distributed via npm.
 
 ## Project Structure
 
-```
-├── {skill-name}/          ← Each skill is a self-contained directory
-│   ├── SKILL.md           ← Required: AI-readable skill definition
-│   └── *.py / *.json      ← Optional companion files
+```text
+├── skills/
+│   └── {skill-name}/      ← Each skill is a self-contained directory
+│       ├── SKILL.md       ← Required: AI-readable skill definition
+│       ├── agents/openai.yaml
+│       └── references/ scripts/ assets/ as needed
 ├── scripts/
 │   └── postinstall.js     ← npm postinstall: distributes skills to AI tool dirs
+├── skills.json            ← Root skill index for scanners
 ├── package.json           ← @fifine/skills npm package
 ├── AGENTS.md              ← Cross-tool usage documentation
 └── .trellis/              ← Task management
@@ -22,21 +25,26 @@ It contains reusable SKILL.md files and companion scripts distributed via npm.
 
 ## Adding a New Skill
 
-Every skill needs at minimum:
-```
-{skill-name}/
-└── SKILL.md    ← YAML frontmatter (name, description) + markdown body
+Every publishable skill needs at minimum:
+```text
+skills/{skill-name}/
+├── SKILL.md    ← YAML frontmatter (name, description) + markdown body
+└── agents/openai.yaml
 ```
 
 SKILL.md frontmatter format:
 ```yaml
 ---
 name: skill-name
-description: >
-  One-line description shown in skill picker.
-  Trigger words: /skill-name, keyword1, keyword2.
+description: One-line description shown in skill picker. Trigger words: /skill-name, keyword1, keyword2.
 ---
 ```
+
+The repository validator accepts only single-line frontmatter fields. Original
+Fifine skills usually use the `fifine-` namespace, while imported third-party
+skills keep the upstream `name` from `SKILL.md`; in all cases the directory name,
+frontmatter `name`, `skills.json` entry, publishable list, and
+`agents/openai.yaml` display name must match exactly.
 
 ---
 

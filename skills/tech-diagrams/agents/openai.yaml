@@ -1,0 +1,5 @@
+interface:
+  display_name: "tech-diagrams"
+  short_description: "Generate professional technical architecture diagrams."
+  icon: "network"
+  brand_color: "#4285F4"

@@ -1,0 +1,5 @@
+interface:
+  display_name: "generative-ui"
+  short_description: "Create interactive visual UI, charts, diagrams, and mockups."
+  icon: "sparkles"
+  brand_color: "#8B5CF6"

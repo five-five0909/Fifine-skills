@@ -50,6 +50,7 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-paper-write-research-grill | 写稿前结构化审问 |
 | fifine-live-humanizer | 中文创作与改稿，保留材料事实、自然中文韵律和活人感 |
 | fifine-writing-style | 可选择角色的写作风格工具，支持按角色特点写作/改写，并通过 original/final 自动学习风格规则 |
+| fifine-science-research-writing-skills | STEMM 研究论文、学位论文和期刊稿件的起草、修订、审阅与分章节指导 |
 | fifine-research-radar | 论文方向追踪雷达，调用 Node 脚本检索 arXiv/OpenAlex/S2，生成 H1/H2/H3 分级 HTML 报告 |
 | fifine-research-search | 学术检索方法论知识库 skill，提供平台路由、API 优先策略、元数据 schema 和站点经验 |
 | fifine-prompt-amplifier | 指令强化工具 |
@@ -63,6 +64,12 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | fifine-adaptive-runtime-orchestrator | 自适应运行时编排与性能诊断：自动探测执行环境、选择执行器与 Shell、自适应轮询长任务，并按 measure-first 方法做性能优化 |
 | fifine-session-memory-curator | 将会话偏好、纠错、踩坑和经验整理为可审计、可修订的全局 agent 记忆 |
 | fifine-file-naming-organizer | 文件/文件夹命名与整理：【状态标签】+YYYYMMDD+核心信息+版本号，只读体检存量并按确认计划改名/移动，含定稿锁定、冲突拒绝、映射日志与回滚 |
+| generative-ui | 生成交互式 HTML/SVG widget、Chart.js 图表、UI mockup 与生成艺术 |
+| scientific-figure-making | 面向论文、报告和幻灯片的 matplotlib 出版级科学图表制作 |
+| baoyu-image-gen | 多 provider AI 生图，支持文生图、参考图、比例和批量生成 |
+| stem-illustration | 面向科研、教育、工程的 STEM 机制图、流程图、信息图和教学插图生成 |
+| tech-diagrams | 生成系统架构、C4、网络、数据流、序列等专业技术图 |
+| academic-figure-skill | 面向 Nature/Cell/Science 风格投稿的学术图表规划、润色、QA 与导出 |
 
 ## Skill Routing
 
@@ -95,6 +102,12 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | 需要性能诊断/优化、benchmark/profiling、并发度选择、GPU/CPU 利用率解释或吞吐量提升 | fifine-adaptive-runtime-orchestrator |
 | 新建文件/文件夹需要按【状态标签】+日期+核心信息+版本号命名，或统一存量文件与目录结构 | fifine-file-naming-organizer |
 | 需要版本号升降级规则、定稿锁定、改名映射记录与回滚 | fifine-file-naming-organizer |
+| 需要交互式可视化、HTML/SVG widget、Chart.js 图表、UI mockup 或生成艺术 | generative-ui |
+| 需要 matplotlib 论文图、报告图、热图、多 panel 或出版级科学图表 | scientific-figure-making |
+| 需要通用 AI 生图、参考图生图、批量生图或多 provider 图片生成 | baoyu-image-gen |
+| 需要科研机制图、实验流程图、STEM 教学插图、学术海报或概念信息图 | stem-illustration |
+| 需要系统架构图、C4、网络图、数据流、序列图或云架构技术图 | tech-diagrams |
+| 需要 Nature/Cell/Science 风格学术图表规划、润色、QA 或投稿导出 | academic-figure-skill |
 
 ## Runtime and performance rule
 

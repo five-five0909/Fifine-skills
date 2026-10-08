@@ -89,11 +89,6 @@
       "description": "Use this skill when the user wants substantial content translated from images, PDFs, documents, text, or mixed batches while preserving structure, or needs multi-language output, chunking, resumable JobID tracking, or selectable HTML/Markdown artifacts. Trigger: /fifine-translation-multiple-kanban, multiple translation, batch translation, document translation, 多语言翻译, 批量翻译, 论文翻译. Produces faithful aligned translations and optional HTML/Markdown files. Not for OCR-only extraction, literature search, or media transcription."
     },
     {
-      "name": "fifine-grill-me-cn",
-      "path": "skills/fifine-grill-me-cn",
-      "description": "Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction. Trigger: /fifine-grill-me-cn, 压测方案, review idea, 找漏洞, pressure test."
-    },
-    {
       "name": "fifine-research-paper-writing",
       "path": "skills/fifine-research-paper-writing",
       "description": "Improve academic paper writing quality for ML/CV/NLP-style papers with clear section structure, paragraph flow, and reviewer-facing presentation. Use when drafting or revising Abstract, Introduction, Related Work, Method, Experiments, or Conclusion; polishing figures/tables; checking claim-support alignment; or performing self-review before submission."
@@ -102,6 +97,11 @@
       "name": "fifine-english-research-write",
       "path": "skills/fifine-english-research-write",
       "description": "Use this skill when the user needs English scientific research writing help at the sentence, paragraph, or IMRaD-section level using phrase banks, tense/linking/voice rules, macro section templates, and published-sentence baselines. Trigger: /fifine-english-research-write, English research writing, scientific English, IMRaD writing, academic English polishing, 科技英语写作, 英文学术润色. Produces section plans, revised prose, phrase-level diagnostics, or draft text with evidence placeholders. Not for broad ML/CV/NLP paper-story review — use fifine-research-paper-writing instead."
+    },
+    {
+      "name": "fifine-grill-me-cn",
+      "path": "skills/fifine-grill-me-cn",
+      "description": "Use this skill when the user wants a rigorous idea or plan review before execution, especially for solution pressure tests, workflow audits, or identifying missing assumptions before committing to a direction. Trigger: /fifine-grill-me-cn, 压测方案, review idea, 找漏洞, pressure test."
     },
     {
       "name": "fifine-tavily-search",
@@ -142,6 +142,36 @@
       "name": "fifine-file-naming-organizer",
       "path": "skills/fifine-file-naming-organizer",
       "description": "Use this skill when the user creates a file or folder that should follow the 【状态标签】+YYYYMMDD+核心信息+版本号 convention, or asks to audit, tidy, unify, version-bump, or rename existing files and folders. Trigger: /fifine-file-naming-organizer, file naming, naming convention, folder structure, rename files, 整理文件, 整理文件夹, 命名规范, 文件重命名, 状态标签, 版本号, 定稿锁定. Produces compliance diagnostics, proposed target names, and an executed rename/move plan with mapping log and rollback. Not for research-PDF title renaming — use fifine-pdf-ref-rename; not for literature topic buckets — use fifine-pdf-ref-classify."
+    },
+    {
+      "name": "generative-ui",
+      "path": "skills/generative-ui",
+      "description": "Generative UI for interactive visual content, HTML widgets, SVG diagrams, Chart.js visualizations, UI mockups, and generative art."
+    },
+    {
+      "name": "scientific-figure-making",
+      "path": "skills/scientific-figure-making",
+      "description": "Publication-ready matplotlib figures for academic papers, slides, and reports, including bars, trends, scatter plots, heatmaps, and multi-panel layouts."
+    },
+    {
+      "name": "baoyu-image-gen",
+      "path": "skills/baoyu-image-gen",
+      "description": "AI image generation with multiple providers, text-to-image, reference images, aspect ratios, and batch generation from saved prompt files."
+    },
+    {
+      "name": "stem-illustration",
+      "path": "skills/stem-illustration",
+      "description": "STEM-focused AI image generation for research, education, and engineering illustrations, including mechanisms, workflows, anatomy, infographics, posters, and architecture diagrams."
+    },
+    {
+      "name": "tech-diagrams",
+      "path": "skills/tech-diagrams",
+      "description": "Generate professional technical diagrams for system architecture, C4 models, networks, data flows, sequences, use cases, and cloud-style visual representations."
+    },
+    {
+      "name": "academic-figure-skill",
+      "path": "skills/academic-figure-skill",
+      "description": "Academic-grade scientific figure creation for Nature/Cell/Science-style manuscript submission, including figure planning, styling, QA, and export guidance."
     }
   ]
 }

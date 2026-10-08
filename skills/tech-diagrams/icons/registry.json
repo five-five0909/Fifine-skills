@@ -1,0 +1,4756 @@
+{
+  "_comment": "Icon registry for tech-diagrams skill. Maps system/service names to icon files. Keys are matched case-insensitively against diagram element names.",
+  "icons": [
+    {
+      "name": "Amperity",
+      "aliases": [
+        "Amperity tenant",
+        "Amperity Bridge",
+        "AmpIQ"
+      ],
+      "file": "vendor/amperity.png",
+      "description": "Official black Amperity ampersand mark on a transparent background"
+    },
+    {
+      "name": "MicroStrategy",
+      "aliases": [
+        "MSTR",
+        "MicroStrategy Intelligence Server"
+      ],
+      "file": "vendor/microstrategy.png",
+      "description": "Red 'M' bars with angled right edge"
+    },
+    {
+      "name": "Azure Databricks",
+      "aliases": [
+        "Databricks"
+      ],
+      "file": "vendor/databricks.png",
+      "description": "Red-orange layered diamond/hexagon"
+    },
+    {
+      "name": "Azure AI Foundry",
+      "aliases": [
+        "Azure AI Foundry (Classic)",
+        "Azure OpenAI",
+        "AI Foundry"
+      ],
+      "file": "azure/azure_ai_foundry.png",
+      "description": "Blue-purple gradient 'A' shape"
+    },
+    {
+      "name": "Azure Key Vault",
+      "aliases": [
+        "Key Vault",
+        "dev-akv-mstraiagent"
+      ],
+      "file": "azure/key_vault.png",
+      "description": "Gold key inside blue circle"
+    },
+    {
+      "name": "Azure Blob Storage",
+      "aliases": [
+        "Blob Storage",
+        "devstrmstraiagent"
+      ],
+      "file": "azure/blob_storage.png",
+      "description": "Blue storage grid/blocks"
+    },
+    {
+      "name": "Azure Container Apps",
+      "aliases": [
+        "Container Apps",
+        "dev-can-mstraiagent",
+        "Container App"
+      ],
+      "file": "azure/container_apps.png",
+      "description": "Purple container box on gray grid"
+    },
+    {
+      "name": "Google ADK Agent",
+      "aliases": [
+        "ADK Agent",
+        "Root Agent",
+        "MicroStrategy Agent",
+        "Forecasting Agent",
+        "Sub-Agent",
+        "LlmAgent"
+      ],
+      "file": "gcp/adk_agent.png",
+      "description": "Blue head silhouette with cogwheel"
+    },
+    {
+      "name": "Cloud Run",
+      "aliases": [
+        "Cloud Run Job",
+        "Cloud Run Service",
+        "segmentation-egress"
+      ],
+      "file": "gcp/cloud_run.png",
+      "description": "GCP Cloud Run blue hexagon with play button"
+    },
+    {
+      "name": "Cloud VPN",
+      "aliases": [
+        "Classic VPN",
+        "VPN Tunnel",
+        "Cloud VPN Tunnel"
+      ],
+      "file": "gcp/cloud_vpn.png",
+      "description": "GCP Cloud VPN blue shield/lock icon"
+    },
+    {
+      "name": "Compute Engine",
+      "aliases": [
+        "VM",
+        "Proxy VM",
+        "Datastream Proxy",
+        "wth-cdi-prod-dsproxy"
+      ],
+      "file": "gcp/compute_engine.png",
+      "description": "GCP Compute Engine blue VM icon"
+    },
+    {
+      "name": "Cloud Router",
+      "aliases": [
+        "Cloud NAT",
+        "route-egress-internet-prod"
+      ],
+      "file": "gcp/cloud_router.png",
+      "description": "GCP Cloud Router blue router icon"
+    },
+    {
+      "name": "BigQuery",
+      "aliases": [
+        "BQ",
+        "BigQuery Transform",
+        "BQ Load",
+        "BQ Merge"
+      ],
+      "file": "gcp/bigquery.png",
+      "description": "GCP BigQuery blue hexagonal analytics icon"
+    },
+    {
+      "name": "Oracle",
+      "aliases": [
+        "Oracle EDW",
+        "Oracle Database",
+        "Oracle DWHPRD",
+        "Oracle INSERT"
+      ],
+      "file": "vendor/oracle.png",
+      "description": "Red Oracle logo"
+    },
+    {
+      "name": "Access Context Manager",
+      "aliases": [
+        "ACM"
+      ],
+      "file": "gcp/access_context_manager.png",
+      "description": "GCP Access Context Manager blue shield icon"
+    },
+    {
+      "name": "Administration",
+      "aliases": [
+        "Admin"
+      ],
+      "file": "gcp/administration.png",
+      "description": "GCP Administration blue gear icon"
+    },
+    {
+      "name": "Advanced Agent Modeling",
+      "aliases": [],
+      "file": "gcp/advanced_agent_modeling.png",
+      "description": "GCP Advanced Agent Modeling blue AI icon"
+    },
+    {
+      "name": "Advanced Solutions Lab",
+      "aliases": [
+        "ASL"
+      ],
+      "file": "gcp/advanced_solutions_lab.png",
+      "description": "GCP Advanced Solutions Lab blue flask icon"
+    },
+    {
+      "name": "Agent Assist",
+      "aliases": [
+        "CCAI Agent Assist"
+      ],
+      "file": "gcp/agent_assist.png",
+      "description": "GCP Agent Assist blue headset icon"
+    },
+    {
+      "name": "AI Hub",
+      "aliases": [],
+      "file": "gcp/ai_hub.png",
+      "description": "GCP AI Hub blue brain icon"
+    },
+    {
+      "name": "AI Platform",
+      "aliases": [
+        "CAIP"
+      ],
+      "file": "gcp/ai_platform.png",
+      "description": "GCP AI Platform blue neural network icon"
+    },
+    {
+      "name": "AI Platform Unified",
+      "aliases": [
+        "Vertex AI Platform"
+      ],
+      "file": "gcp/ai_platform_unified.png",
+      "description": "GCP AI Platform Unified blue hexagonal AI icon"
+    },
+    {
+      "name": "Analytics Hub",
+      "aliases": [],
+      "file": "gcp/analytics_hub.png",
+      "description": "GCP Analytics Hub blue data exchange icon"
+    },
+    {
+      "name": "Anthos",
+      "aliases": [],
+      "file": "gcp/anthos.png",
+      "description": "GCP Anthos blue hybrid cloud icon"
+    },
+    {
+      "name": "Anthos Config Management",
+      "aliases": [
+        "ACM Config"
+      ],
+      "file": "gcp/anthos_config_management.png",
+      "description": "GCP Anthos Config Management blue configuration icon"
+    },
+    {
+      "name": "Anthos Service Mesh",
+      "aliases": [
+        "ASM"
+      ],
+      "file": "gcp/anthos_service_mesh.png",
+      "description": "GCP Anthos Service Mesh blue mesh network icon"
+    },
+    {
+      "name": "API",
+      "aliases": [
+        "Cloud API"
+      ],
+      "file": "gcp/api.png",
+      "description": "GCP API blue endpoint icon"
+    },
+    {
+      "name": "API Analytics",
+      "aliases": [],
+      "file": "gcp/api_analytics.png",
+      "description": "GCP API Analytics blue chart icon"
+    },
+    {
+      "name": "API Monetization",
+      "aliases": [],
+      "file": "gcp/api_monetization.png",
+      "description": "GCP API Monetization blue dollar icon"
+    },
+    {
+      "name": "Apigee API Platform",
+      "aliases": [
+        "Apigee"
+      ],
+      "file": "gcp/apigee_api_platform.png",
+      "description": "GCP Apigee blue API gateway icon"
+    },
+    {
+      "name": "Apigee Sense",
+      "aliases": [],
+      "file": "gcp/apigee_sense.png",
+      "description": "GCP Apigee Sense blue security analytics icon"
+    },
+    {
+      "name": "App Engine",
+      "aliases": [
+        "GAE"
+      ],
+      "file": "gcp/app_engine.png",
+      "description": "GCP App Engine blue app deployment icon"
+    },
+    {
+      "name": "Artifact Registry",
+      "aliases": [
+        "GAR"
+      ],
+      "file": "gcp/artifact_registry.png",
+      "description": "GCP Artifact Registry blue package icon"
+    },
+    {
+      "name": "Asset Inventory",
+      "aliases": [
+        "Cloud Asset Inventory"
+      ],
+      "file": "gcp/asset_inventory.png",
+      "description": "GCP Asset Inventory blue inventory list icon"
+    },
+    {
+      "name": "Assured Workloads",
+      "aliases": [],
+      "file": "gcp/assured_workloads.png",
+      "description": "GCP Assured Workloads blue compliance shield icon"
+    },
+    {
+      "name": "AutoML",
+      "aliases": [],
+      "file": "gcp/automl.png",
+      "description": "GCP AutoML blue machine learning icon"
+    },
+    {
+      "name": "AutoML Natural Language",
+      "aliases": [
+        "AutoML NL"
+      ],
+      "file": "gcp/automl_natural_language.png",
+      "description": "GCP AutoML Natural Language blue text analysis icon"
+    },
+    {
+      "name": "AutoML Tables",
+      "aliases": [],
+      "file": "gcp/automl_tables.png",
+      "description": "GCP AutoML Tables blue tabular data icon"
+    },
+    {
+      "name": "AutoML Translation",
+      "aliases": [],
+      "file": "gcp/automl_translation.png",
+      "description": "GCP AutoML Translation blue language icon"
+    },
+    {
+      "name": "AutoML Video Intelligence",
+      "aliases": [],
+      "file": "gcp/automl_video_intelligence.png",
+      "description": "GCP AutoML Video Intelligence blue video analysis icon"
+    },
+    {
+      "name": "AutoML Vision",
+      "aliases": [],
+      "file": "gcp/automl_vision.png",
+      "description": "GCP AutoML Vision blue image recognition icon"
+    },
+    {
+      "name": "Bare Metal Solutions",
+      "aliases": [
+        "BMS"
+      ],
+      "file": "gcp/bare_metal_solutions.png",
+      "description": "GCP Bare Metal Solutions blue server icon"
+    },
+    {
+      "name": "Batch",
+      "aliases": [
+        "Cloud Batch"
+      ],
+      "file": "gcp/batch.png",
+      "description": "GCP Batch blue batch processing icon"
+    },
+    {
+      "name": "BeyondCorp",
+      "aliases": [
+        "BeyondCorp Enterprise"
+      ],
+      "file": "gcp/beyondcorp.png",
+      "description": "GCP BeyondCorp blue zero-trust security icon"
+    },
+    {
+      "name": "Bigtable",
+      "aliases": [
+        "Cloud Bigtable"
+      ],
+      "file": "gcp/bigtable.png",
+      "description": "GCP Bigtable blue NoSQL database icon"
+    },
+    {
+      "name": "Billing",
+      "aliases": [
+        "Cloud Billing"
+      ],
+      "file": "gcp/billing.png",
+      "description": "GCP Billing blue payment icon"
+    },
+    {
+      "name": "Binary Authorization",
+      "aliases": [
+        "BinAuthz"
+      ],
+      "file": "gcp/binary_authorization.png",
+      "description": "GCP Binary Authorization blue verification icon"
+    },
+    {
+      "name": "Catalog",
+      "aliases": [
+        "Data Catalog"
+      ],
+      "file": "gcp/catalog.png",
+      "description": "GCP Catalog blue data catalog icon"
+    },
+    {
+      "name": "Certificate Authority Service",
+      "aliases": [
+        "CAS"
+      ],
+      "file": "gcp/certificate_authority_service.png",
+      "description": "GCP Certificate Authority Service blue certificate icon"
+    },
+    {
+      "name": "Certificate Manager",
+      "aliases": [],
+      "file": "gcp/certificate_manager.png",
+      "description": "GCP Certificate Manager blue SSL certificate icon"
+    },
+    {
+      "name": "Cloud API Gateway",
+      "aliases": [
+        "API Gateway"
+      ],
+      "file": "gcp/cloud_api_gateway.png",
+      "description": "GCP Cloud API Gateway blue gateway icon"
+    },
+    {
+      "name": "Cloud APIs",
+      "aliases": [],
+      "file": "gcp/cloud_apis.png",
+      "description": "GCP Cloud APIs blue interface icon"
+    },
+    {
+      "name": "Cloud Armor",
+      "aliases": [
+        "Google Cloud Armor"
+      ],
+      "file": "gcp/cloud_armor.png",
+      "description": "GCP Cloud Armor blue shield protection icon"
+    },
+    {
+      "name": "Cloud Asset Inventory",
+      "aliases": [
+        "CAI"
+      ],
+      "file": "gcp/cloud_asset_inventory.png",
+      "description": "GCP Cloud Asset Inventory blue resource tracking icon"
+    },
+    {
+      "name": "Cloud Audit Logs",
+      "aliases": [
+        "Audit Logs"
+      ],
+      "file": "gcp/cloud_audit_logs.png",
+      "description": "GCP Cloud Audit Logs blue log icon"
+    },
+    {
+      "name": "Cloud Build",
+      "aliases": [
+        "GCB"
+      ],
+      "file": "gcp/cloud_build.png",
+      "description": "GCP Cloud Build blue CI/CD icon"
+    },
+    {
+      "name": "Cloud CDN",
+      "aliases": [
+        "CDN"
+      ],
+      "file": "gcp/cloud_cdn.png",
+      "description": "GCP Cloud CDN blue content delivery icon"
+    },
+    {
+      "name": "Cloud Code",
+      "aliases": [],
+      "file": "gcp/cloud_code.png",
+      "description": "GCP Cloud Code blue IDE extension icon"
+    },
+    {
+      "name": "Cloud Composer",
+      "aliases": [
+        "Composer"
+      ],
+      "file": "gcp/cloud_composer.png",
+      "description": "GCP Cloud Composer blue workflow orchestration icon"
+    },
+    {
+      "name": "Cloud Data Fusion",
+      "aliases": [
+        "CDF",
+        "Data Fusion"
+      ],
+      "file": "gcp/cloud_data_fusion.png",
+      "description": "GCP Cloud Data Fusion blue data integration icon"
+    },
+    {
+      "name": "Cloud Deploy",
+      "aliases": [],
+      "file": "gcp/cloud_deploy.png",
+      "description": "GCP Cloud Deploy blue deployment pipeline icon"
+    },
+    {
+      "name": "Cloud Deployment Manager",
+      "aliases": [
+        "Deployment Manager"
+      ],
+      "file": "gcp/cloud_deployment_manager.png",
+      "description": "GCP Cloud Deployment Manager blue infrastructure icon"
+    },
+    {
+      "name": "Cloud DNS",
+      "aliases": [
+        "DNS"
+      ],
+      "file": "gcp/cloud_dns.png",
+      "description": "GCP Cloud DNS blue domain name icon"
+    },
+    {
+      "name": "Cloud Domains",
+      "aliases": [],
+      "file": "gcp/cloud_domains.png",
+      "description": "GCP Cloud Domains blue domain registration icon"
+    },
+    {
+      "name": "Cloud EKM",
+      "aliases": [
+        "External Key Manager"
+      ],
+      "file": "gcp/cloud_ekm.png",
+      "description": "GCP Cloud EKM blue external key icon"
+    },
+    {
+      "name": "Cloud Endpoints",
+      "aliases": [
+        "Endpoints"
+      ],
+      "file": "gcp/cloud_endpoints.png",
+      "description": "GCP Cloud Endpoints blue API management icon"
+    },
+    {
+      "name": "Cloud External IP Addresses",
+      "aliases": [
+        "External IP"
+      ],
+      "file": "gcp/cloud_external_ip_addresses.png",
+      "description": "GCP Cloud External IP Addresses blue network icon"
+    },
+    {
+      "name": "Cloud Firewall Rules",
+      "aliases": [
+        "Firewall Rules",
+        "VPC Firewall"
+      ],
+      "file": "gcp/cloud_firewall_rules.png",
+      "description": "GCP Cloud Firewall Rules blue firewall icon"
+    },
+    {
+      "name": "Cloud for Marketing",
+      "aliases": [],
+      "file": "gcp/cloud_for_marketing.png",
+      "description": "GCP Cloud for Marketing blue marketing analytics icon"
+    },
+    {
+      "name": "Cloud Functions",
+      "aliases": [
+        "GCF"
+      ],
+      "file": "gcp/cloud_functions.png",
+      "description": "GCP Cloud Functions blue serverless function icon"
+    },
+    {
+      "name": "Cloud Generic",
+      "aliases": [
+        "GCP"
+      ],
+      "file": "gcp/cloud_generic.png",
+      "description": "GCP generic blue cloud icon"
+    },
+    {
+      "name": "Cloud GPU",
+      "aliases": [
+        "GPU"
+      ],
+      "file": "gcp/cloud_gpu.png",
+      "description": "GCP Cloud GPU blue graphics processor icon"
+    },
+    {
+      "name": "Cloud Healthcare API",
+      "aliases": [
+        "Healthcare API"
+      ],
+      "file": "gcp/cloud_healthcare_api.png",
+      "description": "GCP Cloud Healthcare API blue medical data icon"
+    },
+    {
+      "name": "Cloud Healthcare Marketplace",
+      "aliases": [],
+      "file": "gcp/cloud_healthcare_marketplace.png",
+      "description": "GCP Cloud Healthcare Marketplace blue health marketplace icon"
+    },
+    {
+      "name": "Cloud HSM",
+      "aliases": [
+        "HSM"
+      ],
+      "file": "gcp/cloud_hsm.png",
+      "description": "GCP Cloud HSM blue hardware security module icon"
+    },
+    {
+      "name": "Cloud IDS",
+      "aliases": [
+        "Intrusion Detection System"
+      ],
+      "file": "gcp/cloud_ids.png",
+      "description": "GCP Cloud IDS blue intrusion detection icon"
+    },
+    {
+      "name": "Cloud Inference API",
+      "aliases": [],
+      "file": "gcp/cloud_inference_api.png",
+      "description": "GCP Cloud Inference API blue prediction icon"
+    },
+    {
+      "name": "Cloud Interconnect",
+      "aliases": [
+        "Dedicated Interconnect"
+      ],
+      "file": "gcp/cloud_interconnect.png",
+      "description": "GCP Cloud Interconnect blue network connection icon"
+    },
+    {
+      "name": "Cloud Jobs API",
+      "aliases": [
+        "Talent Solution"
+      ],
+      "file": "gcp/cloud_jobs_api.png",
+      "description": "GCP Cloud Jobs API blue job search icon"
+    },
+    {
+      "name": "Cloud Load Balancing",
+      "aliases": [
+        "GCLB",
+        "Load Balancer"
+      ],
+      "file": "gcp/cloud_load_balancing.png",
+      "description": "GCP Cloud Load Balancing blue traffic distribution icon"
+    },
+    {
+      "name": "Cloud Logging",
+      "aliases": [
+        "Stackdriver Logging"
+      ],
+      "file": "gcp/cloud_logging.png",
+      "description": "GCP Cloud Logging blue log management icon"
+    },
+    {
+      "name": "Cloud Media Edge",
+      "aliases": [],
+      "file": "gcp/cloud_media_edge.png",
+      "description": "GCP Cloud Media Edge blue media streaming icon"
+    },
+    {
+      "name": "Cloud Monitoring",
+      "aliases": [
+        "Stackdriver Monitoring"
+      ],
+      "file": "gcp/cloud_monitoring.png",
+      "description": "GCP Cloud Monitoring blue metrics dashboard icon"
+    },
+    {
+      "name": "Cloud NAT",
+      "aliases": [
+        "NAT Gateway"
+      ],
+      "file": "gcp/cloud_nat.png",
+      "description": "GCP Cloud NAT blue network address translation icon"
+    },
+    {
+      "name": "Cloud Natural Language API",
+      "aliases": [
+        "NL API"
+      ],
+      "file": "gcp/cloud_natural_language_api.png",
+      "description": "GCP Cloud Natural Language API blue text analysis icon"
+    },
+    {
+      "name": "Cloud Network",
+      "aliases": [
+        "VPC Network"
+      ],
+      "file": "gcp/cloud_network.png",
+      "description": "GCP Cloud Network blue network topology icon"
+    },
+    {
+      "name": "Cloud Ops",
+      "aliases": [
+        "Operations Suite"
+      ],
+      "file": "gcp/cloud_ops.png",
+      "description": "GCP Cloud Ops blue operations management icon"
+    },
+    {
+      "name": "Cloud Optimization AI",
+      "aliases": [],
+      "file": "gcp/cloud_optimization_ai.png",
+      "description": "GCP Cloud Optimization AI blue optimization icon"
+    },
+    {
+      "name": "Cloud Optimization AI Fleet Routing API",
+      "aliases": [
+        "Fleet Routing"
+      ],
+      "file": "gcp/cloud_optimization_ai_-_fleet_routing_api.png",
+      "description": "GCP Fleet Routing API blue route optimization icon"
+    },
+    {
+      "name": "Cloud Routes",
+      "aliases": [
+        "Routes"
+      ],
+      "file": "gcp/cloud_routes.png",
+      "description": "GCP Cloud Routes blue network routing icon"
+    },
+    {
+      "name": "Cloud Run for Anthos",
+      "aliases": [],
+      "file": "gcp/cloud_run_for_anthos.png",
+      "description": "GCP Cloud Run for Anthos blue hybrid run icon"
+    },
+    {
+      "name": "Cloud Scheduler",
+      "aliases": [
+        "Scheduler"
+      ],
+      "file": "gcp/cloud_scheduler.png",
+      "description": "GCP Cloud Scheduler blue cron job icon"
+    },
+    {
+      "name": "Cloud Security Scanner",
+      "aliases": [
+        "Security Scanner"
+      ],
+      "file": "gcp/cloud_security_scanner.png",
+      "description": "GCP Cloud Security Scanner blue vulnerability scan icon"
+    },
+    {
+      "name": "Cloud Shell",
+      "aliases": [],
+      "file": "gcp/cloud_shell.png",
+      "description": "GCP Cloud Shell blue terminal icon"
+    },
+    {
+      "name": "Cloud Spanner",
+      "aliases": [
+        "Spanner"
+      ],
+      "file": "gcp/cloud_spanner.png",
+      "description": "GCP Cloud Spanner blue distributed database icon"
+    },
+    {
+      "name": "Cloud SQL",
+      "aliases": [
+        "CloudSQL"
+      ],
+      "file": "gcp/cloud_sql.png",
+      "description": "GCP Cloud SQL blue relational database icon"
+    },
+    {
+      "name": "Cloud Storage",
+      "aliases": [
+        "GCS"
+      ],
+      "file": "gcp/cloud_storage.png",
+      "description": "GCP Cloud Storage blue bucket icon"
+    },
+    {
+      "name": "Cloud Tasks",
+      "aliases": [],
+      "file": "gcp/cloud_tasks.png",
+      "description": "GCP Cloud Tasks blue task queue icon"
+    },
+    {
+      "name": "Cloud Test Lab",
+      "aliases": [
+        "Firebase Test Lab"
+      ],
+      "file": "gcp/cloud_test_lab.png",
+      "description": "GCP Cloud Test Lab blue testing icon"
+    },
+    {
+      "name": "Cloud TPU",
+      "aliases": [
+        "TPU"
+      ],
+      "file": "gcp/cloud_tpu.png",
+      "description": "GCP Cloud TPU blue tensor processing unit icon"
+    },
+    {
+      "name": "Cloud Translation API",
+      "aliases": [
+        "Translation API",
+        "Translate"
+      ],
+      "file": "gcp/cloud_translation_api.png",
+      "description": "GCP Cloud Translation API blue language translation icon"
+    },
+    {
+      "name": "Cloud Vision API",
+      "aliases": [
+        "Vision API"
+      ],
+      "file": "gcp/cloud_vision_api.png",
+      "description": "GCP Cloud Vision API blue image analysis icon"
+    },
+    {
+      "name": "Configuration Management",
+      "aliases": [],
+      "file": "gcp/configuration_management.png",
+      "description": "GCP Configuration Management blue config icon"
+    },
+    {
+      "name": "Connectivity Test",
+      "aliases": [],
+      "file": "gcp/connectivity_test.png",
+      "description": "GCP Connectivity Test blue network test icon"
+    },
+    {
+      "name": "Connectors",
+      "aliases": [
+        "Integration Connectors"
+      ],
+      "file": "gcp/connectors.png",
+      "description": "GCP Connectors blue integration link icon"
+    },
+    {
+      "name": "Contact Center AI",
+      "aliases": [
+        "CCAI"
+      ],
+      "file": "gcp/contact_center_ai.png",
+      "description": "GCP Contact Center AI blue customer service icon"
+    },
+    {
+      "name": "Container Optimized OS",
+      "aliases": [
+        "COS"
+      ],
+      "file": "gcp/container_optimized_os.png",
+      "description": "GCP Container Optimized OS blue container OS icon"
+    },
+    {
+      "name": "Container Registry",
+      "aliases": [
+        "GCR"
+      ],
+      "file": "gcp/container_registry.png",
+      "description": "GCP Container Registry blue container image icon"
+    },
+    {
+      "name": "Data Catalog",
+      "aliases": [],
+      "file": "gcp/data_catalog.png",
+      "description": "GCP Data Catalog blue metadata management icon"
+    },
+    {
+      "name": "Data Labeling",
+      "aliases": [
+        "Data Labeling Service"
+      ],
+      "file": "gcp/data_labeling.png",
+      "description": "GCP Data Labeling blue annotation icon"
+    },
+    {
+      "name": "Data Layers",
+      "aliases": [],
+      "file": "gcp/data_layers.png",
+      "description": "GCP Data Layers blue stacked data icon"
+    },
+    {
+      "name": "Data Loss Prevention API",
+      "aliases": [
+        "DLP",
+        "Cloud DLP"
+      ],
+      "file": "gcp/data_loss_prevention_api.png",
+      "description": "GCP Data Loss Prevention blue data protection icon"
+    },
+    {
+      "name": "Data QnA",
+      "aliases": [],
+      "file": "gcp/data_qna.png",
+      "description": "GCP Data QnA blue natural language query icon"
+    },
+    {
+      "name": "Data Studio",
+      "aliases": [
+        "Looker Studio"
+      ],
+      "file": "gcp/data_studio.png",
+      "description": "GCP Data Studio blue dashboard reporting icon"
+    },
+    {
+      "name": "Data Transfer",
+      "aliases": [
+        "BigQuery Data Transfer"
+      ],
+      "file": "gcp/data_transfer.png",
+      "description": "GCP Data Transfer blue data movement icon"
+    },
+    {
+      "name": "Database Migration Service",
+      "aliases": [
+        "DMS"
+      ],
+      "file": "gcp/database_migration_service.png",
+      "description": "GCP Database Migration Service blue migration icon"
+    },
+    {
+      "name": "Dataflow",
+      "aliases": [],
+      "file": "gcp/dataflow.png",
+      "description": "GCP Dataflow blue stream processing icon"
+    },
+    {
+      "name": "Datalab",
+      "aliases": [],
+      "file": "gcp/datalab.png",
+      "description": "GCP Datalab blue notebook icon"
+    },
+    {
+      "name": "Dataplex",
+      "aliases": [],
+      "file": "gcp/dataplex.png",
+      "description": "GCP Dataplex blue data mesh management icon"
+    },
+    {
+      "name": "Datapol",
+      "aliases": [],
+      "file": "gcp/datapol.png",
+      "description": "GCP Datapol blue data policy icon"
+    },
+    {
+      "name": "Dataprep",
+      "aliases": [
+        "Trifacta"
+      ],
+      "file": "gcp/dataprep.png",
+      "description": "GCP Dataprep blue data preparation icon"
+    },
+    {
+      "name": "Dataproc",
+      "aliases": [],
+      "file": "gcp/dataproc.png",
+      "description": "GCP Dataproc blue Hadoop/Spark processing icon"
+    },
+    {
+      "name": "Dataproc Metastore",
+      "aliases": [],
+      "file": "gcp/dataproc_metastore.png",
+      "description": "GCP Dataproc Metastore blue metadata service icon"
+    },
+    {
+      "name": "Datashare",
+      "aliases": [],
+      "file": "gcp/datashare.png",
+      "description": "GCP Datashare blue data sharing icon"
+    },
+    {
+      "name": "Datastore",
+      "aliases": [
+        "Cloud Datastore"
+      ],
+      "file": "gcp/datastore.png",
+      "description": "GCP Datastore blue NoSQL document database icon"
+    },
+    {
+      "name": "Datastream",
+      "aliases": [],
+      "file": "gcp/datastream.png",
+      "description": "GCP Datastream blue CDC replication icon"
+    },
+    {
+      "name": "Debugger",
+      "aliases": [
+        "Cloud Debugger"
+      ],
+      "file": "gcp/debugger.png",
+      "description": "GCP Debugger blue debug icon"
+    },
+    {
+      "name": "Developer Portal",
+      "aliases": [],
+      "file": "gcp/developer_portal.png",
+      "description": "GCP Developer Portal blue developer icon"
+    },
+    {
+      "name": "Dialogflow",
+      "aliases": [],
+      "file": "gcp/dialogflow.png",
+      "description": "GCP Dialogflow blue conversational AI icon"
+    },
+    {
+      "name": "Dialogflow CX",
+      "aliases": [],
+      "file": "gcp/dialogflow_cx.png",
+      "description": "GCP Dialogflow CX blue advanced conversation icon"
+    },
+    {
+      "name": "Dialogflow Insights",
+      "aliases": [
+        "CCAI Insights"
+      ],
+      "file": "gcp/dialogflow_insights.png",
+      "description": "GCP Dialogflow Insights blue analytics icon"
+    },
+    {
+      "name": "Document AI",
+      "aliases": [
+        "DocAI"
+      ],
+      "file": "gcp/document_ai.png",
+      "description": "GCP Document AI blue document processing icon"
+    },
+    {
+      "name": "Early Access Center",
+      "aliases": [],
+      "file": "gcp/early_access_center.png",
+      "description": "GCP Early Access Center blue preview icon"
+    },
+    {
+      "name": "Error Reporting",
+      "aliases": [],
+      "file": "gcp/error_reporting.png",
+      "description": "GCP Error Reporting blue error tracking icon"
+    },
+    {
+      "name": "Eventarc",
+      "aliases": [],
+      "file": "gcp/eventarc.png",
+      "description": "GCP Eventarc blue event routing icon"
+    },
+    {
+      "name": "Filestore",
+      "aliases": [
+        "Cloud Filestore"
+      ],
+      "file": "gcp/filestore.png",
+      "description": "GCP Filestore blue managed NFS icon"
+    },
+    {
+      "name": "Financial Services Marketplace",
+      "aliases": [],
+      "file": "gcp/financial_services_marketplace.png",
+      "description": "GCP Financial Services Marketplace blue fintech icon"
+    },
+    {
+      "name": "Firestore",
+      "aliases": [
+        "Cloud Firestore"
+      ],
+      "file": "gcp/firestore.png",
+      "description": "GCP Firestore blue document database icon"
+    },
+    {
+      "name": "Fleet Engine",
+      "aliases": [],
+      "file": "gcp/fleet_engine.png",
+      "description": "GCP Fleet Engine blue fleet management icon"
+    },
+    {
+      "name": "Free Trial",
+      "aliases": [],
+      "file": "gcp/free_trial.png",
+      "description": "GCP Free Trial blue trial icon"
+    },
+    {
+      "name": "Game Servers",
+      "aliases": [],
+      "file": "gcp/game_servers.png",
+      "description": "GCP Game Servers blue game hosting icon"
+    },
+    {
+      "name": "GCE Systems Management",
+      "aliases": [
+        "OS Management"
+      ],
+      "file": "gcp/gce_systems_management.png",
+      "description": "GCP GCE Systems Management blue VM management icon"
+    },
+    {
+      "name": "Genomics",
+      "aliases": [
+        "Cloud Life Sciences"
+      ],
+      "file": "gcp/genomics.png",
+      "description": "GCP Genomics blue DNA helix icon"
+    },
+    {
+      "name": "GKE On-Prem",
+      "aliases": [
+        "Anthos on VMware"
+      ],
+      "file": "gcp/gke_on-prem.png",
+      "description": "GCP GKE On-Prem blue on-premises Kubernetes icon"
+    },
+    {
+      "name": "Google Cloud Marketplace",
+      "aliases": [
+        "GCP Marketplace"
+      ],
+      "file": "gcp/google_cloud_marketplace.png",
+      "description": "GCP Marketplace blue storefront icon"
+    },
+    {
+      "name": "Google Kubernetes Engine",
+      "aliases": [
+        "GKE"
+      ],
+      "file": "gcp/google_kubernetes_engine.png",
+      "description": "GCP Google Kubernetes Engine blue container orchestration icon"
+    },
+    {
+      "name": "Google Maps Platform",
+      "aliases": [
+        "Maps API"
+      ],
+      "file": "gcp/google_maps_platform.png",
+      "description": "GCP Google Maps Platform blue map pin icon"
+    },
+    {
+      "name": "Healthcare NLP API",
+      "aliases": [],
+      "file": "gcp/healthcare_nlp_api.png",
+      "description": "GCP Healthcare NLP API blue medical text icon"
+    },
+    {
+      "name": "Home",
+      "aliases": [
+        "Cloud Console"
+      ],
+      "file": "gcp/home.png",
+      "description": "GCP Home blue console home icon"
+    },
+    {
+      "name": "Identity and Access Management",
+      "aliases": [
+        "IAM"
+      ],
+      "file": "gcp/identity_and_access_management.png",
+      "description": "GCP IAM blue identity icon"
+    },
+    {
+      "name": "Identity Platform",
+      "aliases": [
+        "CICP"
+      ],
+      "file": "gcp/identity_platform.png",
+      "description": "GCP Identity Platform blue authentication icon"
+    },
+    {
+      "name": "Identity-Aware Proxy",
+      "aliases": [
+        "IAP"
+      ],
+      "file": "gcp/identity-aware_proxy.png",
+      "description": "GCP Identity-Aware Proxy blue access control icon"
+    },
+    {
+      "name": "IoT Core",
+      "aliases": [
+        "Cloud IoT"
+      ],
+      "file": "gcp/iot_core.png",
+      "description": "GCP IoT Core blue device management icon"
+    },
+    {
+      "name": "IoT Edge",
+      "aliases": [],
+      "file": "gcp/iot_edge.png",
+      "description": "GCP IoT Edge blue edge computing icon"
+    },
+    {
+      "name": "Key Access Justifications",
+      "aliases": [
+        "KAJ"
+      ],
+      "file": "gcp/key_access_justifications.png",
+      "description": "GCP Key Access Justifications blue key access icon"
+    },
+    {
+      "name": "Key Management Service",
+      "aliases": [
+        "KMS",
+        "Cloud KMS"
+      ],
+      "file": "gcp/key_management_service.png",
+      "description": "GCP Key Management Service blue encryption key icon"
+    },
+    {
+      "name": "KubeRun",
+      "aliases": [],
+      "file": "gcp/kuberun.png",
+      "description": "GCP KubeRun blue Kubernetes run icon"
+    },
+    {
+      "name": "Launcher",
+      "aliases": [],
+      "file": "gcp/launcher.png",
+      "description": "GCP Launcher blue quick start icon"
+    },
+    {
+      "name": "Local SSD",
+      "aliases": [],
+      "file": "gcp/local_ssd.png",
+      "description": "GCP Local SSD blue solid state disk icon"
+    },
+    {
+      "name": "Looker",
+      "aliases": [],
+      "file": "gcp/looker.png",
+      "description": "GCP Looker blue business intelligence icon"
+    },
+    {
+      "name": "Managed Service for Microsoft Active Directory",
+      "aliases": [
+        "Managed AD"
+      ],
+      "file": "gcp/managed_service_for_microsoft_active_directory.png",
+      "description": "GCP Managed AD blue directory service icon"
+    },
+    {
+      "name": "Media Translation API",
+      "aliases": [],
+      "file": "gcp/media_translation_api.png",
+      "description": "GCP Media Translation API blue media translation icon"
+    },
+    {
+      "name": "Memorystore",
+      "aliases": [
+        "Cloud Memorystore",
+        "Redis"
+      ],
+      "file": "gcp/memorystore.png",
+      "description": "GCP Memorystore blue in-memory database icon"
+    },
+    {
+      "name": "Migrate for Anthos",
+      "aliases": [],
+      "file": "gcp/migrate_for_anthos.png",
+      "description": "GCP Migrate for Anthos blue container migration icon"
+    },
+    {
+      "name": "Migrate for Compute Engine",
+      "aliases": [
+        "Velostrata"
+      ],
+      "file": "gcp/migrate_for_compute_engine.png",
+      "description": "GCP Migrate for Compute Engine blue VM migration icon"
+    },
+    {
+      "name": "My Cloud",
+      "aliases": [],
+      "file": "gcp/my_cloud.png",
+      "description": "GCP My Cloud blue personal cloud icon"
+    },
+    {
+      "name": "Network Connectivity Center",
+      "aliases": [
+        "NCC"
+      ],
+      "file": "gcp/network_connectivity_center.png",
+      "description": "GCP Network Connectivity Center blue hub icon"
+    },
+    {
+      "name": "Network Intelligence Center",
+      "aliases": [
+        "NIC"
+      ],
+      "file": "gcp/network_intelligence_center.png",
+      "description": "GCP Network Intelligence Center blue network insights icon"
+    },
+    {
+      "name": "Network Security",
+      "aliases": [],
+      "file": "gcp/network_security.png",
+      "description": "GCP Network Security blue network protection icon"
+    },
+    {
+      "name": "Network Tiers",
+      "aliases": [],
+      "file": "gcp/network_tiers.png",
+      "description": "GCP Network Tiers blue tiered network icon"
+    },
+    {
+      "name": "Network Topology",
+      "aliases": [],
+      "file": "gcp/network_topology.png",
+      "description": "GCP Network Topology blue topology map icon"
+    },
+    {
+      "name": "Onboarding",
+      "aliases": [],
+      "file": "gcp/onboarding.png",
+      "description": "GCP Onboarding blue getting started icon"
+    },
+    {
+      "name": "OS Configuration Management",
+      "aliases": [],
+      "file": "gcp/os_configuration_management.png",
+      "description": "GCP OS Configuration Management blue OS config icon"
+    },
+    {
+      "name": "OS Inventory Management",
+      "aliases": [],
+      "file": "gcp/os_inventory_management.png",
+      "description": "GCP OS Inventory Management blue OS tracking icon"
+    },
+    {
+      "name": "OS Patch Management",
+      "aliases": [],
+      "file": "gcp/os_patch_management.png",
+      "description": "GCP OS Patch Management blue patching icon"
+    },
+    {
+      "name": "Partner Interconnect",
+      "aliases": [],
+      "file": "gcp/partner_interconnect.png",
+      "description": "GCP Partner Interconnect blue partner network icon"
+    },
+    {
+      "name": "Partner Portal",
+      "aliases": [],
+      "file": "gcp/partner_portal.png",
+      "description": "GCP Partner Portal blue partner icon"
+    },
+    {
+      "name": "Performance Dashboard",
+      "aliases": [],
+      "file": "gcp/performance_dashboard.png",
+      "description": "GCP Performance Dashboard blue metrics icon"
+    },
+    {
+      "name": "Permissions",
+      "aliases": [],
+      "file": "gcp/permissions.png",
+      "description": "GCP Permissions blue access control icon"
+    },
+    {
+      "name": "Persistent Disk",
+      "aliases": [
+        "PD"
+      ],
+      "file": "gcp/persistent_disk.png",
+      "description": "GCP Persistent Disk blue block storage icon"
+    },
+    {
+      "name": "Phishing Protection",
+      "aliases": [],
+      "file": "gcp/phishing_protection.png",
+      "description": "GCP Phishing Protection blue anti-phishing icon"
+    },
+    {
+      "name": "Policy Analyzer",
+      "aliases": [],
+      "file": "gcp/policy_analyzer.png",
+      "description": "GCP Policy Analyzer blue policy review icon"
+    },
+    {
+      "name": "Premium Network Tier",
+      "aliases": [],
+      "file": "gcp/premium_network_tier.png",
+      "description": "GCP Premium Network Tier blue premium network icon"
+    },
+    {
+      "name": "Private Connectivity",
+      "aliases": [],
+      "file": "gcp/private_connectivity.png",
+      "description": "GCP Private Connectivity blue private link icon"
+    },
+    {
+      "name": "Private Service Connect",
+      "aliases": [
+        "PSC"
+      ],
+      "file": "gcp/private_service_connect.png",
+      "description": "GCP Private Service Connect blue private endpoint icon"
+    },
+    {
+      "name": "Producer Portal",
+      "aliases": [],
+      "file": "gcp/producer_portal.png",
+      "description": "GCP Producer Portal blue producer icon"
+    },
+    {
+      "name": "Profiler",
+      "aliases": [
+        "Cloud Profiler"
+      ],
+      "file": "gcp/profiler.png",
+      "description": "GCP Profiler blue performance profiling icon"
+    },
+    {
+      "name": "Project",
+      "aliases": [
+        "GCP Project"
+      ],
+      "file": "gcp/project.png",
+      "description": "GCP Project blue project folder icon"
+    },
+    {
+      "name": "Pub/Sub",
+      "aliases": [
+        "PubSub",
+        "Cloud Pub/Sub"
+      ],
+      "file": "gcp/pubsub.png",
+      "description": "GCP Pub/Sub blue messaging icon"
+    },
+    {
+      "name": "Quantum Engine",
+      "aliases": [],
+      "file": "gcp/quantum_engine.png",
+      "description": "GCP Quantum Engine blue quantum computing icon"
+    },
+    {
+      "name": "Quotas",
+      "aliases": [],
+      "file": "gcp/quotas.png",
+      "description": "GCP Quotas blue resource limits icon"
+    },
+    {
+      "name": "Real-World Insights",
+      "aliases": [],
+      "file": "gcp/real-world_insights.png",
+      "description": "GCP Real-World Insights blue analytics icon"
+    },
+    {
+      "name": "Recommendations AI",
+      "aliases": [
+        "Retail Recommendations"
+      ],
+      "file": "gcp/recommendations_ai.png",
+      "description": "GCP Recommendations AI blue recommendation engine icon"
+    },
+    {
+      "name": "Release Notes",
+      "aliases": [],
+      "file": "gcp/release_notes.png",
+      "description": "GCP Release Notes blue changelog icon"
+    },
+    {
+      "name": "Retail API",
+      "aliases": [
+        "Retail Search"
+      ],
+      "file": "gcp/retail_api.png",
+      "description": "GCP Retail API blue retail commerce icon"
+    },
+    {
+      "name": "Risk Manager",
+      "aliases": [],
+      "file": "gcp/risk_manager.png",
+      "description": "GCP Risk Manager blue risk assessment icon"
+    },
+    {
+      "name": "Runtime Config",
+      "aliases": [],
+      "file": "gcp/runtime_config.png",
+      "description": "GCP Runtime Config blue configuration icon"
+    },
+    {
+      "name": "Secret Manager",
+      "aliases": [],
+      "file": "gcp/secret_manager.png",
+      "description": "GCP Secret Manager blue secrets vault icon"
+    },
+    {
+      "name": "Security",
+      "aliases": [
+        "Cloud Security"
+      ],
+      "file": "gcp/security.png",
+      "description": "GCP Security blue shield icon"
+    },
+    {
+      "name": "Security Command Center",
+      "aliases": [
+        "SCC"
+      ],
+      "file": "gcp/security_command_center.png",
+      "description": "GCP Security Command Center blue security dashboard icon"
+    },
+    {
+      "name": "Security Health Advisor",
+      "aliases": [],
+      "file": "gcp/security_health_advisor.png",
+      "description": "GCP Security Health Advisor blue health check icon"
+    },
+    {
+      "name": "Security Key Enforcement",
+      "aliases": [],
+      "file": "gcp/security_key_enforcement.png",
+      "description": "GCP Security Key Enforcement blue key policy icon"
+    },
+    {
+      "name": "Service Discovery",
+      "aliases": [],
+      "file": "gcp/service_discovery.png",
+      "description": "GCP Service Discovery blue service registry icon"
+    },
+    {
+      "name": "Speech-to-Text",
+      "aliases": [
+        "STT",
+        "Cloud Speech"
+      ],
+      "file": "gcp/speech-to-text.png",
+      "description": "GCP Speech-to-Text blue voice recognition icon"
+    },
+    {
+      "name": "Stackdriver",
+      "aliases": [],
+      "file": "gcp/stackdriver.png",
+      "description": "GCP Stackdriver blue monitoring suite icon"
+    },
+    {
+      "name": "Standard Network Tier",
+      "aliases": [],
+      "file": "gcp/standard_network_tier.png",
+      "description": "GCP Standard Network Tier blue standard network icon"
+    },
+    {
+      "name": "Stream Suite",
+      "aliases": [],
+      "file": "gcp/stream_suite.png",
+      "description": "GCP Stream Suite blue streaming icon"
+    },
+    {
+      "name": "Support",
+      "aliases": [
+        "Cloud Support"
+      ],
+      "file": "gcp/support.png",
+      "description": "GCP Support blue help icon"
+    },
+    {
+      "name": "TensorFlow Enterprise",
+      "aliases": [
+        "TFE"
+      ],
+      "file": "gcp/tensorflow_enterprise.png",
+      "description": "GCP TensorFlow Enterprise blue ML framework icon"
+    },
+    {
+      "name": "Text-to-Speech",
+      "aliases": [
+        "TTS"
+      ],
+      "file": "gcp/text-to-speech.png",
+      "description": "GCP Text-to-Speech blue speech synthesis icon"
+    },
+    {
+      "name": "Tools for PowerShell",
+      "aliases": [],
+      "file": "gcp/tools_for_powershell.png",
+      "description": "GCP Tools for PowerShell blue PowerShell icon"
+    },
+    {
+      "name": "Trace",
+      "aliases": [
+        "Cloud Trace"
+      ],
+      "file": "gcp/trace.png",
+      "description": "GCP Trace blue distributed tracing icon"
+    },
+    {
+      "name": "Traffic Director",
+      "aliases": [],
+      "file": "gcp/traffic_director.png",
+      "description": "GCP Traffic Director blue service mesh traffic icon"
+    },
+    {
+      "name": "Transfer",
+      "aliases": [
+        "Storage Transfer Service"
+      ],
+      "file": "gcp/transfer.png",
+      "description": "GCP Transfer blue data transfer icon"
+    },
+    {
+      "name": "Transfer Appliance",
+      "aliases": [],
+      "file": "gcp/transfer_appliance.png",
+      "description": "GCP Transfer Appliance blue physical transfer device icon"
+    },
+    {
+      "name": "User Preferences",
+      "aliases": [],
+      "file": "gcp/user_preferences.png",
+      "description": "GCP User Preferences blue settings icon"
+    },
+    {
+      "name": "Vertex AI",
+      "aliases": [
+        "Vertex"
+      ],
+      "file": "gcp/vertexai.png",
+      "description": "GCP Vertex AI blue ML platform icon"
+    },
+    {
+      "name": "Video Intelligence API",
+      "aliases": [],
+      "file": "gcp/video_intelligence_api.png",
+      "description": "GCP Video Intelligence API blue video analysis icon"
+    },
+    {
+      "name": "Virtual Private Cloud",
+      "aliases": [
+        "VPC"
+      ],
+      "file": "gcp/virtual_private_cloud.png",
+      "description": "GCP Virtual Private Cloud blue network icon"
+    },
+    {
+      "name": "Visual Inspection",
+      "aliases": [
+        "Visual Inspection AI"
+      ],
+      "file": "gcp/visual_inspection.png",
+      "description": "GCP Visual Inspection blue quality inspection icon"
+    },
+    {
+      "name": "VMware Engine",
+      "aliases": [
+        "GCVE"
+      ],
+      "file": "gcp/vmware_engine.png",
+      "description": "GCP VMware Engine blue VMware cloud icon"
+    },
+    {
+      "name": "Web Risk",
+      "aliases": [
+        "Web Risk API"
+      ],
+      "file": "gcp/web_risk.png",
+      "description": "GCP Web Risk blue threat detection icon"
+    },
+    {
+      "name": "Web Security Scanner",
+      "aliases": [],
+      "file": "gcp/web_security_scanner.png",
+      "description": "GCP Web Security Scanner blue vulnerability scan icon"
+    },
+    {
+      "name": "Workflows",
+      "aliases": [
+        "Cloud Workflows"
+      ],
+      "file": "gcp/workflows.png",
+      "description": "GCP Workflows blue orchestration icon"
+    },
+    {
+      "name": "Workload Identity Pool",
+      "aliases": [
+        "WIP"
+      ],
+      "file": "gcp/workload_identity_pool.png",
+      "description": "GCP Workload Identity Pool blue federated identity icon"
+    },
+    {
+      "name": "Google Gemini",
+      "aliases": [
+        "Gemini",
+        "Gemini Flash",
+        "Gemini Pro",
+        "Gemini 3 Flash Preview",
+        "Gemini 3 Pro Preview",
+        "gemini-3-flash-preview",
+        "gemini-3-pro-preview"
+      ],
+      "file": "gcp/gemini.png",
+      "description": "Google Gemini colorful 4-pointed sparkle/star icon"
+    },
+    {
+      "name": "NotebookLM",
+      "aliases": [
+        "Google NotebookLM",
+        "Notebook LM"
+      ],
+      "file": "gcp/notebooklm.png",
+      "description": "NotebookLM black nested arc/rainbow icon"
+    },
+    {
+      "name": "Discovery Engine",
+      "aliases": [
+        "Google Discovery Engine",
+        "Vertex AI Search",
+        "Agent Builder"
+      ],
+      "file": "gcp/discovery_engine.png",
+      "description": "Vertex AI blue data/analytics icon (used for Discovery Engine)"
+    },
+    {
+      "name": "Azure Virtual Machines",
+      "aliases": [
+        "Virtual Machine",
+        "Azure VM"
+      ],
+      "file": "azure/virtual_machines.png",
+      "description": "Blue computer monitor icon"
+    },
+    {
+      "name": "Azure App Service",
+      "aliases": [
+        "App Service",
+        "Web App"
+      ],
+      "file": "azure/app_service.png",
+      "description": "Blue globe/app icon"
+    },
+    {
+      "name": "Azure Functions",
+      "aliases": [
+        "Function App",
+        "Functions",
+        "Azure Function"
+      ],
+      "file": "azure/functions.png",
+      "description": "Yellow lightning bolt function icon"
+    },
+    {
+      "name": "Azure VM Scale Sets",
+      "aliases": [
+        "VMSS",
+        "Scale Sets",
+        "Virtual Machine Scale Sets"
+      ],
+      "file": "azure/vm_scale_sets.png",
+      "description": "Blue stacked VMs icon"
+    },
+    {
+      "name": "Azure Service Fabric",
+      "aliases": [
+        "Service Fabric"
+      ],
+      "file": "azure/service_fabric.png",
+      "description": "Blue mesh cluster icon"
+    },
+    {
+      "name": "Azure Batch",
+      "aliases": [
+        "Batch"
+      ],
+      "file": "azure/batch.png",
+      "description": "Blue batch processing icon"
+    },
+    {
+      "name": "Azure Kubernetes Service",
+      "aliases": [
+        "AKS",
+        "Kubernetes"
+      ],
+      "file": "azure/kubernetes_service.png",
+      "description": "Blue Kubernetes wheel icon"
+    },
+    {
+      "name": "Azure Container Registry",
+      "aliases": [
+        "ACR",
+        "Container Registry"
+      ],
+      "file": "azure/container_registry.png",
+      "description": "Blue container registry icon"
+    },
+    {
+      "name": "Azure Container Instances",
+      "aliases": [
+        "ACI",
+        "Container Instances"
+      ],
+      "file": "azure/container_instances.png",
+      "description": "Blue container cube icon"
+    },
+    {
+      "name": "Azure Virtual Network",
+      "aliases": [
+        "VNet",
+        "Virtual Network"
+      ],
+      "file": "azure/virtual_network.png",
+      "description": "Blue network triangle icon"
+    },
+    {
+      "name": "Azure Load Balancer",
+      "aliases": [
+        "ALB"
+      ],
+      "file": "azure/load_balancer.png",
+      "description": "Blue balance scale icon"
+    },
+    {
+      "name": "Azure Application Gateway",
+      "aliases": [
+        "App Gateway",
+        "Application Gateway"
+      ],
+      "file": "azure/application_gateway.png",
+      "description": "Blue gateway icon"
+    },
+    {
+      "name": "Azure DNS",
+      "aliases": [
+        "DNS Zone"
+      ],
+      "file": "azure/dns_zones.png",
+      "description": "Blue DNS icon"
+    },
+    {
+      "name": "Azure Traffic Manager",
+      "aliases": [
+        "Traffic Manager"
+      ],
+      "file": "azure/traffic_manager.png",
+      "description": "Blue traffic routing icon"
+    },
+    {
+      "name": "Azure Front Door",
+      "aliases": [
+        "Front Door",
+        "Azure CDN"
+      ],
+      "file": "azure/front_door.png",
+      "description": "Blue globe with shield icon"
+    },
+    {
+      "name": "Azure Firewall",
+      "aliases": [
+        "Firewall"
+      ],
+      "file": "azure/firewall.png",
+      "description": "Red shield/firewall icon"
+    },
+    {
+      "name": "Azure ExpressRoute",
+      "aliases": [
+        "ExpressRoute"
+      ],
+      "file": "azure/expressroute.png",
+      "description": "Blue circuit icon"
+    },
+    {
+      "name": "Azure Private Link",
+      "aliases": [
+        "Private Link",
+        "Private Endpoint"
+      ],
+      "file": "azure/private_link.png",
+      "description": "Blue chain link icon"
+    },
+    {
+      "name": "Azure Network Security Group",
+      "aliases": [
+        "NSG",
+        "Network Security Group"
+      ],
+      "file": "azure/nsg.png",
+      "description": "Blue shield with checkmark icon"
+    },
+    {
+      "name": "Azure Bastion",
+      "aliases": [
+        "Bastion"
+      ],
+      "file": "azure/bastion.png",
+      "description": "Blue bastion/fortress icon"
+    },
+    {
+      "name": "Azure NAT Gateway",
+      "aliases": [
+        "NAT"
+      ],
+      "file": "azure/nat_gateway.png",
+      "description": "Blue NAT arrow icon"
+    },
+    {
+      "name": "Azure Private DNS",
+      "aliases": [
+        "Private DNS",
+        "Private DNS Zone"
+      ],
+      "file": "azure/private_dns_zones.png",
+      "description": "Blue lock DNS icon"
+    },
+    {
+      "name": "Azure Network Watcher",
+      "aliases": [
+        "Network Watcher"
+      ],
+      "file": "azure/network_watcher.png",
+      "description": "Blue network eye icon"
+    },
+    {
+      "name": "Azure DDoS Protection",
+      "aliases": [
+        "DDoS Protection",
+        "DDoS"
+      ],
+      "file": "azure/ddos_protection.png",
+      "description": "Blue shield DDoS icon"
+    },
+    {
+      "name": "Azure SQL Database",
+      "aliases": [
+        "SQL Database",
+        "Azure SQL",
+        "SQL DB"
+      ],
+      "file": "azure/sql_database.png",
+      "description": "Blue SQL database cylinder icon"
+    },
+    {
+      "name": "Azure Cosmos DB",
+      "aliases": [
+        "Cosmos DB",
+        "CosmosDB"
+      ],
+      "file": "azure/cosmos_db.png",
+      "description": "Blue planet/globe database icon"
+    },
+    {
+      "name": "Azure SQL Managed Instance",
+      "aliases": [
+        "SQL MI",
+        "Managed Instance"
+      ],
+      "file": "azure/sql_managed_instance.png",
+      "description": "Blue managed SQL icon"
+    },
+    {
+      "name": "Azure Database for MySQL",
+      "aliases": [
+        "MySQL",
+        "Azure MySQL"
+      ],
+      "file": "azure/mysql.png",
+      "description": "Blue dolphin database icon"
+    },
+    {
+      "name": "Azure Database for PostgreSQL",
+      "aliases": [
+        "PostgreSQL",
+        "Azure PostgreSQL",
+        "Postgres"
+      ],
+      "file": "azure/postgresql.png",
+      "description": "Blue elephant database icon"
+    },
+    {
+      "name": "Azure Cache for Redis",
+      "aliases": [
+        "Redis Cache",
+        "Azure Redis"
+      ],
+      "file": "azure/redis_cache.png",
+      "description": "Red diamond cache icon"
+    },
+    {
+      "name": "Azure SQL Server",
+      "aliases": [
+        "SQL Server"
+      ],
+      "file": "azure/sql_server.png",
+      "description": "Blue SQL server icon"
+    },
+    {
+      "name": "Azure SQL Elastic Pool",
+      "aliases": [
+        "Elastic Pool",
+        "SQL Elastic Pool"
+      ],
+      "file": "azure/sql_elastic_pool.png",
+      "description": "Blue elastic pool icon"
+    },
+    {
+      "name": "Azure Database for MariaDB",
+      "aliases": [
+        "MariaDB",
+        "Azure MariaDB"
+      ],
+      "file": "azure/mariadb.png",
+      "description": "Blue MariaDB database icon"
+    },
+    {
+      "name": "Azure Storage Account",
+      "aliases": [
+        "Storage Account",
+        "Storage"
+      ],
+      "file": "azure/storage_accounts.png",
+      "description": "Blue storage table icon"
+    },
+    {
+      "name": "Azure Data Lake Storage",
+      "aliases": [
+        "Data Lake",
+        "ADLS",
+        "Data Lake Storage"
+      ],
+      "file": "azure/data_lake_storage.png",
+      "description": "Blue data lake wave icon"
+    },
+    {
+      "name": "Azure Table Storage",
+      "aliases": [
+        "Table Storage",
+        "Storage Table"
+      ],
+      "file": "azure/table_storage.png",
+      "description": "Blue table grid icon"
+    },
+    {
+      "name": "Azure Managed Disks",
+      "aliases": [
+        "Managed Disks",
+        "Disk"
+      ],
+      "file": "azure/managed_disks.png",
+      "description": "Blue disk icon"
+    },
+    {
+      "name": "Azure AI Services",
+      "aliases": [
+        "Cognitive Services",
+        "AI Services"
+      ],
+      "file": "azure/cognitive_services.png",
+      "description": "Blue brain icon"
+    },
+    {
+      "name": "Azure Machine Learning",
+      "aliases": [
+        "ML",
+        "Machine Learning",
+        "AML"
+      ],
+      "file": "azure/machine_learning.png",
+      "description": "Blue flask/beaker icon"
+    },
+    {
+      "name": "Azure Bot Service",
+      "aliases": [
+        "Bot Service",
+        "Bot"
+      ],
+      "file": "azure/bot_services.png",
+      "description": "Blue robot icon"
+    },
+    {
+      "name": "Azure OpenAI Service",
+      "aliases": [
+        "OpenAI",
+        "GPT"
+      ],
+      "file": "azure/openai.png",
+      "description": "Blue OpenAI icon"
+    },
+    {
+      "name": "Azure AI Search",
+      "aliases": [
+        "AI Search",
+        "Cognitive Search",
+        "Search Service"
+      ],
+      "file": "azure/ai_search.png",
+      "description": "Blue magnifying glass icon"
+    },
+    {
+      "name": "Azure Document Intelligence",
+      "aliases": [
+        "Document Intelligence",
+        "Form Recognizer"
+      ],
+      "file": "azure/document_intelligence.png",
+      "description": "Blue document scan icon"
+    },
+    {
+      "name": "Azure Speech Services",
+      "aliases": [
+        "Speech Services",
+        "Speech"
+      ],
+      "file": "azure/speech_services.png",
+      "description": "Blue microphone icon"
+    },
+    {
+      "name": "Azure Computer Vision",
+      "aliases": [
+        "Computer Vision",
+        "Vision"
+      ],
+      "file": "azure/computer_vision.png",
+      "description": "Blue eye icon"
+    },
+    {
+      "name": "Azure Language Service",
+      "aliases": [
+        "Language Service",
+        "Text Analytics"
+      ],
+      "file": "azure/language.png",
+      "description": "Blue language icon"
+    },
+    {
+      "name": "Azure Translator",
+      "aliases": [
+        "Translator",
+        "Translation"
+      ],
+      "file": "azure/translator.png",
+      "description": "Blue translate icon"
+    },
+    {
+      "name": "Azure Anomaly Detector",
+      "aliases": [
+        "Anomaly Detector"
+      ],
+      "file": "azure/anomaly_detector.png",
+      "description": "Blue anomaly chart icon"
+    },
+    {
+      "name": "Microsoft Entra ID",
+      "aliases": [
+        "Entra ID",
+        "Azure AD",
+        "Active Directory",
+        "AAD",
+        "Microsoft Entra"
+      ],
+      "file": "azure/entra_id.png",
+      "description": "Blue shield/person icon"
+    },
+    {
+      "name": "Microsoft Defender for Cloud",
+      "aliases": [
+        "Defender for Cloud",
+        "Security Center"
+      ],
+      "file": "azure/defender_for_cloud.png",
+      "description": "Blue shield icon"
+    },
+    {
+      "name": "Azure Managed Identity",
+      "aliases": [
+        "Managed Identity",
+        "MSI"
+      ],
+      "file": "azure/managed_identities.png",
+      "description": "Blue identity icon"
+    },
+    {
+      "name": "Azure Security",
+      "aliases": [
+        "Security"
+      ],
+      "file": "azure/security.png",
+      "description": "Blue lock security icon"
+    },
+    {
+      "name": "Azure DevOps",
+      "aliases": [
+        "DevOps",
+        "ADO"
+      ],
+      "file": "azure/devops.png",
+      "description": "Blue infinity loop icon"
+    },
+    {
+      "name": "Azure DevTest Labs",
+      "aliases": [
+        "DevTest Labs"
+      ],
+      "file": "azure/devtest_labs.png",
+      "description": "Blue lab flask icon"
+    },
+    {
+      "name": "Azure Load Testing",
+      "aliases": [
+        "Load Testing"
+      ],
+      "file": "azure/load_testing.png",
+      "description": "Blue load test icon"
+    },
+    {
+      "name": "Azure Service Bus",
+      "aliases": [
+        "Service Bus"
+      ],
+      "file": "azure/service_bus.png",
+      "description": "Blue bus/message icon"
+    },
+    {
+      "name": "Azure Event Grid",
+      "aliases": [
+        "Event Grid"
+      ],
+      "file": "azure/event_grid.png",
+      "description": "Blue grid icon"
+    },
+    {
+      "name": "Azure Event Hubs",
+      "aliases": [
+        "Event Hubs",
+        "Event Hub"
+      ],
+      "file": "azure/event_hubs.png",
+      "description": "Blue streaming icon"
+    },
+    {
+      "name": "Azure Logic Apps",
+      "aliases": [
+        "Logic Apps",
+        "Logic App"
+      ],
+      "file": "azure/logic_apps.png",
+      "description": "Blue workflow icon"
+    },
+    {
+      "name": "Azure API Management",
+      "aliases": [
+        "API Management",
+        "APIM"
+      ],
+      "file": "azure/api_management.png",
+      "description": "Purple API gateway icon"
+    },
+    {
+      "name": "Azure Synapse Analytics",
+      "aliases": [
+        "Synapse",
+        "Synapse Analytics"
+      ],
+      "file": "azure/synapse_analytics.png",
+      "description": "Blue analytics icon"
+    },
+    {
+      "name": "Azure Data Factory",
+      "aliases": [
+        "Data Factory",
+        "ADF"
+      ],
+      "file": "azure/data_factory.png",
+      "description": "Blue factory icon"
+    },
+    {
+      "name": "Azure Stream Analytics",
+      "aliases": [
+        "Stream Analytics"
+      ],
+      "file": "azure/stream_analytics.png",
+      "description": "Blue stream icon"
+    },
+    {
+      "name": "Azure Log Analytics",
+      "aliases": [
+        "Log Analytics",
+        "LA Workspace"
+      ],
+      "file": "azure/log_analytics.png",
+      "description": "Blue log analysis icon"
+    },
+    {
+      "name": "Azure Data Explorer",
+      "aliases": [
+        "Data Explorer",
+        "ADX",
+        "Kusto"
+      ],
+      "file": "azure/data_explorer.png",
+      "description": "Blue explorer icon"
+    },
+    {
+      "name": "Power BI",
+      "aliases": [
+        "Power BI",
+        "PowerBI"
+      ],
+      "file": "azure/power_bi.png",
+      "description": "Yellow Power BI icon"
+    },
+    {
+      "name": "Azure Monitor",
+      "aliases": [
+        "Monitor",
+        "Azure Monitor"
+      ],
+      "file": "azure/monitor.png",
+      "description": "Blue monitor icon"
+    },
+    {
+      "name": "Azure Application Insights",
+      "aliases": [
+        "Application Insights",
+        "App Insights",
+        "AppInsights"
+      ],
+      "file": "azure/application_insights.png",
+      "description": "Purple chart icon"
+    },
+    {
+      "name": "Azure Resource Group",
+      "aliases": [
+        "Resource Group",
+        "RG"
+      ],
+      "file": "azure/resource_groups.png",
+      "description": "Blue folder icon"
+    },
+    {
+      "name": "Azure Policy",
+      "aliases": [
+        "Policy",
+        "Azure Policy"
+      ],
+      "file": "azure/policy.png",
+      "description": "Blue policy clipboard icon"
+    },
+    {
+      "name": "Azure Cost Management",
+      "aliases": [
+        "Cost Management",
+        "Billing"
+      ],
+      "file": "azure/cost_management.png",
+      "description": "Green dollar icon"
+    },
+    {
+      "name": "Azure Subscription",
+      "aliases": [
+        "Subscription"
+      ],
+      "file": "azure/subscriptions.png",
+      "description": "Blue key icon"
+    },
+    {
+      "name": "Azure Management Group",
+      "aliases": [
+        "Management Group"
+      ],
+      "file": "azure/management_groups.png",
+      "description": "Blue hierarchy icon"
+    },
+    {
+      "name": "Azure Automation",
+      "aliases": [
+        "Automation",
+        "Runbook"
+      ],
+      "file": "azure/automation.png",
+      "description": "Blue gear icon"
+    },
+    {
+      "name": "Azure Advisor",
+      "aliases": [
+        "Advisor"
+      ],
+      "file": "azure/advisor.png",
+      "description": "Blue star advisor icon"
+    },
+    {
+      "name": "Azure Arc",
+      "aliases": [
+        "Arc",
+        "Azure Arc"
+      ],
+      "file": "azure/azure_arc.png",
+      "description": "Blue arc icon"
+    },
+    {
+      "name": "Azure Recovery Services Vault",
+      "aliases": [
+        "Recovery Vault",
+        "Site Recovery",
+        "ASR"
+      ],
+      "file": "azure/recovery_vault.png",
+      "description": "Blue vault icon"
+    },
+    {
+      "name": "Azure Backup Vault",
+      "aliases": [
+        "Backup",
+        "Azure Backup"
+      ],
+      "file": "azure/backup_vault.png",
+      "description": "Green backup icon"
+    },
+    {
+      "name": "Azure IoT Hub",
+      "aliases": [
+        "IoT Hub",
+        "IoT"
+      ],
+      "file": "azure/iot_hub.png",
+      "description": "Blue IoT hub icon"
+    },
+    {
+      "name": "Azure IoT Central",
+      "aliases": [
+        "IoT Central"
+      ],
+      "file": "azure/iot_central.png",
+      "description": "Blue IoT central icon"
+    },
+    {
+      "name": "Azure SignalR Service",
+      "aliases": [
+        "SignalR"
+      ],
+      "file": "azure/signalr.png",
+      "description": "Blue SignalR icon"
+    },
+    {
+      "name": "Azure Notification Hubs",
+      "aliases": [
+        "Notification Hubs",
+        "Push Notification"
+      ],
+      "file": "azure/notification_hubs.png",
+      "description": "Blue bell icon"
+    },
+    {
+      "name": "Azure Static Web Apps",
+      "aliases": [
+        "Static Web Apps",
+        "SWA"
+      ],
+      "file": "azure/static_web_apps.png",
+      "description": "Blue static web icon"
+    },
+    {
+      "name": "Azure Spring Apps",
+      "aliases": [
+        "Spring Apps",
+        "Spring Cloud"
+      ],
+      "file": "azure/spring_apps.png",
+      "description": "Green spring leaf icon"
+    },
+    {
+      "name": "Azure App Service Plan",
+      "aliases": [
+        "App Service Plan"
+      ],
+      "file": "azure/app_service_plan.png",
+      "description": "Blue app plan icon"
+    },
+    {
+      "name": "Azure CDN Profile",
+      "aliases": [
+        "CDN Profile"
+      ],
+      "file": "azure/cdn.png",
+      "description": "Blue CDN globe icon"
+    },
+    {
+      "name": "Azure VPN Gateway",
+      "aliases": [
+        "VPN Gateway",
+        "VPN",
+        "Virtual Network Gateway"
+      ],
+      "file": "azure/vpn_gateway.png",
+      "description": "Blue VPN gateway icon"
+    },
+    {
+      "name": "Azure Queue Storage",
+      "aliases": [
+        "Queue Storage",
+        "Storage Queue"
+      ],
+      "file": "azure/queue_storage.png",
+      "description": "Blue queue icon"
+    },
+    {
+      "name": "Microsoft Sentinel",
+      "aliases": [
+        "Sentinel",
+        "Azure Sentinel"
+      ],
+      "file": "azure/sentinel.png",
+      "description": "Blue sentinel shield icon"
+    },
+    {
+      "name": "Azure HDInsight",
+      "aliases": [
+        "HDInsight"
+      ],
+      "file": "azure/hdinsight.png",
+      "description": "Blue Hadoop cluster icon"
+    },
+    {
+      "name": "AWS Cloud",
+      "aliases": [
+        "AWS",
+        "Amazon Web Services"
+      ],
+      "file": "aws/aws_cloud.png",
+      "description": "AWS orange smile/arrow cloud logo"
+    },
+    {
+      "name": "Amazon EC2",
+      "aliases": [
+        "EC2",
+        "Elastic Compute Cloud",
+        "EC2 Instance"
+      ],
+      "file": "aws/ec2.png",
+      "description": "AWS orange compute instance icon"
+    },
+    {
+      "name": "Amazon EC2 Auto Scaling",
+      "aliases": [
+        "EC2 Auto Scaling",
+        "Auto Scaling Group",
+        "ASG"
+      ],
+      "file": "aws/ec2_auto_scaling.png",
+      "description": "AWS orange EC2 auto scaling icon"
+    },
+    {
+      "name": "AWS Lambda",
+      "aliases": [
+        "Lambda",
+        "Lambda Function",
+        "Serverless Function"
+      ],
+      "file": "aws/lambda.png",
+      "description": "AWS orange lambda serverless compute icon"
+    },
+    {
+      "name": "AWS Elastic Beanstalk",
+      "aliases": [
+        "Elastic Beanstalk",
+        "Beanstalk",
+        "EB"
+      ],
+      "file": "aws/elastic_beanstalk.png",
+      "description": "AWS orange Elastic Beanstalk deployment icon"
+    },
+    {
+      "name": "AWS Batch",
+      "aliases": [
+        "AWS Batch"
+      ],
+      "file": "aws/batch.png",
+      "description": "AWS orange Batch computing icon"
+    },
+    {
+      "name": "Amazon Lightsail",
+      "aliases": [
+        "Lightsail"
+      ],
+      "file": "aws/lightsail.png",
+      "description": "AWS orange Lightsail simple VPS icon"
+    },
+    {
+      "name": "AWS App Runner",
+      "aliases": [
+        "App Runner"
+      ],
+      "file": "aws/app_runner.png",
+      "description": "AWS orange App Runner container deployment icon"
+    },
+    {
+      "name": "Amazon S3",
+      "aliases": [
+        "S3",
+        "Simple Storage Service",
+        "S3 Bucket"
+      ],
+      "file": "aws/s3.png",
+      "description": "AWS green S3 storage bucket icon"
+    },
+    {
+      "name": "Amazon S3 Glacier",
+      "aliases": [
+        "S3 Glacier",
+        "Glacier",
+        "S3 Glacier Deep Archive"
+      ],
+      "file": "aws/s3_glacier.png",
+      "description": "AWS green S3 Glacier cold storage icon"
+    },
+    {
+      "name": "Amazon EFS",
+      "aliases": [
+        "EFS",
+        "Elastic File System"
+      ],
+      "file": "aws/efs.png",
+      "description": "AWS green EFS elastic file system icon"
+    },
+    {
+      "name": "Amazon EBS",
+      "aliases": [
+        "EBS",
+        "Elastic Block Store"
+      ],
+      "file": "aws/ebs.png",
+      "description": "AWS green EBS block storage volume icon"
+    },
+    {
+      "name": "Amazon FSx",
+      "aliases": [
+        "FSx",
+        "FSx for Windows",
+        "FSx for Lustre"
+      ],
+      "file": "aws/fsx.png",
+      "description": "AWS green FSx file system icon"
+    },
+    {
+      "name": "AWS Storage Gateway",
+      "aliases": [
+        "Storage Gateway"
+      ],
+      "file": "aws/storage_gateway.png",
+      "description": "AWS green Storage Gateway hybrid icon"
+    },
+    {
+      "name": "AWS Backup",
+      "aliases": [
+        "AWS Backup"
+      ],
+      "file": "aws/backup.png",
+      "description": "AWS green Backup service icon"
+    },
+    {
+      "name": "AWS Snowball Edge",
+      "aliases": [
+        "Snowball",
+        "Snowball Edge",
+        "Snow Family"
+      ],
+      "file": "aws/snowball_edge.png",
+      "description": "AWS green Snowball Edge data transfer device icon"
+    },
+    {
+      "name": "Amazon RDS",
+      "aliases": [
+        "RDS",
+        "Relational Database Service"
+      ],
+      "file": "aws/rds.png",
+      "description": "AWS blue RDS relational database icon"
+    },
+    {
+      "name": "Amazon Aurora",
+      "aliases": [
+        "Aurora",
+        "Aurora MySQL",
+        "Aurora PostgreSQL",
+        "Aurora Serverless"
+      ],
+      "file": "aws/aurora.png",
+      "description": "AWS blue Aurora database icon"
+    },
+    {
+      "name": "Amazon DynamoDB",
+      "aliases": [
+        "DynamoDB",
+        "Dynamo"
+      ],
+      "file": "aws/dynamodb.png",
+      "description": "AWS blue DynamoDB NoSQL database icon"
+    },
+    {
+      "name": "Amazon ElastiCache",
+      "aliases": [
+        "ElastiCache",
+        "Redis on AWS",
+        "Memcached on AWS"
+      ],
+      "file": "aws/elasticache.png",
+      "description": "AWS blue ElastiCache in-memory cache icon"
+    },
+    {
+      "name": "Amazon Neptune",
+      "aliases": [
+        "Neptune",
+        "Graph Database"
+      ],
+      "file": "aws/neptune.png",
+      "description": "AWS blue Neptune graph database icon"
+    },
+    {
+      "name": "Amazon DocumentDB",
+      "aliases": [
+        "DocumentDB",
+        "Document DB"
+      ],
+      "file": "aws/documentdb.png",
+      "description": "AWS blue DocumentDB document database icon"
+    },
+    {
+      "name": "Amazon Timestream",
+      "aliases": [
+        "Timestream"
+      ],
+      "file": "aws/timestream.png",
+      "description": "AWS blue Timestream time series database icon"
+    },
+    {
+      "name": "Amazon MemoryDB",
+      "aliases": [
+        "MemoryDB",
+        "MemoryDB for Redis"
+      ],
+      "file": "aws/memorydb.png",
+      "description": "AWS blue MemoryDB in-memory database icon"
+    },
+    {
+      "name": "Amazon Keyspaces",
+      "aliases": [
+        "Keyspaces",
+        "Managed Cassandra"
+      ],
+      "file": "aws/keyspaces.png",
+      "description": "AWS blue Keyspaces managed Cassandra icon"
+    },
+    {
+      "name": "AWS DMS",
+      "aliases": [
+        "DMS",
+        "Database Migration Service"
+      ],
+      "file": "aws/dms.png",
+      "description": "AWS blue Database Migration Service icon"
+    },
+    {
+      "name": "Amazon CloudFront",
+      "aliases": [
+        "CloudFront",
+        "AWS CDN"
+      ],
+      "file": "aws/cloudfront.png",
+      "description": "AWS purple CloudFront CDN icon"
+    },
+    {
+      "name": "Amazon Route 53",
+      "aliases": [
+        "Route 53",
+        "Route53"
+      ],
+      "file": "aws/route_53.png",
+      "description": "AWS purple Route 53 DNS icon"
+    },
+    {
+      "name": "Amazon VPC",
+      "aliases": [
+        "VPC",
+        "Virtual Private Cloud",
+        "AWS VPC"
+      ],
+      "file": "aws/vpc.png",
+      "description": "AWS purple VPC virtual private cloud icon"
+    },
+    {
+      "name": "Amazon API Gateway",
+      "aliases": [
+        "API Gateway",
+        "APIGW",
+        "AWS API Gateway"
+      ],
+      "file": "aws/api_gateway.png",
+      "description": "AWS purple API Gateway icon"
+    },
+    {
+      "name": "Elastic Load Balancing",
+      "aliases": [
+        "ELB",
+        "ALB",
+        "NLB",
+        "Application Load Balancer",
+        "Network Load Balancer",
+        "AWS Load Balancer"
+      ],
+      "file": "aws/elb.png",
+      "description": "AWS purple Elastic Load Balancing icon"
+    },
+    {
+      "name": "AWS Direct Connect",
+      "aliases": [
+        "Direct Connect",
+        "DX"
+      ],
+      "file": "aws/direct_connect.png",
+      "description": "AWS purple Direct Connect dedicated network icon"
+    },
+    {
+      "name": "AWS Transit Gateway",
+      "aliases": [
+        "Transit Gateway",
+        "TGW"
+      ],
+      "file": "aws/transit_gateway.png",
+      "description": "AWS purple Transit Gateway network hub icon"
+    },
+    {
+      "name": "AWS Global Accelerator",
+      "aliases": [
+        "Global Accelerator"
+      ],
+      "file": "aws/global_accelerator.png",
+      "description": "AWS purple Global Accelerator icon"
+    },
+    {
+      "name": "AWS PrivateLink",
+      "aliases": [
+        "PrivateLink",
+        "VPC Endpoint"
+      ],
+      "file": "aws/privatelink.png",
+      "description": "AWS purple PrivateLink private connectivity icon"
+    },
+    {
+      "name": "Amazon VPC Lattice",
+      "aliases": [
+        "VPC Lattice"
+      ],
+      "file": "aws/vpc_lattice.png",
+      "description": "AWS purple VPC Lattice service mesh icon"
+    },
+    {
+      "name": "AWS Cloud WAN",
+      "aliases": [
+        "Cloud WAN"
+      ],
+      "file": "aws/cloud_wan.png",
+      "description": "AWS purple Cloud WAN wide area network icon"
+    },
+    {
+      "name": "Amazon ECS",
+      "aliases": [
+        "ECS",
+        "Elastic Container Service"
+      ],
+      "file": "aws/ecs.png",
+      "description": "AWS orange ECS container service icon"
+    },
+    {
+      "name": "Amazon EKS",
+      "aliases": [
+        "EKS",
+        "Elastic Kubernetes Service"
+      ],
+      "file": "aws/eks.png",
+      "description": "AWS orange EKS Kubernetes icon"
+    },
+    {
+      "name": "Amazon ECR",
+      "aliases": [
+        "ECR",
+        "Elastic Container Registry"
+      ],
+      "file": "aws/ecr.png",
+      "description": "AWS orange ECR container registry icon"
+    },
+    {
+      "name": "AWS Fargate",
+      "aliases": [
+        "Fargate",
+        "Serverless Containers"
+      ],
+      "file": "aws/fargate.png",
+      "description": "AWS orange Fargate serverless container icon"
+    },
+    {
+      "name": "Amazon SNS",
+      "aliases": [
+        "SNS",
+        "Simple Notification Service"
+      ],
+      "file": "aws/sns.png",
+      "description": "AWS pink SNS pub/sub notification icon"
+    },
+    {
+      "name": "Amazon SQS",
+      "aliases": [
+        "SQS",
+        "Simple Queue Service"
+      ],
+      "file": "aws/sqs.png",
+      "description": "AWS pink SQS message queue icon"
+    },
+    {
+      "name": "AWS Step Functions",
+      "aliases": [
+        "Step Functions",
+        "State Machine"
+      ],
+      "file": "aws/step_functions.png",
+      "description": "AWS pink Step Functions workflow icon"
+    },
+    {
+      "name": "Amazon EventBridge",
+      "aliases": [
+        "EventBridge",
+        "Event Bus"
+      ],
+      "file": "aws/eventbridge.png",
+      "description": "AWS pink EventBridge event bus icon"
+    },
+    {
+      "name": "Amazon MQ",
+      "aliases": [
+        "MQ",
+        "Amazon MQ for ActiveMQ",
+        "Amazon MQ for RabbitMQ"
+      ],
+      "file": "aws/mq.png",
+      "description": "AWS pink MQ message broker icon"
+    },
+    {
+      "name": "Amazon AppFlow",
+      "aliases": [
+        "AppFlow"
+      ],
+      "file": "aws/appflow.png",
+      "description": "AWS pink AppFlow data integration icon"
+    },
+    {
+      "name": "AWS AppSync",
+      "aliases": [
+        "AppSync",
+        "GraphQL API"
+      ],
+      "file": "aws/appsync.png",
+      "description": "AWS pink AppSync GraphQL icon"
+    },
+    {
+      "name": "AWS IAM",
+      "aliases": [
+        "IAM",
+        "Identity and Access Management"
+      ],
+      "file": "aws/iam.png",
+      "description": "AWS red IAM identity and access management icon"
+    },
+    {
+      "name": "Amazon Cognito",
+      "aliases": [
+        "Cognito",
+        "User Pool"
+      ],
+      "file": "aws/cognito.png",
+      "description": "AWS red Cognito user authentication icon"
+    },
+    {
+      "name": "AWS KMS",
+      "aliases": [
+        "KMS",
+        "Key Management Service"
+      ],
+      "file": "aws/kms.png",
+      "description": "AWS red KMS key management icon"
+    },
+    {
+      "name": "AWS Secrets Manager",
+      "aliases": [
+        "Secrets Manager"
+      ],
+      "file": "aws/secrets_manager.png",
+      "description": "AWS red Secrets Manager icon"
+    },
+    {
+      "name": "AWS Certificate Manager",
+      "aliases": [
+        "ACM",
+        "Certificate Manager",
+        "SSL Certificate"
+      ],
+      "file": "aws/acm.png",
+      "description": "AWS red ACM certificate manager icon"
+    },
+    {
+      "name": "AWS Shield",
+      "aliases": [
+        "Shield",
+        "DDoS Protection"
+      ],
+      "file": "aws/shield.png",
+      "description": "AWS red Shield DDoS protection icon"
+    },
+    {
+      "name": "AWS WAF",
+      "aliases": [
+        "WAF",
+        "Web Application Firewall"
+      ],
+      "file": "aws/waf.png",
+      "description": "AWS red WAF web application firewall icon"
+    },
+    {
+      "name": "Amazon GuardDuty",
+      "aliases": [
+        "GuardDuty"
+      ],
+      "file": "aws/guardduty.png",
+      "description": "AWS red GuardDuty threat detection icon"
+    },
+    {
+      "name": "AWS Security Hub",
+      "aliases": [
+        "Security Hub"
+      ],
+      "file": "aws/security_hub.png",
+      "description": "AWS red Security Hub centralized security icon"
+    },
+    {
+      "name": "Amazon Inspector",
+      "aliases": [
+        "Inspector"
+      ],
+      "file": "aws/inspector.png",
+      "description": "AWS red Inspector vulnerability scanning icon"
+    },
+    {
+      "name": "Amazon Macie",
+      "aliases": [
+        "Macie"
+      ],
+      "file": "aws/macie.png",
+      "description": "AWS red Macie data privacy icon"
+    },
+    {
+      "name": "AWS IAM Identity Center",
+      "aliases": [
+        "IAM Identity Center",
+        "AWS SSO",
+        "Single Sign-On"
+      ],
+      "file": "aws/iam_identity_center.png",
+      "description": "AWS red IAM Identity Center single sign-on icon"
+    },
+    {
+      "name": "AWS Firewall Manager",
+      "aliases": [
+        "Firewall Manager"
+      ],
+      "file": "aws/firewall_manager.png",
+      "description": "AWS red Firewall Manager icon"
+    },
+    {
+      "name": "AWS Network Firewall",
+      "aliases": [
+        "Network Firewall"
+      ],
+      "file": "aws/network_firewall.png",
+      "description": "AWS red Network Firewall icon"
+    },
+    {
+      "name": "Amazon CloudWatch",
+      "aliases": [
+        "CloudWatch",
+        "CW",
+        "CloudWatch Logs",
+        "CloudWatch Metrics"
+      ],
+      "file": "aws/cloudwatch.png",
+      "description": "AWS pink CloudWatch monitoring icon"
+    },
+    {
+      "name": "AWS CloudFormation",
+      "aliases": [
+        "CloudFormation",
+        "CFN"
+      ],
+      "file": "aws/cloudformation.png",
+      "description": "AWS pink CloudFormation infrastructure-as-code icon"
+    },
+    {
+      "name": "AWS CloudTrail",
+      "aliases": [
+        "CloudTrail"
+      ],
+      "file": "aws/cloudtrail.png",
+      "description": "AWS pink CloudTrail audit logging icon"
+    },
+    {
+      "name": "AWS Config",
+      "aliases": [
+        "AWS Config",
+        "AWS Config Rules"
+      ],
+      "file": "aws/config.png",
+      "description": "AWS pink Config compliance icon"
+    },
+    {
+      "name": "AWS Systems Manager",
+      "aliases": [
+        "Systems Manager",
+        "SSM",
+        "Parameter Store"
+      ],
+      "file": "aws/systems_manager.png",
+      "description": "AWS pink Systems Manager operations icon"
+    },
+    {
+      "name": "AWS Organizations",
+      "aliases": [
+        "Organizations",
+        "AWS Org"
+      ],
+      "file": "aws/organizations.png",
+      "description": "AWS pink Organizations multi-account icon"
+    },
+    {
+      "name": "AWS Trusted Advisor",
+      "aliases": [
+        "Trusted Advisor"
+      ],
+      "file": "aws/trusted_advisor.png",
+      "description": "AWS pink Trusted Advisor best practices icon"
+    },
+    {
+      "name": "AWS Control Tower",
+      "aliases": [
+        "Control Tower"
+      ],
+      "file": "aws/control_tower.png",
+      "description": "AWS pink Control Tower governance icon"
+    },
+    {
+      "name": "AWS Auto Scaling",
+      "aliases": [
+        "AWS Auto Scaling"
+      ],
+      "file": "aws/auto_scaling.png",
+      "description": "AWS pink Auto Scaling icon"
+    },
+    {
+      "name": "Amazon Managed Grafana",
+      "aliases": [
+        "Managed Grafana",
+        "AMG"
+      ],
+      "file": "aws/managed_grafana.png",
+      "description": "AWS pink Managed Grafana observability icon"
+    },
+    {
+      "name": "Amazon Managed Prometheus",
+      "aliases": [
+        "Managed Prometheus",
+        "AMP"
+      ],
+      "file": "aws/managed_prometheus.png",
+      "description": "AWS pink Managed Prometheus monitoring icon"
+    },
+    {
+      "name": "Amazon Redshift",
+      "aliases": [
+        "Redshift"
+      ],
+      "file": "aws/redshift.png",
+      "description": "AWS purple Redshift data warehouse icon"
+    },
+    {
+      "name": "Amazon Kinesis",
+      "aliases": [
+        "Kinesis"
+      ],
+      "file": "aws/kinesis.png",
+      "description": "AWS purple Kinesis real-time streaming icon"
+    },
+    {
+      "name": "Amazon Kinesis Data Streams",
+      "aliases": [
+        "Kinesis Data Streams",
+        "KDS"
+      ],
+      "file": "aws/kinesis_data_streams.png",
+      "description": "AWS purple Kinesis Data Streams icon"
+    },
+    {
+      "name": "Amazon Data Firehose",
+      "aliases": [
+        "Data Firehose",
+        "Kinesis Firehose",
+        "Firehose"
+      ],
+      "file": "aws/data_firehose.png",
+      "description": "AWS purple Data Firehose delivery stream icon"
+    },
+    {
+      "name": "Amazon Athena",
+      "aliases": [
+        "Athena"
+      ],
+      "file": "aws/athena.png",
+      "description": "AWS purple Athena serverless SQL query icon"
+    },
+    {
+      "name": "Amazon EMR",
+      "aliases": [
+        "EMR",
+        "Elastic MapReduce"
+      ],
+      "file": "aws/emr.png",
+      "description": "AWS purple EMR big data processing icon"
+    },
+    {
+      "name": "AWS Glue",
+      "aliases": [
+        "Glue",
+        "Glue ETL",
+        "Glue Catalog"
+      ],
+      "file": "aws/glue.png",
+      "description": "AWS purple Glue ETL data integration icon"
+    },
+    {
+      "name": "Amazon OpenSearch Service",
+      "aliases": [
+        "OpenSearch",
+        "Elasticsearch Service",
+        "OpenSearch Service"
+      ],
+      "file": "aws/opensearch.png",
+      "description": "AWS purple OpenSearch search and analytics icon"
+    },
+    {
+      "name": "AWS Lake Formation",
+      "aliases": [
+        "Lake Formation"
+      ],
+      "file": "aws/lake_formation.png",
+      "description": "AWS purple Lake Formation data lake icon"
+    },
+    {
+      "name": "Amazon MSK",
+      "aliases": [
+        "MSK",
+        "Managed Streaming for Apache Kafka",
+        "Managed Kafka"
+      ],
+      "file": "aws/msk.png",
+      "description": "AWS purple MSK managed Kafka icon"
+    },
+    {
+      "name": "Amazon DataZone",
+      "aliases": [
+        "DataZone"
+      ],
+      "file": "aws/datazone.png",
+      "description": "AWS purple DataZone data governance icon"
+    },
+    {
+      "name": "AWS Data Exchange",
+      "aliases": [
+        "Data Exchange"
+      ],
+      "file": "aws/data_exchange.png",
+      "description": "AWS purple Data Exchange marketplace icon"
+    },
+    {
+      "name": "AWS CodePipeline",
+      "aliases": [
+        "CodePipeline"
+      ],
+      "file": "aws/codepipeline.png",
+      "description": "AWS blue CodePipeline CI/CD pipeline icon"
+    },
+    {
+      "name": "AWS CodeBuild",
+      "aliases": [
+        "CodeBuild"
+      ],
+      "file": "aws/codebuild.png",
+      "description": "AWS blue CodeBuild build service icon"
+    },
+    {
+      "name": "AWS CodeDeploy",
+      "aliases": [
+        "CodeDeploy"
+      ],
+      "file": "aws/codedeploy.png",
+      "description": "AWS blue CodeDeploy deployment icon"
+    },
+    {
+      "name": "AWS CodeCommit",
+      "aliases": [
+        "CodeCommit"
+      ],
+      "file": "aws/codecommit.png",
+      "description": "AWS blue CodeCommit source control icon"
+    },
+    {
+      "name": "AWS CodeArtifact",
+      "aliases": [
+        "CodeArtifact"
+      ],
+      "file": "aws/codeartifact.png",
+      "description": "AWS blue CodeArtifact package repository icon"
+    },
+    {
+      "name": "AWS Cloud9",
+      "aliases": [
+        "Cloud9"
+      ],
+      "file": "aws/cloud9.png",
+      "description": "AWS blue Cloud9 IDE icon"
+    },
+    {
+      "name": "AWS CloudShell",
+      "aliases": [
+        "CloudShell"
+      ],
+      "file": "aws/cloudshell.png",
+      "description": "AWS blue CloudShell terminal icon"
+    },
+    {
+      "name": "AWS X-Ray",
+      "aliases": [
+        "X-Ray",
+        "XRay"
+      ],
+      "file": "aws/xray.png",
+      "description": "AWS blue X-Ray distributed tracing icon"
+    },
+    {
+      "name": "Amazon CodeCatalyst",
+      "aliases": [
+        "CodeCatalyst"
+      ],
+      "file": "aws/codecatalyst.png",
+      "description": "AWS blue CodeCatalyst development platform icon"
+    },
+    {
+      "name": "Amazon SageMaker",
+      "aliases": [
+        "SageMaker",
+        "SageMaker AI"
+      ],
+      "file": "aws/sagemaker.png",
+      "description": "AWS green SageMaker ML platform icon"
+    },
+    {
+      "name": "Amazon Bedrock",
+      "aliases": [
+        "Bedrock",
+        "Foundation Models"
+      ],
+      "file": "aws/bedrock.png",
+      "description": "AWS green Bedrock generative AI icon"
+    },
+    {
+      "name": "Amazon Rekognition",
+      "aliases": [
+        "Rekognition"
+      ],
+      "file": "aws/rekognition.png",
+      "description": "AWS green Rekognition image/video analysis icon"
+    },
+    {
+      "name": "Amazon Comprehend",
+      "aliases": [
+        "Comprehend"
+      ],
+      "file": "aws/comprehend.png",
+      "description": "AWS green Comprehend NLP icon"
+    },
+    {
+      "name": "Amazon Lex",
+      "aliases": [
+        "Lex",
+        "AWS Chatbot"
+      ],
+      "file": "aws/lex.png",
+      "description": "AWS green Lex conversational AI icon"
+    },
+    {
+      "name": "Amazon Polly",
+      "aliases": [
+        "Polly",
+        "Text-to-Speech"
+      ],
+      "file": "aws/polly.png",
+      "description": "AWS green Polly text-to-speech icon"
+    },
+    {
+      "name": "Amazon Textract",
+      "aliases": [
+        "Textract"
+      ],
+      "file": "aws/textract.png",
+      "description": "AWS green Textract document text extraction icon"
+    },
+    {
+      "name": "Amazon Transcribe",
+      "aliases": [
+        "Transcribe",
+        "Speech-to-Text"
+      ],
+      "file": "aws/transcribe.png",
+      "description": "AWS green Transcribe speech-to-text icon"
+    },
+    {
+      "name": "Amazon Translate",
+      "aliases": [
+        "AWS Translate"
+      ],
+      "file": "aws/translate.png",
+      "description": "AWS green Translate language translation icon"
+    },
+    {
+      "name": "Amazon Kendra",
+      "aliases": [
+        "Kendra",
+        "Intelligent Search"
+      ],
+      "file": "aws/kendra.png",
+      "description": "AWS green Kendra intelligent search icon"
+    },
+    {
+      "name": "Amazon Personalize",
+      "aliases": [
+        "Personalize"
+      ],
+      "file": "aws/personalize.png",
+      "description": "AWS green Personalize recommendation icon"
+    },
+    {
+      "name": "Amazon Q",
+      "aliases": [
+        "Q",
+        "Amazon Q Business",
+        "Amazon Q Developer"
+      ],
+      "file": "aws/amazon_q.png",
+      "description": "AWS purple Amazon Q AI assistant icon"
+    },
+    {
+      "name": "Amazon Nova",
+      "aliases": [
+        "Nova"
+      ],
+      "file": "aws/nova.png",
+      "description": "AWS Amazon Nova foundation model icon"
+    },
+    {
+      "name": "AWS Amplify",
+      "aliases": [
+        "Amplify"
+      ],
+      "file": "aws/amplify.png",
+      "description": "AWS orange Amplify full-stack web/mobile icon"
+    },
+    {
+      "name": "AWS DataSync",
+      "aliases": [
+        "DataSync"
+      ],
+      "file": "aws/datasync.png",
+      "description": "AWS green DataSync data transfer icon"
+    },
+    {
+      "name": "AWS Transfer Family",
+      "aliases": [
+        "Transfer Family",
+        "SFTP",
+        "AWS SFTP"
+      ],
+      "file": "aws/transfer_family.png",
+      "description": "AWS green Transfer Family SFTP/FTPS icon"
+    },
+    {
+      "name": "Material: Settings",
+      "aliases": [
+        "Settings",
+        "Gear",
+        "Config",
+        "Configuration",
+        "Preferences"
+      ],
+      "file": "google/material/settings.png",
+      "description": "Material Design settings gear icon"
+    },
+    {
+      "name": "Material: Search",
+      "aliases": [
+        "Search",
+        "Magnifying Glass",
+        "Find",
+        "Lookup"
+      ],
+      "file": "google/material/search.png",
+      "description": "Material Design search magnifying glass icon"
+    },
+    {
+      "name": "Material: Home",
+      "aliases": [
+        "Home",
+        "House",
+        "Homepage",
+        "Main"
+      ],
+      "file": "google/material/home.png",
+      "description": "Material Design home icon"
+    },
+    {
+      "name": "Material: Account Circle",
+      "aliases": [
+        "Account",
+        "User",
+        "Profile",
+        "Avatar",
+        "User Account"
+      ],
+      "file": "google/material/account_circle.png",
+      "description": "Material Design user account circle icon"
+    },
+    {
+      "name": "Material: Delete",
+      "aliases": [
+        "Delete",
+        "Trash",
+        "Remove",
+        "Bin"
+      ],
+      "file": "google/material/delete.png",
+      "description": "Material Design delete trash can icon"
+    },
+    {
+      "name": "Material: Done",
+      "aliases": [
+        "Done",
+        "Complete",
+        "Checkmark",
+        "Success",
+        "Approved"
+      ],
+      "file": "google/material/done.png",
+      "description": "Material Design done checkmark icon"
+    },
+    {
+      "name": "Material: Info",
+      "aliases": [
+        "Info",
+        "Information",
+        "About",
+        "Details"
+      ],
+      "file": "google/material/info.png",
+      "description": "Material Design info circle icon"
+    },
+    {
+      "name": "Material: Lock",
+      "aliases": [
+        "Lock",
+        "Locked",
+        "Secure",
+        "Authentication",
+        "Auth"
+      ],
+      "file": "google/material/lock.png",
+      "description": "Material Design lock/security icon"
+    },
+    {
+      "name": "Material: Visibility",
+      "aliases": [
+        "Visibility",
+        "Eye",
+        "View",
+        "Visible",
+        "Monitor"
+      ],
+      "file": "google/material/visibility.png",
+      "description": "Material Design visibility eye icon"
+    },
+    {
+      "name": "Material: Power Settings",
+      "aliases": [
+        "Power",
+        "Power Settings",
+        "Shutdown",
+        "On/Off"
+      ],
+      "file": "google/material/power_settings_new.png",
+      "description": "Material Design power button icon"
+    },
+    {
+      "name": "Material: Build",
+      "aliases": [
+        "Build",
+        "Wrench",
+        "Tool",
+        "Repair",
+        "Maintain"
+      ],
+      "file": "google/material/build.png",
+      "description": "Material Design build wrench icon"
+    },
+    {
+      "name": "Material: Code",
+      "aliases": [
+        "Code",
+        "Source Code",
+        "Programming",
+        "Development",
+        "Brackets"
+      ],
+      "file": "google/material/code.png",
+      "description": "Material Design code brackets icon"
+    },
+    {
+      "name": "Material: Dashboard",
+      "aliases": [
+        "Dashboard",
+        "Overview",
+        "Control Panel",
+        "Admin Panel"
+      ],
+      "file": "google/material/dashboard.png",
+      "description": "Material Design dashboard grid icon"
+    },
+    {
+      "name": "Material: Explore",
+      "aliases": [
+        "Explore",
+        "Compass",
+        "Discover",
+        "Browse"
+      ],
+      "file": "google/material/explore.png",
+      "description": "Material Design explore compass icon"
+    },
+    {
+      "name": "Material: Extension",
+      "aliases": [
+        "Extension",
+        "Plugin",
+        "Add-on",
+        "Module",
+        "Puzzle"
+      ],
+      "file": "google/material/extension.png",
+      "description": "Material Design extension puzzle piece icon"
+    },
+    {
+      "name": "Material: Fingerprint",
+      "aliases": [
+        "Fingerprint",
+        "Biometric",
+        "Identity",
+        "Biometrics"
+      ],
+      "file": "google/material/fingerprint.png",
+      "description": "Material Design fingerprint biometric icon"
+    },
+    {
+      "name": "Material: Help",
+      "aliases": [
+        "Help",
+        "Question",
+        "Support",
+        "FAQ"
+      ],
+      "file": "google/material/help.png",
+      "description": "Material Design help question mark icon"
+    },
+    {
+      "name": "Material: History",
+      "aliases": [
+        "History",
+        "Log",
+        "Audit Log",
+        "Recent",
+        "Changelog"
+      ],
+      "file": "google/material/history.png",
+      "description": "Material Design history clock icon"
+    },
+    {
+      "name": "Material: Language",
+      "aliases": [
+        "Language",
+        "Globe",
+        "Global",
+        "World",
+        "International",
+        "Internet",
+        "Web"
+      ],
+      "file": "google/material/language.png",
+      "description": "Material Design language globe icon"
+    },
+    {
+      "name": "Material: Launch",
+      "aliases": [
+        "Launch",
+        "Open",
+        "External Link",
+        "Redirect"
+      ],
+      "file": "google/material/launch.png",
+      "description": "Material Design launch/open external icon"
+    },
+    {
+      "name": "Material: List",
+      "aliases": [
+        "List",
+        "Bullet List",
+        "Items",
+        "Queue"
+      ],
+      "file": "google/material/list.png",
+      "description": "Material Design list icon"
+    },
+    {
+      "name": "Material: Open In New",
+      "aliases": [
+        "Open In New",
+        "New Window",
+        "External",
+        "Pop Out"
+      ],
+      "file": "google/material/open_in_new.png",
+      "description": "Material Design open in new window icon"
+    },
+    {
+      "name": "Material: Schedule",
+      "aliases": [
+        "Schedule",
+        "Clock",
+        "Time",
+        "Timer",
+        "Scheduled"
+      ],
+      "file": "google/material/schedule.png",
+      "description": "Material Design schedule clock icon"
+    },
+    {
+      "name": "Material: Shopping Cart",
+      "aliases": [
+        "Shopping Cart",
+        "Cart",
+        "Purchase",
+        "Buy",
+        "E-Commerce"
+      ],
+      "file": "google/material/shopping_cart.png",
+      "description": "Material Design shopping cart icon"
+    },
+    {
+      "name": "Material: Supervisor Account",
+      "aliases": [
+        "Supervisor",
+        "Admin",
+        "Administrator",
+        "Manager"
+      ],
+      "file": "google/material/supervisor_account.png",
+      "description": "Material Design supervisor/admin account icon"
+    },
+    {
+      "name": "Material: Tab",
+      "aliases": [
+        "Tab",
+        "Browser Tab",
+        "Page Tab"
+      ],
+      "file": "google/material/tab.png",
+      "description": "Material Design tab icon"
+    },
+    {
+      "name": "Material: Timeline",
+      "aliases": [
+        "Timeline",
+        "Progress",
+        "Steps",
+        "Workflow",
+        "Pipeline"
+      ],
+      "file": "google/material/timeline.png",
+      "description": "Material Design timeline icon"
+    },
+    {
+      "name": "Material: Today",
+      "aliases": [
+        "Today",
+        "Calendar",
+        "Date",
+        "Day"
+      ],
+      "file": "google/material/today.png",
+      "description": "Material Design today/calendar icon"
+    },
+    {
+      "name": "Material: Work",
+      "aliases": [
+        "Work",
+        "Briefcase",
+        "Business",
+        "Job",
+        "Enterprise"
+      ],
+      "file": "google/material/work.png",
+      "description": "Material Design work briefcase icon"
+    },
+    {
+      "name": "Material: Zoom In",
+      "aliases": [
+        "Zoom In",
+        "Magnify",
+        "Enlarge"
+      ],
+      "file": "google/material/zoom_in.png",
+      "description": "Material Design zoom in magnifier icon"
+    },
+    {
+      "name": "Material: Error",
+      "aliases": [
+        "Error",
+        "Alert Error",
+        "Failure",
+        "Failed",
+        "Critical"
+      ],
+      "file": "google/material/error.png",
+      "description": "Material Design error circle icon"
+    },
+    {
+      "name": "Material: Warning",
+      "aliases": [
+        "Warning",
+        "Alert",
+        "Caution",
+        "Attention"
+      ],
+      "file": "google/material/warning.png",
+      "description": "Material Design warning triangle icon"
+    },
+    {
+      "name": "Material: Notification Important",
+      "aliases": [
+        "Notification",
+        "Alert Notification",
+        "Important",
+        "Bell"
+      ],
+      "file": "google/material/notification_important.png",
+      "description": "Material Design important notification bell icon"
+    },
+    {
+      "name": "Material: Chat",
+      "aliases": [
+        "Chat",
+        "Messaging",
+        "Conversation",
+        "IM"
+      ],
+      "file": "google/material/chat.png",
+      "description": "Material Design chat bubble icon"
+    },
+    {
+      "name": "Material: Email",
+      "aliases": [
+        "Email",
+        "Mail",
+        "Envelope",
+        "SMTP",
+        "Inbox"
+      ],
+      "file": "google/material/email.png",
+      "description": "Material Design email envelope icon"
+    },
+    {
+      "name": "Material: Forum",
+      "aliases": [
+        "Forum",
+        "Discussion",
+        "Comments",
+        "Thread"
+      ],
+      "file": "google/material/forum.png",
+      "description": "Material Design forum discussion bubbles icon"
+    },
+    {
+      "name": "Material: Message",
+      "aliases": [
+        "Message",
+        "SMS",
+        "Text",
+        "Chat Message"
+      ],
+      "file": "google/material/message.png",
+      "description": "Material Design message bubble icon"
+    },
+    {
+      "name": "Material: Phone",
+      "aliases": [
+        "Phone",
+        "Call",
+        "Telephone",
+        "Voice"
+      ],
+      "file": "google/material/phone.png",
+      "description": "Material Design phone icon"
+    },
+    {
+      "name": "Material: VPN Key",
+      "aliases": [
+        "VPN Key",
+        "Key",
+        "Credential",
+        "Secret",
+        "API Key"
+      ],
+      "file": "google/material/vpn_key.png",
+      "description": "Material Design VPN key icon"
+    },
+    {
+      "name": "Material: Call",
+      "aliases": [
+        "Call",
+        "Phone Call",
+        "Ring",
+        "Dial"
+      ],
+      "file": "google/material/call.png",
+      "description": "Material Design call phone icon"
+    },
+    {
+      "name": "Material: Add",
+      "aliases": [
+        "Add",
+        "Plus",
+        "Create",
+        "New"
+      ],
+      "file": "google/material/add.png",
+      "description": "Material Design add plus icon"
+    },
+    {
+      "name": "Material: Content Copy",
+      "aliases": [
+        "Copy",
+        "Duplicate",
+        "Clone",
+        "Clipboard"
+      ],
+      "file": "google/material/content_copy.png",
+      "description": "Material Design copy/duplicate icon"
+    },
+    {
+      "name": "Material: Flag",
+      "aliases": [
+        "Flag",
+        "Flagged",
+        "Bookmark",
+        "Mark"
+      ],
+      "file": "google/material/flag.png",
+      "description": "Material Design flag icon"
+    },
+    {
+      "name": "Material: Link",
+      "aliases": [
+        "Link",
+        "URL",
+        "Chain",
+        "Hyperlink",
+        "Connection"
+      ],
+      "file": "google/material/link.png",
+      "description": "Material Design link chain icon"
+    },
+    {
+      "name": "Material: Save",
+      "aliases": [
+        "Save",
+        "Floppy Disk",
+        "Persist",
+        "Store"
+      ],
+      "file": "google/material/save.png",
+      "description": "Material Design save floppy disk icon"
+    },
+    {
+      "name": "Material: Send",
+      "aliases": [
+        "Send",
+        "Submit",
+        "Dispatch",
+        "Paper Plane"
+      ],
+      "file": "google/material/send.png",
+      "description": "Material Design send paper plane icon"
+    },
+    {
+      "name": "Material: Report",
+      "aliases": [
+        "Report",
+        "Flag Report",
+        "Issue",
+        "Incident"
+      ],
+      "file": "google/material/report.png",
+      "description": "Material Design report flag icon"
+    },
+    {
+      "name": "Material: Devices",
+      "aliases": [
+        "Devices",
+        "Multi-Device",
+        "Cross-Platform",
+        "Device Fleet"
+      ],
+      "file": "google/material/devices.png",
+      "description": "Material Design multiple devices icon"
+    },
+    {
+      "name": "Material: Smartphone",
+      "aliases": [
+        "Smartphone",
+        "Mobile",
+        "Cell Phone",
+        "Mobile Device"
+      ],
+      "file": "google/material/smartphone.png",
+      "description": "Material Design smartphone icon"
+    },
+    {
+      "name": "Material: Computer",
+      "aliases": [
+        "Computer",
+        "Desktop",
+        "PC",
+        "Workstation",
+        "Server"
+      ],
+      "file": "google/material/computer.png",
+      "description": "Material Design desktop computer icon"
+    },
+    {
+      "name": "Material: Tablet",
+      "aliases": [
+        "Tablet",
+        "iPad",
+        "Tablet Device"
+      ],
+      "file": "google/material/tablet_device.png",
+      "description": "Material Design tablet device icon"
+    },
+    {
+      "name": "Material: Storage",
+      "aliases": [
+        "Storage",
+        "Disk",
+        "Database",
+        "Data Store",
+        "HDD"
+      ],
+      "file": "google/material/storage.png",
+      "description": "Material Design storage disk icon"
+    },
+    {
+      "name": "Material: WiFi",
+      "aliases": [
+        "WiFi",
+        "Wireless",
+        "Wi-Fi",
+        "Signal",
+        "Network Signal"
+      ],
+      "file": "google/material/signal_wifi_4_bar.png",
+      "description": "Material Design WiFi signal bars icon"
+    },
+    {
+      "name": "Material: Bluetooth",
+      "aliases": [
+        "Bluetooth",
+        "BT",
+        "Wireless Bluetooth"
+      ],
+      "file": "google/material/bluetooth.png",
+      "description": "Material Design Bluetooth icon"
+    },
+    {
+      "name": "Material: GPS",
+      "aliases": [
+        "GPS",
+        "Location Fixed",
+        "Geolocation",
+        "Position"
+      ],
+      "file": "google/material/gps_fixed.png",
+      "description": "Material Design GPS fixed location icon"
+    },
+    {
+      "name": "Material: Insert Chart",
+      "aliases": [
+        "Chart",
+        "Bar Graph",
+        "Analytics",
+        "Metrics"
+      ],
+      "file": "google/material/insert_chart.png",
+      "description": "Material Design chart/analytics icon"
+    },
+    {
+      "name": "Material: Pie Chart",
+      "aliases": [
+        "Pie Chart",
+        "Distribution",
+        "Breakdown"
+      ],
+      "file": "google/material/pie_chart.png",
+      "description": "Material Design pie chart icon"
+    },
+    {
+      "name": "Material: Bar Chart",
+      "aliases": [
+        "Bar Chart",
+        "Histogram",
+        "Bar Graph"
+      ],
+      "file": "google/material/bar_chart.png",
+      "description": "Material Design bar chart icon"
+    },
+    {
+      "name": "Material: Show Chart",
+      "aliases": [
+        "Line Chart",
+        "Trend",
+        "Graph",
+        "Time Series"
+      ],
+      "file": "google/material/show_chart.png",
+      "description": "Material Design line chart/trend icon"
+    },
+    {
+      "name": "Material: Table Chart",
+      "aliases": [
+        "Table Chart",
+        "Data Table",
+        "Grid View",
+        "Spreadsheet"
+      ],
+      "file": "google/material/table_chart.png",
+      "description": "Material Design table chart icon"
+    },
+    {
+      "name": "Material: Cloud",
+      "aliases": [
+        "Cloud",
+        "Cloud Service",
+        "Cloud Platform"
+      ],
+      "file": "google/material/cloud.png",
+      "description": "Material Design cloud icon"
+    },
+    {
+      "name": "Material: Cloud Upload",
+      "aliases": [
+        "Cloud Upload",
+        "Upload to Cloud",
+        "Push",
+        "Deploy"
+      ],
+      "file": "google/material/cloud_upload.png",
+      "description": "Material Design cloud upload icon"
+    },
+    {
+      "name": "Material: Cloud Download",
+      "aliases": [
+        "Cloud Download",
+        "Download from Cloud",
+        "Pull",
+        "Fetch"
+      ],
+      "file": "google/material/cloud_download.png",
+      "description": "Material Design cloud download icon"
+    },
+    {
+      "name": "Material: Folder",
+      "aliases": [
+        "Folder",
+        "Directory",
+        "File System",
+        "Catalog"
+      ],
+      "file": "google/material/folder.png",
+      "description": "Material Design folder icon"
+    },
+    {
+      "name": "Material: Attachment",
+      "aliases": [
+        "Attachment",
+        "Paperclip",
+        "Attach",
+        "File Attachment"
+      ],
+      "file": "google/material/attachment.png",
+      "description": "Material Design attachment paperclip icon"
+    },
+    {
+      "name": "Material: File Copy",
+      "aliases": [
+        "File Copy",
+        "Duplicate File",
+        "Copy File"
+      ],
+      "file": "google/material/file_copy.png",
+      "description": "Material Design file copy icon"
+    },
+    {
+      "name": "Material: Upload File",
+      "aliases": [
+        "Upload",
+        "Upload File",
+        "File Upload"
+      ],
+      "file": "google/material/upload_file.png",
+      "description": "Material Design file upload icon"
+    },
+    {
+      "name": "Material: Download",
+      "aliases": [
+        "Download",
+        "Download File",
+        "Save File"
+      ],
+      "file": "google/material/download.png",
+      "description": "Material Design download icon"
+    },
+    {
+      "name": "Material: Desktop Windows",
+      "aliases": [
+        "Desktop",
+        "Desktop PC",
+        "Monitor",
+        "Display",
+        "Screen"
+      ],
+      "file": "google/material/desktop_windows.png",
+      "description": "Material Design desktop monitor icon"
+    },
+    {
+      "name": "Material: Laptop",
+      "aliases": [
+        "Laptop",
+        "Notebook",
+        "Portable Computer"
+      ],
+      "file": "google/material/laptop.png",
+      "description": "Material Design laptop icon"
+    },
+    {
+      "name": "Material: Memory",
+      "aliases": [
+        "Memory",
+        "RAM",
+        "Chip",
+        "Processor",
+        "CPU",
+        "Microchip"
+      ],
+      "file": "google/material/memory.png",
+      "description": "Material Design memory chip icon"
+    },
+    {
+      "name": "Material: Phone Android",
+      "aliases": [
+        "Android Phone",
+        "Android",
+        "Android Device"
+      ],
+      "file": "google/material/phone_android.png",
+      "description": "Material Design Android phone icon"
+    },
+    {
+      "name": "Material: Router",
+      "aliases": [
+        "Router",
+        "Network Router",
+        "Gateway",
+        "Network Device",
+        "Switch"
+      ],
+      "file": "google/material/router.png",
+      "description": "Material Design network router icon"
+    },
+    {
+      "name": "Material: Security",
+      "aliases": [
+        "Security",
+        "Shield",
+        "Protection",
+        "Firewall",
+        "Guard"
+      ],
+      "file": "google/material/security.png",
+      "description": "Material Design security shield icon"
+    },
+    {
+      "name": "Material: Smart Toy",
+      "aliases": [
+        "Smart Toy",
+        "AI",
+        "Bot",
+        "Robot",
+        "Chatbot",
+        "Artificial Intelligence"
+      ],
+      "file": "google/material/smart_toy.png",
+      "description": "Material Design smart toy/robot/AI icon"
+    },
+    {
+      "name": "Material: Keyboard",
+      "aliases": [
+        "Keyboard",
+        "Input",
+        "Type"
+      ],
+      "file": "google/material/keyboard.png",
+      "description": "Material Design keyboard icon"
+    },
+    {
+      "name": "Material: Mouse",
+      "aliases": [
+        "Mouse",
+        "Cursor",
+        "Pointer"
+      ],
+      "file": "google/material/mouse.png",
+      "description": "Material Design mouse icon"
+    },
+    {
+      "name": "Material: Headset",
+      "aliases": [
+        "Headset",
+        "Headphones",
+        "Audio",
+        "Support"
+      ],
+      "file": "google/material/headset.png",
+      "description": "Material Design headset icon"
+    },
+    {
+      "name": "Material: Developer Board",
+      "aliases": [
+        "Developer Board",
+        "Circuit Board",
+        "Hardware",
+        "IoT",
+        "Embedded"
+      ],
+      "file": "google/material/developer_board.png",
+      "description": "Material Design developer/circuit board icon"
+    },
+    {
+      "name": "Material: Camera",
+      "aliases": [
+        "Camera",
+        "Photo Camera",
+        "Capture"
+      ],
+      "file": "google/material/camera.png",
+      "description": "Material Design camera icon"
+    },
+    {
+      "name": "Material: Filter",
+      "aliases": [
+        "Filter",
+        "Funnel",
+        "Sort",
+        "Refine"
+      ],
+      "file": "google/material/filter.png",
+      "description": "Material Design filter icon"
+    },
+    {
+      "name": "Material: Photo",
+      "aliases": [
+        "Photo",
+        "Image",
+        "Picture"
+      ],
+      "file": "google/material/photo.png",
+      "description": "Material Design photo/image icon"
+    },
+    {
+      "name": "Material: Tune",
+      "aliases": [
+        "Tune",
+        "Adjust",
+        "Sliders",
+        "Controls",
+        "Parameters"
+      ],
+      "file": "google/material/tune.png",
+      "description": "Material Design tune/adjust sliders icon"
+    },
+    {
+      "name": "Material: Layers",
+      "aliases": [
+        "Layers",
+        "Stack",
+        "Tiers",
+        "Multi-Layer"
+      ],
+      "file": "google/material/layers.png",
+      "description": "Material Design layers stack icon"
+    },
+    {
+      "name": "Material: Map",
+      "aliases": [
+        "Map",
+        "Geography",
+        "Region",
+        "Territory"
+      ],
+      "file": "google/material/map.png",
+      "description": "Material Design map icon"
+    },
+    {
+      "name": "Material: My Location",
+      "aliases": [
+        "My Location",
+        "Location",
+        "Current Location",
+        "Here"
+      ],
+      "file": "google/material/my_location.png",
+      "description": "Material Design current location crosshair icon"
+    },
+    {
+      "name": "Material: Place",
+      "aliases": [
+        "Place",
+        "Pin",
+        "Location Pin",
+        "Marker",
+        "Destination"
+      ],
+      "file": "google/material/place.png",
+      "description": "Material Design place/location pin icon"
+    },
+    {
+      "name": "Material: Traffic",
+      "aliases": [
+        "Traffic",
+        "Network Traffic",
+        "Load",
+        "Congestion"
+      ],
+      "file": "google/material/traffic.png",
+      "description": "Material Design traffic light icon"
+    },
+    {
+      "name": "Material: Apps",
+      "aliases": [
+        "Apps",
+        "Applications",
+        "Grid",
+        "App Menu"
+      ],
+      "file": "google/material/apps.png",
+      "description": "Material Design apps grid icon"
+    },
+    {
+      "name": "Material: Arrow Back",
+      "aliases": [
+        "Arrow Back",
+        "Back",
+        "Return",
+        "Previous"
+      ],
+      "file": "google/material/arrow_back.png",
+      "description": "Material Design back arrow icon"
+    },
+    {
+      "name": "Material: Arrow Forward",
+      "aliases": [
+        "Arrow Forward",
+        "Forward",
+        "Next",
+        "Continue"
+      ],
+      "file": "google/material/arrow_forward.png",
+      "description": "Material Design forward arrow icon"
+    },
+    {
+      "name": "Material: Cancel",
+      "aliases": [
+        "Cancel",
+        "Abort",
+        "Stop",
+        "X Circle"
+      ],
+      "file": "google/material/cancel.png",
+      "description": "Material Design cancel circle-X icon"
+    },
+    {
+      "name": "Material: Check",
+      "aliases": [
+        "Check",
+        "Tick",
+        "Confirm",
+        "OK",
+        "Yes"
+      ],
+      "file": "google/material/check.png",
+      "description": "Material Design check/tick icon"
+    },
+    {
+      "name": "Material: Close",
+      "aliases": [
+        "Close",
+        "X",
+        "Dismiss",
+        "Exit"
+      ],
+      "file": "google/material/close.png",
+      "description": "Material Design close X icon"
+    },
+    {
+      "name": "Material: Menu",
+      "aliases": [
+        "Menu",
+        "Hamburger",
+        "Navigation Menu",
+        "Three Lines"
+      ],
+      "file": "google/material/menu.png",
+      "description": "Material Design hamburger menu icon"
+    },
+    {
+      "name": "Material: Refresh",
+      "aliases": [
+        "Refresh",
+        "Reload",
+        "Retry",
+        "Reset"
+      ],
+      "file": "google/material/refresh.png",
+      "description": "Material Design refresh/reload icon"
+    },
+    {
+      "name": "Material: Sync",
+      "aliases": [
+        "Sync",
+        "Synchronize",
+        "Replicate",
+        "Bidirectional"
+      ],
+      "file": "google/material/sync.png",
+      "description": "Material Design sync/synchronize icon"
+    },
+    {
+      "name": "Material: VPN Lock",
+      "aliases": [
+        "VPN Lock",
+        "VPN",
+        "Secure Network",
+        "Encrypted Connection"
+      ],
+      "file": "google/material/vpn_lock.png",
+      "description": "Material Design VPN lock/secure network icon"
+    },
+    {
+      "name": "Material: Event Note",
+      "aliases": [
+        "Event Note",
+        "Event",
+        "Calendar Event",
+        "Note",
+        "Agenda"
+      ],
+      "file": "google/material/event_note.png",
+      "description": "Material Design event note/calendar icon"
+    },
+    {
+      "name": "Material: Group",
+      "aliases": [
+        "Group",
+        "Team",
+        "Users",
+        "People Group",
+        "User Group"
+      ],
+      "file": "google/material/group.png",
+      "description": "Material Design group/team icon"
+    },
+    {
+      "name": "Material: People",
+      "aliases": [
+        "People",
+        "Users",
+        "Community",
+        "Team Members"
+      ],
+      "file": "google/material/people.png",
+      "description": "Material Design people icon"
+    },
+    {
+      "name": "Material: Person",
+      "aliases": [
+        "Person",
+        "User",
+        "Individual",
+        "Single User"
+      ],
+      "file": "google/material/person.png",
+      "description": "Material Design person/user icon"
+    },
+    {
+      "name": "Material: Share",
+      "aliases": [
+        "Share",
+        "Distribute",
+        "Broadcast",
+        "Publish"
+      ],
+      "file": "google/material/share.png",
+      "description": "Material Design share icon"
+    },
+    {
+      "name": "Material: Public",
+      "aliases": [
+        "Public",
+        "Globe",
+        "World",
+        "Global",
+        "Earth",
+        "Internet"
+      ],
+      "file": "google/material/public.png",
+      "description": "Material Design public globe/earth icon"
+    },
+    {
+      "name": "Material: School",
+      "aliases": [
+        "School",
+        "Education",
+        "Learning",
+        "Training",
+        "Academic"
+      ],
+      "file": "google/material/school.png",
+      "description": "Material Design school/education cap icon"
+    },
+    {
+      "name": "Material: Engineering",
+      "aliases": [
+        "Engineering",
+        "Engineer",
+        "DevOps",
+        "SRE",
+        "Technical"
+      ],
+      "file": "google/material/engineering.png",
+      "description": "Material Design engineering hard hat icon"
+    },
+    {
+      "name": "Material: Star",
+      "aliases": [
+        "Star",
+        "Favorite",
+        "Rating",
+        "Starred",
+        "Bookmark"
+      ],
+      "file": "google/material/star.png",
+      "description": "Material Design star/favorite icon"
+    },
+    {
+      "name": "Material: Toggle On",
+      "aliases": [
+        "Toggle On",
+        "Enabled",
+        "Active",
+        "Switch On",
+        "On"
+      ],
+      "file": "google/material/toggle_on.png",
+      "description": "Material Design toggle switch on icon"
+    },
+    {
+      "name": "Material: Toggle Off",
+      "aliases": [
+        "Toggle Off",
+        "Disabled",
+        "Inactive",
+        "Switch Off",
+        "Off"
+      ],
+      "file": "google/material/toggle_off.png",
+      "description": "Material Design toggle switch off icon"
+    },
+    {
+      "name": "GitHub",
+      "aliases": [
+        "GitHub Actions",
+        "GitHub Repo",
+        "GitHub Repository",
+        "Dev Branch",
+        "UAT Branch",
+        "Main Branch",
+        "Pull Request",
+        "GitHub Enterprise"
+      ],
+      "file": "vendor/github.png",
+      "description": "GitHub Octocat mark, black on transparent"
+    },
+    {
+      "name": "SAP",
+      "aliases": [
+        "SAP ERP",
+        "SAP / IFS",
+        "SAP S/4HANA",
+        "SAP IFS"
+      ],
+      "file": "vendor/sap.png",
+      "description": "SAP blue wordmark logo"
+    },
+    {
+      "name": "Icertis",
+      "aliases": [
+        "iCertis",
+        "Icertis CLM",
+        "iCertis CLM",
+        "Contract Lifecycle Management"
+      ],
+      "file": "vendor/icertis.png",
+      "description": "Icertis contract lifecycle management wordmark logo"
+    },
+    {
+      "name": "Google Drive",
+      "aliases": [
+        "Drive",
+        "Google Workspace Drive",
+        "Enterprise Documents"
+      ],
+      "file": "vendor/google_drive.png",
+      "description": "Official Google Drive product icon"
+    },
+    {
+      "name": "Confluence",
+      "aliases": [
+        "Atlassian Confluence",
+        "Enterprise Wiki",
+        "Knowledge Documents"
+      ],
+      "file": "vendor/confluence.png",
+      "description": "Confluence product mark"
+    },
+    {
+      "name": "Lynx",
+      "aliases": [
+        "GFS Lynx",
+        "Lynx operational system",
+        "Lynx application"
+      ],
+      "file": "vendor/lynx.png",
+      "description": "Neutral blue lynx-head icon for the GFS Lynx enterprise system"
+    }
+  ]
+}

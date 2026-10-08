@@ -7,7 +7,7 @@
 ## 项目定位
 
 这是一个 **AI Coding Skills 分发包**。核心活动：
-1. 编写 `{skill-name}/SKILL.md` — 定义 skill 的触发方式和执行流程
+1. 编写 `skills/{skill-name}/SKILL.md` — 定义 skill 的触发方式和执行流程
 2. 维护 `scripts/postinstall.js` — 保证安装后正确分发到各 AI 工具目录
 3. 通过 `npm install github:five-five0909/Fifine-skills` 向消费项目分发
 
