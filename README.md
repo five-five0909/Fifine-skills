@@ -83,13 +83,15 @@ correctable rules into global agent instructions. `fifine-file-naming-organizer`
 applies the 【状态标签】+YYYYMMDD+核心信息+版本号 formula: it proposes canonical names
 for new files, audits an existing folder read-only, and executes a confirmed
 rename/move plan with 定稿 locking, conflict refusal, a mapping log, and rollback.
-The visual creation family includes `fifine-visual-creation-orchestrator` as the
-global entry point for classifying drawing requests and delegating to one
-specialized visual skill. It routes to `generative-ui` for interactive HTML/SVG
-widgets, `scientific-figure-making`, `academic-figure-skill`, and
-`nature-figure` for publication and high-impact journal figures,
-`baoyu-image-gen` and `stem-illustration` for AI image and STEM illustration
-generation, and `tech-diagrams` for architecture and system diagrams.
+The visual creation family includes `fifine-visual-creation-orchestrator` as an
+AI-paper Figure Planner for NeurIPS/ICML/ICLR/ACL/CVPR and Nature-family work.
+It maps scientific questions to an 18-category, 180-type registry, plans
+Nature/NMI multi-panel evidence chains, prefers R for suitable statistical and
+composition work, and selects Python, Graphviz/SVG, interactive, specialist, or
+runtime-exposed generative engines by figure type. Existing visual skills remain
+the semantic and rendering specialists for publication figures, STEM
+illustrations, architecture diagrams, interactive visuals, and provider-based
+image generation.
 
 See [`skills.json`](skills.json) for the complete, machine-readable skill index.
 

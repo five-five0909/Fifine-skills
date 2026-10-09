@@ -181,7 +181,7 @@
     {
       "name": "fifine-visual-creation-orchestrator",
       "path": "skills/fifine-visual-creation-orchestrator",
-      "description": "Global visual-creation routing skill that classifies drawing requests and delegates to the most appropriate image, figure, diagram, UI, STEM, or publication-figure skill."
+      "description": "Scientific-question-driven Figure Planner for AI and computer-science papers: selects from an 18-category, 180-type registry, plans Nature/NMI multi-panel evidence chains, chooses R/Python/Graphviz or generative backends, and delegates to specialized visual skills."
     }
   ]
 }

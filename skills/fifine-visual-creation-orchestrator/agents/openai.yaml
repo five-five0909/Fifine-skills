@@ -1,5 +1,5 @@
 interface:
   display_name: "fifine-visual-creation-orchestrator"
-  short_description: "Route visual requests to the right drawing skill."
+  short_description: "Plan Nature-grade AI paper figures from research questions."
   icon: "palette"
   brand_color: "#9333EA"
