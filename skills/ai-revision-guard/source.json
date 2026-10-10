@@ -1,0 +1,104 @@
+{
+  "name": "ai-revision-guard",
+  "repository_url": "https://github.com/ShiyanW/ai-revision-guard",
+  "commit": "85e72d63b17dc92e71909d59e72c34c1222e6868",
+  "download_url": "https://codeload.github.com/ShiyanW/ai-revision-guard/tar.gz/85e72d63b17dc92e71909d59e72c34c1222e6868",
+  "license": {
+    "declared": "MIT",
+    "path": "LICENSE",
+    "upstream_path": "references/upstream/LICENSE",
+    "third_party_concerns": []
+  },
+  "distribution_status": "publishable",
+  "components": [
+    {
+      "original": "LICENSE",
+      "local": "references/upstream/LICENSE",
+      "sha256": "56c65ac667a606828fbd9eb5a252892e9384b8cfb6aef48d2522d4587c7b72d2",
+      "kind": "license"
+    },
+    {
+      "original": "SKILL.md",
+      "local": "references/upstream/INSTRUCTIONS.md",
+      "sha256": "9d348a51cd39f46173c5e6c40772eb9f1a9af04c7b52e57ddf50ebaac8096cde",
+      "kind": "instruction_reference"
+    },
+    {
+      "original": "examples/economics-revision-demo.md",
+      "local": "references/upstream/examples/economics-revision-demo.md",
+      "sha256": "57bd6bf4441c659bf206ab3dde68b7ade129f6ea474f99935257b012340dc843",
+      "kind": "resource"
+    },
+    {
+      "original": "references/domain-presets.md",
+      "local": "references/upstream/references/domain-presets.md",
+      "sha256": "f490b365199d9c3e95027a57ca78d40efd253ac06280e717b4ff6fcaeed871aa",
+      "kind": "resource"
+    },
+    {
+      "original": "references/over-refinement-patterns.md",
+      "local": "references/upstream/references/over-refinement-patterns.md",
+      "sha256": "74c0b59c37a9cd394d6f92987d1583b724de706c1d0dd5fcce087d03ea7e49e2",
+      "kind": "resource"
+    },
+    {
+      "original": "references/research-evidence.md",
+      "local": "references/upstream/references/research-evidence.md",
+      "sha256": "c8ec543af20105ef24adca186257d167012c563333f1cf6bb3d67b8a0a4e0cde",
+      "kind": "resource"
+    },
+    {
+      "original": "scripts/diff-check.py",
+      "local": "references/upstream/scripts/diff-check.py",
+      "sha256": "4fdb3e5b124dbe63203e9b4ce5c994f48e37c0b15328d467a8761e6d62f7d4c8",
+      "kind": "script"
+    }
+  ],
+  "instruction_paths": [
+    "references/upstream/INSTRUCTIONS.md"
+  ],
+  "original_to_local": {
+    "LICENSE": "references/upstream/LICENSE",
+    "SKILL.md": "references/upstream/INSTRUCTIONS.md",
+    "examples/economics-revision-demo.md": "references/upstream/examples/economics-revision-demo.md",
+    "references/domain-presets.md": "references/upstream/references/domain-presets.md",
+    "references/over-refinement-patterns.md": "references/upstream/references/over-refinement-patterns.md",
+    "references/research-evidence.md": "references/upstream/references/research-evidence.md",
+    "scripts/diff-check.py": "references/upstream/scripts/diff-check.py"
+  },
+  "excluded_upstream_paths": [
+    ".claude-plugin/plugin.json",
+    ".gitignore",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "evals/evals.json"
+  ],
+  "modifications": [
+    "Original instruction documents are inert reference material; root adapter controls execution and evidence integrity.",
+    "Rename every retained upstream SKILL.md to INSTRUCTIONS.md without changing its contents; relative resources and scripts otherwise retain their original paths.",
+    "Copy upstream LICENSE to root LICENSE for discoverability.",
+    "Exclude installers, host/plugin configuration, packaging files, unnecessary README files, caches and test/evaluation fixtures; no upstream scripts or installers executed.",
+    "Add original host-neutral root SKILL.md and agents/openai.yaml using the visual orchestrator interface format; evidence integrity overrides upstream rhetoric."
+  ],
+  "execution_policy": {
+    "upstream_instructions": "reference_only",
+    "automatic_scripts": false,
+    "external_uploads": false
+  },
+  "upstream_payload_file_count": 7,
+  "adapter_files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "source.json",
+    "LICENSE"
+  ],
+  "instruction_review": {
+    "authority": "All upstream instructions/prompts/examples are isolated as reference only. Root adapter is the active entry point.",
+    "risk_notes": [
+      "Optional cross-model verification can disclose manuscript content externally; adapter prohibits automatic uploads and requires explicit disclosure authorization.",
+      "Hedge-density and confidence-erosion heuristics do not justify removing evidence-required uncertainty."
+    ]
+  },
+  "local_total_file_count": 11
+}

@@ -1,0 +1,5 @@
+interface:
+  display_name: "kiterlin-anti-defensive-writing"
+  short_description: "Remove defensive rhetoric without losing evidence."
+  icon: "pencil"
+  brand_color: "#9333EA"

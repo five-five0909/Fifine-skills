@@ -30,7 +30,7 @@ Create `skills.json` in your project root to control which skills are installed 
 }
 ```
 
-Omit `include` to install all publishable skills. Omit `targets` to auto-detect from existing directories.
+Omit `include` to install all available publishable skills. Omit `targets` to auto-detect existing `.claude`, `.codex` and `.agents` directories; if none exist, installation is skipped. The root `skills.json` is the local scanner index, not the installation whitelist. See README's recommended writing `include` bundle; selecting only the orchestrator does not install specialists or resolve dependencies.
 
 ## Publishable skills
 
@@ -72,14 +72,38 @@ Omit `include` to install all publishable skills. Omit `targets` to auto-detect 
 | academic-figure-skill | 面向 Nature/Cell/Science 风格投稿的学术图表规划、润色、QA 与导出 |
 | nature-figure | 面向 Nature/高影响力期刊的 Python/R 投稿级科学图表工作流 |
 | fifine-visual-creation-orchestrator | 面向 AI/计算机顶会与 Nature 投稿的科研 Figure Planner：按科学问题从 18 类 180 图型中选图，规划多 panel 证据链、Nature/NMI 风格、后端与专业 skill |
+| fifine-writing-orchestrator | 写作策划与主导编排：唯一主笔、按需专家、事实/原文锁定优先、缺失技能诚实降级 |
+| kiterlin-anti-defensive-writing | MIT 来源适配器，保留证据边界的去防御式改写 |
+| adkid-anti-defensive-writing | MIT 中英文贡献叙事与去防御式表达适配器 |
+| academic-defensive-writing-auditor | MIT 学术防御式表达审计，区分修辞冗余与科学边界 |
+| ai-revision-guard | MIT 最小修改与原文对照，防止过度精修和事实漂移 |
+| nature-paper-skills | MIT/Apache-2.0 获许可子集，保留署名/NOTICE；未许可 rebuttal-response 不发布 |
+
+## Local/imported writing skills and licensing
+
+Seven imported root adapters exist locally: `kiterlin-anti-defensive-writing`, `adkid-anti-defensive-writing`, `academic-defensive-writing-auditor`, `ai-revision-guard`, `nature-paper-skills`, `momojee-writing-skills`, and `writing-guard-skill`. The eighth root skill, `fifine-writing-orchestrator`, is the original thin orchestration layer. The scanner index includes all eight, but is not a redistribution authorization.
+
+`momojee-writing-skills` is local-only because of mixed unresolved/noncommercial licenses. `writing-guard-skill` is local-only pending missing third-party Apache attribution/notices despite its declared MIT license. Both are absent from the publishable whitelist and excluded by exact `.npmignore` paths. Nature's unresolved `references/upstream/skills/core/rebuttal-response/` is excluded from both npm archives and postinstall copying, including direct GitHub installs. Its `source.json` describes the retained local inventory, not unconditional shipped availability; check the optional file exists before using it and disclose its absence.
+
+Retain each imported package's `source.json`, applicable licenses, attributions and notices. Downloaded or public on GitHub does not mean cleared for redistribution; the root MIT declaration does not override component licenses. Other source scanners/installers can discover local-only entries and require explicit selection; postinstall's whitelist does not control those tools.
 
 ## Skill Routing
 
+Automatic natural-language routing depends on host discovery of installed skill metadata; it is not guaranteed. Use one lead writer, optional specialists, evidence-first constraints and actual availability checks with disclosed fallback; do not create competing dispatchers or repeat full rewrites. This integration is reviewed statically only: no runtime tests, installation or skill execution.
+
 | 用户意图 | Skill |
 |----------|-------|
+| 自然语言写作策划、起草、改写或审校，需要选一个主笔并按需组合专家 | fifine-writing-orchestrator |
+| 通用 STEMM 论文、学位论文分章节写作 | fifine-science-research-writing-skills |
+| Nature 类全稿结构、Review/Survey 架构、引文/统计/投稿专项审校 | nature-paper-skills |
+| 原文锁定、最小修改、防止反复精修和事实漂移 | ai-revision-guard |
+| 防御式表达诊断（默认只审计） | academic-defensive-writing-auditor |
+| 保留证据、局限和负结果的去防御式改写 | kiterlin-anti-defensive-writing |
+| 需要重构中英文贡献叙事，且证据支持 | adkid-anti-defensive-writing |
 | ML/CV/NLP 论文分章节写作、改写、段落逻辑和审稿人自检 | fifine-research-paper-writing |
 | 英文科技论文句子/段落/IMRaD 章节润色，需短语库、时态、衔接和语态指导 | fifine-english-research-write |
-| 学术写作有模板化或 AI 味，需在不改变事实的前提下修订 | fifine-live-humanizer |
+| 英文学术写作有模板化或 AI 味，需保真润色 | fifine-english-research-write，按需 ai-revision-guard |
+| 中文面向读者创作/改稿有模板化或 AI 味 | fifine-live-humanizer（中文风格/标点约束不得扩散到英文论文） |
 | 写作/改写时需要先选择角色、按角色特点输出 | fifine-writing-style |
 | 证明数学题，形式化验证 | fifine-rethlas |
 | 方案压力测试、找逻辑漏洞 | fifine-grill-me-cn |

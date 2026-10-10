@@ -1,0 +1,5 @@
+interface:
+  display_name: "adkid-anti-defensive-writing"
+  short_description: "Refine Chinese and English evidence-first arguments."
+  icon: "pencil"
+  brand_color: "#9333EA"

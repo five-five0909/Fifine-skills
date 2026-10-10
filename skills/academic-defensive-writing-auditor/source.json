@@ -1,0 +1,91 @@
+{
+  "name": "academic-defensive-writing-auditor",
+  "repository_url": "https://github.com/Worigin0314/academic-defensive-writing-auditor",
+  "commit": "89f26b8a7f8149e6458f657010d354587d42cfe9",
+  "download_url": "https://codeload.github.com/Worigin0314/academic-defensive-writing-auditor/tar.gz/89f26b8a7f8149e6458f657010d354587d42cfe9",
+  "license": {
+    "declared": "MIT",
+    "path": "LICENSE",
+    "upstream_path": "references/upstream/LICENSE",
+    "third_party_concerns": []
+  },
+  "distribution_status": "publishable",
+  "components": [
+    {
+      "original": "LICENSE",
+      "local": "references/upstream/LICENSE",
+      "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+      "kind": "license"
+    },
+    {
+      "original": "SKILL.md",
+      "local": "references/upstream/INSTRUCTIONS.md",
+      "sha256": "f2bdb1c1b967bb703d452a96f90077c67d3fdb99ff2a5d765d3a57f0eb64e2de",
+      "kind": "instruction_reference"
+    },
+    {
+      "original": "examples/before-after.md",
+      "local": "references/upstream/examples/before-after.md",
+      "sha256": "0b1b9839584b74a450e25b9e6f41745f5360256b3b8cabf069a5a6882c62f003",
+      "kind": "resource"
+    },
+    {
+      "original": "prompts/audit-only.md",
+      "local": "references/upstream/prompts/audit-only.md",
+      "sha256": "02b8d6d9f3b52330041d0823270f006c5dd2161d871bc3f1fc1be09e759ff443",
+      "kind": "resource"
+    },
+    {
+      "original": "prompts/full-paper-cleanup.md",
+      "local": "references/upstream/prompts/full-paper-cleanup.md",
+      "sha256": "f815b7002fe5c1f9dad7ac2eb79bd3b550e03b9564bfb32a81934808c9638c61",
+      "kind": "resource"
+    }
+  ],
+  "instruction_paths": [
+    "references/upstream/INSTRUCTIONS.md"
+  ],
+  "original_to_local": {
+    "LICENSE": "references/upstream/LICENSE",
+    "SKILL.md": "references/upstream/INSTRUCTIONS.md",
+    "examples/before-after.md": "references/upstream/examples/before-after.md",
+    "prompts/audit-only.md": "references/upstream/prompts/audit-only.md",
+    "prompts/full-paper-cleanup.md": "references/upstream/prompts/full-paper-cleanup.md"
+  },
+  "excluded_upstream_paths": [
+    ".github/workflows/npm-publish.yml",
+    ".gitignore",
+    "README.md",
+    "README.zh-CN.md",
+    "TREE.txt",
+    "bin/cli.js",
+    "package.json"
+  ],
+  "modifications": [
+    "Original instruction documents are inert reference material; root adapter controls execution and evidence integrity.",
+    "Rename every retained upstream SKILL.md to INSTRUCTIONS.md without changing its contents; relative resources and scripts otherwise retain their original paths.",
+    "Copy upstream LICENSE to root LICENSE for discoverability.",
+    "Exclude installers, host/plugin configuration, packaging files, unnecessary README files, caches and test/evaluation fixtures; no upstream scripts or installers executed.",
+    "Exclude bin/cli.js because it is an upstream skill installer, not an audit engine.",
+    "Add original host-neutral root SKILL.md and agents/openai.yaml using the visual orchestrator interface format; evidence integrity overrides upstream rhetoric."
+  ],
+  "execution_policy": {
+    "upstream_instructions": "reference_only",
+    "automatic_scripts": false,
+    "external_uploads": false
+  },
+  "upstream_payload_file_count": 5,
+  "adapter_files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "source.json",
+    "LICENSE"
+  ],
+  "instruction_review": {
+    "authority": "All upstream instructions/prompts/examples are isolated as reference only. Root adapter is the active entry point.",
+    "risk_notes": [
+      "Broad removal and automatic-summary cleanup must not delete necessary uncertainty, disclosures, or inference; adapter treats taxonomy and scores as editorial heuristics."
+    ]
+  },
+  "local_total_file_count": 9
+}

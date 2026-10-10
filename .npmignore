@@ -14,3 +14,9 @@ build/
 .trellis/
 .claude/
 .codex/
+
+# Downloaded local-only packages are not cleared for redistribution.
+/skills/momojee-writing-skills/
+/skills/writing-guard-skill/
+# Nature has a mixed-license payload; retain licensed components and notices.
+/skills/nature-paper-skills/references/upstream/skills/core/rebuttal-response/

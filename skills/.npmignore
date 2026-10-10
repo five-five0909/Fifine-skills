@@ -1,0 +1,4 @@
+# Nested rules apply even when package.json explicitly includes skills.
+/momojee-writing-skills/
+/writing-guard-skill/
+/nature-paper-skills/references/upstream/skills/core/rebuttal-response/

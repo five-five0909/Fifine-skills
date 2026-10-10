@@ -182,6 +182,46 @@
       "name": "fifine-visual-creation-orchestrator",
       "path": "skills/fifine-visual-creation-orchestrator",
       "description": "Scientific-question-driven Figure Planner for AI and computer-science papers: selects from an 18-category, 180-type registry, plans Nature/NMI multi-panel evidence chains, chooses R/Python/Graphviz or generative backends, and delegates to specialized visual skills."
+    },
+    {
+      "name": "kiterlin-anti-defensive-writing",
+      "path": "skills/kiterlin-anti-defensive-writing",
+      "description": "MIT adapter for evidence-preserving reduction of unnecessary defensive framing in academic and professional drafts."
+    },
+    {
+      "name": "adkid-anti-defensive-writing",
+      "path": "skills/adkid-anti-defensive-writing",
+      "description": "MIT bilingual adapter for Chinese and English academic contribution narratives and anti-defensive revision without hiding limitations or negative results."
+    },
+    {
+      "name": "academic-defensive-writing-auditor",
+      "path": "skills/academic-defensive-writing-auditor",
+      "description": "MIT academic defensive-prose auditor; distinguishes removable rhetoric from necessary scientific boundaries, with audit-only default."
+    },
+    {
+      "name": "ai-revision-guard",
+      "path": "skills/ai-revision-guard",
+      "description": "MIT minimal-revision guard against over-refinement, voice erasure, specificity loss, and scientific claim drift."
+    },
+    {
+      "name": "writing-guard-skill",
+      "path": "skills/writing-guard-skill",
+      "description": "Local-only scientific text audit adapter with an optional standalone Node scanner; excluded from public distribution pending third-party license and notice resolution."
+    },
+    {
+      "name": "momojee-writing-skills",
+      "path": "skills/momojee-writing-skills",
+      "description": "Local-only MoMoJee research writing, LaTeX prose, lab-report and review bundle; mixed unresolved and noncommercial licenses, not publicly installable."
+    },
+    {
+      "name": "nature-paper-skills",
+      "path": "skills/nature-paper-skills",
+      "description": "Scientific manuscript drafting, review, structure, citation, statistics and submission guidance with retained MIT/Apache notices; unresolved rebuttal-response payload is local-only and omitted from public installs."
+    },
+    {
+      "name": "fifine-writing-orchestrator",
+      "path": "skills/fifine-writing-orchestrator",
+      "description": "Host-neutral writing planner and orchestrator: selects one lead writer and optional specialists by language, genre, evidence and edit scope; preserves facts and original locks, checks actual skill availability, and discloses missing-skill fallback."
     }
   ]
 }

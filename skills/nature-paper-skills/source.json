@@ -1,0 +1,1993 @@
+{
+  "schema_version": 1,
+  "name": "nature-paper-skills",
+  "repository": "https://github.com/Boom5426/Nature-Paper-Skills",
+  "commit": "b4822bf0f526c727a1fdd7f2d99d356876c81937",
+  "status": "publishable_with_local_only_exclusions",
+  "wrapper_status": "publishable",
+  "upstream_text_modified": false,
+  "path_changes": "Every original SKILL.md is renamed INSTRUCTIONS.md; all other retained relative resource paths are preserved.",
+  "root_license_files": [
+    "references/upstream/ATTRIBUTION.md",
+    "references/upstream/LICENSE",
+    "references/upstream/LICENSE-APACHE",
+    "references/upstream/NOTICE"
+  ],
+  "components": [
+    {
+      "component": "docs",
+      "original_path": "docs",
+      "local_path": "references/upstream/docs",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 12
+    },
+    {
+      "component": "examples",
+      "original_path": "examples",
+      "local_path": "references/upstream/examples",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 4
+    },
+    {
+      "component": "root-legal",
+      "original_path": "root-legal",
+      "local_path": "references/upstream",
+      "license": "MIT",
+      "license_files": [
+        "references/upstream/ATTRIBUTION.md",
+        "references/upstream/LICENSE",
+        "references/upstream/LICENSE-APACHE",
+        "references/upstream/NOTICE"
+      ],
+      "status": "publishable",
+      "file_count": 4
+    },
+    {
+      "component": "scripts",
+      "original_path": "scripts",
+      "local_path": "references/upstream/scripts",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 1
+    },
+    {
+      "component": "skills/core/anti-defensive-writing",
+      "original_path": "skills/core/anti-defensive-writing",
+      "local_path": "references/upstream/skills/core/anti-defensive-writing",
+      "license": "MIT",
+      "license_files": [
+        "references/upstream/skills/core/anti-defensive-writing/LICENSE"
+      ],
+      "status": "publishable",
+      "file_count": 4
+    },
+    {
+      "component": "skills/core/citation-verifier",
+      "original_path": "skills/core/citation-verifier",
+      "local_path": "references/upstream/skills/core/citation-verifier",
+      "license": "MIT AND Apache-2.0",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 5
+    },
+    {
+      "component": "skills/core/claim-source-verification",
+      "original_path": "skills/core/claim-source-verification",
+      "local_path": "references/upstream/skills/core/claim-source-verification",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 3
+    },
+    {
+      "component": "skills/core/data-availability",
+      "original_path": "skills/core/data-availability",
+      "local_path": "references/upstream/skills/core/data-availability",
+      "license": "MIT AND Apache-2.0",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 6
+    },
+    {
+      "component": "skills/core/draft-marker-discipline",
+      "original_path": "skills/core/draft-marker-discipline",
+      "local_path": "references/upstream/skills/core/draft-marker-discipline",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 3
+    },
+    {
+      "component": "skills/core/figure-planner",
+      "original_path": "skills/core/figure-planner",
+      "local_path": "references/upstream/skills/core/figure-planner",
+      "license": "MIT AND Apache-2.0",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 1
+    },
+    {
+      "component": "skills/core/manuscript-optimizer",
+      "original_path": "skills/core/manuscript-optimizer",
+      "local_path": "references/upstream/skills/core/manuscript-optimizer",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 1
+    },
+    {
+      "component": "skills/core/paper-bootstrap",
+      "original_path": "skills/core/paper-bootstrap",
+      "local_path": "references/upstream/skills/core/paper-bootstrap",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 2
+    },
+    {
+      "component": "skills/core/paper-workflow",
+      "original_path": "skills/core/paper-workflow",
+      "local_path": "references/upstream/skills/core/paper-workflow",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 3
+    },
+    {
+      "component": "skills/core/rebuttal-response",
+      "original_path": "skills/core/rebuttal-response",
+      "local_path": "references/upstream/skills/core/rebuttal-response",
+      "license": "unresolved_upstream_license",
+      "license_files": [],
+      "status": "local_only",
+      "file_count": 4
+    },
+    {
+      "component": "skills/core/results-section-revision",
+      "original_path": "skills/core/results-section-revision",
+      "local_path": "references/upstream/skills/core/results-section-revision",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 1
+    },
+    {
+      "component": "skills/core/review-article-architecture",
+      "original_path": "skills/core/review-article-architecture",
+      "local_path": "references/upstream/skills/core/review-article-architecture",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 3
+    },
+    {
+      "component": "skills/core/scientific-prose-style",
+      "original_path": "skills/core/scientific-prose-style",
+      "local_path": "references/upstream/skills/core/scientific-prose-style",
+      "license": "Apache-2.0",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 1
+    },
+    {
+      "component": "skills/core/scientific-writing",
+      "original_path": "skills/core/scientific-writing",
+      "local_path": "references/upstream/skills/core/scientific-writing",
+      "license": "MIT AND Apache-2.0",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 8
+    },
+    {
+      "component": "skills/core/stats-reporting-audit",
+      "original_path": "skills/core/stats-reporting-audit",
+      "local_path": "references/upstream/skills/core/stats-reporting-audit",
+      "license": "Apache-2.0",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 6
+    },
+    {
+      "component": "skills/core/submission-audit",
+      "original_path": "skills/core/submission-audit",
+      "local_path": "references/upstream/skills/core/submission-audit",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 2
+    },
+    {
+      "component": "skills/core/write-scientific-manuscript",
+      "original_path": "skills/core/write-scientific-manuscript",
+      "local_path": "references/upstream/skills/core/write-scientific-manuscript",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 3
+    },
+    {
+      "component": "skills/optional/conference-paper-writing",
+      "original_path": "skills/optional/conference-paper-writing",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 47
+    },
+    {
+      "component": "skills/optional/reference-audit-guide",
+      "original_path": "skills/optional/reference-audit-guide",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 10
+    },
+    {
+      "component": "skills/research/academic-researcher",
+      "original_path": "skills/research/academic-researcher",
+      "local_path": "references/upstream/skills/research/academic-researcher",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 1
+    },
+    {
+      "component": "skills/research/paper-analyzer",
+      "original_path": "skills/research/paper-analyzer",
+      "local_path": "references/upstream/skills/research/paper-analyzer",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 3
+    },
+    {
+      "component": "skills/research/results-analysis",
+      "original_path": "skills/research/results-analysis",
+      "local_path": "references/upstream/skills/research/results-analysis",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 11
+    },
+    {
+      "component": "skills/review/paper-reviewer",
+      "original_path": "skills/review/paper-reviewer",
+      "local_path": "references/upstream/skills/review/paper-reviewer",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 7
+    },
+    {
+      "component": "skills/venue/nature-portfolio-playbook",
+      "original_path": "skills/venue/nature-portfolio-playbook",
+      "local_path": "references/upstream/skills/venue/nature-portfolio-playbook",
+      "license": "MIT",
+      "license_files": [],
+      "status": "publishable",
+      "file_count": 2
+    }
+  ],
+  "files": [
+    {
+      "original_path": "ATTRIBUTION.md",
+      "local_path": "references/upstream/ATTRIBUTION.md",
+      "git_blob_sha": "0fb4a60e57cb5e77631af78d4ffb215381229c47",
+      "sha256": "f866d5979dd0a06273b6389e502ad6ea38141820caea9297557e5bb8caa23f3e",
+      "bytes": 14772
+    },
+    {
+      "original_path": "LICENSE",
+      "local_path": "references/upstream/LICENSE",
+      "git_blob_sha": "8823c03da2731585aba0e69ee34309fa3185008a",
+      "sha256": "90ba27dfdbe2a75cfcbf0aeb148b48e521216910c92cba66a5e0c39133f56a86",
+      "bytes": 1065
+    },
+    {
+      "original_path": "LICENSE-APACHE",
+      "local_path": "references/upstream/LICENSE-APACHE",
+      "git_blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "original_path": "NOTICE",
+      "local_path": "references/upstream/NOTICE",
+      "git_blob_sha": "e69fb442b9aaaf768b2edde939fe1bf4cf8c287e",
+      "sha256": "be096f9f9d767139ea2bb106d24233c90e22c63e750b09697e94f980d248d6f0",
+      "bytes": 1462
+    },
+    {
+      "original_path": "docs/compatibility.md",
+      "local_path": "references/upstream/docs/compatibility.md",
+      "git_blob_sha": "7c04ae33052779bdb8f43009de34f826e8aeb9c7",
+      "sha256": "23444adca7ccdace5b0360de6da91517bbbee9e0be0783ff07abd283f419387b",
+      "bytes": 3587
+    },
+    {
+      "original_path": "docs/design-principles.md",
+      "local_path": "references/upstream/docs/design-principles.md",
+      "git_blob_sha": "1303bc16b52679e7cb677eefc0ae14c35c5787ee",
+      "sha256": "4d7b9215155e33e9e2a783fce667b7226ed066b51e60cf1e0a5872261f3498c2",
+      "bytes": 3614
+    },
+    {
+      "original_path": "docs/figure-workflow.md",
+      "local_path": "references/upstream/docs/figure-workflow.md",
+      "git_blob_sha": "11791282ad42b8905c74d7a9c49f71fa9045280c",
+      "sha256": "ce1d6bec1e54dcdf441622b5ed122178dabd70a4eed097d5c2d14d9f2cf94587",
+      "bytes": 2122
+    },
+    {
+      "original_path": "docs/helper-script-boundaries.md",
+      "local_path": "references/upstream/docs/helper-script-boundaries.md",
+      "git_blob_sha": "5c0d335cd0b29820fd12f39116abb24d7d6fcf15",
+      "sha256": "323aa0218349d5edbfb0fbe2d4910a2b7e9b1a82eb465d0ae12e69b29902295f",
+      "bytes": 4367
+    },
+    {
+      "original_path": "docs/installation-chatgpt-work.md",
+      "local_path": "references/upstream/docs/installation-chatgpt-work.md",
+      "git_blob_sha": "dadac8e3865689199ab53595d0af4ed95f773ec0",
+      "sha256": "1923021da6d23e7be214e319bb5ea6472e90b950e9cb49a1f30db9de46ead8ea",
+      "bytes": 8803
+    },
+    {
+      "original_path": "docs/installation-claude.md",
+      "local_path": "references/upstream/docs/installation-claude.md",
+      "git_blob_sha": "c545ce732d0886dc175e7722546a1197779c621d",
+      "sha256": "4333010380b1b20a8440337645a02a1ae1995f39d1486e071285f025dfdf3bca",
+      "bytes": 3034
+    },
+    {
+      "original_path": "docs/installation-codex.md",
+      "local_path": "references/upstream/docs/installation-codex.md",
+      "git_blob_sha": "0aaa11e3ce18e8d3b1e77f16635985822289a48f",
+      "sha256": "b02252235b5ade9728100784918611bd841363d612368e3ace13606d2b5850ac",
+      "bytes": 6436
+    },
+    {
+      "original_path": "docs/installation-management.md",
+      "local_path": "references/upstream/docs/installation-management.md",
+      "git_blob_sha": "3215265d66a0dc3432675ef09831c8e621a74520",
+      "sha256": "92d683b8e17dcf25940adf13961df7fddb954c163fec164af024251e982620e1",
+      "bytes": 9786
+    },
+    {
+      "original_path": "docs/skill-map.md",
+      "local_path": "references/upstream/docs/skill-map.md",
+      "git_blob_sha": "8461a70cf5dcf57546fd5c648d1187910039c049",
+      "sha256": "a68504063f66f51b83e208c081b2e982f86e6fb9c90ec6994a4c52feb1d60a06",
+      "bytes": 3508
+    },
+    {
+      "original_path": "docs/task-recipes.md",
+      "local_path": "references/upstream/docs/task-recipes.md",
+      "git_blob_sha": "06c31be57e46db159435302272a89d2749cd95a9",
+      "sha256": "f37b0d619113e48038de6e0f01673fefab1aa021f75e88dc590b7408639a5a81",
+      "bytes": 2300
+    },
+    {
+      "original_path": "docs/venue-routing.md",
+      "local_path": "references/upstream/docs/venue-routing.md",
+      "git_blob_sha": "c03cca276b3ecb64f95bd3a9da7e71bd6ab3d633",
+      "sha256": "3317be9d3e71e810ca81b16617f483d9302d3b478181108ef20836d711667793",
+      "bytes": 1070
+    },
+    {
+      "original_path": "docs/workflow-map.md",
+      "local_path": "references/upstream/docs/workflow-map.md",
+      "git_blob_sha": "183ae50b12d7183cbce539369efe0b68011c4a49",
+      "sha256": "8f474bdfc7a19aa97167863ac89b812a5f6226bf643aa28285933fdae9689a49",
+      "bytes": 4357
+    },
+    {
+      "original_path": "examples/claim-evidence-map-example.md",
+      "local_path": "references/upstream/examples/claim-evidence-map-example.md",
+      "git_blob_sha": "d586c1bebee9b1328c2cd34de1eeaba4cb3699bd",
+      "sha256": "e51313879c57fee9cfb2de7feec4da77d5fa6a59ea827ecda5f34da03ff9cbbe",
+      "bytes": 517
+    },
+    {
+      "original_path": "examples/paper-handoff-example.md",
+      "local_path": "references/upstream/examples/paper-handoff-example.md",
+      "git_blob_sha": "c3e6e6c468f120dc22a7081a2819cad5ca680b1a",
+      "sha256": "9d81d1c48397dca4f170b3f9d8ecec5c9ed3fdf65231aa164bce100fdb5a4ec0",
+      "bytes": 762
+    },
+    {
+      "original_path": "examples/project-layout.md",
+      "local_path": "references/upstream/examples/project-layout.md",
+      "git_blob_sha": "2835337cb5b2ca29f61e6871810ed9494d2055aa",
+      "sha256": "619832abc2198018ce53614a50db1002b9758e0a612a0ee3250b9279f72d7599",
+      "bytes": 346
+    },
+    {
+      "original_path": "examples/result-summary-example.md",
+      "local_path": "references/upstream/examples/result-summary-example.md",
+      "git_blob_sha": "c9f1561cbc8c59de97a5158a165fcb1c375f5629",
+      "sha256": "fc97046f63042eb03e308ce1dd42fe7d40306d0d8c69485a8eea27aeaf218618",
+      "bytes": 868
+    },
+    {
+      "original_path": "scripts/section_corpus.py",
+      "local_path": "references/upstream/scripts/section_corpus.py",
+      "git_blob_sha": "4598a4bbb1fa1b31c2daddf4ae983ca5ea6cb042",
+      "sha256": "c984601cead61e9ff4d13bda51bf7efd11506c90c5a768b45b1d291d4de7d098",
+      "bytes": 13402
+    },
+    {
+      "original_path": "skills/core/anti-defensive-writing/LICENSE",
+      "local_path": "references/upstream/skills/core/anti-defensive-writing/LICENSE",
+      "git_blob_sha": "50c4372f587d3bd31e635fe892d386091ad7f1f9",
+      "sha256": "cc3d842a912f0ed1fc80ae8d2ca7ab6cff37756422069424bf2edec554219fc9",
+      "bytes": 1065
+    },
+    {
+      "original_path": "skills/core/anti-defensive-writing/SKILL.md",
+      "local_path": "references/upstream/skills/core/anti-defensive-writing/INSTRUCTIONS.md",
+      "git_blob_sha": "c810ac08932d5ff8509d0cbf737d3d76b4c072aa",
+      "sha256": "82cfa3673e2bf78702697e9f311513c6b8a16f5973fc57428e1b46438bc83a1c",
+      "bytes": 21759
+    },
+    {
+      "original_path": "skills/core/anti-defensive-writing/UPSTREAM.md",
+      "local_path": "references/upstream/skills/core/anti-defensive-writing/UPSTREAM.md",
+      "git_blob_sha": "73da7401061b8651bebf22cb03f3eee6e5737b87",
+      "sha256": "7a04fa6e282f2b1e9e183bea72b7a0f371d5342e0bbdf667128764ee75f883a2",
+      "bytes": 2420
+    },
+    {
+      "original_path": "skills/core/anti-defensive-writing/references/worked-examples.md",
+      "local_path": "references/upstream/skills/core/anti-defensive-writing/references/worked-examples.md",
+      "git_blob_sha": "9cd373fdddde563f35bb87b7e267756063ea7883",
+      "sha256": "424034941fa2a4da1c3f3e622c13e4961e257fe4661133539948fd417412b0c7",
+      "bytes": 17945
+    },
+    {
+      "original_path": "skills/core/citation-verifier/SKILL.md",
+      "local_path": "references/upstream/skills/core/citation-verifier/INSTRUCTIONS.md",
+      "git_blob_sha": "5af2cc4fc0d296e92a6428f54ba205339009fc70",
+      "sha256": "0190f692a1e68d9c1851b89deb0d9cdf0a9271ced946c8c31596e10b7aa23542",
+      "bytes": 5778
+    },
+    {
+      "original_path": "skills/core/citation-verifier/references/bibtex-toolchain.md",
+      "local_path": "references/upstream/skills/core/citation-verifier/references/bibtex-toolchain.md",
+      "git_blob_sha": "8893c2139ef4032f476eaca09bb035983bca39ab",
+      "sha256": "eff1e0c18582ed4c1de5fc2c27c811b3a292e6c8674fea2da4da304177889608",
+      "bytes": 9460
+    },
+    {
+      "original_path": "skills/core/citation-verifier/scripts/audit_bib.py",
+      "local_path": "references/upstream/skills/core/citation-verifier/scripts/audit_bib.py",
+      "git_blob_sha": "98428c98839d351b428522c467fd76f0ec9cc4b2",
+      "sha256": "48769b5854441267c424840b8769da9b3604a0578898839900e41cd50e957069",
+      "bytes": 16457
+    },
+    {
+      "original_path": "skills/core/citation-verifier/scripts/citation_syntax.py",
+      "local_path": "references/upstream/skills/core/citation-verifier/scripts/citation_syntax.py",
+      "git_blob_sha": "752011b4bf025d4c709b5d2ca34f7f3cb9ef5f6f",
+      "sha256": "c5335510a424db7d84fcdd9681f4f9690a58e4d8a01a87d4d5819c181d7aafe1",
+      "bytes": 1671
+    },
+    {
+      "original_path": "skills/core/citation-verifier/scripts/scan_citations.py",
+      "local_path": "references/upstream/skills/core/citation-verifier/scripts/scan_citations.py",
+      "git_blob_sha": "08176d571bf209f40c22fe7a45175227557d97a7",
+      "sha256": "83b1d5c7114ff036a503ed36f9a1cd7e84b83677daf21df79da75b93fba949ae",
+      "bytes": 5713
+    },
+    {
+      "original_path": "skills/core/claim-source-verification/SKILL.md",
+      "local_path": "references/upstream/skills/core/claim-source-verification/INSTRUCTIONS.md",
+      "git_blob_sha": "6c3905fb356fe4d58b6030ccc6bec7e1a98dc56c",
+      "sha256": "cd7890fec1752db997e25f1e00840eaaa7efb4606e16c08509578937dc97cde5",
+      "bytes": 11780
+    },
+    {
+      "original_path": "skills/core/claim-source-verification/references/adversarial-protocol.md",
+      "local_path": "references/upstream/skills/core/claim-source-verification/references/adversarial-protocol.md",
+      "git_blob_sha": "a7c3e6c3fca0749a755a7bf9ba001ecff9a57e71",
+      "sha256": "fab7e7c2043076c6f01a8a948ee2f087144ae7cdb020be0bda49ac49d169ca0e",
+      "bytes": 6656
+    },
+    {
+      "original_path": "skills/core/claim-source-verification/references/rejection-taxonomy.md",
+      "local_path": "references/upstream/skills/core/claim-source-verification/references/rejection-taxonomy.md",
+      "git_blob_sha": "2cba5517f41f3f2c6e164736f49de61fa2057549",
+      "sha256": "c4607fbbc586412630e43340830c2ccd3835ac701f87ca98e03accfba827b13b",
+      "bytes": 7339
+    },
+    {
+      "original_path": "skills/core/data-availability/SKILL.md",
+      "local_path": "references/upstream/skills/core/data-availability/INSTRUCTIONS.md",
+      "git_blob_sha": "203fc2aaa95cbbab114684475a05f339c711bb25",
+      "sha256": "8dfc07708b98cf3d08cf565a956b5a969948f21dafc7a2a4c5a93dd86effab5e",
+      "bytes": 5005
+    },
+    {
+      "original_path": "skills/core/data-availability/references/chinese-author-alignment.md",
+      "local_path": "references/upstream/skills/core/data-availability/references/chinese-author-alignment.md",
+      "git_blob_sha": "51eae025229584f143b9b2d2f1ab76bfdd97197a",
+      "sha256": "b2cbab1fb5145251b401d7e770c7965e240453534128281072ab3cdbd4ed5f83",
+      "bytes": 5076
+    },
+    {
+      "original_path": "skills/core/data-availability/references/fair-metadata-checklist.md",
+      "local_path": "references/upstream/skills/core/data-availability/references/fair-metadata-checklist.md",
+      "git_blob_sha": "f97e4b34b9025a8d0199074d27804c7d8a97e89b",
+      "sha256": "35fb836b3310ae50976434f4a36611cf9d0d145c513705e576cffb616fc01f2a",
+      "bytes": 4076
+    },
+    {
+      "original_path": "skills/core/data-availability/references/repository-routing.md",
+      "local_path": "references/upstream/skills/core/data-availability/references/repository-routing.md",
+      "git_blob_sha": "e9acd6abcb3a91c94691209a39ff9581112aff5e",
+      "sha256": "c490926c7c3c0d0247022d802fa32f9e16b719b3d0a4730cb017ac5afebb87de",
+      "bytes": 1142
+    },
+    {
+      "original_path": "skills/core/data-availability/references/source-data-checks.md",
+      "local_path": "references/upstream/skills/core/data-availability/references/source-data-checks.md",
+      "git_blob_sha": "ce8822366280bb04604c7c9d7b60aadd9915ec0e",
+      "sha256": "e44cc2cb3a3ef091363309c32964918bab0b64283bafeef1c226e36485ba89a7",
+      "bytes": 1235
+    },
+    {
+      "original_path": "skills/core/data-availability/references/statement-patterns.md",
+      "local_path": "references/upstream/skills/core/data-availability/references/statement-patterns.md",
+      "git_blob_sha": "0935c4eded0e7ee337c3c0f270eab96156a5d5a1",
+      "sha256": "03704311e48081f727c2ea23be6b2ebf45d6b95f2e0ce200add8a0ff63615871",
+      "bytes": 3765
+    },
+    {
+      "original_path": "skills/core/draft-marker-discipline/SKILL.md",
+      "local_path": "references/upstream/skills/core/draft-marker-discipline/INSTRUCTIONS.md",
+      "git_blob_sha": "e94e0cd0463a2abcfd2bc628693477e5673706b1",
+      "sha256": "f9fb02c8e6a52693cfc19c0f103409b90be133de25113a94ae3357bffa0d4f78",
+      "bytes": 11974
+    },
+    {
+      "original_path": "skills/core/draft-marker-discipline/references/scripted-edit-safety.md",
+      "local_path": "references/upstream/skills/core/draft-marker-discipline/references/scripted-edit-safety.md",
+      "git_blob_sha": "92f27c9657ff6f534423726874dbca1907966af3",
+      "sha256": "e2a3b09fba143644b0ec807b6c067b3cc378572684a594ec32c903f733ebf78c",
+      "bytes": 5284
+    },
+    {
+      "original_path": "skills/core/draft-marker-discipline/scripts/prose_wordcount.py",
+      "local_path": "references/upstream/skills/core/draft-marker-discipline/scripts/prose_wordcount.py",
+      "git_blob_sha": "00ea14826be429cb8b27ea6f4323d9b14174bf74",
+      "sha256": "06b311e5b72209c9bcf84391ba794cdedff5598119e37f213687e0e6fc4a3ecc",
+      "bytes": 11526
+    },
+    {
+      "original_path": "skills/core/figure-planner/SKILL.md",
+      "local_path": "references/upstream/skills/core/figure-planner/INSTRUCTIONS.md",
+      "git_blob_sha": "50e0c3f7db80897e3b646e923b6d6ae14e43f667",
+      "sha256": "d257b2ef12ecdf8374393ff4ad7b9f1afe59bbf1aa123bf155dbe304791af1f3",
+      "bytes": 10140
+    },
+    {
+      "original_path": "skills/core/manuscript-optimizer/SKILL.md",
+      "local_path": "references/upstream/skills/core/manuscript-optimizer/INSTRUCTIONS.md",
+      "git_blob_sha": "8e063446d51142b56bdcd596ab326cc35142e01c",
+      "sha256": "e41faf17d58dfc64f9712717ae9cc049d1d5f5cf8cdbaae0483d6c3242d5ec6a",
+      "bytes": 14436
+    },
+    {
+      "original_path": "skills/core/paper-bootstrap/SKILL.md",
+      "local_path": "references/upstream/skills/core/paper-bootstrap/INSTRUCTIONS.md",
+      "git_blob_sha": "b77bda146b8775b17b66eb8c66603362ed7378c6",
+      "sha256": "c0f5f71b753eb886d27ae871fe782d26db39adb6b3490ddc9428f516d0fbc962",
+      "bytes": 5536
+    },
+    {
+      "original_path": "skills/core/paper-bootstrap/scripts/init_paper_layout.py",
+      "local_path": "references/upstream/skills/core/paper-bootstrap/scripts/init_paper_layout.py",
+      "git_blob_sha": "405ac7e0619d84b4fc59f79fe97636da444402ea",
+      "sha256": "2a6fcf582746f3212b2e36e9c8bcc11726f2807168c0f750b3d0f6da9e478b5a",
+      "bytes": 3670
+    },
+    {
+      "original_path": "skills/core/paper-workflow/SKILL.md",
+      "local_path": "references/upstream/skills/core/paper-workflow/INSTRUCTIONS.md",
+      "git_blob_sha": "82b2ed30e4e469d30a1cf419733933d35a42d3db",
+      "sha256": "5894aa39c9237213afbf9e31d582ad954c8a239f336336593864b180659ad7f7",
+      "bytes": 21445
+    },
+    {
+      "original_path": "skills/core/paper-workflow/references/section-contracts.md",
+      "local_path": "references/upstream/skills/core/paper-workflow/references/section-contracts.md",
+      "git_blob_sha": "31df6391ea539d69c843f9d6f9dd462a0c3c0776",
+      "sha256": "59922cb1281c2099eb085dc6ef56d220f501fab2095c1ed7282c77447d1c5edc",
+      "bytes": 14768
+    },
+    {
+      "original_path": "skills/core/paper-workflow/references/section-evidence.md",
+      "local_path": "references/upstream/skills/core/paper-workflow/references/section-evidence.md",
+      "git_blob_sha": "cb1e4e8b075db92f484dfa2a36d3dbf7340c04a1",
+      "sha256": "256ac8dd7f9b537f41bb5e08b680901c7b1741dfbea3bb90c9bd52ca1fdfb3ab",
+      "bytes": 6049
+    },
+    {
+      "original_path": "skills/core/rebuttal-response/SKILL.md",
+      "local_path": "references/upstream/skills/core/rebuttal-response/INSTRUCTIONS.md",
+      "git_blob_sha": "9ed9de91bc15c43c9693aef90de656234616980d",
+      "sha256": "dbad4612ec6da2ba0a8be1955ee1187489af2a5fe8478e4f723e31ee2b272959",
+      "bytes": 13844
+    },
+    {
+      "original_path": "skills/core/rebuttal-response/references/final-audit.md",
+      "local_path": "references/upstream/skills/core/rebuttal-response/references/final-audit.md",
+      "git_blob_sha": "bd32ab03e058eb4a4fb433bf84373f8379d482c0",
+      "sha256": "b150851543459f8714bb95d71bfcdd03e205df0a09c837a24339cb81fac0369e",
+      "bytes": 5096
+    },
+    {
+      "original_path": "skills/core/rebuttal-response/references/response-patterns.md",
+      "local_path": "references/upstream/skills/core/rebuttal-response/references/response-patterns.md",
+      "git_blob_sha": "ad5e93803228890ae3d9eba76a9205dc9d6b7c02",
+      "sha256": "7709629aa91e3a18db64be3288d77c330e9fbdcc9a69472e37f7643af1148a24",
+      "bytes": 9297
+    },
+    {
+      "original_path": "skills/core/rebuttal-response/references/triage-and-stance.md",
+      "local_path": "references/upstream/skills/core/rebuttal-response/references/triage-and-stance.md",
+      "git_blob_sha": "2c6503501c6221a1476b573c0cd51650b8768fdc",
+      "sha256": "8c20d6c938b7a8cdebe6d60e2452ae7828bd32f35b0e760aebabe7f29124587b",
+      "bytes": 8007
+    },
+    {
+      "original_path": "skills/core/results-section-revision/SKILL.md",
+      "local_path": "references/upstream/skills/core/results-section-revision/INSTRUCTIONS.md",
+      "git_blob_sha": "e8d0360f43bc4aaf414ca44db4d2b81612cf32bb",
+      "sha256": "19324b35fc34ca20e3befb8991c0966cb18bd2e499c9505cf27b54460e23dde3",
+      "bytes": 3665
+    },
+    {
+      "original_path": "skills/core/review-article-architecture/SKILL.md",
+      "local_path": "references/upstream/skills/core/review-article-architecture/INSTRUCTIONS.md",
+      "git_blob_sha": "a205112648420980fcaeb2d6d3fbb0a3f8171a83",
+      "sha256": "237a8900f2d8d79a6834bd0a8b2f5a07a0edb114340e1066dc685747133981f1",
+      "bytes": 13117
+    },
+    {
+      "original_path": "skills/core/review-article-architecture/references/drift-audit.md",
+      "local_path": "references/upstream/skills/core/review-article-architecture/references/drift-audit.md",
+      "git_blob_sha": "0fdc105f11c6accda888e3e10c87cf2dbe694f0c",
+      "sha256": "20c28765e7205a7d4c7c42dfe406d8428042bbce801af6501717659232fc823d",
+      "bytes": 6150
+    },
+    {
+      "original_path": "skills/core/review-article-architecture/references/governing-document.md",
+      "local_path": "references/upstream/skills/core/review-article-architecture/references/governing-document.md",
+      "git_blob_sha": "32ca5814955d7a4c49047f408b27fdee5974de90",
+      "sha256": "26dd98ad7a22672336fe5974696d3783a681d788959c0eab3ddb59657e99e6b6",
+      "bytes": 5335
+    },
+    {
+      "original_path": "skills/core/scientific-prose-style/SKILL.md",
+      "local_path": "references/upstream/skills/core/scientific-prose-style/INSTRUCTIONS.md",
+      "git_blob_sha": "dc2f92f06db82fb72b5450634fb40773bb2c1ca5",
+      "sha256": "a844e2381a2be3f25868b8c753ba51ec8437f0f01cd5532ba743198fa53fd0d8",
+      "bytes": 6488
+    },
+    {
+      "original_path": "skills/core/scientific-writing/SKILL.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/INSTRUCTIONS.md",
+      "git_blob_sha": "0643eecec144ee391050bae1bc43503f0954454b",
+      "sha256": "c379e9df9465ea0e69119e8c7ebdf77ef1c95997753fa3a3bfb958c3933a84ef",
+      "bytes": 31783
+    },
+    {
+      "original_path": "skills/core/scientific-writing/references/citation_styles.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/references/citation_styles.md",
+      "git_blob_sha": "e27d1bb7980e773af55a7fb5d8c7eaeedaa3e4c5",
+      "sha256": "23e4e2d07858d8a73f8c4168fbc74436cfbee4b484a2fa38a6d3d72c09eeaaa9",
+      "bytes": 23705
+    },
+    {
+      "original_path": "skills/core/scientific-writing/references/editor-first-impression.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/references/editor-first-impression.md",
+      "git_blob_sha": "5afbffaaf264b3b5f4926393f223d5ec46b486c8",
+      "sha256": "e92e936977ee8c578b0c3a5e7cf14d04bb05f3d78ac4831779b26b5e1c7d9f66",
+      "bytes": 3913
+    },
+    {
+      "original_path": "skills/core/scientific-writing/references/figures_tables.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/references/figures_tables.md",
+      "git_blob_sha": "4f612425a8bed3c3202ec8abd0c745a899e3e0f8",
+      "sha256": "fdbd4a65f624c0582fb9ee07ede8279e05955bcf1ac1eeaa7c03baf5288f30e3",
+      "bytes": 27883
+    },
+    {
+      "original_path": "skills/core/scientific-writing/references/imrad_structure.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/references/imrad_structure.md",
+      "git_blob_sha": "f6ce1ff03705cd8e6ee4003c6dd2ab8586b0ecf8",
+      "sha256": "d6f44d22c2179329fd9cde7b816a942ab985fd9cdaf8040b3c0832ac1d7e4a05",
+      "bytes": 25791
+    },
+    {
+      "original_path": "skills/core/scientific-writing/references/latex-layout.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/references/latex-layout.md",
+      "git_blob_sha": "4552181d6efb7aab13ddfe4f48f8ec7bc093ea96",
+      "sha256": "83e05dbdf9cac4483278ecda0b5b6eb464993b10a4c9f6b4dcab24508f8952a0",
+      "bytes": 15294
+    },
+    {
+      "original_path": "skills/core/scientific-writing/references/reporting_guidelines.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/references/reporting_guidelines.md",
+      "git_blob_sha": "e9864705275fdd96f9865b00119b0de893642531",
+      "sha256": "02a58157e8e7fe54e241fedb6bc7721c435c16399bdfad62200c1124c766f43c",
+      "bytes": 25012
+    },
+    {
+      "original_path": "skills/core/scientific-writing/references/writing_principles.md",
+      "local_path": "references/upstream/skills/core/scientific-writing/references/writing_principles.md",
+      "git_blob_sha": "83cb57728221de190f9c8c0717066c15c0e26d3a",
+      "sha256": "c786f9fe6f21b346fe3e43da20c4fa19206e93e5488ba9600d45a3b34b8c6c40",
+      "bytes": 27593
+    },
+    {
+      "original_path": "skills/core/stats-reporting-audit/SKILL.md",
+      "local_path": "references/upstream/skills/core/stats-reporting-audit/INSTRUCTIONS.md",
+      "git_blob_sha": "8fc272c201aff5d2189a2d5200e9f3557ed6faf9",
+      "sha256": "a58c2fa55ea014677e01f28fa2f5464dbf969e575a3296c623ccc521764b9e32",
+      "bytes": 8591
+    },
+    {
+      "original_path": "skills/core/stats-reporting-audit/references/common-failure-modes.md",
+      "local_path": "references/upstream/skills/core/stats-reporting-audit/references/common-failure-modes.md",
+      "git_blob_sha": "52326e1648b6878de81546092f0e37d932eb99af",
+      "sha256": "e5d8b56664b2ad94b451569a8a790ffcf04415f330ae1810aa98b25fd98a35e4",
+      "bytes": 4145
+    },
+    {
+      "original_path": "skills/core/stats-reporting-audit/references/figure-statistics.md",
+      "local_path": "references/upstream/skills/core/stats-reporting-audit/references/figure-statistics.md",
+      "git_blob_sha": "8767ce212457270d86936e7c3231cc6959d45e10",
+      "sha256": "734e4b6b6f196f1459dd31c5a99873cbffaa22b6983b3e572c2a19f25b246d02",
+      "bytes": 2966
+    },
+    {
+      "original_path": "skills/core/stats-reporting-audit/references/reviewer-checklist.md",
+      "local_path": "references/upstream/skills/core/stats-reporting-audit/references/reviewer-checklist.md",
+      "git_blob_sha": "a8eac6a9a097abd43dcab5e8931d42f6becff4aa",
+      "sha256": "4e5576e64a28a29bb9fc81f11c44e680d7920d2dea87028cb4102c329c259958",
+      "bytes": 3610
+    },
+    {
+      "original_path": "skills/core/stats-reporting-audit/references/source-basis.md",
+      "local_path": "references/upstream/skills/core/stats-reporting-audit/references/source-basis.md",
+      "git_blob_sha": "d4ffe96faf0be410964a642fb31a197373db9210",
+      "sha256": "a8b511079aa799d858c771fb15ab7b0bfe88d2e2fa6ac0b3fe2f342a2b2bfd9a",
+      "bytes": 3482
+    },
+    {
+      "original_path": "skills/core/stats-reporting-audit/references/statistical-reporting.md",
+      "local_path": "references/upstream/skills/core/stats-reporting-audit/references/statistical-reporting.md",
+      "git_blob_sha": "e485ff59fe7a341870436d92aaba0fcc08c60e0c",
+      "sha256": "7715a2e90130d473c890261c6db3044c1404bcbd0b0b8f8115dec0c2dec66f73",
+      "bytes": 4845
+    },
+    {
+      "original_path": "skills/core/submission-audit/SKILL.md",
+      "local_path": "references/upstream/skills/core/submission-audit/INSTRUCTIONS.md",
+      "git_blob_sha": "6b0f2498448156ceb128471cbdd1505496d8dbfb",
+      "sha256": "21899eb710874b4b73e6518091638b6c2ca1540372efdf39820d0a769b32cb3c",
+      "bytes": 7236
+    },
+    {
+      "original_path": "skills/core/submission-audit/scripts/check_figure_refs.py",
+      "local_path": "references/upstream/skills/core/submission-audit/scripts/check_figure_refs.py",
+      "git_blob_sha": "66155afc43bb5ae05f0c55e75291663b2dba7a74",
+      "sha256": "3fb82e3a47286de50346d038e3d9dab786128878980d4c44ade5c26d092f1bc5",
+      "bytes": 6042
+    },
+    {
+      "original_path": "skills/core/write-scientific-manuscript/SKILL.md",
+      "local_path": "references/upstream/skills/core/write-scientific-manuscript/INSTRUCTIONS.md",
+      "git_blob_sha": "bb41711f5ec13d8c57cbe4f74e983fb2485454a1",
+      "sha256": "358c4eb147ce99d868592123defa215b11d5ea51382361e28ebd25c2519d5793",
+      "bytes": 12109
+    },
+    {
+      "original_path": "skills/core/write-scientific-manuscript/references/language-guide.md",
+      "local_path": "references/upstream/skills/core/write-scientific-manuscript/references/language-guide.md",
+      "git_blob_sha": "bb2106d25eb0ca870dacd265cf9960c04d196f4e",
+      "sha256": "a7293f9fe9938c23c3fbe0f7a644bfe14bfff1e49ab9c404ba79e48bf66c4641",
+      "bytes": 4694
+    },
+    {
+      "original_path": "skills/core/write-scientific-manuscript/references/section-logic.md",
+      "local_path": "references/upstream/skills/core/write-scientific-manuscript/references/section-logic.md",
+      "git_blob_sha": "dc83498db09fd88a325fed4c0bc028bc7bead73a",
+      "sha256": "4bca140ae8b4bead9bb548ecd29bdc1e2fe72413d5421dd1ed432f9340487796",
+      "bytes": 3481
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/SKILL.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/INSTRUCTIONS.md",
+      "git_blob_sha": "443cbd66434690a495edd5672f6f81ee6ac40e21",
+      "sha256": "7ba26ae620f25f43901bcca5071e2d4607f1d885d25df13bbc36eff4eb6b34ac",
+      "bytes": 35594
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/references/checklists.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/references/checklists.md",
+      "git_blob_sha": "1c46b75cca0f38ecf0c129d2ba850692706401ed",
+      "sha256": "033aa8b30e3b7e29cc1c82be18576435148d5730bc280acf591ad4efffb25ea0",
+      "bytes": 10774
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/references/citation-workflow.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/references/citation-workflow.md",
+      "git_blob_sha": "b7ec90b6a9d8e8ee932921a22e3d76ab41fcf663",
+      "sha256": "067a3b02daa8b4d0f3238e64d34f471bb359b96e75ddce8fa962aaf5e431e7ed",
+      "bytes": 15167
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/references/reviewer-guidelines.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/references/reviewer-guidelines.md",
+      "git_blob_sha": "17e7cf0f79bef05998be467301ffd3cd00d4c27c",
+      "sha256": "3c70be5fb8568b64991aa78b61cf47d36110827c482e2492be7fdfbb838a10e0",
+      "bytes": 10451
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/references/sources.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/references/sources.md",
+      "git_blob_sha": "1690d2b45250b0eb9f1319d2fa6bad0c8341761a",
+      "sha256": "7baf1a564febfd24677b316cf473ecdf0dc86d28e0b1cdb77b7a20bdd0ea0aa6",
+      "bytes": 7310
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/references/writing-guide.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/references/writing-guide.md",
+      "git_blob_sha": "3da7233b657b980f8d58402a21bde3ed28453494",
+      "sha256": "ed5ff6960a04bd385b6a28577a26428056e35920001b1916240a4eb563f54709",
+      "bytes": 16297
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/README.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/README.md",
+      "git_blob_sha": "0633b73231d20e88df999ff7b12846cfe308adc1",
+      "sha256": "e65dc1a22cb150da124dbd4dfb08ec3a4b68978436918a880e8581d6f74e39e5",
+      "bytes": 6707
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/README.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/aaai2026/README.md",
+      "git_blob_sha": "401ff3eb7ecde1b5972cbc64870feaab8a5ed5ad",
+      "sha256": "ee2c61a8b06e1471c0df7c774074d2ff1be824e6377a9e38f6adca5c68ddbb60",
+      "bytes": 17987
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-supp.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-supp.tex",
+      "git_blob_sha": "e59d365bc1eb4d1e731eaed5d7475d70eb34205a",
+      "sha256": "35adcff419efc25a032140c520d40520d0d0fc69123e9d8e38ad161c40ad07b7",
+      "bytes": 4548
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-template.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-template.tex",
+      "git_blob_sha": "0a7612fea5dfe74707049b77cc3a0f3a0074c7d3",
+      "sha256": "bed12c50b5e027fd88097d238ec4e7ebf1ae7b450cb06d6df7c8ae126a620aea",
+      "bytes": 63140
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026.bib",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/aaai2026/aaai2026.bib",
+      "git_blob_sha": "7b7d2bcf44a7488d282c3e9b1f9079598dc99fa3",
+      "sha256": "d8fcf3dc09b9d489aeff13631174c5998a48cb0d0800ac8a00a2f7bdbc40295b",
+      "bytes": 4766
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026.bst",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/aaai2026/aaai2026.bst",
+      "git_blob_sha": "bc73330ee79240ca69f8bd439f2230e46b555250",
+      "sha256": "ac26e2c66047435c0ed25f21ae36ad42d731cf3d794c4a8b5f05a62141a27294",
+      "bytes": 30207
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/aaai2026/aaai2026.sty",
+      "git_blob_sha": "1c587a54d5613355974d8ac25ebb7d5d741c84e0",
+      "sha256": "a39f1866a04dd1e2603613c876fa446aaea2c2f3e34d02be868fd21520bfade5",
+      "bytes": 11802
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/README.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/README.md",
+      "git_blob_sha": "a9404276c07f6dd1bf0b1fd61f1bee7affe2a8b7",
+      "sha256": "e55608f9bc0b564f58d864d43197547785ef021c3ec1c5f0a6d2057aa615681e",
+      "bytes": 2126
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/acl.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/acl.sty",
+      "git_blob_sha": "d9b74d0e6d1ea7a41929ff30111a112e1d23f959",
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "bytes": 11615
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/acl_latex.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/acl_latex.tex",
+      "git_blob_sha": "2eba2f17011dcd0e99bc9e127e12bccf422fc7d3",
+      "sha256": "339c9ee9705c1767d44ef24b85365c0bb8619ecc3fcf66172bf1356292389614",
+      "bytes": 14533
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/acl_lualatex.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/acl_lualatex.tex",
+      "git_blob_sha": "6684e89307487f419bb3b850bdd5495b9aa5458c",
+      "sha256": "0d9987ba833331a996f9abcd1a03eebba7d7ae331145793e7ddb6b5ae8db27b3",
+      "bytes": 3050
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/acl_natbib.bst",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/acl_natbib.bst",
+      "git_blob_sha": "49196816b22fed15ed57fbdad5c769e50955e935",
+      "sha256": "e332fd51dcea48e2a8a89754892c3cb99674a1cd70b527b661e9aaffc235e83c",
+      "bytes": 45186
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/anthology.bib.txt",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/anthology.bib.txt",
+      "git_blob_sha": "0d9f1fd5a4f683f779972d62a02d89bb95c53f96",
+      "sha256": "2b78d2d9aeda62e14c4e46099e8225b5fc116387d8e0a54aad776485e249ceff",
+      "bytes": 1169
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/custom.bib",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/custom.bib",
+      "git_blob_sha": "c2c0106471e5984835b3a25c6347e73a0624d415",
+      "sha256": "d76ccb30ddceb70c9e1ad0be3f43dfe301ad5765aab2c960fc830ef67bf8232a",
+      "bytes": 2071
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/acl/formatting.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/acl/formatting.md",
+      "git_blob_sha": "eeb1ce1548b95ea3191fe3ac76df1f5595adb8e7",
+      "sha256": "9e004a136c5dd43300d97e5bef5eb3a77d0e2a2d3502f0f2436ec011d1c49e9c",
+      "bytes": 17923
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/README.md",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/README.md",
+      "git_blob_sha": "5a2c5ff16099a9d651e843999961269d70ae36bc",
+      "sha256": "7c2c585d565482357dffdf499b567929e07a9f09619608c19ce9eb2984697ea1",
+      "bytes": 51
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.bib",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.bib",
+      "git_blob_sha": "95744c20fc7ed4864ec1e860231ea981059afdd3",
+      "sha256": "c5fabf46cc7d7a6e527b82860b9a9d658eb07f63abaafa9b7beb631d8abb91bd",
+      "bytes": 496
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.bst",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.bst",
+      "git_blob_sha": "a85a0087d13bb3d19ba2ca53cae3a9db47119853",
+      "sha256": "2d67552db7ed38ccfccb5957b52f95656e25c249724761d3cf5f7922ad1844c5",
+      "bytes": 26973
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.sty",
+      "git_blob_sha": "ae6c90f387a2ee8191a84478c107d6155483586c",
+      "sha256": "79df8b2a1b142dfb324a0a7e87fabcd9d5dc2a34700e1c6c083a9bbb9e5daa8e",
+      "bytes": 7727
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.tex",
+      "git_blob_sha": "cd02cdc0d911d15fcbe9d8543fdc85ce70ede406",
+      "sha256": "baf01cd056ccd1b35165d190019414946217de1683f8ae3ddc66b11e3c653dbc",
+      "bytes": 12830
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/fancyhdr.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/fancyhdr.sty",
+      "git_blob_sha": "77ed4e3012d822c7cca5c17efcae308b32b8cc2b",
+      "sha256": "b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea",
+      "bytes": 20521
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/math_commands.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/math_commands.tex",
+      "git_blob_sha": "0668f931945175ca8535db25cc27fa603920cc3c",
+      "sha256": "90473c4d0542070db244cea73ef962d6cddc5b2a746757e6a40ddf5fdfb90ba9",
+      "bytes": 12284
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/natbib.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/colm2025/natbib.sty",
+      "git_blob_sha": "ff0d0b91b6ef41468c593a0ca40a81f9a183b055",
+      "sha256": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d",
+      "bytes": 45154
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/fancyhdr.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/iclr2026/fancyhdr.sty",
+      "git_blob_sha": "77ed4e3012d822c7cca5c17efcae308b32b8cc2b",
+      "sha256": "b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea",
+      "bytes": 20521
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.bib",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.bib",
+      "git_blob_sha": "dbc773bf20f6a5e04306a5f7c8c4c759abf44baf",
+      "sha256": "cdd86e7d4c31854dcf2145871657c944588a6d44c3b72e160ff4baa8df1a52fb",
+      "bytes": 629
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.bst",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.bst",
+      "git_blob_sha": "a85a0087d13bb3d19ba2ca53cae3a9db47119853",
+      "sha256": "2d67552db7ed38ccfccb5957b52f95656e25c249724761d3cf5f7922ad1844c5",
+      "bytes": 26973
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.sty",
+      "git_blob_sha": "7a3e556699846084788d87853d2865cf8b4d0e70",
+      "sha256": "a4852f68e080d6c5245057ca2039100b409e31727898aa93c03d78ddb84374a3",
+      "bytes": 9025
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.tex",
+      "git_blob_sha": "695022843e0be1fda33d6d0d3c989db212ab56d4",
+      "sha256": "941b58de6e52f5538de0ebfe2d20425a79e1768cb271d453b7436904b5159859",
+      "bytes": 16899
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/math_commands.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/iclr2026/math_commands.tex",
+      "git_blob_sha": "0668f931945175ca8535db25cc27fa603920cc3c",
+      "sha256": "90473c4d0542070db244cea73ef962d6cddc5b2a746757e6a40ddf5fdfb90ba9",
+      "bytes": 12284
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/natbib.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/iclr2026/natbib.sty",
+      "git_blob_sha": "ff0d0b91b6ef41468c593a0ca40a81f9a183b055",
+      "sha256": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d",
+      "bytes": 45154
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/algorithm.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/icml2026/algorithm.sty",
+      "git_blob_sha": "843e3d5b9a52c705c34255b26177ba6d064630f5",
+      "sha256": "93fd0eb31c112eb405833db8f1d7f5d238c7e691b1c05680d7276e68f36d564a",
+      "bytes": 2223
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/algorithmic.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/icml2026/algorithmic.sty",
+      "git_blob_sha": "ad614783f8b9160eb736ae864a2c6fe6cf7707c5",
+      "sha256": "48d18794a5d97c0479a588cc2eac0917992feb9da83acc4631b8f55757d80f9b",
+      "bytes": 7414
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/example_paper.bib",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/icml2026/example_paper.bib",
+      "git_blob_sha": "ac29a9925877fd3e7bed2b7c208ab7713516062e",
+      "sha256": "df950103d38f9cfc81b1f40d84c9be2a3525d046d2991a6973a4446922c06bd1",
+      "bytes": 2051
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/example_paper.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/icml2026/example_paper.tex",
+      "git_blob_sha": "2d3e8313db38bd0f9688557009c55f2c73370962",
+      "sha256": "c2ca8140bf255d1ff77d1278eb3eefed4018b4b1e71065b8e1ccbc68b74c8acf",
+      "bytes": 29714
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/fancyhdr.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/icml2026/fancyhdr.sty",
+      "git_blob_sha": "b3d811f9028c2f60b4437f9c834a5dfff1d02a9d",
+      "sha256": "9130c52f91087abc6d223164ffa587e207e3257fcbcd069ef09ecb5391043f14",
+      "bytes": 31715
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/icml2026.bst",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/icml2026/icml2026.bst",
+      "git_blob_sha": "f1a50e87853c5a25a1f072fecc8a99398413257f",
+      "sha256": "0ec3d5eb9b02efb7e0b44a32f3775882f42a743d0bdc618f34e6936309b98764",
+      "bytes": 27147
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/icml2026.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/icml2026/icml2026.sty",
+      "git_blob_sha": "47f1fae8400f54698eb5b3b245da8ea458dac536",
+      "sha256": "7cdcf90f6a59c5219e7f15c88f7ed09fcaf598dad91e6cdddc4dc3cb0e397a95",
+      "bytes": 27344
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/neurips2025/Makefile",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/neurips2025/Makefile",
+      "git_blob_sha": "9baab4a2eb95bec88fcb62b412d45620c8c4a446",
+      "sha256": "0983425d74e769f2457f6ff0654cf76fc0c95f8d158fc8eaec66c5697ba0594f",
+      "bytes": 1054
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/neurips2025/extra_pkgs.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/neurips2025/extra_pkgs.tex",
+      "git_blob_sha": "7b8b2e81203f48bc5ffbd20d97dd8950f4f39151",
+      "sha256": "fcd6b09156fa193c347f6acd8188d430fa28f769fb6e2c2514cbbd215c39014a",
+      "bytes": 2837
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/neurips2025/main.tex",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/neurips2025/main.tex",
+      "git_blob_sha": "65ece27c1a069b007c2019c8c777a5e005c4eac4",
+      "sha256": "366c093fbc3018c46de28f3fe0ecb063b4aba10a089afe037837bbf673a9c4d6",
+      "bytes": 574
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/neurips2025/neurips.sty",
+      "local_path": "references/upstream/skills/optional/conference-paper-writing/templates/neurips2025/neurips.sty",
+      "git_blob_sha": "d5297aaa270108376df30adea22c6297f930d943",
+      "sha256": "ef7a55f0a7c9da12fea39af7990a6a314a721b74a23b1544f252e55fcba940cd",
+      "bytes": 11625
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/SKILL.md",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/INSTRUCTIONS.md",
+      "git_blob_sha": "3cfbe7bb16c665163a03dd3aaa818dee7e779b38",
+      "sha256": "025be632bab446785100ba1d08090fcd17d6fb171635c0310a694ebee3974f54",
+      "bytes": 3576
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/references/README.md",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/references/README.md",
+      "git_blob_sha": "81f082c163738b2e2d879505fb8a3812e45ae9f0",
+      "sha256": "144dae0a2f4c011cd89be890e65f15ddd1500a2bef1ab3287a474233bdadd5a7",
+      "bytes": 1983
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/references/api-usage.md",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/references/api-usage.md",
+      "git_blob_sha": "395f52ad94ba894db8220e20f40226fe0f4216ba",
+      "sha256": "8272cf78b68eb7e3f9f45d47cdd9dedcfc9ee6903ff2ba34d8974f0b59f14a81",
+      "bytes": 8259
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/references/common-errors.md",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/references/common-errors.md",
+      "git_blob_sha": "911bb8a3acfd08c0c1e16e1919f9e8b1f09ae9ae",
+      "sha256": "f3e8fe91edc22d5d8ba798c9fecaf68ddb9ff327873b4b6f5aec7630f1819d2a",
+      "bytes": 8561
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/references/verification-rules.md",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/references/verification-rules.md",
+      "git_blob_sha": "03d8a357c6d35a693dafcdcf1eadd53ea7e46ad1",
+      "sha256": "f5781c3d5d47d194a68228256909e73b2e15495426e089bfacb9cbcee7aaeb1f",
+      "bytes": 10079
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/scripts/README.md",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/scripts/README.md",
+      "git_blob_sha": "87c4cfdc5c42c30747bf0c7bc577205bebf2957f",
+      "sha256": "80687260fad60cfada3461ae1525069cf406fb2967f89fe1abb961889d007dda",
+      "bytes": 2930
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/scripts/api-clients.py",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/scripts/api-clients.py",
+      "git_blob_sha": "6528ad69e0cecf9a5f0ce173c77b4d072b4425cf",
+      "sha256": "522e6cd132bb85bf57a75f72576e2836b312cce140eac481be7373cd64e6ecc0",
+      "bytes": 16723
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/scripts/citation_io.py",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/scripts/citation_io.py",
+      "git_blob_sha": "3fda199bd8174e3031b27c9dec98e3baee95a932",
+      "sha256": "77329d02ed42432f5e5b1f80fef24ea0e5410523222a6e68e07eccc4a0d6414f",
+      "bytes": 7059
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/scripts/format-checker.py",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/scripts/format-checker.py",
+      "git_blob_sha": "d42ffdd37fd9e88a629b40a423396607b51002ef",
+      "sha256": "7289386221a796ca3254d45aa041838949ddc05c946365fe6ebe8c1219671fe7",
+      "bytes": 19778
+    },
+    {
+      "original_path": "skills/optional/reference-audit-guide/scripts/verify-citations.py",
+      "local_path": "references/upstream/skills/optional/reference-audit-guide/scripts/verify-citations.py",
+      "git_blob_sha": "bf03af46956f32bdc3634fef237fa4c7af7a9f74",
+      "sha256": "9564d745d4d865b2bfbd3aa57de310ab56a3599ae819c193300d4629a96b8665",
+      "bytes": 22478
+    },
+    {
+      "original_path": "skills/research/academic-researcher/SKILL.md",
+      "local_path": "references/upstream/skills/research/academic-researcher/INSTRUCTIONS.md",
+      "git_blob_sha": "a7d954e33313cda858cb6e6641a8cd1fbd94f5a8",
+      "sha256": "894901b0dfb02b137a4c714dee8668c0a3d42627d03f558e48e069cef9222a60",
+      "bytes": 8129
+    },
+    {
+      "original_path": "skills/research/paper-analyzer/SKILL.md",
+      "local_path": "references/upstream/skills/research/paper-analyzer/INSTRUCTIONS.md",
+      "git_blob_sha": "e695384c890ea6298478c6524e54f23fabf75453",
+      "sha256": "953768303fc4ca35a43f418033276654d55eef7c778b95c175a3a8c059b27007",
+      "bytes": 1919
+    },
+    {
+      "original_path": "skills/research/paper-analyzer/scripts/generate_note.py",
+      "local_path": "references/upstream/skills/research/paper-analyzer/scripts/generate_note.py",
+      "git_blob_sha": "a3d45ccf2029608c4e63c6ec957d350f394cd2df",
+      "sha256": "ef3c589a4af4238cf95479bdcd653a311d7450c1cef9ee74501bed778de43670",
+      "bytes": 5739
+    },
+    {
+      "original_path": "skills/research/paper-analyzer/scripts/update_graph.py",
+      "local_path": "references/upstream/skills/research/paper-analyzer/scripts/update_graph.py",
+      "git_blob_sha": "5c2196caf86773d7f0acabb64de5baffa024af1c",
+      "sha256": "ff00e8a6bc3cb61c11412cae67770da19305cd1679156d70100583bdf9fa7706",
+      "bytes": 3226
+    },
+    {
+      "original_path": "skills/research/results-analysis/SKILL.md",
+      "local_path": "references/upstream/skills/research/results-analysis/INSTRUCTIONS.md",
+      "git_blob_sha": "1bdcfe88853b86ec6db034790207de1b572b6f32",
+      "sha256": "9265a9817bc3e3cf3ce68860d9c5a5cac7f24c8c04865f0fc64e7e4872d7ee44",
+      "bytes": 10864
+    },
+    {
+      "original_path": "skills/research/results-analysis/USAGE.md",
+      "local_path": "references/upstream/skills/research/results-analysis/USAGE.md",
+      "git_blob_sha": "8d5457eac376ba9485108e1e1a3006bb8633ea12",
+      "sha256": "511c62fcf5272235d55ba058c683f167bb8c264e2c714d18d82f282154611da8",
+      "bytes": 7849
+    },
+    {
+      "original_path": "skills/research/results-analysis/examples/benchmark-runs.csv",
+      "local_path": "references/upstream/skills/research/results-analysis/examples/benchmark-runs.csv",
+      "git_blob_sha": "efd22b9c80e4b72cb3291acc2b38502258fa6fbb",
+      "sha256": "a1dee21902111c56a412cc95fcfd758011a1ffcb7d1052c8dfc6a2623cf2d611",
+      "bytes": 873
+    },
+    {
+      "original_path": "skills/research/results-analysis/examples/example-analysis-report.md",
+      "local_path": "references/upstream/skills/research/results-analysis/examples/example-analysis-report.md",
+      "git_blob_sha": "b738e96eddfe1c04eda20557d61a7f8f5b3e2566",
+      "sha256": "99edbf56e911efceba8641fce37d029ba79e5d16383fc80dea420281233d222a",
+      "bytes": 12281
+    },
+    {
+      "original_path": "skills/research/results-analysis/examples/example-results-section.md",
+      "local_path": "references/upstream/skills/research/results-analysis/examples/example-results-section.md",
+      "git_blob_sha": "1c788586854eb499ad0f4c0d4e6cb31972814936",
+      "sha256": "5443dd73080f1265adc2e1bbb3ee44811a0c10dbf11502bfc248c4971250585e",
+      "bytes": 8527
+    },
+    {
+      "original_path": "skills/research/results-analysis/examples/usage-runs.csv",
+      "local_path": "references/upstream/skills/research/results-analysis/examples/usage-runs.csv",
+      "git_blob_sha": "d5d1c8e2ac56b9ac70b4bbf7f30c1696d9650700",
+      "sha256": "7bf21d1adff5cf76cd827929cabafc4bf9fae0961d4585f748d34542cc097fde",
+      "bytes": 713
+    },
+    {
+      "original_path": "skills/research/results-analysis/references/common-pitfalls.md",
+      "local_path": "references/upstream/skills/research/results-analysis/references/common-pitfalls.md",
+      "git_blob_sha": "a040c4c3d25fd8f01300bf2d7f760147e1ac14a3",
+      "sha256": "8eaebe5166490a00b9ce241fda737470766f4368a5bd95bc01c5e096a1cdf1c2",
+      "bytes": 14659
+    },
+    {
+      "original_path": "skills/research/results-analysis/references/results-writing-guide.md",
+      "local_path": "references/upstream/skills/research/results-analysis/references/results-writing-guide.md",
+      "git_blob_sha": "8e2d91860656712e8d8d223c4acfd876b8caedaf",
+      "sha256": "f3b245e1478d86e1de080708f6553b8d3722c05ce3294d0d3b27bf9f1797dfa9",
+      "bytes": 6738
+    },
+    {
+      "original_path": "skills/research/results-analysis/references/statistical-methods.md",
+      "local_path": "references/upstream/skills/research/results-analysis/references/statistical-methods.md",
+      "git_blob_sha": "fde4fce6dcd101c6ed5af1709ce47e70160bcb79",
+      "sha256": "84895bb944b4a4181b0ac5ba8b55c9b91bd88054cac6e3aa8505b7b01feaac2c",
+      "bytes": 18076
+    },
+    {
+      "original_path": "skills/research/results-analysis/references/visualization-best-practices.md",
+      "local_path": "references/upstream/skills/research/results-analysis/references/visualization-best-practices.md",
+      "git_blob_sha": "1571cba9cd8487401cd56df77d6f4d8f29944e10",
+      "sha256": "28c2a9b9ab51abcd697b5db63fb78597b86b2f87cfa91902613fcb5d2c17b3fe",
+      "bytes": 6589
+    },
+    {
+      "original_path": "skills/research/results-analysis/scripts/example_statistics.py",
+      "local_path": "references/upstream/skills/research/results-analysis/scripts/example_statistics.py",
+      "git_blob_sha": "18bd4fa0279d625669781fae9abc5a435b2678d2",
+      "sha256": "94820d5ed01447aa17f8a700873815b7fcf37713a849998c751e3fe875461158",
+      "bytes": 4218
+    },
+    {
+      "original_path": "skills/review/paper-reviewer/SKILL.md",
+      "local_path": "references/upstream/skills/review/paper-reviewer/INSTRUCTIONS.md",
+      "git_blob_sha": "5dcefe9fe5f47222df5fb336493368f45788d2ce",
+      "sha256": "f6b68028400d8f3f91eac5b3f314dd8c5eb65e575df9690bd295760d9315ca58",
+      "bytes": 14328
+    },
+    {
+      "original_path": "skills/review/paper-reviewer/references/comment_splitting.md",
+      "local_path": "references/upstream/skills/review/paper-reviewer/references/comment_splitting.md",
+      "git_blob_sha": "03dde62d984ee60ff83f8fe735d7c71fba050466",
+      "sha256": "ecd1c924bbfda663090079ac4edbf84663a1d5828ac4434335c079233bd51757",
+      "bytes": 14966
+    },
+    {
+      "original_path": "skills/review/paper-reviewer/references/common_issues.md",
+      "local_path": "references/upstream/skills/review/paper-reviewer/references/common_issues.md",
+      "git_blob_sha": "e66c3912db83a37d657ea6b9f1c2c0bdd04b9b89",
+      "sha256": "4b655ffadb3e0f37ab599f0a7aadf265e4bf9001987bc460bf7aed7cebd7bdbf",
+      "bytes": 21802
+    },
+    {
+      "original_path": "skills/review/paper-reviewer/references/reply_blocks.md",
+      "local_path": "references/upstream/skills/review/paper-reviewer/references/reply_blocks.md",
+      "git_blob_sha": "860b4bb06dc8bba6ef67c87f46a15b7bc05b2dab",
+      "sha256": "80344810bdfc7d8bd0ddc82c5d69328444be1312a9f0ffd7a489b5d810bddcf6",
+      "bytes": 18327
+    },
+    {
+      "original_path": "skills/review/paper-reviewer/references/reporting_standards.md",
+      "local_path": "references/upstream/skills/review/paper-reviewer/references/reporting_standards.md",
+      "git_blob_sha": "2d775669f6afe33aafb6fd9f9d0636497a78cc42",
+      "sha256": "14413db9df53b79d81bc3ffd82ff94ee49916fd1fe17a37db33095d7d5908714",
+      "bytes": 13685
+    },
+    {
+      "original_path": "skills/review/paper-reviewer/references/review_checklist.md",
+      "local_path": "references/upstream/skills/review/paper-reviewer/references/review_checklist.md",
+      "git_blob_sha": "b660cbd061f6fd7da2b7bb2432b2eb9b210529b5",
+      "sha256": "ed9dca5146307ecfff414f23aaa1e165f9baf62da14f20d59c827b4a82f9e331",
+      "bytes": 10872
+    },
+    {
+      "original_path": "skills/review/paper-reviewer/scripts/check_coverage.py",
+      "local_path": "references/upstream/skills/review/paper-reviewer/scripts/check_coverage.py",
+      "git_blob_sha": "a6ec90ba6d951ea114df72b19cc50cda329f8805",
+      "sha256": "6f6411b06a735b76d8e1edb8291dc4fbd5ce5523f3ccec2d1a2955e7552e20fd",
+      "bytes": 25454
+    },
+    {
+      "original_path": "skills/venue/nature-portfolio-playbook/SKILL.md",
+      "local_path": "references/upstream/skills/venue/nature-portfolio-playbook/INSTRUCTIONS.md",
+      "git_blob_sha": "1e4b3102f5a5353181327d3551dda5e85f222e45",
+      "sha256": "d6c27dbeb71db1b55e90ff4e3a58ae82ca0834af1083391a87ec971ce2eb2ebe",
+      "bytes": 7021
+    },
+    {
+      "original_path": "skills/venue/nature-portfolio-playbook/SOURCES.md",
+      "local_path": "references/upstream/skills/venue/nature-portfolio-playbook/SOURCES.md",
+      "git_blob_sha": "93cfcfe3566ba42af3166b5c8a411ef6654f5a1c",
+      "sha256": "0b920a084d622809a7badba9a4cefb9adf0a253917e394a8baebee5b51e3e41d",
+      "bytes": 1967
+    }
+  ],
+  "excluded_file_count": 150,
+  "exclusions": [
+    {
+      "original_path": ".github/repo-metadata.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": ".github/workflows/ci.yml",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": ".github/workflows/website-live-smoke.yml",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": ".github/workflows/website.yml",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": ".gitignore",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "CHANGELOG.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "CONTRIBUTING.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "INSTALL.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "README.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "README.zh-CN.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "VERSION",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/README.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/abstract-section.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/author-scope.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/equation-numbering.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/figure-unavailable.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/layout-scope.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/long-article.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/paragraph-equation-continuity.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/passage.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/cases/rebuttal.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/manifest.json",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "evals/results/2026-10-02.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "examples/first-run/README.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "examples/first-run/draft.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "examples/first-run/evidence.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "examples/first-run/expected.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "install.sh",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "packaging/chatgpt-work/assets/icon.svg",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "packaging/chatgpt-work/creator-prompt.txt",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "packaging/chatgpt-work/plugin.json",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "packaging/chatgpt-work/skill/SKILL.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "scripts/build_chatgpt_plugin.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "scripts/check_behavior_assets.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "scripts/manage_install.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/figure-style/SKILL.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/figure-style/kernel.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/README.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/README_EN.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/SKILL.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/THIRD_PARTY_NOTICES.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/evals/evals.json",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/manifest.yaml",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/ai-graphical-abstract-workflow.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/api.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/asset-adaptation.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/backend-selection.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/chart-types.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/common-patterns.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/demos.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/design-theory.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/figure-contract.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/figure-delivery-bundle.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/figure-legend-conventions.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/multipanel-evidence-architecture.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/nature-2026-observations.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/nature-article-requirements.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/openrouter-image-generation.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/qa-contract.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/r-template-index.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/r-workflow.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/references/tutorials.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/audit_figure_collisions.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/audit_panel_alignment.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/audit_pdf_text.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/figure_safety.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/figure_source_data.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/generate_openrouter_schematic.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/nature_figure_backend.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/scripts/validate_figure.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/static/core/contract.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/static/core/stance.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/static/fragments/backend/python.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/figure/nature-figure/static/fragments/backend/r.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/academic-presentations/SKILL.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/academic-presentations/references/pptx-conversion.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/academic-presentations/references/slide-generation.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/academic-presentations/references/tts-engines.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/academic-presentations/scripts/batch_tts_edge.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/academic-presentations/scripts/batch_tts_kokoro.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-supp.aux",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-supp.bbl",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-supp.blg",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-supp.pdf",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/aaai2026/aaai2026-unified-supp.synctex.gz",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/colm2025/colm2025_conference.pdf",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/iclr2026/iclr2026_conference.pdf",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/example_paper.pdf",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "skills/optional/conference-paper-writing/templates/icml2026/icml_numpapers.pdf",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_audit_figure_collisions.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_audit_panel_alignment.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_audit_pdf_text.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_chatgpt_packaging.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_check_figure_refs.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_citation_helpers.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_figure_safety.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_figure_source_data.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_installation_management.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_kernel_geometry.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_license_shipping.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_paper_bootstrap.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_prose_wordcount.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_repo_consistency.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_results_analysis_example.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_statistical_examples.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_upstream_figure_audits.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_usage_regressions.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_validate_figure.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "tests/test_vendored_figure_references.py",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/.gitignore",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/README.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/VERIFICATION.md",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/astro.config.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/package-lock.json",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/package.json",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/playwright.config.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/public/favicon.svg",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/public/og-en.png",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/public/og-zh.png",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/scripts/check-links.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/scripts/create-social-cards.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/scripts/generate-content.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/Contracts.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/CopyBox.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/DocsPage.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/EvidencePreview.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/Example.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/ExamplePage.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/Home.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/InstallPage.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/Mark.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/PageHeader.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/SkillLinks.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/SkillsPage.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/TasksPage.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/WorkflowMap.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/components/WorkflowPage.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/data/content.ts",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/layouts/SiteLayout.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/lib/client.ts",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/lib/installation.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/lib/site.ts",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/pages/404.astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/pages/[...path].astro",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/pages/robots.txt.ts",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/pages/sitemap.xml.ts",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/src/styles/global.css",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/tests/browser/site.spec.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/tests/content.test.mjs",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    },
+    {
+      "original_path": "website/tsconfig.json",
+      "reason": "outside selected writing payload, personal profile, development/test fixture, binary or generated output"
+    }
+  ],
+  "packaging_exclude_base": "skill_directory",
+  "packaging_exclude_paths": [
+    "references/upstream/skills/core/rebuttal-response"
+  ],
+  "licensing_note": "Public availability does not grant redistribution rights. Preserve all upstream notices; unresolved and noncommercial payloads are local-only. Nature MIT covers repository-original material, not unresolved rebuttal upstream text."
+}

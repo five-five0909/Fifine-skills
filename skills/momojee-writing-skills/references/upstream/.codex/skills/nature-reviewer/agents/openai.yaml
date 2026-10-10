@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nature Reviewer"
+  short_description: "Simulate Nature-style referee reports"
+  default_prompt: "Use $nature-reviewer to produce three grounded referee-style reports plus a cross-review synthesis."

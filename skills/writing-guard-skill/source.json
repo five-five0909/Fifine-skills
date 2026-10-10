@@ -1,0 +1,93 @@
+{
+  "name": "writing-guard-skill",
+  "repository_url": "https://github.com/xmutfyh/writing-guard-skill",
+  "commit": "5054be60920619c4920fa92e1368754db8acc4d1",
+  "download_url": "https://codeload.github.com/xmutfyh/writing-guard-skill/tar.gz/5054be60920619c4920fa92e1368754db8acc4d1",
+  "license": {
+    "declared": "MIT",
+    "path": "LICENSE",
+    "upstream_path": "references/upstream/LICENSE",
+    "third_party_concerns": [
+      "Upstream declares MIT, but engine/rules.mjs cites Yila-AI/sci-ssci-skills claim-strength ladder (Apache-2.0, adapted, see THIRD_PARTY.md). The pinned repository does not contain THIRD_PARTY.md, Apache license text, or corresponding attribution/NOTICE material. Evidence-Bound MIT attributions also refer to that absent file. Hold redistribution until third-party provenance and required notices are resolved."
+    ]
+  },
+  "distribution_status": "local_only_pending_license",
+  "components": [
+    {
+      "original": "LICENSE",
+      "local": "references/upstream/LICENSE",
+      "sha256": "b0898472e53a57847496fcad56c04d18f6c77419d4415f9e4f25fdae7c9f03b0",
+      "kind": "license"
+    },
+    {
+      "original": "SKILL.md",
+      "local": "references/upstream/INSTRUCTIONS.md",
+      "sha256": "5dfbcc94e17635d3fc2e51356b6f75a5ea3eb50dd4a8ab9dc2838b4410136086",
+      "kind": "instruction_reference"
+    },
+    {
+      "original": "engine/rules.mjs",
+      "local": "references/upstream/engine/rules.mjs",
+      "sha256": "8720f0cb3d6a4678464a0816e3b19724330c8c7dae16c189f58ae69b06c41046",
+      "kind": "resource"
+    },
+    {
+      "original": "references/writing-discipline.md",
+      "local": "references/upstream/references/writing-discipline.md",
+      "sha256": "9362bee90452218fb37313d49a6419213761ed35073e78844fae2794efa6fb79",
+      "kind": "resource"
+    },
+    {
+      "original": "scripts/audit.mjs",
+      "local": "references/upstream/scripts/audit.mjs",
+      "sha256": "609097b634061e10bbb9b55efa20dd6f6a1ca34904546459fbc74fbf8420c645",
+      "kind": "script"
+    }
+  ],
+  "instruction_paths": [
+    "references/upstream/INSTRUCTIONS.md"
+  ],
+  "original_to_local": {
+    "LICENSE": "references/upstream/LICENSE",
+    "SKILL.md": "references/upstream/INSTRUCTIONS.md",
+    "engine/rules.mjs": "references/upstream/engine/rules.mjs",
+    "references/writing-discipline.md": "references/upstream/references/writing-discipline.md",
+    "scripts/audit.mjs": "references/upstream/scripts/audit.mjs"
+  },
+  "excluded_upstream_paths": [
+    "README.md",
+    "manifest.yaml",
+    "tests/sample-after.txt",
+    "tests/sample-before.txt",
+    "tests/sample-draft.txt",
+    "tests/selftest.mjs"
+  ],
+  "modifications": [
+    "Original instruction documents are inert reference material; root adapter controls execution and evidence integrity.",
+    "Rename every retained upstream SKILL.md to INSTRUCTIONS.md without changing its contents; relative resources and scripts otherwise retain their original paths.",
+    "Copy upstream LICENSE to root LICENSE for discoverability.",
+    "Exclude installers, host/plugin configuration, packaging files, unnecessary README files, caches and test/evaluation fixtures; no upstream scripts or installers executed.",
+    "Retain standalone scripts/audit.mjs and engine/rules.mjs together. Do not expose absent DSH Word tools or autoAuditOnWrite integration.",
+    "Add original host-neutral root SKILL.md and agents/openai.yaml using the visual orchestrator interface format; evidence integrity overrides upstream rhetoric."
+  ],
+  "execution_policy": {
+    "upstream_instructions": "reference_only",
+    "automatic_scripts": false,
+    "external_uploads": false
+  },
+  "upstream_payload_file_count": 5,
+  "adapter_files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "source.json",
+    "LICENSE"
+  ],
+  "instruction_review": {
+    "authority": "All upstream instructions/prompts/examples are isolated as reference only. Root adapter is the active entry point.",
+    "risk_notes": [
+      "Original DSH Word routes, autoAuditOnWrite, backups and overwrite behavior are absent from standalone payload and are not exposed by adapter.",
+      "Profile-building subcommands can recursively read directories and write --out files; separately authorize input scope and output writes."
+    ]
+  },
+  "local_total_file_count": 9
+}

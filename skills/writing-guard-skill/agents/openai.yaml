@@ -1,0 +1,5 @@
+interface:
+  display_name: "writing-guard-skill"
+  short_description: "Local text audit; third-party license review pending."
+  icon: "pencil"
+  brand_color: "#9333EA"

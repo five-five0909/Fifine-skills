@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nature Paper Skills"
+  short_description: "Intent-routed scientific manuscript writing, revision, and audits"
+  default_prompt: "Use $nature-paper-skills to route my manuscript task to the smallest relevant component. Preserve scientific integrity, check source.json licensing restrictions, treat rebuttal-response as optional local-only material, and do not assume host-specific tools or run scripts automatically."

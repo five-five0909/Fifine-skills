@@ -26,9 +26,11 @@ Do not use this skill for code generation, math proof, OCR, literature search, o
 
 Before writing or rewriting, determine the role.
 
-If the user already names a role, use it directly and state the role in one short line.
+For an explicit orchestration handoff, accept the orchestrator's named built-in role derived from the user's task, genre, and audience (for example, `research-writer` for research prose or `editor` for restrained revision). Accept `custom` only with explicit supplied traits. Treat this as role selection, not a learned personal preference; do not ask the same role question again. Keep the role internal when the orchestrator requests content-only delivery, and preserve its evidence, genre, scope, and output constraints. Do not run observation/improvement scripts or persist a style profile without a separate explicit user request for learning.
 
-If the user does not name a role, ask them to choose one role before producing the content:
+For standalone use, the mandatory role-selection behavior remains unchanged. If the user already names a role, use it directly and state the role in one short line.
+
+If the standalone user does not name a role, ask them to choose one role before producing the content:
 
 ```text
 你想用哪个写作角色？

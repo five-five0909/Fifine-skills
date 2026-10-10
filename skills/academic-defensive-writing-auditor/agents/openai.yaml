@@ -1,0 +1,5 @@
+interface:
+  display_name: "academic-defensive-writing-auditor"
+  short_description: "Audit defensive prose and preserve scientific caveats."
+  icon: "pencil"
+  brand_color: "#9333EA"

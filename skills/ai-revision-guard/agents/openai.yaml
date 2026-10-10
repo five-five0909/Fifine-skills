@@ -1,0 +1,5 @@
+interface:
+  display_name: "ai-revision-guard"
+  short_description: "Protect author voice and evidence during revision."
+  icon: "pencil"
+  brand_color: "#9333EA"

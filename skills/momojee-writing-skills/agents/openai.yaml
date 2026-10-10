@@ -1,0 +1,4 @@
+interface:
+  display_name: "MoMoJee Writing Skills (Local Only)"
+  short_description: "Local-only intent-routed academic writing and manuscript review"
+  default_prompt: "Use $momojee-writing-skills to select the relevant local writing component for my request. Preserve scientific integrity, respect the bundle's local-only licensing boundary, and do not assume project-specific documents or run scripts automatically."

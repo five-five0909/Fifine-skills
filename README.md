@@ -60,9 +60,10 @@ setup.
 
 ## Skills
 
-Most original Fifine skills use the `fifine-<original-name>` namespace. Imported
-third-party skills keep the upstream `name` from their `SKILL.md` so triggers and
-metadata remain compatible.
+Most original Fifine skills use the `fifine-<original-name>` namespace. Some
+imports retain upstream names; the writing imports use unique host-neutral root
+adapter names, with original instructions retained under `references/upstream/`
+as `INSTRUCTIONS.md` rather than separately registered nested skills.
 
 Examples include `fifine-live-humanizer`, `fifine-paper-weaver`,
 `fifine-pdf-ref-classify`, `fifine-paper-idea-hook-forge`, and
@@ -93,7 +94,91 @@ the semantic and rendering specialists for publication figures, STEM
 illustrations, architecture diagrams, interactive visuals, and provider-based
 image generation.
 
-See [`skills.json`](skills.json) for the complete, machine-readable skill index.
+See [`skills.json`](skills.json) for the complete local scanner index, including
+local-only entries. It is not the public installation whitelist; that is
+[`scripts/publishable-skills.json`](scripts/publishable-skills.json).
+
+### Writing imports and publication boundaries
+
+Seven imported root adapters are retained locally, plus the original
+`fifine-writing-orchestrator`:
+
+| Root skill | Public installation | Source / license boundary |
+|---|---|---|
+| `kiterlin-anti-defensive-writing` | Yes | Kiterlin/anti-defensive-writing; MIT |
+| `adkid-anti-defensive-writing` | Yes | Adkid-Zephyr/anti-defensive-writing-Skill; MIT, Chinese and English resources |
+| `academic-defensive-writing-auditor` | Yes | Worigin0314/academic-defensive-writing-auditor; MIT, original attribution retained |
+| `ai-revision-guard` | Yes | ShiyanW/ai-revision-guard; MIT |
+| `nature-paper-skills` | Licensed subset only | Boom5426/Nature-Paper-Skills; component-specific MIT/Apache-2.0 notices |
+| `momojee-writing-skills` | No, local-only | MoMoJee/MoMoJeeObsidian; mixed unresolved and noncommercial material |
+| `writing-guard-skill` | No, local-only | xmutfyh/writing-guard-skill; declared MIT but third-party Apache attribution/notice obligations unresolved |
+| `fifine-writing-orchestrator` | Yes | Original thin planner and single-lead writing orchestration |
+
+Downloaded or publicly accessible does **not** mean cleared for redistribution.
+Each imported package retains its own `source.json`, applicable licenses,
+attributions and notices; the repository's MIT declaration does not relicense
+third-party content. The two local-only packages are excluded from both the npm
+archive and the postinstall whitelist. Nature's unresolved
+`references/upstream/skills/core/rebuttal-response/` subtree is excluded from the
+npm archive **and** postinstall copying, including direct GitHub installations.
+Its manifest records the local inventory, not a guarantee that every listed file
+is shipped; the adapter checks for this optional component before using it.
+Other installers or direct source scanners may discover local-only skills and
+need their own explicit selection; the npm whitelist does not govern them.
+
+### Writing routing and recommended bundle
+
+Use `fifine-writing-orchestrator` for natural-language writing planning, drafting,
+revision or audit requests spanning multiple skills. It selects one lead writer,
+loads specialists only as needed, preserves evidence and original-text locks,
+and checks actual availability before falling back with disclosure. Simple edits
+can go directly to a specialist; planning-only requests do not authorize a full
+draft. Automatic routing depends on the host discovering the installed metadata;
+it is not guaranteed on every host or every request.
+
+- ML/CV/NLP paper structure: `fifine-research-paper-writing`.
+- General STEMM drafting: `fifine-science-research-writing-skills`.
+- Scientific English and English template-like/AI-like prose:
+  `fifine-english-research-write`, optionally `ai-revision-guard`; do not apply
+  the Chinese humanizer's punctuation/style constraints to English papers.
+- Chinese reader-facing creation/revision: `fifine-live-humanizer`;
+  requested role/style: `fifine-writing-style`.
+- Nature-style whole-paper/review architecture and focused checks:
+  `nature-paper-skills`; defensive-prose diagnosis: the auditor;
+  evidence-preserving anti-defensive edits: Kiterlin; contribution narrative
+  restructuring: Adkid only when needed, not three repeated full rewrites.
+- Faithful translation: `fifine-translation-multiple-kanban`; figure evidence
+  planning remains with `fifine-visual-creation-orchestrator`.
+
+For selective npm installation, a recommended writing bundle in the consuming
+project's `skills.json` is:
+
+```json
+{
+  "include": [
+    "fifine-writing-orchestrator",
+    "fifine-research-paper-writing",
+    "fifine-science-research-writing-skills",
+    "fifine-english-research-write",
+    "fifine-live-humanizer",
+    "fifine-writing-style",
+    "fifine-translation-multiple-kanban",
+    "ai-revision-guard",
+    "academic-defensive-writing-auditor",
+    "kiterlin-anti-defensive-writing",
+    "adkid-anti-defensive-writing",
+    "nature-paper-skills"
+  ],
+  "targets": ["claude", "codex", "agents"]
+}
+```
+
+Omit `include` to install all available publishable skills. Omit `targets` to
+select existing `.claude`, `.codex` and `.agents` directories; if none exist,
+postinstall skips installation. No dependency resolver is added: selecting only
+the orchestrator does not install its specialists. This writing integration has
+been inspected statically only; no runtime tests, installs or skill executions
+were performed.
 
 ## Prompt Templates
 

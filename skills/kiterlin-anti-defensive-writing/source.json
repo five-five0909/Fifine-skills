@@ -1,0 +1,101 @@
+{
+  "name": "kiterlin-anti-defensive-writing",
+  "repository_url": "https://github.com/Kiterlin/anti-defensive-writing",
+  "commit": "c7edf8fc91ae9c4f7e58345bd12934bb4cf41c46",
+  "download_url": "https://codeload.github.com/Kiterlin/anti-defensive-writing/tar.gz/c7edf8fc91ae9c4f7e58345bd12934bb4cf41c46",
+  "license": {
+    "declared": "MIT",
+    "path": "LICENSE",
+    "upstream_path": "references/upstream/LICENSE",
+    "third_party_concerns": []
+  },
+  "distribution_status": "publishable",
+  "components": [
+    {
+      "original": "LICENSE",
+      "local": "references/upstream/LICENSE",
+      "sha256": "cc3d842a912f0ed1fc80ae8d2ca7ab6cff37756422069424bf2edec554219fc9",
+      "kind": "license"
+    },
+    {
+      "original": "examples/academic-introduction.md",
+      "local": "references/upstream/examples/academic-introduction.md",
+      "sha256": "6ffe24d5b29081be5aeaf8b16800eeb14d88409ef8de6af8d9f65c073d532a7a",
+      "kind": "resource"
+    },
+    {
+      "original": "examples/grant-proposal.md",
+      "local": "references/upstream/examples/grant-proposal.md",
+      "sha256": "4cde4d001b7b8883a0f4ec8dba0aefcb33045be1cd84a114ad6f757131f67afd",
+      "kind": "resource"
+    },
+    {
+      "original": "examples/methods-and-contributions.md",
+      "local": "references/upstream/examples/methods-and-contributions.md",
+      "sha256": "c64d9d6f28cb5dcdec47a3a87e8c5154e9e80d1ea4e380fc654609b2408c087d",
+      "kind": "resource"
+    },
+    {
+      "original": "skill/anti-defensive-writing/SKILL.md",
+      "local": "references/upstream/skill/anti-defensive-writing/INSTRUCTIONS.md",
+      "sha256": "ef055917cc1407064cd0deaffd78264c251e8a27c30c112c54c64fb5ca46ef7a",
+      "kind": "instruction_reference"
+    }
+  ],
+  "instruction_paths": [
+    "references/upstream/skill/anti-defensive-writing/INSTRUCTIONS.md"
+  ],
+  "original_to_local": {
+    "LICENSE": "references/upstream/LICENSE",
+    "examples/academic-introduction.md": "references/upstream/examples/academic-introduction.md",
+    "examples/grant-proposal.md": "references/upstream/examples/grant-proposal.md",
+    "examples/methods-and-contributions.md": "references/upstream/examples/methods-and-contributions.md",
+    "skill/anti-defensive-writing/SKILL.md": "references/upstream/skill/anti-defensive-writing/INSTRUCTIONS.md"
+  },
+  "excluded_upstream_paths": [
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
+    ".github/ISSUE_TEMPLATE/prompt_suggestion.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "README.md",
+    "README.zh-CN.md",
+    "SKILL.md",
+    "assets/anti-defensive-writing-en.png",
+    "assets/anti-defensive-writing-zh-CN.png",
+    "install.ps1",
+    "install.sh",
+    "skill.json",
+    "tests/test-install.ps1",
+    "tests/test_install.py"
+  ],
+  "modifications": [
+    "Original instruction documents are inert reference material; root adapter controls execution and evidence integrity.",
+    "Rename every retained upstream SKILL.md to INSTRUCTIONS.md without changing its contents; relative resources and scripts otherwise retain their original paths.",
+    "Copy upstream LICENSE to root LICENSE for discoverability.",
+    "Exclude installers, host/plugin configuration, packaging files, unnecessary README files, caches and test/evaluation fixtures; no upstream scripts or installers executed.",
+    "Keep canonical skill/anti-defensive-writing/SKILL.md once; exclude byte-identical top-level SKILL.md and promotional image assets. Examples remain at their original relative paths under references/upstream.",
+    "Add original host-neutral root SKILL.md and agents/openai.yaml using the visual orchestrator interface format; evidence integrity overrides upstream rhetoric."
+  ],
+  "execution_policy": {
+    "upstream_instructions": "reference_only",
+    "automatic_scripts": false,
+    "external_uploads": false
+  },
+  "upstream_payload_file_count": 5,
+  "adapter_files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "source.json",
+    "LICENSE"
+  ],
+  "instruction_review": {
+    "authority": "All upstream instructions/prompts/examples are isolated as reference only. Root adapter is the active entry point.",
+    "risk_notes": [
+      "Hypothetical-objection deletion and result-reframing examples may conceal validity boundaries or invent trade-offs; adapter requires evidence and preserves unfavorable findings."
+    ]
+  },
+  "local_total_file_count": 9
+}

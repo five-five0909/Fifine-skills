@@ -1,0 +1,672 @@
+{
+  "schema_version": 1,
+  "path_base": "Parent directory containing installed skill folders; source checkout uses skills/",
+  "provenance_policy": "Snapshot derived from actual seven root source.json files; consult those files for complete hashes/inventory. No downloads, license grants, packaging changes, or installer registrations implied.",
+  "sources": [
+    {
+      "adapter": "kiterlin-anti-defensive-writing",
+      "repository": "https://github.com/Kiterlin/anti-defensive-writing",
+      "commit": "c7edf8fc91ae9c4f7e58345bd12934bb4cf41c46",
+      "local_root": "kiterlin-anti-defensive-writing",
+      "entry_path": "kiterlin-anti-defensive-writing/SKILL.md",
+      "source_metadata_path": "kiterlin-anti-defensive-writing/source.json",
+      "distribution_status": "publishable",
+      "status_origin": "distribution_status",
+      "installer_registration": "Not asserted or modified by this manifest; eligibility is not current installer inclusion",
+      "upstream_execution": "Root adapter governs; upstream instructions remain reference-only",
+      "license": {
+        "declared": "MIT",
+        "path": "LICENSE",
+        "upstream_path": "references/upstream/LICENSE",
+        "third_party_concerns": []
+      },
+      "instruction_mappings": [
+        {
+          "original": "skill/anti-defensive-writing/SKILL.md",
+          "local": "kiterlin-anti-defensive-writing/references/upstream/skill/anti-defensive-writing/INSTRUCTIONS.md"
+        }
+      ],
+      "duplicates_and_selection": "Canonical upstream skill retained once; prefer for narrow non-defensive revision"
+    },
+    {
+      "adapter": "adkid-anti-defensive-writing",
+      "repository": "https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill",
+      "commit": "82d31402caa0db1790026824399044538483171b",
+      "local_root": "adkid-anti-defensive-writing",
+      "entry_path": "adkid-anti-defensive-writing/SKILL.md",
+      "source_metadata_path": "adkid-anti-defensive-writing/source.json",
+      "distribution_status": "publishable",
+      "status_origin": "distribution_status",
+      "installer_registration": "Not asserted or modified by this manifest; eligibility is not current installer inclusion",
+      "upstream_execution": "Root adapter governs; upstream instructions remain reference-only",
+      "license": {
+        "declared": "MIT",
+        "path": "LICENSE",
+        "upstream_path": "references/upstream/LICENSE",
+        "third_party_concerns": []
+      },
+      "instruction_mappings": [
+        {
+          "original": "skills/anti-defensive-writing-en/SKILL.md",
+          "local": "adkid-anti-defensive-writing/references/upstream/skills/anti-defensive-writing-en/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/anti-defensive-writing/SKILL.md",
+          "local": "adkid-anti-defensive-writing/references/upstream/skills/anti-defensive-writing/INSTRUCTIONS.md"
+        }
+      ],
+      "duplicates_and_selection": "Chinese/English components share one root adapter; choose passage language, not two rewrite passes"
+    },
+    {
+      "adapter": "academic-defensive-writing-auditor",
+      "repository": "https://github.com/Worigin0314/academic-defensive-writing-auditor",
+      "commit": "89f26b8a7f8149e6458f657010d354587d42cfe9",
+      "local_root": "academic-defensive-writing-auditor",
+      "entry_path": "academic-defensive-writing-auditor/SKILL.md",
+      "source_metadata_path": "academic-defensive-writing-auditor/source.json",
+      "distribution_status": "publishable",
+      "status_origin": "distribution_status",
+      "installer_registration": "Not asserted or modified by this manifest; eligibility is not current installer inclusion",
+      "upstream_execution": "Root adapter governs; upstream instructions remain reference-only",
+      "license": {
+        "declared": "MIT",
+        "path": "LICENSE",
+        "upstream_path": "references/upstream/LICENSE",
+        "third_party_concerns": []
+      },
+      "instruction_mappings": [
+        {
+          "original": "SKILL.md",
+          "local": "academic-defensive-writing-auditor/references/upstream/INSTRUCTIONS.md"
+        }
+      ],
+      "duplicates_and_selection": "Diagnosis complements one selected rewriting method; audit-only by default"
+    },
+    {
+      "adapter": "ai-revision-guard",
+      "repository": "https://github.com/ShiyanW/ai-revision-guard",
+      "commit": "85e72d63b17dc92e71909d59e72c34c1222e6868",
+      "local_root": "ai-revision-guard",
+      "entry_path": "ai-revision-guard/SKILL.md",
+      "source_metadata_path": "ai-revision-guard/source.json",
+      "distribution_status": "publishable",
+      "status_origin": "distribution_status",
+      "installer_registration": "Not asserted or modified by this manifest; eligibility is not current installer inclusion",
+      "upstream_execution": "Root adapter governs; upstream instructions remain reference-only",
+      "license": {
+        "declared": "MIT",
+        "path": "LICENSE",
+        "upstream_path": "references/upstream/LICENSE",
+        "third_party_concerns": []
+      },
+      "instruction_mappings": [
+        {
+          "original": "SKILL.md",
+          "local": "ai-revision-guard/references/upstream/INSTRUCTIONS.md"
+        }
+      ],
+      "duplicates_and_selection": "Meaning/voice guard, not competing whole-text polishing"
+    },
+    {
+      "adapter": "writing-guard-skill",
+      "repository": "https://github.com/xmutfyh/writing-guard-skill",
+      "commit": "5054be60920619c4920fa92e1368754db8acc4d1",
+      "local_root": "writing-guard-skill",
+      "entry_path": "writing-guard-skill/SKILL.md",
+      "source_metadata_path": "writing-guard-skill/source.json",
+      "distribution_status": "local_only_pending_license",
+      "status_origin": "distribution_status",
+      "installer_registration": "Not asserted or modified by this manifest; eligibility is not current installer inclusion",
+      "upstream_execution": "Root adapter governs; upstream instructions remain reference-only",
+      "license": {
+        "declared": "MIT",
+        "path": "LICENSE",
+        "upstream_path": "references/upstream/LICENSE",
+        "third_party_concerns": [
+          "Upstream declares MIT, but engine/rules.mjs cites Yila-AI/sci-ssci-skills claim-strength ladder (Apache-2.0, adapted, see THIRD_PARTY.md). The pinned repository does not contain THIRD_PARTY.md, Apache license text, or corresponding attribution/NOTICE material. Evidence-Bound MIT attributions also refer to that absent file. Hold redistribution until third-party provenance and required notices are resolved."
+        ]
+      },
+      "instruction_mappings": [
+        {
+          "original": "SKILL.md",
+          "local": "writing-guard-skill/references/upstream/INSTRUCTIONS.md"
+        }
+      ],
+      "duplicates_and_selection": "Separate discipline audit; optional scanner is not Word/DSH functionality"
+    },
+    {
+      "adapter": "momojee-writing-skills",
+      "repository": "https://github.com/MoMoJee/MoMoJeeObsidian",
+      "commit": "534e9d67149481a3fceeaefa64a8104ad1afd4cb",
+      "local_root": "momojee-writing-skills",
+      "entry_path": "momojee-writing-skills/SKILL.md",
+      "source_metadata_path": "momojee-writing-skills/source.json",
+      "distribution_status": "local_only_restricted_license",
+      "status_origin": "status",
+      "installer_registration": "Not asserted or modified by this manifest; eligibility is not current installer inclusion",
+      "upstream_execution": "Root adapter governs; upstream instructions remain reference-only",
+      "wrapper_status": "local_only_restricted_license",
+      "licensing_note": "Public availability does not grant redistribution rights. Preserve all upstream notices; unresolved and noncommercial payloads are local-only. Nature MIT covers repository-original material, not unresolved rebuttal upstream text.",
+      "root_license_files": [],
+      "components": [
+        {
+          "component": ".codex/skills/academic-paper",
+          "original_path": ".codex/skills/academic-paper",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-paper",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/academic-paper-reviewer",
+          "original_path": ".codex/skills/academic-paper-reviewer",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-paper-reviewer",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/academic-research-suite",
+          "original_path": ".codex/skills/academic-research-suite",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-research-suite",
+          "license": "CC-BY-NC-4.0",
+          "license_files": [
+            "references/upstream/.codex/skills/academic-research-suite/LICENSE",
+            "references/upstream/.codex/skills/academic-research-suite/ars/LICENSE",
+            "references/upstream/.codex/skills/academic-research-suite/ars/LICENSE.academic-research-skills",
+            "references/upstream/.codex/skills/academic-research-suite/ars/NOTICE.md",
+            "references/upstream/.codex/skills/academic-research-suite/ars/THIRD_PARTY.md",
+            "references/upstream/.codex/skills/academic-research-suite/ars/experiment-agent/LICENSE"
+          ],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/academic-writing",
+          "original_path": ".codex/skills/academic-writing",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-writing",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/anti-defensive-writing",
+          "original_path": ".codex/skills/anti-defensive-writing",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/anti-defensive-writing",
+          "license": "MIT",
+          "license_files": [
+            "references/upstream/.codex/skills/anti-defensive-writing/LICENSE"
+          ],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/lab-report-writing",
+          "original_path": ".codex/skills/lab-report-writing",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/lab-report-writing",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/latex-writing",
+          "original_path": ".codex/skills/latex-writing",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/latex-writing",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/nature-reviewer",
+          "original_path": ".codex/skills/nature-reviewer",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/nature-reviewer",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/nature-writing",
+          "original_path": ".codex/skills/nature-writing",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/nature-writing",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/paper-polish",
+          "original_path": ".codex/skills/paper-polish",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/paper-polish",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/research-writing-skill",
+          "original_path": ".codex/skills/research-writing-skill",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/research-writing-skill",
+          "license": "unlicensed_or_unresolved",
+          "license_files": [],
+          "distribution_status": "local_only_restricted_license"
+        },
+        {
+          "component": ".codex/skills/supervisor-research",
+          "original_path": ".codex/skills/supervisor-research",
+          "local_path": "momojee-writing-skills/references/upstream/.codex/skills/supervisor-research",
+          "license": "see_component_license",
+          "license_files": [
+            "references/upstream/.codex/skills/supervisor-research/toolkit/LICENSE",
+            "references/upstream/.codex/skills/supervisor-research/toolkit/skills/drawio-reconstruction/LICENSE"
+          ],
+          "distribution_status": "local_only_restricted_license"
+        }
+      ],
+      "instruction_mappings": [
+        {
+          "original": ".codex/skills/academic-paper/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/academic-paper/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/academic-paper-reviewer/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/academic-paper-reviewer/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/academic-research-suite/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/academic-research-suite/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/academic-writing/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/academic-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/anti-defensive-writing/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/anti-defensive-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/lab-report-writing/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/lab-report-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/latex-writing/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/latex-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/nature-reviewer/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/nature-reviewer/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/nature-writing/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/nature-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/paper-polish/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/paper-polish/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/research-writing-skill/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/research-writing-skill/INSTRUCTIONS.md"
+        },
+        {
+          "original": ".codex/skills/supervisor-research/SKILL.md",
+          "local": "momojee-writing-skills/references/upstream/.codex/skills/supervisor-research/INSTRUCTIONS.md"
+        }
+      ],
+      "packaging_exclude_paths": [
+        "momojee-writing-skills"
+      ],
+      "duplicates_and_selection": "Overlaps scientific writing, polish, anti-defensive and Nature methods; choose one selected component, never whole bundle"
+    },
+    {
+      "adapter": "nature-paper-skills",
+      "repository": "https://github.com/Boom5426/Nature-Paper-Skills",
+      "commit": "b4822bf0f526c727a1fdd7f2d99d356876c81937",
+      "local_root": "nature-paper-skills",
+      "entry_path": "nature-paper-skills/SKILL.md",
+      "source_metadata_path": "nature-paper-skills/source.json",
+      "distribution_status": "publishable_with_local_only_exclusions",
+      "status_origin": "status",
+      "installer_registration": "Not asserted or modified by this manifest; eligibility is not current installer inclusion",
+      "upstream_execution": "Root adapter governs; upstream instructions remain reference-only",
+      "wrapper_status": "publishable",
+      "licensing_note": "Public availability does not grant redistribution rights. Preserve all upstream notices; unresolved and noncommercial payloads are local-only. Nature MIT covers repository-original material, not unresolved rebuttal upstream text.",
+      "root_license_files": [
+        "nature-paper-skills/references/upstream/ATTRIBUTION.md",
+        "nature-paper-skills/references/upstream/LICENSE",
+        "nature-paper-skills/references/upstream/LICENSE-APACHE",
+        "nature-paper-skills/references/upstream/NOTICE"
+      ],
+      "components": [
+        {
+          "component": "docs",
+          "original_path": "docs",
+          "local_path": "nature-paper-skills/references/upstream/docs",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "examples",
+          "original_path": "examples",
+          "local_path": "nature-paper-skills/references/upstream/examples",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "root-legal",
+          "original_path": "root-legal",
+          "local_path": "nature-paper-skills/references/upstream",
+          "license": "MIT",
+          "license_files": [
+            "references/upstream/ATTRIBUTION.md",
+            "references/upstream/LICENSE",
+            "references/upstream/LICENSE-APACHE",
+            "references/upstream/NOTICE"
+          ],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "scripts",
+          "original_path": "scripts",
+          "local_path": "nature-paper-skills/references/upstream/scripts",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/anti-defensive-writing",
+          "original_path": "skills/core/anti-defensive-writing",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/anti-defensive-writing",
+          "license": "MIT",
+          "license_files": [
+            "references/upstream/skills/core/anti-defensive-writing/LICENSE"
+          ],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/citation-verifier",
+          "original_path": "skills/core/citation-verifier",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/citation-verifier",
+          "license": "MIT AND Apache-2.0",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/claim-source-verification",
+          "original_path": "skills/core/claim-source-verification",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/claim-source-verification",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/data-availability",
+          "original_path": "skills/core/data-availability",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/data-availability",
+          "license": "MIT AND Apache-2.0",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/draft-marker-discipline",
+          "original_path": "skills/core/draft-marker-discipline",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/draft-marker-discipline",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/figure-planner",
+          "original_path": "skills/core/figure-planner",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/figure-planner",
+          "license": "MIT AND Apache-2.0",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/manuscript-optimizer",
+          "original_path": "skills/core/manuscript-optimizer",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/manuscript-optimizer",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/paper-bootstrap",
+          "original_path": "skills/core/paper-bootstrap",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/paper-bootstrap",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/paper-workflow",
+          "original_path": "skills/core/paper-workflow",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/paper-workflow",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/rebuttal-response",
+          "original_path": "skills/core/rebuttal-response",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/rebuttal-response",
+          "license": "unresolved_upstream_license",
+          "license_files": [],
+          "distribution_status": "local_only"
+        },
+        {
+          "component": "skills/core/results-section-revision",
+          "original_path": "skills/core/results-section-revision",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/results-section-revision",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/review-article-architecture",
+          "original_path": "skills/core/review-article-architecture",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/review-article-architecture",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/scientific-prose-style",
+          "original_path": "skills/core/scientific-prose-style",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/scientific-prose-style",
+          "license": "Apache-2.0",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/scientific-writing",
+          "original_path": "skills/core/scientific-writing",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/scientific-writing",
+          "license": "MIT AND Apache-2.0",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/stats-reporting-audit",
+          "original_path": "skills/core/stats-reporting-audit",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/stats-reporting-audit",
+          "license": "Apache-2.0",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/submission-audit",
+          "original_path": "skills/core/submission-audit",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/submission-audit",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/core/write-scientific-manuscript",
+          "original_path": "skills/core/write-scientific-manuscript",
+          "local_path": "nature-paper-skills/references/upstream/skills/core/write-scientific-manuscript",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/optional/conference-paper-writing",
+          "original_path": "skills/optional/conference-paper-writing",
+          "local_path": "nature-paper-skills/references/upstream/skills/optional/conference-paper-writing",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/optional/reference-audit-guide",
+          "original_path": "skills/optional/reference-audit-guide",
+          "local_path": "nature-paper-skills/references/upstream/skills/optional/reference-audit-guide",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/research/academic-researcher",
+          "original_path": "skills/research/academic-researcher",
+          "local_path": "nature-paper-skills/references/upstream/skills/research/academic-researcher",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/research/paper-analyzer",
+          "original_path": "skills/research/paper-analyzer",
+          "local_path": "nature-paper-skills/references/upstream/skills/research/paper-analyzer",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/research/results-analysis",
+          "original_path": "skills/research/results-analysis",
+          "local_path": "nature-paper-skills/references/upstream/skills/research/results-analysis",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/review/paper-reviewer",
+          "original_path": "skills/review/paper-reviewer",
+          "local_path": "nature-paper-skills/references/upstream/skills/review/paper-reviewer",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        },
+        {
+          "component": "skills/venue/nature-portfolio-playbook",
+          "original_path": "skills/venue/nature-portfolio-playbook",
+          "local_path": "nature-paper-skills/references/upstream/skills/venue/nature-portfolio-playbook",
+          "license": "MIT",
+          "license_files": [],
+          "distribution_status": "publishable"
+        }
+      ],
+      "instruction_mappings": [
+        {
+          "original": "skills/core/anti-defensive-writing/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/anti-defensive-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/citation-verifier/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/citation-verifier/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/claim-source-verification/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/claim-source-verification/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/data-availability/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/data-availability/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/draft-marker-discipline/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/draft-marker-discipline/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/figure-planner/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/figure-planner/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/manuscript-optimizer/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/manuscript-optimizer/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/paper-bootstrap/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/paper-bootstrap/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/paper-workflow/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/paper-workflow/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/rebuttal-response/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/rebuttal-response/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/results-section-revision/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/results-section-revision/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/review-article-architecture/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/review-article-architecture/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/scientific-prose-style/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/scientific-prose-style/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/scientific-writing/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/scientific-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/stats-reporting-audit/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/stats-reporting-audit/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/submission-audit/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/submission-audit/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/core/write-scientific-manuscript/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/core/write-scientific-manuscript/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/optional/conference-paper-writing/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/optional/conference-paper-writing/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/optional/reference-audit-guide/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/optional/reference-audit-guide/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/research/academic-researcher/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/research/academic-researcher/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/research/paper-analyzer/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/research/paper-analyzer/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/research/results-analysis/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/research/results-analysis/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/review/paper-reviewer/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/review/paper-reviewer/INSTRUCTIONS.md"
+        },
+        {
+          "original": "skills/venue/nature-portfolio-playbook/SKILL.md",
+          "local": "nature-paper-skills/references/upstream/skills/venue/nature-portfolio-playbook/INSTRUCTIONS.md"
+        }
+      ],
+      "packaging_exclude_paths": [
+        "nature-paper-skills/references/upstream/skills/core/rebuttal-response"
+      ],
+      "duplicates_and_selection": "Overlaps scientific writing, anti-defensive and figures; use scoped structure/audit/venue guidance, not another dispatcher"
+    }
+  ]
+}

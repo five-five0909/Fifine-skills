@@ -1,0 +1,106 @@
+{
+  "name": "adkid-anti-defensive-writing",
+  "repository_url": "https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill",
+  "commit": "82d31402caa0db1790026824399044538483171b",
+  "download_url": "https://codeload.github.com/Adkid-Zephyr/anti-defensive-writing-Skill/tar.gz/82d31402caa0db1790026824399044538483171b",
+  "license": {
+    "declared": "MIT",
+    "path": "LICENSE",
+    "upstream_path": "references/upstream/LICENSE",
+    "third_party_concerns": []
+  },
+  "distribution_status": "publishable",
+  "components": [
+    {
+      "original": "LICENSE",
+      "local": "references/upstream/LICENSE",
+      "sha256": "fdf440e5214588d9edcdc1ec315cddbd8525fe509242c24989a8472d283325f4",
+      "kind": "license"
+    },
+    {
+      "original": "PRIVACY.md",
+      "local": "references/upstream/PRIVACY.md",
+      "sha256": "6fa49bf747275e4c1073ba5ffd9dcb7ce374831e4c361b52b4b4ae09ca8192d3",
+      "kind": "resource"
+    },
+    {
+      "original": "assets/icon.svg",
+      "local": "references/upstream/assets/icon.svg",
+      "sha256": "ed7e0b0a79900f217f623cdb63bf9b4e61130df5185153d3c6eeb6a898b4e7e9",
+      "kind": "resource"
+    },
+    {
+      "original": "prompts/quick-prompt-en.txt",
+      "local": "references/upstream/prompts/quick-prompt-en.txt",
+      "sha256": "e771ee6efe1cfdf83ada543963cbe5f0c485f43781d6354d5c6c3dfaacbff16a",
+      "kind": "resource"
+    },
+    {
+      "original": "prompts/精简版提示词.txt",
+      "local": "references/upstream/prompts/精简版提示词.txt",
+      "sha256": "8a52d3a5d5def26d22acf9024ab31169f74cc4d944e1b6a7c6280c3886a01e86",
+      "kind": "resource"
+    },
+    {
+      "original": "skills/anti-defensive-writing-en/SKILL.md",
+      "local": "references/upstream/skills/anti-defensive-writing-en/INSTRUCTIONS.md",
+      "sha256": "49705a92677d06b1be9f78be5be4f966b1d30c4ed72a3b97c86a973d06683b9b",
+      "kind": "instruction_reference"
+    },
+    {
+      "original": "skills/anti-defensive-writing/SKILL.md",
+      "local": "references/upstream/skills/anti-defensive-writing/INSTRUCTIONS.md",
+      "sha256": "6f072e66f6adf813bc1b4291754f2bc07ed4e65a398359844e97bfa215a1c28e",
+      "kind": "instruction_reference"
+    }
+  ],
+  "instruction_paths": [
+    "references/upstream/skills/anti-defensive-writing-en/INSTRUCTIONS.md",
+    "references/upstream/skills/anti-defensive-writing/INSTRUCTIONS.md"
+  ],
+  "original_to_local": {
+    "LICENSE": "references/upstream/LICENSE",
+    "PRIVACY.md": "references/upstream/PRIVACY.md",
+    "assets/icon.svg": "references/upstream/assets/icon.svg",
+    "prompts/quick-prompt-en.txt": "references/upstream/prompts/quick-prompt-en.txt",
+    "prompts/精简版提示词.txt": "references/upstream/prompts/精简版提示词.txt",
+    "skills/anti-defensive-writing-en/SKILL.md": "references/upstream/skills/anti-defensive-writing-en/INSTRUCTIONS.md",
+    "skills/anti-defensive-writing/SKILL.md": "references/upstream/skills/anti-defensive-writing/INSTRUCTIONS.md"
+  },
+  "excluded_upstream_paths": [
+    ".agents/plugins/marketplace.json",
+    ".codex-plugin/plugin.json",
+    ".gitignore",
+    "README.md",
+    "README_EN.md",
+    "plugin.json",
+    "scripts/build_plugin.py"
+  ],
+  "modifications": [
+    "Original instruction documents are inert reference material; root adapter controls execution and evidence integrity.",
+    "Rename every retained upstream SKILL.md to INSTRUCTIONS.md without changing its contents; relative resources and scripts otherwise retain their original paths.",
+    "Copy upstream LICENSE to root LICENSE for discoverability.",
+    "Exclude installers, host/plugin configuration, packaging files, unnecessary README files, caches and test/evaluation fixtures; no upstream scripts or installers executed.",
+    "Retain Chinese and English instruction payloads and both prompt resources; expose one adapter selecting the requested manuscript language.",
+    "Add original host-neutral root SKILL.md and agents/openai.yaml using the visual orchestrator interface format; evidence integrity overrides upstream rhetoric."
+  ],
+  "execution_policy": {
+    "upstream_instructions": "reference_only",
+    "automatic_scripts": false,
+    "external_uploads": false
+  },
+  "upstream_payload_file_count": 7,
+  "adapter_files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "source.json",
+    "LICENSE"
+  ],
+  "instruction_review": {
+    "authority": "All upstream instructions/prompts/examples are isolated as reference only. Root adapter is the active entry point.",
+    "risk_notes": [
+      "Chinese original recommends deleting, weakening, moving, or redesigning experiments that do not strengthen the narrative; adapter forbids suppressing inconvenient evidence."
+    ]
+  },
+  "local_total_file_count": 11
+}

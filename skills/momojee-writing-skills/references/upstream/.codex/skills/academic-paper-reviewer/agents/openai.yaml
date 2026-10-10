@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Paper Reviewer"
+  short_description: "Multi-perspective peer review simulator"
+  default_prompt: "Use $academic-paper-reviewer to review a manuscript with field-aware reviewer personas and an editorial synthesis."

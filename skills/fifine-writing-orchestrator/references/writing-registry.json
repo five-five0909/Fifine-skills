@@ -1,0 +1,939 @@
+{
+  "schema_version": 1,
+  "path_base": "Parent directory containing installed skill folders",
+  "dependency_policy": "All entries optional; presence and actual tools checked before use; never auto-install",
+  "loading_policy": "Metadata -> one owner entry -> scoped specialist root -> selected nested reference -> necessary resources",
+  "priority": [
+    "evidence_integrity",
+    "user_locks_and_scope",
+    "genre_language_actual_venue",
+    "structure",
+    "style"
+  ],
+  "entries": [
+    {
+      "id": "fifine-research-paper-writing",
+      "skill": "fifine-research-paper-writing",
+      "entry_path": "fifine-research-paper-writing/SKILL.md",
+      "role": "owner",
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "genres": [
+        "research article"
+      ],
+      "domains": [
+        "ML",
+        "CV",
+        "NLP"
+      ],
+      "stages": [
+        "plan",
+        "draft",
+        "revise",
+        "review"
+      ],
+      "inputs_required": "Evidence, section goal, draft or notes",
+      "do_not_use_for": "Not general fiction or faithful translation",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Section prose or focused paper-story diagnosis",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-science-research-writing-skills",
+      "skill": "fifine-science-research-writing-skills",
+      "entry_path": "fifine-science-research-writing-skills/SKILL.md",
+      "role": "owner",
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "genres": [
+        "research article",
+        "thesis",
+        "scientific report"
+      ],
+      "domains": [
+        "STEMM"
+      ],
+      "stages": [
+        "plan",
+        "draft",
+        "revise",
+        "review"
+      ],
+      "inputs_required": "Research question, available evidence, section or draft",
+      "do_not_use_for": "Not invented results or mandatory interview for minor edits",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Evidence-bounded plan, section, or revision",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-english-research-write",
+      "skill": "fifine-english-research-write",
+      "entry_path": "fifine-english-research-write/SKILL.md",
+      "role": "owner",
+      "languages": [
+        "en"
+      ],
+      "genres": [
+        "scientific prose"
+      ],
+      "domains": [
+        "STEMM"
+      ],
+      "stages": [
+        "draft",
+        "polish",
+        "diagnose"
+      ],
+      "inputs_required": "Passage or section notes and evidence",
+      "do_not_use_for": "Not whole-paper ML story review or general English copy",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Revised scientific English or scoped diagnostics",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-live-humanizer",
+      "skill": "fifine-live-humanizer",
+      "entry_path": "fifine-live-humanizer/SKILL.md",
+      "role": "owner",
+      "languages": [
+        "zh"
+      ],
+      "genres": [
+        "article",
+        "post",
+        "story",
+        "dialogue",
+        "script",
+        "speech",
+        "tutorial"
+      ],
+      "domains": [
+        "general"
+      ],
+      "stages": [
+        "draft",
+        "rewrite"
+      ],
+      "inputs_required": "Audience, genre, factual materials or fictional premise",
+      "do_not_use_for": "Not English academic prose or punctuation bans applied to faithful translations",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Natural Chinese within original genre; no invented nonfiction",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-writing-style",
+      "skill": "fifine-writing-style",
+      "entry_path": "fifine-writing-style/SKILL.md",
+      "role": "owner_or_specialist",
+      "languages": [
+        "any"
+      ],
+      "genres": [
+        "email",
+        "copy",
+        "post",
+        "article",
+        "proposal",
+        "script",
+        "research prose"
+      ],
+      "domains": [
+        "general"
+      ],
+      "stages": [
+        "draft",
+        "rewrite",
+        "style"
+      ],
+      "inputs_required": "Named role or explicit orchestrator task-derived role; source and audience",
+      "do_not_use_for": "Not automatic persona learning or unselected standalone role",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Role-constrained text; no learning/persistence by default",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks",
+      "handoff_role": "Explicit task-derived built-in role accepted without additional role question; standalone selection remains mandatory; no learning by default"
+    },
+    {
+      "id": "fifine-translation-multiple-kanban",
+      "skill": "fifine-translation-multiple-kanban",
+      "entry_path": "fifine-translation-multiple-kanban/SKILL.md",
+      "role": "owner",
+      "languages": [
+        "any"
+      ],
+      "genres": [
+        "translation"
+      ],
+      "domains": [
+        "general"
+      ],
+      "stages": [
+        "translate"
+      ],
+      "inputs_required": "Source text/document, target languages, structure requirements",
+      "do_not_use_for": "Not creative adaptation by default or assumed OCR access",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [
+        "Actual authorized document parser/OCR for non-text inputs; request text if unavailable"
+      ],
+      "output_contract": "Faithful aligned translation; chunk/artifact modes only as needed",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-paper-topic-refiner",
+      "skill": "fifine-paper-topic-refiner",
+      "entry_path": "fifine-paper-topic-refiner/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "research question",
+        "proposal"
+      ],
+      "domains": [
+        "research"
+      ],
+      "stages": [
+        "plan"
+      ],
+      "inputs_required": "Broad idea and known evidence/constraints",
+      "do_not_use_for": "Not grammar editing or routine prerequisite",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Focused research question and evidence gaps",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-paper-write-research-grill",
+      "skill": "fifine-paper-write-research-grill",
+      "entry_path": "fifine-paper-write-research-grill/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "paper",
+        "proposal",
+        "report",
+        "argument"
+      ],
+      "domains": [
+        "research"
+      ],
+      "stages": [
+        "prewriting diagnosis"
+      ],
+      "inputs_required": "Argument materials and requested interrogation or blocking gap",
+      "do_not_use_for": "Not mandatory interrogation before ordinary editing",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Scoped argument questions/diagnosis, no draft unless requested",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-grill-me-cn",
+      "skill": "fifine-grill-me-cn",
+      "entry_path": "fifine-grill-me-cn/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh"
+      ],
+      "genres": [
+        "plan",
+        "argument"
+      ],
+      "domains": [
+        "general"
+      ],
+      "stages": [
+        "pressure test"
+      ],
+      "inputs_required": "Plan and requested pressure-test scope",
+      "do_not_use_for": "Not ordinary polish or competing writing owner",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Assumptions, failure modes, prioritized findings",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-paper-llm-research-grill",
+      "skill": "fifine-paper-llm-research-grill",
+      "entry_path": "fifine-paper-llm-research-grill/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "research direction",
+        "experiment argument"
+      ],
+      "domains": [
+        "LLM",
+        "PyTorch"
+      ],
+      "stages": [
+        "research audit"
+      ],
+      "inputs_required": "Research question, experimental/dataset evidence",
+      "do_not_use_for": "Not invented experiment verification or language polish",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Evidence-aware research findings",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-visual-creation-orchestrator",
+      "skill": "fifine-visual-creation-orchestrator",
+      "entry_path": "fifine-visual-creation-orchestrator/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "any"
+      ],
+      "genres": [
+        "figure plan",
+        "figure evidence narrative"
+      ],
+      "domains": [
+        "AI",
+        "ML",
+        "systems",
+        "STEMM"
+      ],
+      "stages": [
+        "figure plan"
+      ],
+      "inputs_required": "Scientific question, figure claim, evidence/data, venue",
+      "do_not_use_for": "Not automatic rendering, generated empirical results, or whole-prose ownership",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [
+        "Authorized installed visual skills and their actual renderers; planning requires none"
+      ],
+      "output_contract": "Figure evidence plan; execution only with authorized real tools",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "fifine-research-search",
+      "skill": "fifine-research-search",
+      "entry_path": "fifine-research-search/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "any"
+      ],
+      "genres": [
+        "source research"
+      ],
+      "domains": [
+        "research"
+      ],
+      "stages": [
+        "source lookup"
+      ],
+      "inputs_required": "Claim or bibliographic target and authorized search access",
+      "do_not_use_for": "Not source-support certification from metadata or implied network access",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [
+        "Actual authorized network/search access; instructions alone do not provide tools"
+      ],
+      "output_contract": "Located metadata/sources and explicit verification level",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "ai-revision-guard",
+      "skill": "ai-revision-guard",
+      "entry_path": "ai-revision-guard/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "any"
+      ],
+      "genres": [
+        "academic prose",
+        "professional prose"
+      ],
+      "domains": [
+        "general"
+      ],
+      "stages": [
+        "revision audit"
+      ],
+      "inputs_required": "Original/revision, locks, edit type",
+      "do_not_use_for": "Not automatic Python diff or cross-model transmission",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [
+        "Python 3 local heuristic diff, only explicitly authorized; not factual validation"
+      ],
+      "output_contract": "Scoped drift findings or minimal patch",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "academic-defensive-writing-auditor",
+      "skill": "academic-defensive-writing-auditor",
+      "entry_path": "academic-defensive-writing-auditor/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "academic prose"
+      ],
+      "domains": [
+        "research"
+      ],
+      "stages": [
+        "audit"
+      ],
+      "inputs_required": "Draft span and necessary evidence boundaries",
+      "do_not_use_for": "Not automatic full-paper cleanup or hedge removal",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Located necessity decisions and minimal suggestions",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "kiterlin-anti-defensive-writing",
+      "skill": "kiterlin-anti-defensive-writing",
+      "entry_path": "kiterlin-anti-defensive-writing/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "academic prose",
+        "professional prose"
+      ],
+      "domains": [
+        "general"
+      ],
+      "stages": [
+        "revise",
+        "audit"
+      ],
+      "inputs_required": "Selected text and evidence boundaries",
+      "do_not_use_for": "Not hiding negative results, invented benefits, or second whole rewrite",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Direct evidence-preserving local revision",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "adkid-anti-defensive-writing",
+      "skill": "adkid-anti-defensive-writing",
+      "entry_path": "adkid-anti-defensive-writing/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "academic prose"
+      ],
+      "domains": [
+        "research"
+      ],
+      "stages": [
+        "revise",
+        "audit"
+      ],
+      "inputs_required": "Contribution/evidence chain and allowed restructuring",
+      "do_not_use_for": "Not selective result reporting or independently registered English adapter",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "One language route; supported contribution narrative or patch",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "writing-guard-skill",
+      "skill": "writing-guard-skill",
+      "entry_path": "writing-guard-skill/SKILL.md",
+      "role": "specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "scientific plain text"
+      ],
+      "domains": [
+        "research"
+      ],
+      "stages": [
+        "audit"
+      ],
+      "inputs_required": "Authorized plain text and original/revision if available",
+      "do_not_use_for": "Not DSH/Word protected editing, auto hooks, or automatic Node execution",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [
+        "Node.js >=18 plain-text scanner, only explicitly authorized; no Word/DSH tools supplied"
+      ],
+      "output_contract": "Manual located discipline/drift findings; optional scanner explicitly separate",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks"
+    },
+    {
+      "id": "nature-paper-skills",
+      "skill": "nature-paper-skills",
+      "entry_path": "nature-paper-skills/SKILL.md",
+      "role": "owner_or_specialist",
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "genres": [
+        "research article",
+        "review",
+        "survey",
+        "Perspective",
+        "reviewer response"
+      ],
+      "domains": [
+        "STEMM"
+      ],
+      "stages": [
+        "plan",
+        "draft",
+        "revise",
+        "audit"
+      ],
+      "inputs_required": "Selected component, supplied evidence and actual venue",
+      "do_not_use_for": "Not Nature conversion for every genre or competing top-level dispatcher",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Selected component result under root adapter; one scoped route",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks",
+      "components": [
+        {
+          "component": "paper-workflow",
+          "intent": "Scoped section/plan contracts only; never second dispatcher",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/paper-workflow/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/paper-workflow/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "manuscript-optimizer",
+          "intent": "Whole-manuscript structure and claim hierarchy",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/manuscript-optimizer/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/manuscript-optimizer/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "scientific-writing",
+          "intent": "Scientific section drafting/reporting conventions",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/scientific-writing/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/scientific-writing/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT AND Apache-2.0",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "write-scientific-manuscript",
+          "intent": "Focused passage clarity and evidence precision",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/write-scientific-manuscript/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/write-scientific-manuscript/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "results-section-revision",
+          "intent": "Settled Results narrative; retain unfavorable/null findings",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/results-section-revision/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/results-section-revision/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "review-article-architecture",
+          "intent": "Review/Survey/Perspective architecture; may own the requested outline",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/review-article-architecture/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/review-article-architecture/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "scientific-prose-style",
+          "intent": "Final sentence style only",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/scientific-prose-style/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/scientific-prose-style/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "Apache-2.0",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "claim-source-verification",
+          "intent": "Exact claim support; requires relevant source text",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/claim-source-verification/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/claim-source-verification/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "citation-verifier",
+          "intent": "Citation metadata/consistency; distinguish source support",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/citation-verifier/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/citation-verifier/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT AND Apache-2.0",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "stats-reporting-audit",
+          "intent": "Reporting audit, not rerunning analyses",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/stats-reporting-audit/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/stats-reporting-audit/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "Apache-2.0",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "data-availability",
+          "intent": "Availability wording only from actual author commitments",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/data-availability/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/data-availability/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT AND Apache-2.0",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "submission-audit",
+          "intent": "Requested preflight only; no unsupported certification",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/submission-audit/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/submission-audit/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "conference-paper-writing",
+          "intent": "Actual conference-target conventions",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/optional/conference-paper-writing/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/optional/conference-paper-writing/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "reference-audit-guide",
+          "intent": "Scoped reference audit",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/optional/reference-audit-guide/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/optional/reference-audit-guide/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "paper-reviewer",
+          "intent": "Review diagnosis and reviewer-comment inventory, not automatic rewriting",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/review/paper-reviewer/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/review/paper-reviewer/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "nature-portfolio-playbook",
+          "intent": "Explicit Nature-family fit, not universal venue",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/venue/nature-portfolio-playbook/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/venue/nature-portfolio-playbook/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "figure-planner",
+          "intent": "Narrative planning only; visual orchestrator owns figure production",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/figure-planner/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/figure-planner/SKILL.md",
+          "distribution_status": "publishable",
+          "license": "MIT AND Apache-2.0",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "rebuttal-response",
+          "intent": "Optional unresolved local-only response guidance; if absent use review inventory and supplied evidence",
+          "instructions_path": "nature-paper-skills/references/upstream/skills/core/rebuttal-response/INSTRUCTIONS.md",
+          "upstream_original_path": "skills/core/rebuttal-response/SKILL.md",
+          "distribution_status": "local_only",
+          "license": "unresolved_upstream_license",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        }
+      ]
+    },
+    {
+      "id": "momojee-writing-skills",
+      "skill": "momojee-writing-skills",
+      "entry_path": "momojee-writing-skills/SKILL.md",
+      "role": "owner_or_specialist",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "genres": [
+        "academic prose",
+        "lab report",
+        "LaTeX prose",
+        "review"
+      ],
+      "domains": [
+        "research"
+      ],
+      "stages": [
+        "plan",
+        "draft",
+        "polish",
+        "review"
+      ],
+      "inputs_required": "Selected local component and supplied draft/evidence",
+      "do_not_use_for": "Not assumed personal vault, full ARS pipeline, redistribution, or auto compilation",
+      "required_tools": [
+        "Accessible local text and instruction reading; no external runtime required for prose guidance"
+      ],
+      "optional_tools": [],
+      "output_contract": "Selected component guidance/prose under restricted local adapter",
+      "availability": "optional; verify entry and resources exist",
+      "fallback": "Use compatible installed owner or direct bounded writing; disclose material missing checks",
+      "components": [
+        {
+          "component": "research-writing-skill",
+          "intent": "Chinese-first research section prose",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/research-writing-skill/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/research-writing-skill/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "academic-writing",
+          "intent": "Academic conventions",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-writing/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/academic-writing/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "paper-polish",
+          "intent": "Focused language polish",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/paper-polish/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/paper-polish/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "anti-defensive-writing",
+          "intent": "Optional alternative; never stack duplicate rewrites",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/anti-defensive-writing/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/anti-defensive-writing/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "MIT",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "nature-writing",
+          "intent": "Explicit Nature narrative guidance",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/nature-writing/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/nature-writing/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "latex-writing",
+          "intent": "LaTeX-preserving prose, no assumed compilation",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/latex-writing/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/latex-writing/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "lab-report-writing",
+          "intent": "Lab-report genre",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/lab-report-writing/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/lab-report-writing/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "academic-research-suite",
+          "intent": "Only explicitly selected writing stage; no full pipeline by default",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-research-suite/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/academic-research-suite/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "CC-BY-NC-4.0",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "supervisor-research",
+          "intent": "Only selected writing workflow; no personal project dependencies",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/supervisor-research/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/supervisor-research/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "see_component_license",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "academic-paper-reviewer",
+          "intent": "General review diagnosis",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-paper-reviewer/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/academic-paper-reviewer/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "nature-reviewer",
+          "intent": "Explicit Nature review",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/nature-reviewer/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/nature-reviewer/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        },
+        {
+          "component": "academic-paper",
+          "intent": "Explicitly requested legacy writing workflow",
+          "instructions_path": "momojee-writing-skills/references/upstream/.codex/skills/academic-paper/INSTRUCTIONS.md",
+          "upstream_original_path": ".codex/skills/academic-paper/SKILL.md",
+          "distribution_status": "local_only_restricted_license",
+          "license": "unlicensed_or_unresolved",
+          "load_policy": "Root adapter first; this selected reference only, then necessary linked resources",
+          "inputs_required": "Task brief and supplied evidence; source verification additionally needs relevant source text",
+          "output_contract": "Scoped findings, plan, prose, or patch; no independent full pipeline"
+        }
+      ]
+    }
+  ]
+}

@@ -132,7 +132,13 @@ function readPublishableSkills() {
     "tech-diagrams",
     "academic-figure-skill",
     "nature-figure",
-    "fifine-visual-creation-orchestrator"
+    "fifine-visual-creation-orchestrator",
+    "kiterlin-anti-defensive-writing",
+    "adkid-anti-defensive-writing",
+    "academic-defensive-writing-auditor",
+    "ai-revision-guard",
+    "nature-paper-skills",
+    "fifine-writing-orchestrator"
   ];
   const parsed = readJson(publishableSkillsPath, { skills: fallback });
   return Array.isArray(parsed.skills) ? parsed.skills : fallback;
@@ -160,10 +166,20 @@ function detectTargets() {
   );
 }
 
+// Keep the unresolved Nature component out of GitHub installs too, where the
+// source tree may still contain payload excluded from the npm archive.
+const copyExcludedPaths = new Set([
+  "nature-paper-skills/references/upstream/skills/core/rebuttal-response"
+]);
+
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
     const sourcePath = path.join(src, entry.name);
+    const relativePath = path.relative(skillsRoot, sourcePath).split(path.sep).join("/");
+    if (copyExcludedPaths.has(relativePath)) {
+      continue;
+    }
     const targetPath = path.join(dest, entry.name);
     if (entry.isDirectory()) {
       copyDir(sourcePath, targetPath);

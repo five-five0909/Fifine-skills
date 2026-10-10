@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Writing"
+  short_description: "Chinese-first academic prose drafting"
+  default_prompt: "Use $research-writing-skill to draft, revise, or polish evidence-grounded Chinese academic prose."

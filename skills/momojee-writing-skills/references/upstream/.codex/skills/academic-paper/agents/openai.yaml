@@ -1,0 +1,4 @@
+interface:
+  display_name: "Academic Paper"
+  short_description: "Guided academic paper drafting pipeline"
+  default_prompt: "Use $academic-paper to plan, draft, review, and format an evidence-grounded academic manuscript."

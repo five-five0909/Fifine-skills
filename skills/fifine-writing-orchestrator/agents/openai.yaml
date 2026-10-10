@@ -1,0 +1,5 @@
+interface:
+  display_name: "fifine-writing-orchestrator"
+  short_description: "Route writing through one owner and scoped evidence-first specialists."
+  icon: "pencil"
+  brand_color: "#2563EB"
