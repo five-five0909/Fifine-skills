@@ -31,7 +31,6 @@ Prefer skills present in the receiver's environment (check `~/.claude/skills/` a
 | Next-session goal | Often invoke |
 |-------------------|--------------|
 | Verify a change actually works | `fifine-grill-me-cn`, `fifine-paper-llm-research-grill` |
-| Coordinate several workstreams | `fifine-parallel-executor-with-trellis` |
 | Keep working from an older transcript | `fifine-trans-criptase` |
 | Plan / pressure-test a multi-step feature | `fifine-grill-me-cn` |
 | Write or polish the resulting report or paper | `fifine-research-paper-writing`, `fifine-english-research-write` |

@@ -59,7 +59,6 @@ Omit `include` to install all available publishable skills. Omit `targets` to au
 | fifine-research-paper-writing | ML/CV/NLP 论文 Abstract / Introduction / Method / Experiments / Conclusion 写作与改写 |
 | fifine-english-research-write | 英文科技论文写作与润色，按 IMRaD 章节调用短语库、时态/衔接/语态规则和句式基线 |
 | fifine-tavily-search | Tavily 实时网络搜索 |
-| fifine-parallel-executor-with-trellis | Trellis 并行任务执行器 |
 | fifine-trans-criptase | 会话续接与本地代码/文档检索工具 |
 | fifine-adaptive-runtime-orchestrator | 自适应运行时编排与性能诊断：自动探测执行环境、选择执行器与 Shell、自适应轮询长任务，并按 measure-first 方法做性能优化 |
 | fifine-session-memory-curator | 将会话偏好、纠错、踩坑和经验整理为可审计、可修订的全局 agent 记忆 |
@@ -115,7 +114,6 @@ Automatic natural-language routing depends on host discovery of installed skill 
 | 论文全流程精读（摘要/引言/方法/实验） | fifine-paper-weaver |
 | OCR、解析扫描件/图片/PDF 为 Markdown | fifine-paddleocr-vl |
 | 需要把当前会话按明确目标交接到新会话，并生成可直接粘贴的首条消息 | fifine-handoff |
-| 大任务拆分为并行子流程 | fifine-parallel-executor-with-trellis |
 | 强化/改写一条 AI 指令 | fifine-prompt-amplifier |
 | PDF 文献自动分类到主题桶 | fifine-pdf-ref-classify |
 | PDF 文献按元数据批量重命名 | fifine-pdf-ref-rename |

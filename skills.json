@@ -109,11 +109,6 @@
       "description": "Use this skill when the user asks for current information, recent updates, documentation lookup, or fact verification, especially when a live web search is required instead of relying on stale model memory. Trigger: /fifine-tavily-search, search web, 联网搜索, current info, live search."
     },
     {
-      "name": "fifine-parallel-executor-with-trellis",
-      "path": "skills/fifine-parallel-executor-with-trellis",
-      "description": "Use this skill when the user has a large task that can be split into independent workstreams, especially for Trellis-managed planning, task decomposition, parallel execution, and final verification. Trigger: /fifine-parallel-executor-with-trellis, parallel tasks, 并行执行, split workstream."
-    },
-    {
       "name": "fifine-prompt-amplifier",
       "path": "skills/fifine-prompt-amplifier",
       "description": "Use this skill when the user wants an instruction rewritten into a stronger execution prompt before handing it to another model or workflow, especially when adherence and precision matter. Trigger: /fifine-prompt-amplifier, amplify prompt, 强化指令, rewrite instruction."

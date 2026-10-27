@@ -14,8 +14,8 @@ SSH/container/scheduler jobs, or any task where the agent would otherwise be tem
 `sleep 300` or tune resources without measurement.
 
 Stop and just run the command directly when it is a short one-shot that returns in seconds and
-needs no backgrounding. Stop and use `fifine-parallel-executor-with-trellis` when the real need
-is splitting a large task into parallel workstreams, not waiting on one job.
+needs no backgrounding. For splitting a large task into parallel workstreams rather than waiting
+on one job, use the host's available parallel execution tools.
 
 ---
 
