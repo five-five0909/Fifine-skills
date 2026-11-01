@@ -1,0 +1,1106 @@
+{
+  "dataset": "fifine/fifine-font",
+  "description": "Expected historical inventory; paths are relative to the font root. Verify licenses before uploading.",
+  "files": [
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifCN-Bold.ttf",
+      "size": 14117456,
+      "sha256": "601872127770e11c7a94b274a2dad6c993d14f6166ef142834542505bfc4751b"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifCN-ExtraLight.ttf",
+      "size": 13992888,
+      "sha256": "4ff7921d2c0e36e3280a09c289c6baac8b64c543d4db63777596cf5370e840c1"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifCN-Heavy.ttf",
+      "size": 14171996,
+      "sha256": "2ed501a7bbb08aeaa073697176c46769e44c9ba7b923e2289659b7e9bce39441"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifCN-Light.ttf",
+      "size": 14029616,
+      "sha256": "49bf644d1f443b7e94226487cd350d470ab3b53f4e785d20e61bd47ec5477570"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifCN-Medium.ttf",
+      "size": 14027412,
+      "sha256": "ec926f6cba27ef68b236382b1c6be46f9ed9b15ef0f6adcb658f26fefcfaad93"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifCN-Regular.ttf",
+      "size": 14031844,
+      "sha256": "2541753d854160342b31e1a05cb8273bbf7b0782f8e6270250fafa18a0a4fbf4"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifCN-SemiBold.ttf",
+      "size": 14047664,
+      "sha256": "901087491b73d3eccfdef836e373e9781316badd7af9039e5f2b169d35bb12d8"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifTC-Bold.otf",
+      "size": 24684812,
+      "sha256": "72dd91dc878236f3e80240ecf919f0d28e29703ca58d9923ad9550c23ce9ad1e"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifTC-ExtraLight.otf",
+      "size": 21304248,
+      "sha256": "d6b3e759277d17dc6375e3a15704edbae1dccd65f536e867c53056537677345b"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifTC-Heavy.otf",
+      "size": 22916932,
+      "sha256": "4ce56573b96326f8285afc2d772db777336850199063e6ffd2e5e4540e03174f"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifTC-Light.otf",
+      "size": 23459208,
+      "sha256": "b47b7a45b7e7ef19e6d7e3b771b9554c3b720c99086936eb8bba07d82507af75"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifTC-Medium.otf",
+      "size": 23890576,
+      "sha256": "af307d95971c51e0171d995b2aac35791956934d80959c65c9e9dd086b4101bd"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifTC-Regular.otf",
+      "size": 23614732,
+      "sha256": "2f9cf55d04e1ece25a619df9f675f18c07e56d57a6f6a589c5e72f04242c05ff"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/SourceHanSerifTC-SemiBold.otf",
+      "size": 23878540,
+      "sha256": "5ae6a4b0f085db33844ca793e237f8ad1b6c9442d5b6e6bdd8fd4cbfb4861157"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/新愚公装甲宋A.TTF",
+      "size": 19085760,
+      "sha256": "64e2fe1aa83246ccd9aa6b1c33a88a65d181092c7678de45729063fe60214b27"
+    },
+    {
+      "path": "01_典藏黑金/思源宋体/新愚公装甲宋B.TTF",
+      "size": 18008184,
+      "sha256": "af6e2ae3de594e67e9d0b7d185f3ef595d6a467baab25b17b718625d0e363034"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansCN-Bold.ttf",
+      "size": 10174460,
+      "sha256": "292e3d3b8a3dd2430b15a778ea9c16bdb242db438c07557910df285e439c6cdd"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansCN-ExtraLight.ttf",
+      "size": 10553636,
+      "sha256": "96c51f5d1e1858f84454a6c77fe8296d9c486cd89e856bd8ecfed632c0965c15"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansCN-Heavy.ttf",
+      "size": 10159936,
+      "sha256": "8f30ea6187d7b846687fb29edc8f6710ebb3b897844fda4a03f2e0f64715bfa2"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansCN-Light.ttf",
+      "size": 10512044,
+      "sha256": "b6d198dfa0709d6f2292ab9f2f53c4aa22469a41e7642434081a302f213f9cfc"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansCN-Medium.ttf",
+      "size": 10294232,
+      "sha256": "f09e7abc149f1079ea73ab8dffd31d4f5f9dc30c1d7716d4770f87d84be3b6c9"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansCN-Normal.ttf",
+      "size": 10435748,
+      "sha256": "1f094418d37d713ec7d5eda8b307c329020494bafd3357b8ea16b62d1e8db029"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansCN-Regular.ttf",
+      "size": 10397552,
+      "sha256": "fd056e3dc836106a41b0f565dfc89e05fcc4abd3a1b26b5d80fa3dc59950ae41"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansHK-Bold.otf",
+      "size": 5841268,
+      "sha256": "d5c95b31e2f8d824bb5c11d7982adaca5e2b3037ac598115efb5f7e392dc9f02"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansHK-ExtraLight.otf",
+      "size": 5234400,
+      "sha256": "cdfbdcf0be0b0884713dba47016d4d8850d033eb18852a485ce9b726d94acb1a"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansHK-Heavy.otf",
+      "size": 6072528,
+      "sha256": "f72b73ad89ed3840566fc5aa16a1e0e209d11dd8292564e4e138bb82cb1041cd"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansHK-Light.otf",
+      "size": 5668344,
+      "sha256": "7c5b1e6145db414f02f26479901c289e99c12cd43bf92a8e2f6f2f38cd7f97a3"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansHK-Medium.otf",
+      "size": 5698900,
+      "sha256": "edb9965c2162f997987cac2a4ba5504b1a323e3c0858391e990a9ca32da12122"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansHK-Normal.otf",
+      "size": 5683788,
+      "sha256": "7e322a4a59b2d41c3d41ca35bd9ffb3e3ee548ed8293be2fefd0a39eefaa2a6a"
+    },
+    {
+      "path": "01_典藏黑金/思源黑体/SourceHanSansHK-Regular.otf",
+      "size": 5688684,
+      "sha256": "682efee3b71458ee23693e11f1b75a5bdf7019ce921bc48b87ae317a7d62ab47"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Bold.ttf",
+      "size": 7804780,
+      "sha256": "250fb5c8d4657f103e332b0b948a995e45f2c159beb8d0528424e2d32ae421be"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Demibold.ttf",
+      "size": 7846136,
+      "sha256": "402d3ded24120a657916ab0c0253dfe1a2a21c8b4a6cb59be992c8a3288dcae4"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-ExtraLight.ttf",
+      "size": 8024904,
+      "sha256": "94108947e487d361ecf00a1fcdf73efedae02b7015f79e1fbd0918589156a398"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Heavy.ttf",
+      "size": 7785296,
+      "sha256": "b739206dff2673c5d7d401cc847e0fc86d840e0f1be77c84503c069bc9fdad86"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Light.ttf",
+      "size": 7977480,
+      "sha256": "4e6d58f0b53457d05c2fc3d49d98cff449262628bf59ab24cf74baa3493ec3fc"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Medium.ttf",
+      "size": 7876052,
+      "sha256": "93528275ee67039c1daeb2ef700625bcf72abab2d3f97e1b6afae6273b579fc1"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Normal.ttf",
+      "size": 7943504,
+      "sha256": "fe0adb56147299e53d5b208a561d6ca7fe4ce5c727a5ead38ad9827b26024f3a"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Regular.ttf",
+      "size": 7924400,
+      "sha256": "7172aa1b5c703780ee12df3fe4c50481dde01f3b125a045a398000a88d032ae5"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Semibold.ttf",
+      "size": 7824000,
+      "sha256": "7143f0160b52fa639c464f8dc904f01e1c1d28a6c514dd8d1fb99fcf28886258"
+    },
+    {
+      "path": "02_瑞士秩序/MiSans/MiSans-Thin.ttf",
+      "size": 8058540,
+      "sha256": "07147c4b98931f9e3a4b2dd8649f0cc7691a822b67572eba99b3ca5c1e3efa73"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansCN-Bold.ttf",
+      "size": 10174460,
+      "sha256": "292e3d3b8a3dd2430b15a778ea9c16bdb242db438c07557910df285e439c6cdd"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansCN-ExtraLight.ttf",
+      "size": 10553636,
+      "sha256": "96c51f5d1e1858f84454a6c77fe8296d9c486cd89e856bd8ecfed632c0965c15"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansCN-Heavy.ttf",
+      "size": 10159936,
+      "sha256": "8f30ea6187d7b846687fb29edc8f6710ebb3b897844fda4a03f2e0f64715bfa2"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansCN-Light.ttf",
+      "size": 10512044,
+      "sha256": "b6d198dfa0709d6f2292ab9f2f53c4aa22469a41e7642434081a302f213f9cfc"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansCN-Medium.ttf",
+      "size": 10294232,
+      "sha256": "f09e7abc149f1079ea73ab8dffd31d4f5f9dc30c1d7716d4770f87d84be3b6c9"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansCN-Normal.ttf",
+      "size": 10435748,
+      "sha256": "1f094418d37d713ec7d5eda8b307c329020494bafd3357b8ea16b62d1e8db029"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansCN-Regular.ttf",
+      "size": 10397552,
+      "sha256": "fd056e3dc836106a41b0f565dfc89e05fcc4abd3a1b26b5d80fa3dc59950ae41"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansHK-Bold.otf",
+      "size": 5841268,
+      "sha256": "d5c95b31e2f8d824bb5c11d7982adaca5e2b3037ac598115efb5f7e392dc9f02"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansHK-ExtraLight.otf",
+      "size": 5234400,
+      "sha256": "cdfbdcf0be0b0884713dba47016d4d8850d033eb18852a485ce9b726d94acb1a"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansHK-Heavy.otf",
+      "size": 6072528,
+      "sha256": "f72b73ad89ed3840566fc5aa16a1e0e209d11dd8292564e4e138bb82cb1041cd"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansHK-Light.otf",
+      "size": 5668344,
+      "sha256": "7c5b1e6145db414f02f26479901c289e99c12cd43bf92a8e2f6f2f38cd7f97a3"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansHK-Medium.otf",
+      "size": 5698900,
+      "sha256": "edb9965c2162f997987cac2a4ba5504b1a323e3c0858391e990a9ca32da12122"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansHK-Normal.otf",
+      "size": 5683788,
+      "sha256": "7e322a4a59b2d41c3d41ca35bd9ffb3e3ee548ed8293be2fefd0a39eefaa2a6a"
+    },
+    {
+      "path": "02_瑞士秩序/思源黑体/SourceHanSansHK-Regular.otf",
+      "size": 5688684,
+      "sha256": "682efee3b71458ee23693e11f1b75a5bdf7019ce921bc48b87ae317a7d62ab47"
+    },
+    {
+      "path": "03_深海未来/IBM Plex Mono/IBMPlexMono-Bold.ttf",
+      "size": 175096,
+      "sha256": "74e5eedcfa4596497d34e19023cabdabd3a8c852b903007a5654a59591a72ffb"
+    },
+    {
+      "path": "03_深海未来/IBM Plex Mono/IBMPlexMono-Italic.ttf",
+      "size": 179756,
+      "sha256": "a55368deb953f594ac18336a1029009ed820e2d9abbb57ad601f61e22bec072b"
+    },
+    {
+      "path": "03_深海未来/IBM Plex Mono/IBMPlexMono-Medium.ttf",
+      "size": 174008,
+      "sha256": "98fbd727aae340b236955879dabed4d991aac9e8e90b3b2a67ce4a59221cc97c"
+    },
+    {
+      "path": "03_深海未来/IBM Plex Mono/IBMPlexMono-Regular.ttf",
+      "size": 173052,
+      "sha256": "7c6fbddca4b700be918f5f6183d9bd4464fa427fe435f0b480d77fe2bb8c5a43"
+    },
+    {
+      "path": "03_深海未来/Space Grotesk/SpaceGrotesk[wght].ttf",
+      "size": 136676,
+      "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansCN-Bold.ttf",
+      "size": 10174460,
+      "sha256": "292e3d3b8a3dd2430b15a778ea9c16bdb242db438c07557910df285e439c6cdd"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansCN-ExtraLight.ttf",
+      "size": 10553636,
+      "sha256": "96c51f5d1e1858f84454a6c77fe8296d9c486cd89e856bd8ecfed632c0965c15"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansCN-Heavy.ttf",
+      "size": 10159936,
+      "sha256": "8f30ea6187d7b846687fb29edc8f6710ebb3b897844fda4a03f2e0f64715bfa2"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansCN-Light.ttf",
+      "size": 10512044,
+      "sha256": "b6d198dfa0709d6f2292ab9f2f53c4aa22469a41e7642434081a302f213f9cfc"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansCN-Medium.ttf",
+      "size": 10294232,
+      "sha256": "f09e7abc149f1079ea73ab8dffd31d4f5f9dc30c1d7716d4770f87d84be3b6c9"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansCN-Normal.ttf",
+      "size": 10435748,
+      "sha256": "1f094418d37d713ec7d5eda8b307c329020494bafd3357b8ea16b62d1e8db029"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansCN-Regular.ttf",
+      "size": 10397552,
+      "sha256": "fd056e3dc836106a41b0f565dfc89e05fcc4abd3a1b26b5d80fa3dc59950ae41"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansHK-Bold.otf",
+      "size": 5841268,
+      "sha256": "d5c95b31e2f8d824bb5c11d7982adaca5e2b3037ac598115efb5f7e392dc9f02"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansHK-ExtraLight.otf",
+      "size": 5234400,
+      "sha256": "cdfbdcf0be0b0884713dba47016d4d8850d033eb18852a485ce9b726d94acb1a"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansHK-Heavy.otf",
+      "size": 6072528,
+      "sha256": "f72b73ad89ed3840566fc5aa16a1e0e209d11dd8292564e4e138bb82cb1041cd"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansHK-Light.otf",
+      "size": 5668344,
+      "sha256": "7c5b1e6145db414f02f26479901c289e99c12cd43bf92a8e2f6f2f38cd7f97a3"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansHK-Medium.otf",
+      "size": 5698900,
+      "sha256": "edb9965c2162f997987cac2a4ba5504b1a323e3c0858391e990a9ca32da12122"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansHK-Normal.otf",
+      "size": 5683788,
+      "sha256": "7e322a4a59b2d41c3d41ca35bd9ffb3e3ee548ed8293be2fefd0a39eefaa2a6a"
+    },
+    {
+      "path": "03_深海未来/思源黑体/SourceHanSansHK-Regular.otf",
+      "size": 5688684,
+      "sha256": "682efee3b71458ee23693e11f1b75a5bdf7019ce921bc48b87ae317a7d62ab47"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-105-Heavy.otf",
+      "size": 1750092,
+      "sha256": "a1f719709752c07f78b4f1865f482a1c7bb16699b896f8f49ecce50bcbc2f630"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-115-Black.otf",
+      "size": 1734080,
+      "sha256": "d52e39fbd9a40986a941e514a5739595d7ba72828e0570c9c0e6a157f8e2c15d"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-35-Thin.otf",
+      "size": 7300424,
+      "sha256": "69a76c9b53845ab94cd0e915fa994d22e4c694f214ff579998453dab8c957fff"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-45-Light.otf",
+      "size": 7359108,
+      "sha256": "fe99706c0a253227da782f3db3c7126617a1e21420c00a6a6931fe50597dd046"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-55-Regular.otf",
+      "size": 7291828,
+      "sha256": "af8f7e04c3bab5dba42925225b17fe61955834c5bad03ae344f6db62338a005c"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-65-Medium.otf",
+      "size": 7117448,
+      "sha256": "be75ec37273cdf504a96912337c84780c7216fe0a59c6e906e76d29503ffea2e"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-75-SemiBold.otf",
+      "size": 6959164,
+      "sha256": "95a5016bb45c7a30ac87c95539f5b80755aab3e359bdbabe590febdd4b5ab4b4"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-85-Bold.otf",
+      "size": 6937460,
+      "sha256": "9b88dead745fcf1d229d1472728d8a53c0cabee43e1907d6e2ae26774b95c633"
+    },
+    {
+      "path": "03_深海未来/阿里巴巴普惠体/AlibabaPuHuiTi-2-95-ExtraBold.otf",
+      "size": 6839824,
+      "sha256": "10f41eed80f309aa121f95f9c21d01a71bd16bacb39b8fda6e38713013ebcfdb"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifCN-Bold.ttf",
+      "size": 14117456,
+      "sha256": "601872127770e11c7a94b274a2dad6c993d14f6166ef142834542505bfc4751b"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifCN-ExtraLight.ttf",
+      "size": 13992888,
+      "sha256": "4ff7921d2c0e36e3280a09c289c6baac8b64c543d4db63777596cf5370e840c1"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifCN-Heavy.ttf",
+      "size": 14171996,
+      "sha256": "2ed501a7bbb08aeaa073697176c46769e44c9ba7b923e2289659b7e9bce39441"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifCN-Light.ttf",
+      "size": 14029616,
+      "sha256": "49bf644d1f443b7e94226487cd350d470ab3b53f4e785d20e61bd47ec5477570"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifCN-Medium.ttf",
+      "size": 14027412,
+      "sha256": "ec926f6cba27ef68b236382b1c6be46f9ed9b15ef0f6adcb658f26fefcfaad93"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifCN-Regular.ttf",
+      "size": 14031844,
+      "sha256": "2541753d854160342b31e1a05cb8273bbf7b0782f8e6270250fafa18a0a4fbf4"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifCN-SemiBold.ttf",
+      "size": 14047664,
+      "sha256": "901087491b73d3eccfdef836e373e9781316badd7af9039e5f2b169d35bb12d8"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifTC-Bold.otf",
+      "size": 24684812,
+      "sha256": "72dd91dc878236f3e80240ecf919f0d28e29703ca58d9923ad9550c23ce9ad1e"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifTC-ExtraLight.otf",
+      "size": 21304248,
+      "sha256": "d6b3e759277d17dc6375e3a15704edbae1dccd65f536e867c53056537677345b"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifTC-Heavy.otf",
+      "size": 22916932,
+      "sha256": "4ce56573b96326f8285afc2d772db777336850199063e6ffd2e5e4540e03174f"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifTC-Light.otf",
+      "size": 23459208,
+      "sha256": "b47b7a45b7e7ef19e6d7e3b771b9554c3b720c99086936eb8bba07d82507af75"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifTC-Medium.otf",
+      "size": 23890576,
+      "sha256": "af307d95971c51e0171d995b2aac35791956934d80959c65c9e9dd086b4101bd"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifTC-Regular.otf",
+      "size": 23614732,
+      "sha256": "2f9cf55d04e1ece25a619df9f675f18c07e56d57a6f6a589c5e72f04242c05ff"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/SourceHanSerifTC-SemiBold.otf",
+      "size": 23878540,
+      "sha256": "5ae6a4b0f085db33844ca793e237f8ad1b6c9442d5b6e6bdd8fd4cbfb4861157"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/新愚公装甲宋A.TTF",
+      "size": 19085760,
+      "sha256": "64e2fe1aa83246ccd9aa6b1c33a88a65d181092c7678de45729063fe60214b27"
+    },
+    {
+      "path": "04_杂志新奢/思源宋体/新愚公装甲宋B.TTF",
+      "size": 18008184,
+      "sha256": "af6e2ae3de594e67e9d0b7d185f3ef595d6a467baab25b17b718625d0e363034"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifCN-Bold.ttf",
+      "size": 14117456,
+      "sha256": "601872127770e11c7a94b274a2dad6c993d14f6166ef142834542505bfc4751b"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifCN-ExtraLight.ttf",
+      "size": 13992888,
+      "sha256": "4ff7921d2c0e36e3280a09c289c6baac8b64c543d4db63777596cf5370e840c1"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifCN-Heavy.ttf",
+      "size": 14171996,
+      "sha256": "2ed501a7bbb08aeaa073697176c46769e44c9ba7b923e2289659b7e9bce39441"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifCN-Light.ttf",
+      "size": 14029616,
+      "sha256": "49bf644d1f443b7e94226487cd350d470ab3b53f4e785d20e61bd47ec5477570"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifCN-Medium.ttf",
+      "size": 14027412,
+      "sha256": "ec926f6cba27ef68b236382b1c6be46f9ed9b15ef0f6adcb658f26fefcfaad93"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifCN-Regular.ttf",
+      "size": 14031844,
+      "sha256": "2541753d854160342b31e1a05cb8273bbf7b0782f8e6270250fafa18a0a4fbf4"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifCN-SemiBold.ttf",
+      "size": 14047664,
+      "sha256": "901087491b73d3eccfdef836e373e9781316badd7af9039e5f2b169d35bb12d8"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifTC-Bold.otf",
+      "size": 24684812,
+      "sha256": "72dd91dc878236f3e80240ecf919f0d28e29703ca58d9923ad9550c23ce9ad1e"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifTC-ExtraLight.otf",
+      "size": 21304248,
+      "sha256": "d6b3e759277d17dc6375e3a15704edbae1dccd65f536e867c53056537677345b"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifTC-Heavy.otf",
+      "size": 22916932,
+      "sha256": "4ce56573b96326f8285afc2d772db777336850199063e6ffd2e5e4540e03174f"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifTC-Light.otf",
+      "size": 23459208,
+      "sha256": "b47b7a45b7e7ef19e6d7e3b771b9554c3b720c99086936eb8bba07d82507af75"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifTC-Medium.otf",
+      "size": 23890576,
+      "sha256": "af307d95971c51e0171d995b2aac35791956934d80959c65c9e9dd086b4101bd"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifTC-Regular.otf",
+      "size": 23614732,
+      "sha256": "2f9cf55d04e1ece25a619df9f675f18c07e56d57a6f6a589c5e72f04242c05ff"
+    },
+    {
+      "path": "05_自然人文/思源宋体/SourceHanSerifTC-SemiBold.otf",
+      "size": 23878540,
+      "sha256": "5ae6a4b0f085db33844ca793e237f8ad1b6c9442d5b6e6bdd8fd4cbfb4861157"
+    },
+    {
+      "path": "05_自然人文/思源宋体/新愚公装甲宋A.TTF",
+      "size": 19085760,
+      "sha256": "64e2fe1aa83246ccd9aa6b1c33a88a65d181092c7678de45729063fe60214b27"
+    },
+    {
+      "path": "05_自然人文/思源宋体/新愚公装甲宋B.TTF",
+      "size": 18008184,
+      "sha256": "af6e2ae3de594e67e9d0b7d185f3ef595d6a467baab25b17b718625d0e363034"
+    },
+    {
+      "path": "05_自然人文/霞鹜文楷/霞鹜文楷 Bold.TTF",
+      "size": 15515508,
+      "sha256": "68f7a9d367b4d66b44eb98002d7211d50be9d5b16aaee60e3f7b26a32225d2fa"
+    },
+    {
+      "path": "05_自然人文/霞鹜文楷/霞鹜文楷 Light.TTF",
+      "size": 18604576,
+      "sha256": "30a37e502d932f24e70b6d1194968b631912d1797a9500aad672202d6e27391a"
+    },
+    {
+      "path": "05_自然人文/霞鹜文楷/霞鹜文楷 Regular.TTF",
+      "size": 15489156,
+      "sha256": "223b216f06f07bfb55f7e3c6d016916e331111efe9f6d3cf22f3d676a63ac02b"
+    },
+    {
+      "path": "05_自然人文/霞鹜文楷/霞鹜文楷 TC Bold.TTF",
+      "size": 10728540,
+      "sha256": "f6d281ae40a25229a92b2b3ed28efc4a9975db41a2209aa9ec79635809a0fd23"
+    },
+    {
+      "path": "05_自然人文/霞鹜文楷/霞鹜文楷 TC Light.TTF",
+      "size": 11553604,
+      "sha256": "459fe529dfe532bf427f57d4fa5fa7c8312d772c3f51e1aaead30bd820c82609"
+    },
+    {
+      "path": "05_自然人文/霞鹜文楷/霞鹜文楷 TC Regular.TTF",
+      "size": 10977068,
+      "sha256": "73ba7cb2fc7e3fee30be26c6106e39a29f5d21b23691120de184b2f8bc6e345c"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifCN-Bold.ttf",
+      "size": 14117456,
+      "sha256": "601872127770e11c7a94b274a2dad6c993d14f6166ef142834542505bfc4751b"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifCN-ExtraLight.ttf",
+      "size": 13992888,
+      "sha256": "4ff7921d2c0e36e3280a09c289c6baac8b64c543d4db63777596cf5370e840c1"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifCN-Heavy.ttf",
+      "size": 14171996,
+      "sha256": "2ed501a7bbb08aeaa073697176c46769e44c9ba7b923e2289659b7e9bce39441"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifCN-Light.ttf",
+      "size": 14029616,
+      "sha256": "49bf644d1f443b7e94226487cd350d470ab3b53f4e785d20e61bd47ec5477570"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifCN-Medium.ttf",
+      "size": 14027412,
+      "sha256": "ec926f6cba27ef68b236382b1c6be46f9ed9b15ef0f6adcb658f26fefcfaad93"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifCN-Regular.ttf",
+      "size": 14031844,
+      "sha256": "2541753d854160342b31e1a05cb8273bbf7b0782f8e6270250fafa18a0a4fbf4"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifCN-SemiBold.ttf",
+      "size": 14047664,
+      "sha256": "901087491b73d3eccfdef836e373e9781316badd7af9039e5f2b169d35bb12d8"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifTC-Bold.otf",
+      "size": 24684812,
+      "sha256": "72dd91dc878236f3e80240ecf919f0d28e29703ca58d9923ad9550c23ce9ad1e"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifTC-ExtraLight.otf",
+      "size": 21304248,
+      "sha256": "d6b3e759277d17dc6375e3a15704edbae1dccd65f536e867c53056537677345b"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifTC-Heavy.otf",
+      "size": 22916932,
+      "sha256": "4ce56573b96326f8285afc2d772db777336850199063e6ffd2e5e4540e03174f"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifTC-Light.otf",
+      "size": 23459208,
+      "sha256": "b47b7a45b7e7ef19e6d7e3b771b9554c3b720c99086936eb8bba07d82507af75"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifTC-Medium.otf",
+      "size": 23890576,
+      "sha256": "af307d95971c51e0171d995b2aac35791956934d80959c65c9e9dd086b4101bd"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifTC-Regular.otf",
+      "size": 23614732,
+      "sha256": "2f9cf55d04e1ece25a619df9f675f18c07e56d57a6f6a589c5e72f04242c05ff"
+    },
+    {
+      "path": "06_当代东方/思源宋体/SourceHanSerifTC-SemiBold.otf",
+      "size": 23878540,
+      "sha256": "5ae6a4b0f085db33844ca793e237f8ad1b6c9442d5b6e6bdd8fd4cbfb4861157"
+    },
+    {
+      "path": "06_当代东方/思源宋体/新愚公装甲宋A.TTF",
+      "size": 19085760,
+      "sha256": "64e2fe1aa83246ccd9aa6b1c33a88a65d181092c7678de45729063fe60214b27"
+    },
+    {
+      "path": "06_当代东方/思源宋体/新愚公装甲宋B.TTF",
+      "size": 18008184,
+      "sha256": "af6e2ae3de594e67e9d0b7d185f3ef595d6a467baab25b17b718625d0e363034"
+    },
+    {
+      "path": "06_当代东方/霞鹜文楷/霞鹜文楷 Bold.TTF",
+      "size": 15515508,
+      "sha256": "68f7a9d367b4d66b44eb98002d7211d50be9d5b16aaee60e3f7b26a32225d2fa"
+    },
+    {
+      "path": "06_当代东方/霞鹜文楷/霞鹜文楷 Light.TTF",
+      "size": 18604576,
+      "sha256": "30a37e502d932f24e70b6d1194968b631912d1797a9500aad672202d6e27391a"
+    },
+    {
+      "path": "06_当代东方/霞鹜文楷/霞鹜文楷 Regular.TTF",
+      "size": 15489156,
+      "sha256": "223b216f06f07bfb55f7e3c6d016916e331111efe9f6d3cf22f3d676a63ac02b"
+    },
+    {
+      "path": "06_当代东方/霞鹜文楷/霞鹜文楷 TC Bold.TTF",
+      "size": 10728540,
+      "sha256": "f6d281ae40a25229a92b2b3ed28efc4a9975db41a2209aa9ec79635809a0fd23"
+    },
+    {
+      "path": "06_当代东方/霞鹜文楷/霞鹜文楷 TC Light.TTF",
+      "size": 11553604,
+      "sha256": "459fe529dfe532bf427f57d4fa5fa7c8312d772c3f51e1aaead30bd820c82609"
+    },
+    {
+      "path": "06_当代东方/霞鹜文楷/霞鹜文楷 TC Regular.TTF",
+      "size": 10977068,
+      "sha256": "73ba7cb2fc7e3fee30be26c6106e39a29f5d21b23691120de184b2f8bc6e345c"
+    },
+    {
+      "path": "07_先锋海报/优设标题黑/优设标题黑.TTF",
+      "size": 1414784,
+      "sha256": "dab883d69fb713233ea5d9aff8d1f27ccc2b71e249143edf6ea08367784c5dba"
+    },
+    {
+      "path": "07_先锋海报/思源黑体 Heavy/SourceHanSansCN-Heavy.ttf",
+      "size": 10159936,
+      "sha256": "8f30ea6187d7b846687fb29edc8f6710ebb3b897844fda4a03f2e0f64715bfa2"
+    },
+    {
+      "path": "07_先锋海报/思源黑体 Heavy/SourceHanSansHK-Heavy.otf",
+      "size": 6072528,
+      "sha256": "f72b73ad89ed3840566fc5aa16a1e0e209d11dd8292564e4e138bb82cb1041cd"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Bold.ttf",
+      "size": 7804780,
+      "sha256": "250fb5c8d4657f103e332b0b948a995e45f2c159beb8d0528424e2d32ae421be"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Demibold.ttf",
+      "size": 7846136,
+      "sha256": "402d3ded24120a657916ab0c0253dfe1a2a21c8b4a6cb59be992c8a3288dcae4"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-ExtraLight.ttf",
+      "size": 8024904,
+      "sha256": "94108947e487d361ecf00a1fcdf73efedae02b7015f79e1fbd0918589156a398"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Heavy.ttf",
+      "size": 7785296,
+      "sha256": "b739206dff2673c5d7d401cc847e0fc86d840e0f1be77c84503c069bc9fdad86"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Light.ttf",
+      "size": 7977480,
+      "sha256": "4e6d58f0b53457d05c2fc3d49d98cff449262628bf59ab24cf74baa3493ec3fc"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Medium.ttf",
+      "size": 7876052,
+      "sha256": "93528275ee67039c1daeb2ef700625bcf72abab2d3f97e1b6afae6273b579fc1"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Normal.ttf",
+      "size": 7943504,
+      "sha256": "fe0adb56147299e53d5b208a561d6ca7fe4ce5c727a5ead38ad9827b26024f3a"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Regular.ttf",
+      "size": 7924400,
+      "sha256": "7172aa1b5c703780ee12df3fe4c50481dde01f3b125a045a398000a88d032ae5"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Semibold.ttf",
+      "size": 7824000,
+      "sha256": "7143f0160b52fa639c464f8dc904f01e1c1d28a6c514dd8d1fb99fcf28886258"
+    },
+    {
+      "path": "08_圆润创意/MiSans/MiSans-Thin.ttf",
+      "size": 8058540,
+      "sha256": "07147c4b98931f9e3a4b2dd8649f0cc7691a822b67572eba99b3ca5c1e3efa73"
+    },
+    {
+      "path": "08_圆润创意/Nunito/Nunito-Italic[wght].ttf",
+      "size": 281832,
+      "sha256": "b520cc871868b0acfca1beda875df7f4a44ebce914f8a89f83977fc9c09529c8"
+    },
+    {
+      "path": "08_圆润创意/Nunito/Nunito[wght].ttf",
+      "size": 276932,
+      "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207"
+    },
+    {
+      "path": "08_圆润创意/Quicksand/Quicksand[wght].ttf",
+      "size": 124824,
+      "sha256": "39c9b64223561f56aaff6062a6f04063c4fc86809ad6768722c06614d977e1cc"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-105-Heavy.otf",
+      "size": 1750092,
+      "sha256": "a1f719709752c07f78b4f1865f482a1c7bb16699b896f8f49ecce50bcbc2f630"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-115-Black.otf",
+      "size": 1734080,
+      "sha256": "d52e39fbd9a40986a941e514a5739595d7ba72828e0570c9c0e6a157f8e2c15d"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-35-Thin.otf",
+      "size": 7300424,
+      "sha256": "69a76c9b53845ab94cd0e915fa994d22e4c694f214ff579998453dab8c957fff"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-45-Light.otf",
+      "size": 7359108,
+      "sha256": "fe99706c0a253227da782f3db3c7126617a1e21420c00a6a6931fe50597dd046"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-55-Regular.otf",
+      "size": 7291828,
+      "sha256": "af8f7e04c3bab5dba42925225b17fe61955834c5bad03ae344f6db62338a005c"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-65-Medium.otf",
+      "size": 7117448,
+      "sha256": "be75ec37273cdf504a96912337c84780c7216fe0a59c6e906e76d29503ffea2e"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-75-SemiBold.otf",
+      "size": 6959164,
+      "sha256": "95a5016bb45c7a30ac87c95539f5b80755aab3e359bdbabe590febdd4b5ab4b4"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-85-Bold.otf",
+      "size": 6937460,
+      "sha256": "9b88dead745fcf1d229d1472728d8a53c0cabee43e1907d6e2ae26774b95c633"
+    },
+    {
+      "path": "08_圆润创意/阿里巴巴普惠体/AlibabaPuHuiTi-2-95-ExtraBold.otf",
+      "size": 6839824,
+      "sha256": "10f41eed80f309aa121f95f9c21d01a71bd16bacb39b8fda6e38713013ebcfdb"
+    },
+    {
+      "path": "09_通用基础字体/IBM Plex Mono/IBMPlexMono-Bold.ttf",
+      "size": 175096,
+      "sha256": "74e5eedcfa4596497d34e19023cabdabd3a8c852b903007a5654a59591a72ffb"
+    },
+    {
+      "path": "09_通用基础字体/IBM Plex Mono/IBMPlexMono-Italic.ttf",
+      "size": 179756,
+      "sha256": "a55368deb953f594ac18336a1029009ed820e2d9abbb57ad601f61e22bec072b"
+    },
+    {
+      "path": "09_通用基础字体/IBM Plex Mono/IBMPlexMono-Medium.ttf",
+      "size": 174008,
+      "sha256": "98fbd727aae340b236955879dabed4d991aac9e8e90b3b2a67ce4a59221cc97c"
+    },
+    {
+      "path": "09_通用基础字体/IBM Plex Mono/IBMPlexMono-Regular.ttf",
+      "size": 173052,
+      "sha256": "7c6fbddca4b700be918f5f6183d9bd4464fa427fe435f0b480d77fe2bb8c5a43"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Bold.ttf",
+      "size": 7804780,
+      "sha256": "250fb5c8d4657f103e332b0b948a995e45f2c159beb8d0528424e2d32ae421be"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Demibold.ttf",
+      "size": 7846136,
+      "sha256": "402d3ded24120a657916ab0c0253dfe1a2a21c8b4a6cb59be992c8a3288dcae4"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-ExtraLight.ttf",
+      "size": 8024904,
+      "sha256": "94108947e487d361ecf00a1fcdf73efedae02b7015f79e1fbd0918589156a398"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Heavy.ttf",
+      "size": 7785296,
+      "sha256": "b739206dff2673c5d7d401cc847e0fc86d840e0f1be77c84503c069bc9fdad86"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Light.ttf",
+      "size": 7977480,
+      "sha256": "4e6d58f0b53457d05c2fc3d49d98cff449262628bf59ab24cf74baa3493ec3fc"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Medium.ttf",
+      "size": 7876052,
+      "sha256": "93528275ee67039c1daeb2ef700625bcf72abab2d3f97e1b6afae6273b579fc1"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Normal.ttf",
+      "size": 7943504,
+      "sha256": "fe0adb56147299e53d5b208a561d6ca7fe4ce5c727a5ead38ad9827b26024f3a"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Regular.ttf",
+      "size": 7924400,
+      "sha256": "7172aa1b5c703780ee12df3fe4c50481dde01f3b125a045a398000a88d032ae5"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Semibold.ttf",
+      "size": 7824000,
+      "sha256": "7143f0160b52fa639c464f8dc904f01e1c1d28a6c514dd8d1fb99fcf28886258"
+    },
+    {
+      "path": "09_通用基础字体/MiSans/MiSans-Thin.ttf",
+      "size": 8058540,
+      "sha256": "07147c4b98931f9e3a4b2dd8649f0cc7691a822b67572eba99b3ca5c1e3efa73"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifCN-Bold.ttf",
+      "size": 14117456,
+      "sha256": "601872127770e11c7a94b274a2dad6c993d14f6166ef142834542505bfc4751b"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifCN-ExtraLight.ttf",
+      "size": 13992888,
+      "sha256": "4ff7921d2c0e36e3280a09c289c6baac8b64c543d4db63777596cf5370e840c1"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifCN-Heavy.ttf",
+      "size": 14171996,
+      "sha256": "2ed501a7bbb08aeaa073697176c46769e44c9ba7b923e2289659b7e9bce39441"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifCN-Light.ttf",
+      "size": 14029616,
+      "sha256": "49bf644d1f443b7e94226487cd350d470ab3b53f4e785d20e61bd47ec5477570"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifCN-Medium.ttf",
+      "size": 14027412,
+      "sha256": "ec926f6cba27ef68b236382b1c6be46f9ed9b15ef0f6adcb658f26fefcfaad93"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifCN-Regular.ttf",
+      "size": 14031844,
+      "sha256": "2541753d854160342b31e1a05cb8273bbf7b0782f8e6270250fafa18a0a4fbf4"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifCN-SemiBold.ttf",
+      "size": 14047664,
+      "sha256": "901087491b73d3eccfdef836e373e9781316badd7af9039e5f2b169d35bb12d8"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifTC-Bold.otf",
+      "size": 24684812,
+      "sha256": "72dd91dc878236f3e80240ecf919f0d28e29703ca58d9923ad9550c23ce9ad1e"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifTC-ExtraLight.otf",
+      "size": 21304248,
+      "sha256": "d6b3e759277d17dc6375e3a15704edbae1dccd65f536e867c53056537677345b"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifTC-Heavy.otf",
+      "size": 22916932,
+      "sha256": "4ce56573b96326f8285afc2d772db777336850199063e6ffd2e5e4540e03174f"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifTC-Light.otf",
+      "size": 23459208,
+      "sha256": "b47b7a45b7e7ef19e6d7e3b771b9554c3b720c99086936eb8bba07d82507af75"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifTC-Medium.otf",
+      "size": 23890576,
+      "sha256": "af307d95971c51e0171d995b2aac35791956934d80959c65c9e9dd086b4101bd"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifTC-Regular.otf",
+      "size": 23614732,
+      "sha256": "2f9cf55d04e1ece25a619df9f675f18c07e56d57a6f6a589c5e72f04242c05ff"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/SourceHanSerifTC-SemiBold.otf",
+      "size": 23878540,
+      "sha256": "5ae6a4b0f085db33844ca793e237f8ad1b6c9442d5b6e6bdd8fd4cbfb4861157"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/新愚公装甲宋A.TTF",
+      "size": 19085760,
+      "sha256": "64e2fe1aa83246ccd9aa6b1c33a88a65d181092c7678de45729063fe60214b27"
+    },
+    {
+      "path": "09_通用基础字体/思源宋体/新愚公装甲宋B.TTF",
+      "size": 18008184,
+      "sha256": "af6e2ae3de594e67e9d0b7d185f3ef595d6a467baab25b17b718625d0e363034"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansCN-Bold.ttf",
+      "size": 10174460,
+      "sha256": "292e3d3b8a3dd2430b15a778ea9c16bdb242db438c07557910df285e439c6cdd"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansCN-ExtraLight.ttf",
+      "size": 10553636,
+      "sha256": "96c51f5d1e1858f84454a6c77fe8296d9c486cd89e856bd8ecfed632c0965c15"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansCN-Heavy.ttf",
+      "size": 10159936,
+      "sha256": "8f30ea6187d7b846687fb29edc8f6710ebb3b897844fda4a03f2e0f64715bfa2"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansCN-Light.ttf",
+      "size": 10512044,
+      "sha256": "b6d198dfa0709d6f2292ab9f2f53c4aa22469a41e7642434081a302f213f9cfc"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansCN-Medium.ttf",
+      "size": 10294232,
+      "sha256": "f09e7abc149f1079ea73ab8dffd31d4f5f9dc30c1d7716d4770f87d84be3b6c9"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansCN-Normal.ttf",
+      "size": 10435748,
+      "sha256": "1f094418d37d713ec7d5eda8b307c329020494bafd3357b8ea16b62d1e8db029"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansCN-Regular.ttf",
+      "size": 10397552,
+      "sha256": "fd056e3dc836106a41b0f565dfc89e05fcc4abd3a1b26b5d80fa3dc59950ae41"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansHK-Bold.otf",
+      "size": 5841268,
+      "sha256": "d5c95b31e2f8d824bb5c11d7982adaca5e2b3037ac598115efb5f7e392dc9f02"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansHK-ExtraLight.otf",
+      "size": 5234400,
+      "sha256": "cdfbdcf0be0b0884713dba47016d4d8850d033eb18852a485ce9b726d94acb1a"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansHK-Heavy.otf",
+      "size": 6072528,
+      "sha256": "f72b73ad89ed3840566fc5aa16a1e0e209d11dd8292564e4e138bb82cb1041cd"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansHK-Light.otf",
+      "size": 5668344,
+      "sha256": "7c5b1e6145db414f02f26479901c289e99c12cd43bf92a8e2f6f2f38cd7f97a3"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansHK-Medium.otf",
+      "size": 5698900,
+      "sha256": "edb9965c2162f997987cac2a4ba5504b1a323e3c0858391e990a9ca32da12122"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansHK-Normal.otf",
+      "size": 5683788,
+      "sha256": "7e322a4a59b2d41c3d41ca35bd9ffb3e3ee548ed8293be2fefd0a39eefaa2a6a"
+    },
+    {
+      "path": "09_通用基础字体/思源黑体/SourceHanSansHK-Regular.otf",
+      "size": 5688684,
+      "sha256": "682efee3b71458ee23693e11f1b75a5bdf7019ce921bc48b87ae317a7d62ab47"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-105-Heavy.otf",
+      "size": 1750092,
+      "sha256": "a1f719709752c07f78b4f1865f482a1c7bb16699b896f8f49ecce50bcbc2f630"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-115-Black.otf",
+      "size": 1734080,
+      "sha256": "d52e39fbd9a40986a941e514a5739595d7ba72828e0570c9c0e6a157f8e2c15d"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-35-Thin.otf",
+      "size": 7300424,
+      "sha256": "69a76c9b53845ab94cd0e915fa994d22e4c694f214ff579998453dab8c957fff"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-45-Light.otf",
+      "size": 7359108,
+      "sha256": "fe99706c0a253227da782f3db3c7126617a1e21420c00a6a6931fe50597dd046"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-55-Regular.otf",
+      "size": 7291828,
+      "sha256": "af8f7e04c3bab5dba42925225b17fe61955834c5bad03ae344f6db62338a005c"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-65-Medium.otf",
+      "size": 7117448,
+      "sha256": "be75ec37273cdf504a96912337c84780c7216fe0a59c6e906e76d29503ffea2e"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-75-SemiBold.otf",
+      "size": 6959164,
+      "sha256": "95a5016bb45c7a30ac87c95539f5b80755aab3e359bdbabe590febdd4b5ab4b4"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-85-Bold.otf",
+      "size": 6937460,
+      "sha256": "9b88dead745fcf1d229d1472728d8a53c0cabee43e1907d6e2ae26774b95c633"
+    },
+    {
+      "path": "09_通用基础字体/阿里巴巴普惠体/AlibabaPuHuiTi-2-95-ExtraBold.otf",
+      "size": 6839824,
+      "sha256": "10f41eed80f309aa121f95f9c21d01a71bd16bacb39b8fda6e38713013ebcfdb"
+    }
+  ]
+}

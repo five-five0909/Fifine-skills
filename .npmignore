@@ -20,3 +20,13 @@ build/
 /skills/writing-guard-skill/
 # Nature has a mixed-license payload; retain licensed components and notices.
 /skills/nature-paper-skills/references/upstream/skills/core/rebuttal-response/
+
+# Fonts are obtained separately from ModelScope, not bundled in npm archives.
+/skills/ppt-typography-designer/PPT推荐字体/**/*.ttf
+/skills/ppt-typography-designer/PPT推荐字体/**/*.TTF
+/skills/ppt-typography-designer/PPT推荐字体/**/*.otf
+/skills/ppt-typography-designer/PPT推荐字体/**/*.OTF
+/skills/ppt-typography-designer/PPT推荐字体/**/*.ttc
+/skills/ppt-typography-designer/PPT推荐字体/**/*.TTC
+/skills/ppt-typography-designer/PPT推荐字体/**/*.otc
+/skills/ppt-typography-designer/PPT推荐字体/**/*.OTC

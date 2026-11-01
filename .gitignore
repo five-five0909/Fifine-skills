@@ -17,3 +17,13 @@ build/
 .trellis/tasks/
 TODO.md
 *.env
+# Font binaries are synced from ModelScope, not stored in this repository.
+skills/ppt-typography-designer/references/local-font-index.json
+skills/ppt-typography-designer/PPT推荐字体/**/*.ttf
+skills/ppt-typography-designer/PPT推荐字体/**/*.TTF
+skills/ppt-typography-designer/PPT推荐字体/**/*.otf
+skills/ppt-typography-designer/PPT推荐字体/**/*.OTF
+skills/ppt-typography-designer/PPT推荐字体/**/*.ttc
+skills/ppt-typography-designer/PPT推荐字体/**/*.TTC
+skills/ppt-typography-designer/PPT推荐字体/**/*.otc
+skills/ppt-typography-designer/PPT推荐字体/**/*.OTC

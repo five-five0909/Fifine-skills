@@ -214,6 +214,11 @@
       "description": "Scientific manuscript drafting, review, structure, citation, statistics and submission guidance with retained MIT/Apache notices; unresolved rebuttal-response payload is local-only and omitted from public installs."
     },
     {
+      "name": "ppt-typography-designer",
+      "path": "skills/ppt-typography-designer",
+      "description": "Design PPT typography, recommend verified Chinese and Latin fonts, generate previews and adjust PPTX; fonts sync from ModelScope or a user-specified local library."
+    },
+    {
       "name": "fifine-writing-orchestrator",
       "path": "skills/fifine-writing-orchestrator",
       "description": "Host-neutral writing planner and orchestrator: selects one lead writer and optional specialists by language, genre, evidence and edit scope; preserves facts and original locks, checks actual skill availability, and discloses missing-skill fallback."

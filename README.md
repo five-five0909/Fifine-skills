@@ -30,8 +30,8 @@ npm install github:five-five0909/Fifine-skills
 
 ## Environment variables
 
-Skills that need credentials read them from a local plaintext env file instead of
-the repository or the agent config. Resolution order, first path wins:
+Some skills read credentials from a local plaintext env file instead of
+the repository or the agent config. For skills using the shared loader, resolution order, first path wins:
 
 1. The file pointed at by `FIFINE_SKILLS_ENV` (optional override).
 2. `~/.config/fifine-skills/secrets.env` (shared across all Fifine skills).
@@ -93,6 +93,14 @@ runtime-exposed generative engines by figure type. Existing visual skills remain
 the semantic and rendering specialists for publication figures, STEM
 illustrations, architecture diagrams, interactive visuals, and provider-based
 image generation.
+
+`ppt-typography-designer` is a local scanner entry for PPT font pairing, previews,
+and PPTX typography. The historical inventory and eight schemes are documented in
+the skill; font binaries are excluded from Git and npm. It defaults to the ModelScope
+dataset `fifine/fifine-font` with `MODELSCOPE_API_TOKEN` supplied via the process
+environment when needed, or accepts an explicit local font root. The dataset must
+be populated and redistribution rights verified before public installation; it is
+not currently on the postinstall whitelist.
 
 See [`skills.json`](skills.json) for the complete local scanner index, including
 local-only entries. It is not the public installation whitelist; that is

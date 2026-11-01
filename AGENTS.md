@@ -19,6 +19,8 @@ Inside this repository, skill content should follow a **`.agents`-compatible neu
 - `.claude/.codex/.agents` are **distribution targets**
 - the skill content itself should stay host-neutral
 
+The `ppt-typography-designer` font binaries must be stored outside Git, in the ModelScope dataset `fifine/fifine-font`. The dataset is not yet populated; its default root syncs that dataset, while `PPT_TYPOGRAPHY_FONT_ROOT` or `--root` selects an existing local library. Supply private dataset credentials via `MODELSCOPE_API_TOKEN`, never hard-code tokens. Verify the remote contains a complete matching copy before deleting local font files; check each font's redistribution license.
+
 ## Per-project config
 
 Create `skills.json` in your project root to control which skills are installed and where:
@@ -129,6 +131,7 @@ Automatic natural-language routing depends on host discovery of installed skill 
 | 需要交互式可视化、HTML/SVG widget、Chart.js 图表、UI mockup 或生成艺术 | generative-ui |
 | 需要 matplotlib 论文图、报告图、热图、多 panel 或出版级科学图表 | scientific-figure-making |
 | 需要通用 AI 生图、参考图生图、批量生图或多 provider 图片生成 | baoyu-image-gen |
+| 需要 PPT 字体搭配、字体样张或 PPTX 排版 | ppt-typography-designer（本地条目；字体从 ModelScope 同步或指定本地目录） |
 | 需要科研机制图、实验流程图、STEM 教学插图、学术海报或概念信息图 | stem-illustration |
 | 需要系统架构图、C4、网络图、数据流、序列图或云架构技术图 | tech-diagrams |
 | 需要 Nature/Cell/Science 风格学术图表规划、润色、QA 或投稿导出 | academic-figure-skill |

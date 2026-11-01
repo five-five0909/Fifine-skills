@@ -1,0 +1,6 @@
+fonttools
+Pillow
+python-pptx
+PyMuPDF
+PyYAML
+modelscope>=1.37.1
