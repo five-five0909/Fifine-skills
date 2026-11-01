@@ -214,8 +214,8 @@
       "description": "Scientific manuscript drafting, review, structure, citation, statistics and submission guidance with retained MIT/Apache notices; unresolved rebuttal-response payload is local-only and omitted from public installs."
     },
     {
-      "name": "ppt-typography-designer",
-      "path": "skills/ppt-typography-designer",
+      "name": "fifine-ppt-typography-designer",
+      "path": "skills/fifine-ppt-typography-designer",
       "description": "Design PPT typography, recommend verified Chinese and Latin fonts, generate previews and adjust PPTX; fonts sync from ModelScope or a user-specified local library."
     },
     {

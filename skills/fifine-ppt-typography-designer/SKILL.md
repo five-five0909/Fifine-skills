@@ -1,6 +1,6 @@
 ---
-name: ppt-typography-designer
-description: Design professional PowerPoint typography systems using a local audited font library. Use when selecting PPT fonts, matching Chinese and English typography, designing slide title hierarchies, creating font pairing recommendations, or generating typography previews.
+name: fifine-ppt-typography-designer
+description: Design professional PowerPoint typography systems using a ModelScope-synced or user-specified font library. Use when selecting PPT fonts, matching Chinese and English typography, designing slide title hierarchies, creating font pairing recommendations, or generating typography previews.
 ---
 
 # PPT Typography Designer

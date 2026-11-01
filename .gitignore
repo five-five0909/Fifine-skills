@@ -18,12 +18,12 @@ build/
 TODO.md
 *.env
 # Font binaries are synced from ModelScope, not stored in this repository.
-skills/ppt-typography-designer/references/local-font-index.json
-skills/ppt-typography-designer/PPT推荐字体/**/*.ttf
-skills/ppt-typography-designer/PPT推荐字体/**/*.TTF
-skills/ppt-typography-designer/PPT推荐字体/**/*.otf
-skills/ppt-typography-designer/PPT推荐字体/**/*.OTF
-skills/ppt-typography-designer/PPT推荐字体/**/*.ttc
-skills/ppt-typography-designer/PPT推荐字体/**/*.TTC
-skills/ppt-typography-designer/PPT推荐字体/**/*.otc
-skills/ppt-typography-designer/PPT推荐字体/**/*.OTC
+skills/fifine-ppt-typography-designer/references/local-font-index.json
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.ttf
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.TTF
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.otf
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.OTF
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.ttc
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.TTC
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.otc
+skills/fifine-ppt-typography-designer/PPT推荐字体/**/*.OTC

@@ -94,7 +94,7 @@ the semantic and rendering specialists for publication figures, STEM
 illustrations, architecture diagrams, interactive visuals, and provider-based
 image generation.
 
-`ppt-typography-designer` is a local scanner entry for PPT font pairing, previews,
+`fifine-ppt-typography-designer` is a local scanner entry for PPT font pairing, previews,
 and PPTX typography. The historical inventory and eight schemes are documented in
 the skill; font binaries are excluded from Git and npm. It defaults to the ModelScope
 dataset `fifine/fifine-font` with `MODELSCOPE_API_TOKEN` supplied via the process

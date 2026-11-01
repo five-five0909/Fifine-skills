@@ -29,4 +29,4 @@ python scripts/apply_typography.py --input 原稿.pptx --output 新稿.pptx --st
 
 现有 PPTX 在独立输出文件操作，不覆盖原稿；旧版 PPT 需要 Windows PowerPoint 转换，转换可能改变原始文稿。无法安全识别的元素保留并在报告中标注。
 
-OMP 示例：`使用 ppt-typography-designer，为智控卫士设计黑金科技 PPT 字体方案，并生成展示 PDF。`
+OMP 示例：`使用 fifine-ppt-typography-designer，为智控卫士设计黑金科技 PPT 字体方案，并生成展示 PDF。`
