@@ -98,9 +98,9 @@ image generation.
 and PPTX typography. The historical inventory and eight schemes are documented in
 the skill; font binaries are excluded from Git and npm. It defaults to the ModelScope
 dataset `fifine/fifine-font` with `MODELSCOPE_API_TOKEN` supplied via the process
-environment when needed, or accepts an explicit local font root. The dataset must
-be populated and redistribution rights verified before public installation; it is
-not currently on the postinstall whitelist.
+environment when needed, or accepts an explicit local font root. Redistribution
+rights still require verification; the skill is not currently on the postinstall
+whitelist.
 
 See [`skills.json`](skills.json) for the complete local scanner index, including
 local-only entries. It is not the public installation whitelist; that is

@@ -6,6 +6,8 @@
 
 默认从 ModelScope 数据集 `fifine/fifine-font` 同步字体到 ModelScope 缓存；首次运行需要网络，字体不会安装到系统。数据集必须包含字体目录（根目录或 `PPT推荐字体/`），并保留方案子目录。其他位置可设置环境变量 `PPT_TYPOGRAPHY_FONT_ROOT` 或传 `--root`，优先级依次为 `--root`、环境变量、ModelScope。需要 Python 3 和 `pip install -r requirements.txt`。私有数据集可通过 `MODELSCOPE_API_TOKEN` 环境变量提供令牌，也可使用 ModelScope 登录凭据；不要把令牌写入仓库。若远端没有字体，将明确报错；请先上传完整字体库，或显式指定已有本地目录。字体授权需逐一核实。
 
+在本源码项目中，若令牌保存在被 Git 忽略的 `.env.ppt-typography.local`，先执行 `set -a; source .env.ppt-typography.local; set +a`（Bash），再运行下列命令。该文件是明文，不随仓库分发；其他安装环境应自行配置环境变量。
+
 字体意向涵盖思源宋体、思源黑体、MiSans、阿里巴巴普惠体、霞鹜文楷、优设标题黑、Space Grotesk、IBM Plex Mono、Nunito 和 Quicksand；目录中还记录了新愚公装甲宋 A/B。八套搭配见 `references/eight-design-styles.md`，历史 220 个字体文件及其 SHA256 见 `references/font-manifest.json`。清单不代表远端当前拥有这些文件，也不代表授权可用于分发。
 
 

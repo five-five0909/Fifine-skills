@@ -19,7 +19,7 @@ Inside this repository, skill content should follow a **`.agents`-compatible neu
 - `.claude/.codex/.agents` are **distribution targets**
 - the skill content itself should stay host-neutral
 
-The `ppt-typography-designer` font binaries must be stored outside Git, in the ModelScope dataset `fifine/fifine-font`. The dataset is not yet populated; its default root syncs that dataset, while `PPT_TYPOGRAPHY_FONT_ROOT` or `--root` selects an existing local library. Supply private dataset credentials via `MODELSCOPE_API_TOKEN`, never hard-code tokens. Verify the remote contains a complete matching copy before deleting local font files; check each font's redistribution license.
+The `ppt-typography-designer` font binaries are stored outside Git in the ModelScope dataset `fifine/fifine-font`. Its default root syncs that dataset, while `PPT_TYPOGRAPHY_FONT_ROOT` or `--root` selects an existing local library. Supply private dataset credentials via `MODELSCOPE_API_TOKEN`, never hard-code tokens. Verify the remote contains a complete matching copy before deleting local font files; check each font's redistribution license.
 
 ## Per-project config
 
