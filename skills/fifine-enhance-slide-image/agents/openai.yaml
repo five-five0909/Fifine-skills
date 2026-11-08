@@ -1,0 +1,11 @@
+interface:
+  display_name: "fifine-enhance-slide-image"
+  short_description: "Enhance existing PPT pages into consistent slide images while preserving content and assets."
+  default_prompt: "美化这些 PPT 页面，统一视觉风格，保留原始文字、数据和真实素材，并逐页检查输出。"
+
+triggers:
+  - "/fifine-enhance-slide-image"
+  - "slide enhancement"
+  - "PPT 美化"
+  - "幻灯片美化"
+  - "幻灯片生图"

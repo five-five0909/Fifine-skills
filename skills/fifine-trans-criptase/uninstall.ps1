@@ -1,7 +1,7 @@
 #Requires -Version 7
 <#
 trans 双客户端卸载器。
-默认只移除 Skill 链接 + MCP 注册，保留配置与索引数据（KeepData 是默认行为，无需显式传参）。
+默认只移除 Skill 链接，保留配置与索引数据（KeepData 是默认行为，无需显式传参）。
 -Purge 才会删除 embed-config.json / config/config.json / index/ / data/ —— 会先列出将删除的路径并要求确认。
 
 用法：
@@ -33,18 +33,10 @@ foreach ($c in $Clients) {
         'claude' {
             Write-Host "`n[Claude Code]"
             Remove-SkillLink -Target (Join-Path $HOME '.claude\skills\trans')
-            if (Get-Command claude -ErrorAction SilentlyContinue) {
-                try { claude mcp remove trans *>$null; Write-Host '  ✓ 已移除 Claude MCP 注册' -ForegroundColor Green }
-                catch { Write-Host '  ⚠ 移除 Claude MCP 注册失败（可能本就未注册）' -ForegroundColor Yellow }
-            }
         }
         'codex' {
             Write-Host "`n[Codex CLI]"
             Remove-SkillLink -Target (Join-Path $HOME '.codex\skills\trans')
-            if (Get-Command codex -ErrorAction SilentlyContinue) {
-                try { codex mcp remove trans *>$null; Write-Host '  ✓ 已移除 Codex MCP 注册' -ForegroundColor Green }
-                catch { Write-Host '  ⚠ 移除 Codex MCP 注册失败（可能本就未注册）' -ForegroundColor Yellow }
-            }
         }
         default { Write-Host "未知客户端: $c（支持 claude / codex）" -ForegroundColor Yellow }
     }

@@ -124,6 +124,7 @@ function readPublishableSkills() {
     "generative-ui",
     "scientific-figure-making",
     "baoyu-image-gen",
+    "fifine-enhance-slide-image",
     "stem-illustration",
     "tech-diagrams",
     "academic-figure-skill",
@@ -165,7 +166,11 @@ function detectTargets() {
 // Keep the unresolved Nature component out of GitHub installs too, where the
 // source tree may still contain payload excluded from the npm archive.
 const copyExcludedPaths = new Set([
-  "nature-paper-skills/references/upstream/skills/core/rebuttal-response"
+  "nature-paper-skills/references/upstream/skills/core/rebuttal-response",
+  "fifine-trans-criptase/embed-config.json",
+  "fifine-trans-criptase/config/config.json",
+  "fifine-trans-criptase/index",
+  "fifine-trans-criptase/data"
 ]);
 
 function copyDir(src, dest) {

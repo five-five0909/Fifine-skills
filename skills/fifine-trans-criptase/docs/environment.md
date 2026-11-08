@@ -1,6 +1,6 @@
 # Environment
 
-`fifine-trans-criptase` 的所有凭据与端点都走环境变量：私有 env 文件自动加载，进程已有的环境变量永远优先，skills 仓库里不含任何明文密钥。
+本 skill 附带项目专用 embedding 配置 `config/bundled.json`。其中 Base64 编码的 key 可被任何拿到项目或发布包的人直接解码；Base64 不是加密。环境变量、私有配置和旧配置可覆盖内置配置。
 
 ## 1. 环境变量清单
 
@@ -32,12 +32,12 @@
    1. `$FIFINE_SKILLS_ENV` 指向的文件
    2. `~/.config/fifine-skills/secrets.env`
    3. `~/.config/fifine-skills/fifine-trans-criptase.env`
-2. **`config/config.json`**（`embedding.*` 字段，`config.mjs:60-85`）；不存在则回退 `embed-config.json`（`config.mjs:87-105`）。
+2. 配置文件：`~/.config/fifine-skills/trans-criptase.json` 优先；不存在时使用安装目录的 `config/config.json`、旧版 `embed-config.json`，最后使用随 skill 发布的 `config/bundled.json`。
 3. **环境变量覆盖**（`config.mjs:112-119`）：`TRANS_EMBED_PROVIDER` / `TRANS_EMBED_BASE_URL` / `TRANS_EMBED_API_KEY` / `TRANS_EMBED_MODEL` / `TRANS_RERANK_MODEL` / `TRANS_LOCAL_EMBEDDER` 高于一切配置文件。
 
-> 注意「只加载一次」的后果：env 文件在模块 import 时读取，而 MCP stdio 子进程的环境在启动时冻结。**新建或修改 secrets.env 后必须重启 agent / MCP 连接才生效**；在同一台机器上改文件不会热更新。
+私有 env 文件在每次启动 CLI 时读取；修改后下一次命令生效。
 
-密钥不要写进 skills 仓库。仓库根 `.gitignore` 屏蔽 `.env`、`.env.*` 与 `*.env`（后者覆盖 `secrets.local.env` 这类「前缀 + .env」文件名），可提交的模板只有 `examples/fifine-skills-secrets.env.example`。
+项目内置 key 随 skill 分发；如需撤销访问，应在服务商处轮换密钥并更新内置配置。
 
 ## 3. 已验证的 provider 事实
 
@@ -66,17 +66,4 @@ NODE_OPTIONS=--use-env-proxy
 NODE_OPTIONS="--import file:///<skill-dir>/scripts/proxy-boot.mjs"
 ```
 
-`proxy-boot.mjs` 依赖 `undici`（`EnvHttpProxyAgent`），需要装在它的同级或某个祖先目录的 `node_modules` 里。**不要把 node_modules 装进 skills 仓库树**：`scripts/validate-skills.mjs:184-260` 会因为检测到 `node_modules` 目录而让校验失败。建议装到仓库外的独立运行时目录（例如 `~/sdk-tools/mcp-proxy`），并把 `proxy-boot.mjs` 复制到那里，用 `--import` 指向副本。undici 缺失时脚本只打一条警告，不会让 MCP 进程崩掉。
-
-MCP 客户端配置示例（`mcp.json` 的 `mcpServers.trans.env`，去掉了密钥，改由 secrets.env 提供）：
-
-```json
-"env": {
-  "HTTP_PROXY": "http://127.0.0.1:7897",
-  "HTTPS_PROXY": "http://127.0.0.1:7897",
-  "NO_PROXY": "localhost,127.0.0.1,::1",
-  "NODE_OPTIONS": "--import file:///home/you/sdk-tools/mcp-proxy/proxy-boot.mjs"
-}
-```
-
-`NO_PROXY` 必须包含本机地址，否则本机服务也会被送进代理。修改这段配置后同样需要重启 MCP/agent。
+`proxy-boot.mjs` 依赖 `undici`；需要单独安装到脚本可解析的位置。也可在支持的 Node 版本上使用 `NODE_OPTIONS=--use-env-proxy`。代理环境变量在运行 CLI 的进程中设置；`NO_PROXY` 应包含本机地址。

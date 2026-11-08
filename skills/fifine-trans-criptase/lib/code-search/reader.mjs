@@ -1,6 +1,4 @@
-// trans_code_read 的读取逻辑：路径必须落在 root_path（若给）或 allowedRoots（若配置）内，拒绝穿越/越界。
-// 已知限制：MCP 工具按调用是无状态的，这里只做机械的路径边界校验，不追踪"是否来自本次 query 结果"——
-// 后者是 SKILL.md 里对模型行为的软约束（不得读取搜索结果之外的任意路径），不是本函数的强制边界。
+// 路径必须落在 root_path（若给）或 allowedRoots（若配置）内，拒绝穿越和越界。
 import fs from 'node:fs'
 import path from 'node:path'
 import { loadSharedConfig } from '../shared/config.mjs'

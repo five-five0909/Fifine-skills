@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # trans 双客户端卸载器（镜像 uninstall.ps1 逻辑，未在 Linux/macOS 实机验证）。
-# 默认只移除 Skill 链接 + MCP 注册，保留配置与索引数据。--purge 才删除配置/索引，会先列出路径并要求确认。
+# 默认只移除 Skill 链接，保留配置与索引数据。--purge 才删除配置/索引，会先列出路径并要求确认。
 #
 # 用法：
 #   ./uninstall.sh --clients claude,codex
@@ -38,12 +38,10 @@ for c in "${CLIENT_LIST[@]}"; do
         claude)
             echo ""; echo "[Claude Code]"
             remove_skill_link "$HOME/.claude/skills/trans"
-            command -v claude >/dev/null 2>&1 && (claude mcp remove trans >/dev/null 2>&1 && echo "  ✓ 已移除 Claude MCP 注册" || echo "  ⚠ 移除 Claude MCP 注册失败（可能本就未注册）")
             ;;
         codex)
             echo ""; echo "[Codex CLI]"
             remove_skill_link "$HOME/.codex/skills/trans"
-            command -v codex >/dev/null 2>&1 && (codex mcp remove trans >/dev/null 2>&1 && echo "  ✓ 已移除 Codex MCP 注册" || echo "  ⚠ 移除 Codex MCP 注册失败（可能本就未注册）")
             ;;
         *) echo "未知客户端: $c（支持 claude / codex）" ;;
     esac

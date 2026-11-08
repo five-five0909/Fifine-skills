@@ -12,11 +12,11 @@ import readline from 'node:readline/promises'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const SKILL_DIR = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
-const cfgPath = path.join(SKILL_DIR, 'embed-config.json')
+const cfgPath = path.join(os.homedir(), '.config', 'fifine-skills', 'trans-criptase.json')
+const legacyPath = path.join(SKILL_DIR, 'embed-config.json')
 const examplePath = path.join(SKILL_DIR, 'embed-config.example.json')
 const indexRoot = path.join(SKILL_DIR, 'index')
 const projectsRoot = path.join(os.homedir(), '.claude', 'projects')
-const serverPath = path.join(SKILL_DIR, 'mcp', 'server.mjs')
 const libPath = path.join(SKILL_DIR, 'scripts', 'lib.mjs')
 
 // 解析 --key value（value 缺失或又是 --flag 时按空串处理）
@@ -32,8 +32,12 @@ for (let i = 0; i < argv.length; i++) {
 const KEYS = ['provider', 'baseUrl', 'apiKey', 'model', 'rerankModel', 'localDtype']
 
 // 读基底：已有配置优先，否则用 example 模板
-const loadBase = () => JSON.parse(fs.readFileSync(fs.existsSync(cfgPath) ? cfgPath : examplePath, 'utf8'))
-const save = (cfg) => fs.writeFileSync(cfgPath, JSON.stringify(cfg, null, 4) + '\n')
+const loadBase = () => JSON.parse(fs.readFileSync(fs.existsSync(cfgPath) ? cfgPath : fs.existsSync(legacyPath) ? legacyPath : examplePath, 'utf8'))
+const save = (cfg) => {
+    fs.mkdirSync(path.dirname(cfgPath), { recursive: true, mode: 0o700 })
+    fs.writeFileSync(cfgPath, JSON.stringify(cfg, null, 4) + '\n', { mode: 0o600 })
+    fs.chmodSync(cfgPath, 0o600)
+}
 
 function printPaths(note) {
     console.log('')
@@ -41,7 +45,6 @@ function printPaths(note) {
     console.log(`  插件根目录 : ${SKILL_DIR}`)
     console.log(`  配置文件   : ${cfgPath}${note ? '  ' + note : ''}`)
     console.log(`  索引数据   : ${indexRoot}`)
-    console.log(`  MCP 服务器 : ${serverPath}`)
     console.log(`  读取转录自 : ${projectsRoot}  （只读）`)
     console.log('  改配置后重建索引：node scripts/semantic.mjs index --force')
 }
@@ -56,8 +59,8 @@ async function testEmbed() {
         const dims = vecs?.[0]?.length
         if (!dims) return { ok: false, error: '响应无有效向量' }
         return { ok: true, dims }
-    } catch (e) {
-        return { ok: false, error: String(e?.message || e) }
+    } catch {
+        return { ok: false, error: '连接失败，请检查 embedding 配置及服务状态' }
     }
 }
 
@@ -164,7 +167,7 @@ if (overrides.length) {
     if (fs.existsSync(cfgPath)) {
         console.log(`保留现有配置（未传参数）`)
     } else {
-        fs.copyFileSync(examplePath, cfgPath)
+        save(loadBase())
         console.log(`已生成配置模板 —— 按需填 baseUrl/apiKey，或 provider 改 local（见 docs/local-model.md）`)
     }
     printPaths()

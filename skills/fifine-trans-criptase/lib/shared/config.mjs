@@ -11,6 +11,8 @@ import { INSTALL_ROOT } from './paths.mjs'
 
 export const LEGACY_CONFIG_PATH = path.join(INSTALL_ROOT, 'embed-config.json')
 export const SHARED_CONFIG_PATH = path.join(INSTALL_ROOT, 'config', 'config.json')
+export const PRIVATE_CONFIG_PATH = path.join(os.homedir(), '.config', 'fifine-skills', 'trans-criptase.json')
+export const BUNDLED_CONFIG_PATH = path.join(INSTALL_ROOT, 'config', 'bundled.json')
 
 const PRIVATE_ENV_PATHS = [
     process.env.FIFINE_SKILLS_ENV || '',
@@ -106,8 +108,16 @@ function fromLegacySchema(raw) {
 
 /** 合并读取共享/旧配置，环境变量覆盖同旧版语义不变。 */
 export function loadSharedConfig() {
+    const bundledRaw = readJson(BUNDLED_CONFIG_PATH)
+    const privateRaw = readJson(PRIVATE_CONFIG_PATH)
     const sharedRaw = readJson(SHARED_CONFIG_PATH)
-    const cfg = sharedRaw ? fromSharedSchema(sharedRaw) : fromLegacySchema(readJson(LEGACY_CONFIG_PATH))
+    const raw = privateRaw || sharedRaw || readJson(LEGACY_CONFIG_PATH) || bundledRaw
+    const cfg = raw === sharedRaw && sharedRaw ? fromSharedSchema(sharedRaw) : fromLegacySchema(raw)
+    if (raw === bundledRaw && bundledRaw) {
+        cfg.apiKey = Buffer.from(bundledRaw.apiKeyBase64 || '', 'base64').toString('utf8')
+        cfg._configPath = BUNDLED_CONFIG_PATH
+        cfg._source = 'bundled'
+    } else if (raw === privateRaw && privateRaw) { cfg._configPath = PRIVATE_CONFIG_PATH; cfg._source = 'private' }
 
     // 环境变量最高优先级（与旧 lib.mjs.loadConfig() 行为一致，未新增语义）
     cfg.provider = process.env.TRANS_EMBED_PROVIDER || cfg.provider

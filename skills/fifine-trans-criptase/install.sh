@@ -14,7 +14,6 @@
 #   ./install.sh --exact-only
 set -e
 skill="$(cd "$(dirname "$0")" && pwd)"
-server="$skill/mcp/server.mjs"
 
 clients="claude,codex"
 skip_index=""
@@ -56,14 +55,6 @@ new_skill_link() {
 
 install_claude() {
     new_skill_link "$HOME/.claude/skills/trans" "$skill"
-    # 不额外跑 claude mcp add：Skill 目录自带 .mcp.json，Claude Code 发现 Skill 时会自动把它注册成
-    # plugin 作用域的 MCP server（自动 Connected）。之前这里还跑一遍 `claude mcp add --scope user`，
-    # 实测会跟 plugin 作用域的自动注册产生"同一个 name 多 scope 不同 endpoint"的冲突提示，去掉即根治。
-    if command -v claude >/dev/null 2>&1; then
-        echo "  ✓ Claude 会在下次发现 Skill 目录时自动注册 MCP（plugin 作用域，无需额外命令）"
-    else
-        echo "  ⚠ 未找到 claude CLI，跳过（不影响 Codex 侧安装）。装好 Claude Code 后 Skill 会自动生效，无需手动注册 MCP"
-    fi
 }
 
 install_codex() {
@@ -71,16 +62,6 @@ install_codex() {
     # 通用 agent 目录：部分 CLI/agent（含 Codex）以及未来客户端会去 ~/.agents/skills 发现 Skill，
     # 与上面 Codex 专属链接并存，两条都指向同一份源目录。
     new_skill_link "$HOME/.agents/skills/trans" "$skill"
-    if command -v codex >/dev/null 2>&1; then
-        if codex mcp add trans -- node "$server" >/dev/null 2>&1; then
-            echo "  ✓ Codex MCP 已注册"
-        else
-            echo "  ⚠ Codex MCP 注册失败（可能已注册过）。手动执行：codex mcp add trans -- node \"$server\""
-        fi
-    else
-        echo "  ⚠ 未找到 codex CLI，跳过 MCP 注册（不影响 Claude 侧安装）。装好后手动执行："
-        echo "    codex mcp add trans -- node \"$server\""
-    fi
 }
 
 # 1. 配置
@@ -101,7 +82,7 @@ for c in "${CLIENT_LIST[@]}"; do
     esac
 done
 
-# 3. 首次自检：验证 MCP JSON-RPC、embedding 配置，并后台启动适合当前配置的初始索引。
+# 3. 首次自检：验证 embedding 配置，并后台启动适合当前配置的初始索引。
 bootstrap_args=("$skill/scripts/bootstrap.mjs" --clients "$clients")
 if [ -n "$skip_index" ]; then bootstrap_args+=(--no-index); fi
 node "${bootstrap_args[@]}"
@@ -109,7 +90,6 @@ node "${bootstrap_args[@]}"
 echo ""
 echo "── 安装完成 ──"
 echo "  共享源目录   : $skill"
-echo "  MCP Server   : $server"
 echo "  Claude Skill : $HOME/.claude/skills/trans"
 echo "  Codex Skill  : $HOME/.codex/skills/trans"
 echo "  Agents Skill : $HOME/.agents/skills/trans"

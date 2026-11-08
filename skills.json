@@ -61,7 +61,7 @@
     {
       "name": "fifine-trans-criptase",
       "path": "skills/fifine-trans-criptase",
-      "description": "转录续接（DNA 式 transcription）：把中断/旧会话的 JSONL 转录读出来，提取「原任务 → 已完成 → 断点 → 剩余」，报告后接着干；同时提供对任意本地项目目录的 exact/semantic/hybrid 代码与文档检索（trans_code_*）。当用户说「/trans / 恢复会话 / 接着上次 / 续接 xxx 会话 / resume session / 上次聊到哪了」，或要求在本地代码/文档中定位符号、报错、相关实现时使用。"
+      "description": "恢复历史会话并检索对话、本地代码和文档，通过 skill 自带的本地命令运行，无需 MCP。"
     },
     {
       "name": "fifine-paddleocr-vl",
@@ -152,6 +152,11 @@
       "name": "baoyu-image-gen",
       "path": "skills/baoyu-image-gen",
       "description": "AI image generation with multiple providers, text-to-image, reference images, aspect ratios, and batch generation from saved prompt files."
+    },
+    {
+      "name": "fifine-enhance-slide-image",
+      "path": "skills/fifine-enhance-slide-image",
+      "description": "Enhance PPT slides, screenshots, or slide text into consistent slide images while preserving original content and authentic assets."
     },
     {
       "name": "stem-illustration",

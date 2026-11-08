@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // trans UserPromptSubmit hook：扫用户输入的续接意图词，
-// 命中则往上下文注入提示，让 AI 自行决定是否调 trans_scan / trans_search。
+// 命中则提示 AI 使用本地 skill 查询会话。
 // 不命中 → 静默退出，零副作用。
 
 // ── 续接意图正则（三组：中文 / 英文 / 会话ID）──
@@ -29,12 +29,8 @@ process.stdin.on('end', () => {
     if (hasIntent(prompt)) {
       const hint = [
         '[trans plugin] The user is asking about a PAST conversation / prior session work.',
-        'This information is NOT in the current workspace source code — do NOT answer by running glob/grep/cat over project files; that searches code, not past dialogue. The dialogue lives only in session transcripts, reachable via the trans MCP tools.',
-        'Before answering, your FIRST action must be one of:',
-        '• trans_search — find specific details across session history (current project by default);',
-        '• trans_scan — pull a resumption brief from a recent session.',
-        'CROSS-PROJECT: if the prior work happened in a DIFFERENT project/folder than the current one, do NOT use allProjects (it re-scans every index and degrades as projects pile up). Instead call trans_projects FIRST to locate the target project\'s real path, then pass that exact path to trans_search / trans_scan via their `project` param to search just that one project.',
-        'Only skip these tools if you are certain the user is asking about CURRENT code, not a past conversation.',
+        'Past conversations live in session transcripts. Use the fifine-trans-criptase skill and its local CLI to locate and scan or search them.',
+        'For another project, first use the projects command, then target the matching project path.',
         'Memory files alone cannot substitute for transcript search — they only store what was explicitly saved.',
       ].join(' ')
       process.stdout.write(JSON.stringify({

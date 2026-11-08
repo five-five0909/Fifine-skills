@@ -1,51 +1,107 @@
 #!/usr/bin/env node
-// trans 语义检索 CLI（逻辑在 lib.mjs / lib/code-search，MCP 服务器共用）
-// 用法：
-//   node semantic.mjs index  [--project <路径>] [--all] [--dry] [--force] [--no-embed]
-//   node semantic.mjs query "自然语言描述" [--top 8] [--project <路径>] [--all] [--exact|--semantic] [--rerank]
-//   node semantic.mjs status
-//   node semantic.mjs code-index --root <路径> [--force] [--no-embed] [--dry]
-//   node semantic.mjs code-query "描述" --root <路径> [--mode exact|semantic|hybrid] [--top 10]
-//   node semantic.mjs code-status [--root <路径>]
-//   node semantic.mjs doctor
+// Local transcript and code-search CLI. Search and indexing share the same libraries.
 import * as lib from './lib.mjs'
-import { buildCodeIndex, codeStatus } from '../lib/code-search/indexer.mjs'
+import { buildCodeIndex, codeStatus, CODE_INDEX_ROOT } from '../lib/code-search/indexer.mjs'
 import { codeQuery } from '../lib/code-search/query.mjs'
+import { readCodeSlice } from '../lib/code-search/reader.mjs'
 import { resolveProjectRoot } from '../lib/shared/paths.mjs'
+import { loadSharedConfig } from '../lib/shared/config.mjs'
+import {
+    checkNodeVersion, checkConfigFile, checkApiKeyPresence, checkEmbeddingConnectivity,
+    checkDirWritable, checkCliPresence, summarize, configSummaryForDisplay,
+} from '../lib/shared/diagnostics.mjs'
+import { redactSecret } from '../lib/shared/redact.mjs'
 
 function parseArgs(rest) {
-    const o = { project: process.cwd(), top: 8, texts: [] }
+    const o = { texts: [] }
+    const values = {
+        '--project': 'project', '--root': 'root', '--root-path': 'root',
+        '--query': 'query', '--mode': 'mode', '--id': 'id', '--path': 'path',
+        '--session-id': 'sessionId',
+    }
+    const numbers = {
+        '--top': 'top', '--limit': 'limit', '--tail': 'tail', '--max-msgs': 'maxMsgs',
+        '--detail-line': 'detailLine', '--detail': 'detailLine', '--line': 'line',
+        '--before': 'before', '--after': 'after', '--start-line': 'startLine', '--end-line': 'endLine',
+    }
+    const flags = {
+        '--all': 'all', '--dry': 'dry', '--force': 'force', '--rerank': 'rerank',
+        '--exact': 'exact', '--semantic': 'semantic', '--no-embed': 'noEmbed',
+    }
     for (let i = 0; i < rest.length; i++) {
         const a = rest[i]
-        if (a === '--project') o.project = rest[++i]
-        else if (a === '--top') o.top = parseInt(rest[++i], 10) || 8
-        else if (a === '--all') o.all = true
-        else if (a === '--dry') o.dry = true
-        else if (a === '--force') o.force = true
-        else if (a === '--rerank') o.rerank = true
-        else if (a === '--exact') o.exact = true
-        else if (a === '--semantic') o.semantic = true
-        else if (a === '--no-embed') o.noEmbed = true
-        else if (a === '--limit') o.limit = parseInt(rest[++i], 10) || 40
-        else if (a === '--query') o.query = rest[++i]
-        else if (a === '--root') o.root = rest[++i]
-        else if (a === '--mode') o.mode = rest[++i]
+        if (values[a] || numbers[a]) {
+            const value = rest[++i]
+            if (value === undefined || value.startsWith('--')) throw new Error(`${a} requires a value`)
+            if (numbers[a]) {
+                if (!/^\d+$/.test(value)) throw new Error(`${a} requires a non-negative integer`)
+                o[numbers[a]] = Number(value)
+            } else o[values[a]] = value
+        } else if (flags[a]) o[flags[a]] = true
+        else if (a === '--no-rerank') o.rerank = false
+        else if (a.startsWith('--')) throw new Error(`unknown option: ${a}`)
         else o.texts.push(a)
     }
     return o
 }
 
-const [cmd, ...rest] = process.argv.slice(2)
-const opts = parseArgs(rest)
-const print = (lines) => console.log(lines.join('\n'))
+const usage = `Usage: node semantic.mjs <command> [options]
+  list [--project PATH] [--limit N]
+  scan [--id ID | --path PATH] [--project PATH] [--tail N] [--max-msgs N] [--detail-line N]
+  projects [--query TEXT] [--limit N]
+  search TEXT [--project PATH] [--all] [--top N] [--mode exact|semantic|hybrid] [--no-rerank]
+  query TEXT [--project PATH] [--all] [--top N] [--exact|--semantic] [--rerank]
+  expand --session-id ID --line N [--project PATH] [--before N] [--after N]
+  index [--project PATH] [--all] [--dry] [--force] [--no-embed]
+  status
+  code-index [--root PATH] [--force] [--no-embed] [--dry]
+  code-query TEXT [--root PATH] [--mode exact|semantic|hybrid] [--limit N]
+  code-status [--root PATH]
+  code-read PATH [--root PATH] [--start-line N] [--end-line N]
+  code-config-check
+  doctor`
+const safeText = value => {
+    const key = lib.CFG.apiKey
+    let text = String(value)
+    if (key) text = text.split(String(key)).join('[REDACTED]').split(redactSecret(key)).join('[REDACTED]')
+    return text
+}
+const print = lines => console.log(safeText(lines.join('\n')))
+const json = value => console.log(safeText(JSON.stringify(value, null, 2)))
 
 try {
+    const [cmd, ...rest] = process.argv.slice(2)
+    const opts = parseArgs(rest)
+    const text = opts.query ?? opts.texts.join(' ').trim()
+    if (opts.mode && !['exact', 'semantic', 'hybrid'].includes(opts.mode)) throw new Error('mode must be exact, semantic, or hybrid')
     if (cmd === 'index') {
         print(await lib.indexCommand(opts))
-    } else if (cmd === 'query') {
-        const text = opts.texts.join(' ').trim()
-        if (!text) { console.log('用法: node semantic.mjs query "描述" [--top 8] [--all] [--exact|--semantic] [--rerank]'); process.exit(1) }
-        print(await lib.queryLines(text, opts))
+    } else if (cmd === 'query' || cmd === 'search') {
+        if (!text) throw new Error('query is required')
+        if (cmd === 'search' && !(opts.exact || opts.mode === 'exact')) {
+            const notes = []
+            try {
+                const idx = await lib.autoRefreshIndex(opts.project)
+                if (idx.some(l => l.includes('+'))) notes.push(...idx)
+                if (opts.all) {
+                    const codexIdx = await lib.autoRefreshCodexIndex()
+                    if (codexIdx.some(l => l.includes('+'))) notes.push(...codexIdx)
+                }
+            } catch (e) {
+                notes.push(`(index auto-refresh failed, using existing index: ${String(e.message).slice(0, 120)})`)
+            }
+            if (notes.length) print(notes)
+        }
+        print(await lib.queryLines(text, {
+            ...opts, exact: opts.exact || opts.mode === 'exact', semantic: opts.semantic || opts.mode === 'semantic',
+            rerank: cmd === 'search' ? opts.rerank !== false : opts.rerank,
+        }))
+    } else if (cmd === 'list') {
+        print(lib.listLines(opts))
+    } else if (cmd === 'scan') {
+        print(lib.scanLines(opts))
+    } else if (cmd === 'expand') {
+        print(lib.expandLines({ ...opts, sessionId: opts.sessionId || opts.id || opts.texts[0] }))
     } else if (cmd === 'status') {
         print(lib.statusLines())
     } else if (cmd === 'projects') {
@@ -53,23 +109,35 @@ try {
     } else if (cmd === 'code-index') {
         const root = resolveProjectRoot(opts.root)
         const res = await buildCodeIndex(root, { force: opts.force, noEmbed: opts.noEmbed, dry: opts.dry })
-        print([`root: ${root}`, ...res.lines])
+        json({ root_path: root, ...res })
     } else if (cmd === 'code-query') {
-        const text = opts.texts.join(' ').trim()
-        if (!text) { console.log('用法: node semantic.mjs code-query "描述" --root <路径> [--mode exact|semantic|hybrid] [--top 10]'); process.exit(1) }
+        if (!text) throw new Error('query is required')
         const root = resolveProjectRoot(opts.root)
-        const res = await codeQuery({ query: text, mode: opts.mode, root_path: root, limit: opts.top })
-        console.log(JSON.stringify(res, null, 2))
+        json(await codeQuery({ query: text, mode: opts.mode, root_path: root, limit: opts.limit || opts.top || 10 }))
     } else if (cmd === 'code-status') {
         const root = resolveProjectRoot(opts.root)
-        console.log(JSON.stringify({ root, ...codeStatus(root) }, null, 2))
+        const cfg = loadSharedConfig()
+        json({ root_path: root, config: configSummaryForDisplay(cfg), embeddingAvailable: cfg.provider === 'local' || !!(cfg.baseUrl && cfg.apiKey), index: codeStatus(root) })
+    } else if (cmd === 'code-read') {
+        json(readCodeSlice({ path: opts.path || opts.texts[0], root_path: opts.root, start_line: opts.startLine, end_line: opts.endLine }))
+    } else if (cmd === 'code-config-check') {
+        const cfg = loadSharedConfig()
+        const checks = [
+            checkNodeVersion(), checkConfigFile(), checkApiKeyPresence(cfg),
+            await checkEmbeddingConnectivity(cfg, lib.embedBatch),
+            checkDirWritable('代码索引目录', CODE_INDEX_ROOT),
+            checkCliPresence('Claude CLI', 'claude'), checkCliPresence('Codex CLI', 'codex'),
+        ]
+        json({ config: configSummaryForDisplay(cfg), ...summarize(checks) })
     } else if (cmd === 'doctor') {
         const { run } = await import('./doctor.mjs')
         await run()
+    } else if (!cmd || cmd === '--help' || cmd === 'help') {
+        console.log(usage)
     } else {
-        console.log('用法:\n  node semantic.mjs index  [--project <路径>] [--all] [--dry] [--force] [--no-embed]\n  node semantic.mjs query "自然语言描述" [--top 8] [--project <路径>] [--all] [--exact|--semantic] [--rerank]\n  node semantic.mjs projects [--query <关键词>] [--limit 40]\n  node semantic.mjs status\n  node semantic.mjs code-index --root <路径> [--force] [--no-embed] [--dry]\n  node semantic.mjs code-query "描述" --root <路径> [--mode exact|semantic|hybrid] [--top 10]\n  node semantic.mjs code-status [--root <路径>]\n  node semantic.mjs doctor\n默认混合检索（向量+关键词 RRF 融合）；--exact 纯关键词（无需 API）；--semantic 纯向量')
+        throw new Error(`unknown command: ${cmd}\n${usage}`)
     }
 } catch (e) {
-    console.error('出错: ' + e.message)
-    process.exit(1)
+    console.error('出错: ' + safeText(e.message))
+    process.exitCode = 1
 }

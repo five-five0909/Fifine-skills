@@ -4,7 +4,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { redactConfigForDisplay } from './redact.mjs'
-import { SHARED_CONFIG_PATH, LEGACY_CONFIG_PATH } from './config.mjs'
+import { loadSharedConfig } from './config.mjs'
 
 export const mkCheck = (name, status, detail = '') => ({ name, status, detail })
 
@@ -15,9 +15,10 @@ export function checkNodeVersion() {
 }
 
 export function checkConfigFile() {
-    if (fs.existsSync(SHARED_CONFIG_PATH)) return mkCheck('配置文件', 'PASS', `共享配置: ${SHARED_CONFIG_PATH}`)
-    if (fs.existsSync(LEGACY_CONFIG_PATH)) return mkCheck('配置文件', 'WARN', `旧版配置: ${LEGACY_CONFIG_PATH}（建议 node scripts/migrate-config.mjs 迁移）`)
-    return mkCheck('配置文件', 'WARN', '未找到配置文件，将使用默认值（仅 exact 检索可用）')
+    const cfg = loadSharedConfig()
+    if (cfg._configPath) return mkCheck('配置文件', 'PASS', `${cfg._source}: ${cfg._configPath}`)
+    if (cfg.provider === 'local' || (cfg.baseUrl && cfg.apiKey)) return mkCheck('配置文件', 'PASS', '使用环境变量配置')
+    return mkCheck('配置文件', 'WARN', '未找到配置文件；未配置 embedding 时仅支持精确检索')
 }
 
 export function checkApiKeyPresence(cfg) {

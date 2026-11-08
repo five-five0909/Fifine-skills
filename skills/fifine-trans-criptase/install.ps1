@@ -28,7 +28,6 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $skillDir = $PSScriptRoot
-$serverPath = Join-Path $skillDir 'mcp\server.mjs'
 
 Write-Host "trans 安装器 —— 共享源目录: $skillDir" -ForegroundColor Cyan
 
@@ -60,15 +59,6 @@ function New-SkillLink {
 function Install-ClaudeClient {
     $target = Join-Path $HOME '.claude\skills\trans'
     New-SkillLink -Target $target -Source $skillDir
-    # 不额外跑 claude mcp add：Skill 目录自带 .mcp.json，Claude Code 发现 Skill 时会自动把它注册成
-    # plugin 作用域的 MCP server（`claude mcp list` 里显示为 plugin:trans:trans，自动 Connected）。
-    # 之前这里还跑了一遍 `claude mcp add --scope user`，实测会跟 plugin 作用域的自动注册产生
-    # "同一个 name 在多个 scope 里定义不同 endpoint" 的冲突提示——去掉这步就是根治，不是掩盖。
-    if (Get-Command claude -ErrorAction SilentlyContinue) {
-        Write-Host '  ✓ Claude 会在下次发现 Skill 目录时自动注册 MCP（plugin 作用域，无需额外命令）' -ForegroundColor Green
-    } else {
-        Write-Host '  ⚠ 未找到 claude CLI，跳过（不影响 Codex 侧安装）。装好 Claude Code 后 Skill 会自动生效，无需手动注册 MCP' -ForegroundColor Yellow
-    }
 }
 
 function Install-CodexClient {
@@ -78,17 +68,6 @@ function Install-CodexClient {
     # 与上面 Codex 专属链接并存，两条都指向同一份源目录。
     $agentsTarget = Join-Path $HOME '.agents\skills\trans'
     New-SkillLink -Target $agentsTarget -Source $skillDir
-    if (Get-Command codex -ErrorAction SilentlyContinue) {
-        try {
-            codex mcp add trans -- node $serverPath *>$null
-            Write-Host '  ✓ Codex MCP 已注册' -ForegroundColor Green
-        } catch {
-            Write-Host "  ⚠ Codex MCP 注册失败（可能已注册过）。手动执行：codex mcp add trans -- node `"$serverPath`"" -ForegroundColor Yellow
-        }
-    } else {
-        Write-Host '  ⚠ 未找到 codex CLI，跳过 MCP 注册（不影响 Claude 侧安装）。装好 Codex CLI 后手动执行：' -ForegroundColor Yellow
-        Write-Host "    codex mcp add trans -- node `"$serverPath`""
-    }
 }
 
 # 1. 生成/更新配置（单一真相层：write-config.mjs，PS/bash 共用）
@@ -105,7 +84,7 @@ if ($ExactOnly) {
     node (Join-Path $skillDir 'scripts\write-config.mjs') @cfgArgs
 }
 
-# 2. 逐客户端安装：互不阻断，缺 CLI 就跳过并提示补装命令
+# 2. 逐客户端安装
 foreach ($c in $Clients) {
     switch ($c) {
         'claude' { Write-Host "`n[Claude Code]"; Install-ClaudeClient }
@@ -114,7 +93,7 @@ foreach ($c in $Clients) {
     }
 }
 
-# 3. 首次自检：验证 MCP JSON-RPC、embedding 配置，并后台启动适合当前配置的初始索引。
+# 3. 首次自检：验证 embedding 配置，并后台启动适合当前配置的初始索引。
 $bootstrapArgs = @((Join-Path $skillDir 'scripts\bootstrap.mjs'), '--clients', ($Clients -join ','))
 if ($SkipIndex) { $bootstrapArgs += '--no-index' }
 node @bootstrapArgs
@@ -122,7 +101,6 @@ node @bootstrapArgs
 # 4. 汇总
 Write-Host "`n── 安装完成 ──" -ForegroundColor Cyan
 Write-Host "  共享源目录   : $skillDir"
-Write-Host "  MCP Server   : $serverPath"
 Write-Host "  Claude Skill : $(Join-Path $HOME '.claude\skills\trans')"
 Write-Host "  Codex Skill  : $(Join-Path $HOME '.codex\skills\trans')"
 Write-Host "  Agents Skill : $(Join-Path $HOME '.agents\skills\trans')"

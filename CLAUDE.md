@@ -45,6 +45,10 @@ Fifine skills usually use the `fifine-` namespace, while imported third-party
 skills keep the upstream `name` from `SKILL.md`; in all cases the directory name,
 frontmatter `name`, `skills.json` entry, publishable list, and
 `agents/openai.yaml` display name must match exactly.
+The publishable whitelist is `scripts/publishable-skills.json`; keep its fallback
+list in `scripts/postinstall.js` in sync. For PPT page enhancement, route to
+`fifine-enhance-slide-image`; its bundled visual examples are optional, not a
+default style, and any requested image provider must be available at runtime.
 
 ---
 

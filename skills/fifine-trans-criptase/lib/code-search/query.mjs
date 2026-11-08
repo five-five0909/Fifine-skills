@@ -1,4 +1,4 @@
-// 代码检索编排：模式选择 + 降级链 + 输出格式化。MCP 工具层（mcp/tools/query.mjs）与 CLI（scripts/semantic.mjs code-query）共用。
+// 代码检索编排：模式选择、降级链和输出格式化。
 import { loadSharedConfig } from '../shared/config.mjs'
 import { loadCodeIndex } from './indexer.mjs'
 import { exactSearch } from './exact-search.mjs'
@@ -21,7 +21,7 @@ export async function codeQuery({ query, mode = 'hybrid', root_path, limit = 10 
 
     const idx = loadCodeIndex(root_path)
     if (!idx) {
-        return { mode, query, results: [], error: `没有可用索引：先调 trans_code_index({root_path: "${root_path}"})` }
+        return { mode, query, results: [], error: '没有可用索引：先运行 code-index --root <project>' }
     }
     const indexes = [idx]
 

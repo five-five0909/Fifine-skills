@@ -19,6 +19,7 @@ The parser checks token sources in this order:
    - path from `FIFINE_SKILLS_ENV` if set
    - `~/.config/fifine-skills/secrets.env`
    - `~/.config/fifine-skills/fifine-paddleocr-vl.env`
+4. The bundled project token in `bundled.json`, used when none of the above is set.
 
 Example local env file content:
 
@@ -27,17 +28,17 @@ PADDLEOCR_AISTUDIO_TOKEN=your-ai-studio-token
 PADDLEOCR_MODEL=PaddleOCR-VL-1.6
 ```
 
-Do not commit real tokens into this publishable skill repository.
+The bundled token is Base64-encoded, not encrypted: anyone with the repository or published package can recover and use it.
 
 ## Environment
 
 | Variable | Required | Default | Purpose |
 | --- | --- | --- | --- |
-| `PADDLEOCR_AISTUDIO_TOKEN` | Yes (unless `--token` is passed) | — | AI Studio API access token. |
+| `PADDLEOCR_AISTUDIO_TOKEN` | No when bundled token is present | bundled token | AI Studio API access token. |
 | `PADDLEOCR_MODEL` | No | `PaddleOCR-VL-1.6` | Model served by the AI Studio endpoint. |
 | `FIFINE_SKILLS_ENV` | No | — | Override path for the local env file with the highest precedence. |
 
-`--token` always wins over every env source, so a one-off run never needs env edits. Put recurring credentials in `~/.config/fifine-skills/secrets.env` (permissions `600`).
+`--token` always wins, followed by the environment and private env files; the bundled token is the fallback.
 
 The parser depends on `requests`; install it once per machine runtime:
 

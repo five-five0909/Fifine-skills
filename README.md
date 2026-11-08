@@ -39,9 +39,8 @@ the repository or the agent config. For skills using the shared loader, resoluti
 
 Existing process env always wins; the loader never overwrites a variable that is
 already set (`skills/fifine-trans-criptase/lib/shared/config.mjs`). Values are
-read once when the skill's config module loads, and a stdio MCP subprocess
-freezes its environment at startup — restart the MCP server / agent after
-editing an env file.
+read when each skill command starts, so a new command picks up changes to the
+private env file.
 
 Several skills need credentials or external provider configuration only when you
 use their live API features. Examples include `fifine-trans-criptase` (embedding
@@ -94,6 +93,15 @@ the semantic and rendering specialists for publication figures, STEM
 illustrations, architecture diagrams, interactive visuals, and provider-based
 image generation.
 
+`fifine-enhance-slide-image` enhances existing PPT pages, screenshots, or slide
+text into consistent slide images. It preserves original text, data, and genuine
+assets, supports selected-page or batch workflows, and checks the actual output
+before delivery. The bundled black-and-gold examples are optional, not a default
+style. Image generation requires an available user-selected provider; Magpie
+requires its image MCP when specifically requested. Generated text and assets
+still need visual verification. Select it in a consumer project's `skills.json`
+with `"include": ["fifine-enhance-slide-image"]` when installing selectively.
+
 `fifine-ppt-typography-designer` is a local scanner entry for PPT font pairing, previews,
 and PPTX typography. The historical inventory and eight schemes are documented in
 the skill; font binaries are excluded from Git and npm. It defaults to the ModelScope
@@ -133,6 +141,8 @@ Its manifest records the local inventory, not a guarantee that every listed file
 is shipped; the adapter checks for this optional component before using it.
 Other installers or direct source scanners may discover local-only skills and
 need their own explicit selection; the npm whitelist does not govern them.
+The local-only `momojee-writing-skills` retains its upstream `.codex` reference
+tree for local use and licensing records; it is not part of the npm payload.
 
 ### Writing routing and recommended bundle
 

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import re
@@ -59,6 +60,18 @@ def load_private_env() -> None:
 
 load_private_env()
 
+def bundled_token() -> str | None:
+    """Load the project-bundled token; Base64 is encoding, not encryption."""
+    path = Path(__file__).resolve().parent.parent / "bundled.json"
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return base64.b64decode(data["tokenBase64"], validate=True).decode("utf-8") or None
+    except (KeyError, ValueError, UnicodeError) as exc:
+        raise ValueError(f"Invalid bundled OCR token configuration: {path}") from exc
+
+
 
 def safe_name(value: str) -> str:
     name = Path(urlparse(value).path).stem if value.startswith(("http://", "https://")) else Path(value).stem
@@ -70,7 +83,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Parse a PDF/image using PaddleOCR-VL AI Studio API.")
     parser.add_argument("file_path", help="Local file path or HTTP(S) file URL.")
     parser.add_argument("--output-dir", default=None, help="Output directory. Default: ./paddleocr-output/<input-name>-<timestamp>")
-    parser.add_argument("--token", default=os.getenv("PADDLEOCR_AISTUDIO_TOKEN"))
+    parser.add_argument("--token", default=os.getenv("PADDLEOCR_AISTUDIO_TOKEN") or bundled_token())
     parser.add_argument("--model", default=os.getenv("PADDLEOCR_MODEL", DEFAULT_MODEL))
     parser.add_argument("--poll-interval", type=float, default=5.0)
     parser.add_argument("--timeout", type=float, default=1800.0)

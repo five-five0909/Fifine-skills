@@ -1,0 +1,12 @@
+{
+  "provider": "api",
+  "baseUrl": "https://api.mistral.ai/v1",
+  "model": "mistral-embed",
+  "rerankModel": "",
+  "batchSize": 32,
+  "maxChars": 800,
+  "stride": 720,
+  "autoRefresh": true,
+  "autoRefreshMaxChunks": 300,
+  "apiKeyBase64": "bXN0cmxfVGVnNjB1RmppWkFCcEFOZHFINGdjRDFvOUQ4V1phVkpfMDN2S3FC"
+}

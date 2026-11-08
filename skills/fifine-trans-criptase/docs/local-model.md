@@ -61,7 +61,7 @@ embedder/
 
 ## 第 5 步：改配置
 
-`embed-config.json`：
+`~/.config/fifine-skills/trans-criptase.json`（旧版安装目录下的 `embed-config.json` 仍可读取）：
 
 ```jsonc
 {

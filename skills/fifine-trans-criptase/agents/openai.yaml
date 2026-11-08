@@ -7,29 +7,12 @@ interface:
 skill:
   name: trans
   entry: ../SKILL.md
-  mcp_server:
-    transport: stdio
-    command: node
-    args: ["../mcp/server.mjs"]
 
 capabilities:
   - session-transcript-resume
   - cross-session-semantic-search
   - local-code-search
   - local-document-search
-
-tools:
-  - trans_search
-  - trans_scan
-  - trans_list
-  - trans_projects
-  - trans_expand
-  - trans_index
-  - trans_code_query
-  - trans_code_index
-  - trans_code_status
-  - trans_code_read
-  - trans_code_config_check
 
 triggers:
   - "/trans"

@@ -1,4 +1,4 @@
-// trans 共享逻辑：转录解析 / 索引 / 检索。semantic.mjs(CLI) 与 mcp/server.mjs 共用。
+// 转录解析、索引与检索的共享逻辑。
 import fs from 'node:fs'
 import path from 'node:path'
 import os from 'node:os'
@@ -177,8 +177,7 @@ function transcriptCwd(file) {
 }
 
 // 发现所有已知项目：真实 cwd + 最近活跃时间 + 会话数 + 是否已建索引 + 最新会话首条消息。
-// 跨项目检索的第一步：AI 先调这个拿到目标项目的真实路径，再把路径传给 trans_search 的 project 参数，
-// 定向搜单个项目——而不是 allProjects 把每个项目的索引全量轮询一遍（项目一多就废）。
+// 跨项目检索先定位目标路径，再限定项目搜索。
 export function projectsLines({ limit = 40, query = '' } = {}) {
     const rows = []
     if (fs.existsSync(PROJECTS_ROOT)) {
@@ -222,8 +221,8 @@ export function projectsLines({ limit = 40, query = '' } = {}) {
     filtered.sort((a, b) => b.mtime - a.mtime)
     const out = [
         '=== 已知项目（按最近活跃降序）===',
-        '跨项目检索：把下面的【路径】原样传给 trans_search / trans_scan 的 project 参数，定向搜该项目。',
-        '不要用 allProjects 轮询全部——项目多时会把每个索引都跑一遍。',
+        '跨项目检索：将下面的【路径】传给 search 或 scan 的 --project 参数。',
+        '不要对所有项目盲目搜索。',
         '',
     ]
     for (const r of filtered.slice(0, limit)) {
@@ -539,7 +538,7 @@ export async function buildIndexLines(transcriptDir, opts = {}) {
     const P = indexPaths(enc)
     fs.mkdirSync(P.iDir, { recursive: true })
 
-    // 并发建索引保护：同一索引目录同一时刻只允许一个写者（两个客户端各自的 MCP 进程都可能触发 index）。
+    // 并发建索引保护：同一索引目录同一时刻只允许一个写者。
     const release = acquireLock(P.lock)
     if (!release) {
         const info = readLockInfo(P.lock)
@@ -818,7 +817,7 @@ export async function queryLines(text, opts = {}) {
         const m = h.meta
         out.push(`${h.score.toFixed(4)}  ${shortSid(m.sid)}:${m.line}  [${m.role}${m.ts ? ' ' + m.ts : ''}]${m.part ? ` (段${m.part + 1})` : ''} ${cut(m.text, 180)}`)
     }
-    out.push('', '→ 放大上下文: trans_expand(sessionId, line) 或 python <skill-dir>/scripts/scan_transcript.py --id <前缀> --detail <行号>')
+    out.push('', '→ 放大上下文: node <skill-dir>/scripts/semantic.mjs expand --id <前缀> --line <行号>')
     return out
 }
 

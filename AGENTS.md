@@ -68,6 +68,7 @@ Omit `include` to install all available publishable skills. Omit `targets` to au
 | generative-ui | 生成交互式 HTML/SVG widget、Chart.js 图表、UI mockup 与生成艺术 |
 | scientific-figure-making | 面向论文、报告和幻灯片的 matplotlib 出版级科学图表制作 |
 | baoyu-image-gen | 多 provider AI 生图，支持文生图、参考图、比例和批量生成 |
+| fifine-enhance-slide-image | 逐页美化 PPT、截图或文字为统一风格的幻灯片图片，保留原文、数据与真实素材 |
 | stem-illustration | 面向科研、教育、工程的 STEM 机制图、流程图、信息图和教学插图生成 |
 | tech-diagrams | 生成系统架构、C4、网络、数据流、序列等专业技术图 |
 | academic-figure-skill | 面向 Nature/Cell/Science 风格投稿的学术图表规划、润色、QA 与导出 |
@@ -131,6 +132,7 @@ Automatic natural-language routing depends on host discovery of installed skill 
 | 需要交互式可视化、HTML/SVG widget、Chart.js 图表、UI mockup 或生成艺术 | generative-ui |
 | 需要 matplotlib 论文图、报告图、热图、多 panel 或出版级科学图表 | scientific-figure-making |
 | 需要通用 AI 生图、参考图生图、批量生图或多 provider 图片生成 | baoyu-image-gen |
+| 需要逐页美化或重绘现有 PPT、页面截图或文字，并保持内容与素材保真 | fifine-enhance-slide-image |
 | 需要 PPT 字体搭配、字体样张或 PPTX 排版 | fifine-ppt-typography-designer（本地条目；字体从 ModelScope 同步或指定本地目录） |
 | 需要科研机制图、实验流程图、STEM 教学插图、学术海报或概念信息图 | stem-illustration |
 | 需要系统架构图、C4、网络图、数据流、序列图或云架构技术图 | tech-diagrams |
