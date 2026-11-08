@@ -1,2 +1,0 @@
-{"file":".trellis/spec/index.md","reason":"Verify repository validation and documentation scope against the project spec entry point."}
-{"file":".trellis/spec/skill-design-principles.md","reason":"Verify that the README preserves the boundary between prompt references and publishable skills."}
