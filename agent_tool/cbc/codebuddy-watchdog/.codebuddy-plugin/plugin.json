@@ -1,0 +1,5 @@
+{
+  "name": "codebuddy-watchdog",
+  "version": "1.0.0",
+  "description": "发送一条自动化「继续」并强制模型通过 watchdog_decide 做决定；pi-extension-watchdog 的 CodeBuddy 移植"
+}

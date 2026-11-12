@@ -1,0 +1,9 @@
+{
+  "name": "codebuddy-watchdog",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A watchdog mod for CodeBuddy Code: one automated continue when the session goes quiet, a forced watchdog_decide answer, hard limits and a kill switch.",
+  "license": "MIT",
+  "files": [".codebuddy-plugin", "hooks", "config", "bin", "README.md", "install.sh", "uninstall.sh"],
+  "engines": { "node": ">=18.20.8" }
+}

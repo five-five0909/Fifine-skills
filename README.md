@@ -28,6 +28,12 @@ This repository can also still be installed through npm:
 npm install github:five-five0909/Fifine-skills
 ```
 
+## Agent tools
+
+The source repository keeps agent-tool utilities under `agent_tool/`, separate from the publishable skills. For CodeBuddy Code, `agent_tool/cbc/` contains the status-line script and the [watchdog plugin source and usage guide](agent_tool/cbc/codebuddy-watchdog/README.md). The watchdog source copy does not automatically change an installed plugin; see its guide before installation, configuration, or removal.
+
+These utilities are source-repository resources: they are not part of the npm package's `files` whitelist or the skill postinstall payload.
+
 ## Environment variables
 
 Some skills read credentials from a local plaintext env file instead of

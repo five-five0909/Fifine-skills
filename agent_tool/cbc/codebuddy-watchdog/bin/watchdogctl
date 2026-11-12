@@ -1,0 +1,212 @@
+#!/usr/bin/env node
+/**
+ * watchdogctl — the out-of-session control for codebuddy-watchdog.
+ *
+ * Zero dependencies, plain Node (>=18.20.8, same floor as the CLI). It never
+ * talks to the model or the network: it reads the plugin's state mirror/log and
+ * writes the person's own config.json, backs up settings before a change and can
+ * roll one back.
+ *
+ *   watchdogctl status                 state mirror + counters + log tail
+ *   watchdogctl on | off               enable/disable the watchdog (config.json)
+ *   watchdogctl set timeoutMs=45000    set any config field (validated)
+ *   watchdogctl reset                  clear the state mirror
+ *   watchdogctl config                 print the effective config
+ *   watchdogctl logs [n]               tail the watchdog log (default 40)
+ *   watchdogctl install [dir]          install + enable the plugin (cbc plugin add)
+ *   watchdogctl uninstall              disable + remove the plugin, restore backup
+ *   watchdogctl where                  print every path this tool touches
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import { execFileSync } from 'node:child_process';
+
+const HERE = path.dirname(new URL(import.meta.url).pathname);
+const POINTER = path.join(os.homedir(), '.codebuddy', 'watchdog', 'pointer.json');
+function pointer() { try { return JSON.parse(fs.readFileSync(POINTER, 'utf8')); } catch { return {}; } }
+const PLUGIN_ROOT = process.env.CODEBUDDY_WATCHDOG_PLUGIN_ROOT || pointer().pluginRoot || path.resolve(HERE, '..');
+const DEFAULTS = {
+  enabled: true, timeoutMs: 60000, minIntervalMs: 8000, maxChecks: 50, graceMs: 2000,
+  tickMs: 1000, requireDecisionTool: true, blockOtherToolsInDecisionRound: true,
+  postponeOnDraft: true, maxDraftPostpones: 3, foldOnCompact: false, logToFile: true, stateDir: 'default', marker: '[Automated watchdog check'
+};
+const INT_BOUNDS = { timeoutMs: [1000, 3600000], minIntervalMs: [0, 3600000], maxChecks: [1, 100000], graceMs: [0, 600000], tickMs: [500, 60000], maxDraftPostpones: [0, 1000] };
+
+function stateDir(cfg) {
+  const fallback = pointer().stateDir || path.join(PLUGIN_ROOT, 'state');
+  const raw = cfg.stateDir && cfg.stateDir !== 'default' ? cfg.stateDir : fallback;
+  return raw.replace(/^~(?=\/|$)/, os.homedir());
+}
+function configPath(cfg) { return path.join(stateDir(cfg), 'config.json'); }
+function readJson(file, fallback) {
+  try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; }
+}
+function effectiveConfig() {
+  const shipped = readJson(path.join(PLUGIN_ROOT, 'config', 'watchdog.config.json'), {});
+  const first = { ...DEFAULTS, ...shipped };
+  const override = readJson(configPath(first), null);
+  if (!override) return { cfg: first, problems: [] };
+  const problems = [];
+  const cfg = { ...first };
+  for (const [k, v] of Object.entries(override)) {
+    if (k.startsWith('_')) continue;
+    if (!(k in DEFAULTS)) { problems.push(`unknown key "${k}"`); continue; }
+    if (INT_BOUNDS[k]) {
+      if (!Number.isInteger(v) || v < INT_BOUNDS[k][0] || v > INT_BOUNDS[k][1]) { problems.push(`${k} ignored (need integer ${INT_BOUNDS[k][0]}..${INT_BOUNDS[k][1]})`); continue; }
+    } else if (typeof v !== typeof DEFAULTS[k]) { problems.push(`${k} ignored (need ${typeof DEFAULTS[k]})`); continue; }
+    cfg[k] = v;
+  }
+  return { cfg, problems };
+}
+function writeConfig(cfg) {
+  const dir = stateDir(cfg);
+  fs.mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, 'config.json');
+  if (fs.existsSync(file)) {
+    const backup = `${file}.bak-${new Date().toISOString().replace(/[:.]/g, '-')}`;
+    fs.copyFileSync(file, backup);
+    console.error(`backed up ${file} -> ${backup}`);
+  }
+  const body = {};
+  for (const k of Object.keys(DEFAULTS)) body[k] = cfg[k];
+  fs.writeFileSync(file, JSON.stringify(body, null, 2) + '\n');
+  return file;
+}
+function cbcBin() { return process.env.CODEBUDDY_BIN || 'codebuddy'; }
+function runCbc(args, { allowFail = false } = {}) {
+  try {
+    return execFileSync(cbcBin(), args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+  } catch (error) {
+    if (allowFail) return `${error.stdout || ''}${error.stderr || ''}`;
+    throw error;
+  }
+}
+function cmd(argv) {
+  const [action, ...rest] = argv;
+  const { cfg, problems } = effectiveConfig();
+  const dir = stateDir(cfg);
+  const stateFile = path.join(dir, 'state.json');
+  const logFile = path.join(dir, 'watchdog.log');
+  switch (action) {
+    case undefined:
+    case 'status': {
+      const state = readJson(stateFile, null);
+      console.log(`plugin root : ${PLUGIN_ROOT}`);
+      console.log(`state dir   : ${dir}`);
+      console.log(`config      : ${fs.existsSync(configPath(cfg)) ? configPath(cfg) : '(defaults only)'}`);
+      console.log(`watchdog    : ${cfg.enabled ? 'enabled' : 'disabled'}`);
+      if (!state) { console.log('state       : (no run recorded yet)'); break; }
+      console.log(`phase       : ${state.phase}`);
+      console.log(`checks      : ${state.checks}/${cfg.maxChecks}   continuations: ${state.continuations}   postpones: ${state.postpones}   missed decisions: ${state.skips}`);
+      console.log(`stop reason : ${state.stopReason || '(running)'}`);
+      console.log(`session     : ${state.sessionId}   updated: ${state.updatedAt}`);
+      const events = Array.isArray(state.trail) ? state.trail.filter((item) => item && typeof item === 'object').slice(-5) : [];
+      if (events.length) {
+        console.log('last events :');
+        for (const item of events) console.log(`  - ${item.kind || item.event || '(unknown)'}${item.decision ? `(${item.decision})` : ''}${item.reason ? `(${item.reason})` : ''}`);
+      }
+      break;
+    }
+    case 'on': case 'off': {
+      const file = writeConfig({ ...cfg, enabled: action === 'on' });
+      console.log(`watchdog ${action === 'on' ? 'enabled' : 'disabled'} -> ${file}`);
+      break;
+    }
+    case 'set': {
+      if (rest.length === 0) throw new Error('usage: watchdogctl set key=value [key=value ...]');
+      const next = { ...cfg };
+      for (const pair of rest) {
+        const [key, ...valueParts] = pair.split('=');
+        const raw = valueParts.join('=');
+        if (!(key in DEFAULTS)) throw new Error(`unknown key "${key}"; known: ${Object.keys(DEFAULTS).join(', ')}`);
+        let value = raw;
+        if (typeof DEFAULTS[key] === 'boolean') value = raw === 'true' ? true : raw === 'false' ? false : (() => { throw new Error(`${key} needs true/false`); })();
+        else if (typeof DEFAULTS[key] === 'number') { value = Number(raw); if (!Number.isInteger(value)) throw new Error(`${key} needs an integer`); }
+        next[key] = value;
+      }
+      const file = writeConfig(next);
+      console.log(`wrote ${file}`);
+      break;
+    }
+    case 'config': {
+      console.log(JSON.stringify(cfg, null, 2));
+      if (problems.length) console.error(`problems: ${problems.join('; ')}`);
+      break;
+    }
+    case 'reset': {
+      if (fs.existsSync(stateFile)) { fs.rmSync(stateFile); console.log(`removed ${stateFile}`); }
+      else console.log('nothing to reset');
+      break;
+    }
+    case 'logs': {
+      const n = Number(rest[0] || 40);
+      if (!fs.existsSync(logFile)) { console.log(`(no log at ${logFile})`); break; }
+      const lines = fs.readFileSync(logFile, 'utf8').split('\n').filter(Boolean);
+      console.log(lines.slice(-n).join('\n'));
+      break;
+    }
+    case 'install': {
+      const dirArg = rest[0] || PLUGIN_ROOT;
+      const settings = path.join(os.homedir(), '.codebuddy', 'settings.json');
+      if (fs.existsSync(settings)) {
+        const backup = `${settings}.watchdog-backup-${Date.now()}`;
+        fs.copyFileSync(settings, backup);
+        console.log(`settings backup: ${backup}`);
+      }
+      console.log(runCbc(['plugin', 'add', dirArg, '--yes']).trim());
+      console.log(runCbc(['plugin', 'list']).trim());
+      break;
+    }
+    case 'uninstall': {
+      // `plugin uninstall` refuses a locally added plugin ("Marketplace undefined
+      // is not found" on 2.176.0), so disable first and remove the cache entry.
+      console.log(runCbc(['plugin', 'disable', 'codebuddy-watchdog'], { allowFail: true }).trim());
+      const installed = path.join(os.homedir(), '.codebuddy', 'plugins', 'installed_plugins.json');
+      const cache = path.join(os.homedir(), '.codebuddy', 'plugins', 'cache');
+      if (fs.existsSync(installed)) {
+        const data = readJson(installed, null);
+        if (data) {
+          const backup = `${installed}.watchdog-backup-${Date.now()}`;
+          fs.copyFileSync(installed, backup);
+          console.log(`installed_plugins.json backup: ${backup}`);
+          const strip = (value) => {
+            if (Array.isArray(value)) return value.filter((id) => !String(id).startsWith('codebuddy-watchdog'));
+            if (value && typeof value === 'object') {
+              for (const key of Object.keys(value)) {
+                if (key.startsWith('codebuddy-watchdog')) delete value[key];
+                else value[key] = strip(value[key]);
+              }
+            }
+            return value;
+          };
+          fs.writeFileSync(installed, JSON.stringify(strip(data), null, 2) + '\n');
+          console.log(`removed codebuddy-watchdog from ${installed}`);
+        }
+      }
+      if (fs.existsSync(cache)) {
+        for (const entry of fs.readdirSync(cache)) {
+          const candidate = path.join(cache, entry, 'codebuddy-watchdog');
+          if (fs.existsSync(candidate)) { fs.rmSync(candidate, { recursive: true, force: true }); console.log(`removed ${candidate}`); }
+        }
+      }
+      console.log('done. Your config/state under the state dir was left untouched.');
+      break;
+    }
+    case 'where': {
+      console.log(`plugin root : ${PLUGIN_ROOT}`);
+      console.log(`state dir   : ${dir}`);
+      console.log(`state file  : ${stateFile}`);
+      console.log(`log file    : ${logFile}`);
+      console.log(`config file : ${configPath(cfg)}`);
+      console.log(`installed   : ${path.join(os.homedir(), '.codebuddy', 'plugins', 'installed_plugins.json')}`);
+      break;
+    }
+    default:
+      console.log(fs.readFileSync(new URL(import.meta.url).pathname, 'utf8').split('\n').slice(1, 20).map((l) => l.replace(/^ \* ?|^\/\*\* ?/, '')).join('\n'));
+  }
+}
+try { cmd(process.argv.slice(2)); } catch (error) {
+  console.error(`watchdogctl: ${error.message}`);
+  process.exit(1);
+}

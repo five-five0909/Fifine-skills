@@ -151,6 +151,10 @@ fair baseline before tuning, optimize effective task throughput/latency rather t
 itself, benchmark one main hypothesis at a time, preserve correctness/reproducibility, and protect
 hardware safety.
 
+## Agent tools
+
+Keep agent-tool utilities under `agent_tool/`, grouped by host. CodeBuddy Code utilities live in `agent_tool/cbc/`; the `codebuddy-watchdog/` subdirectory contains its plugin source, controller, configuration examples and tests. Its README documents installation and operation. Repository changes do not automatically update the installed plugin or its runtime state. These utilities are source-repository resources, not skills in the postinstall whitelist or the npm package's `files` list.
+
 ## Distribution targets
 
 | Tool | Skills path |

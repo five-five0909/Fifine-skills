@@ -1,0 +1,16 @@
+{
+  "_comment": "Copy to <stateDir>/config.json to override. stateDir defaults to <plugin root>/state; bin/watchdogctl config set writes an absolute path here.",
+  "enabled": true,
+  "timeoutMs": 60000,
+  "minIntervalMs": 8000,
+  "maxChecks": 50,
+  "graceMs": 2000,
+  "tickMs": 1000,
+  "requireDecisionTool": true,
+  "blockOtherToolsInDecisionRound": true,
+  "postponeOnDraft": true,
+  "maxDraftPostpones": 3,
+  "foldOnCompact": false,
+  "logToFile": true,
+  "stateDir": "default"
+}
